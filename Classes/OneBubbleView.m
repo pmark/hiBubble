@@ -11,7 +11,7 @@
 
 
 #define GROW_ANIMATION_DURATION_SECONDS 0.4
-#define FLOAT_ANIMATION_DURATION_SECONDS 1.8
+#define FLOAT_ANIMATION_DURATION_SECONDS 3.5
 
 
 @implementation OneBubbleView
@@ -68,12 +68,11 @@ int randomPolarity() {
   int minRadius = 10;  
   CGFloat maxRadius = 240.0f;  
   CGFloat scaledRadius = maxRadius * [self velocityScalar];
-  NSLog(@"scaledRadius: %f", scaledRadius);
   int radius = scaledRadius + minRadius;
   int randomRadius = randomNumber(radius);
   int phi = randomNumber(360);
   int x = cos(phi) * randomRadius + 160;
-  int y = sin(phi) * randomRadius * 0.33f + 210;
+  int y = sin(phi) * randomRadius * 0.33f + 150;
   self.center = CGPointMake(x, y);
 }
 
@@ -92,7 +91,7 @@ int randomPolarity() {
   [UIView setAnimationDidStopSelector:@selector(bubbleBirthAnimationDidStop:finished:context:)];
   
   int dir = randomPolarity();
-  CGFloat scaleValue = (randomNumber(70) / 100.0f) + 0.1f;
+  CGFloat scaleValue = (randomNumber(90) / 100.0f) + 0.2f;
   
   CGAffineTransform transform = CGAffineTransformConcat(
       CGAffineTransformMakeScale(scaleValue, scaleValue),
@@ -117,7 +116,7 @@ int randomPolarity() {
   [UIView setAnimationDelegate:oneBubble];
    
   CGAffineTransform transform = CGAffineTransformConcat(
-      CGAffineTransformMakeScale(0.05f, 0.05f),
+      CGAffineTransformMakeScale(0.15f, 0.15f),
       CGAffineTransformMakeRotation(randomNumber(180) + 180.0f));
 
   oneBubble.transform = transform;
@@ -126,7 +125,7 @@ int randomPolarity() {
   // fade out too
   [CATransaction setValue:[NSNumber numberWithFloat:duration+0.02f] forKey:kCATransactionAnimationDuration];
   CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-  fadeAnimation.toValue = [NSNumber numberWithFloat:0.05f];
+  fadeAnimation.toValue = [NSNumber numberWithFloat:0.3f];
   fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
   [[oneBubble layer] addAnimation:fadeAnimation forKey:@"fadeAnimation"];  
   

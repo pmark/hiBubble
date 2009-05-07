@@ -11,8 +11,8 @@
 @class BubblesViewController;
 
 @interface BubblesAppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow *window;
-    BubblesViewController *viewController;
+  UIWindow *window;
+  BubblesViewController *viewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

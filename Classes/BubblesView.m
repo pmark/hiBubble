@@ -12,28 +12,28 @@
 
 @implementation BubblesView
 
+@synthesize controller;
+
 CGPoint randomPointBetween(NSInteger x, NSInteger y) {
   return CGPointMake(random() % x, random() % y);
 }
 CGPoint randomPoint() {return randomPointBetween(256, 396);}
 
-
 - (id)initWithFrame:(CGRect)frame {
   if (self = [super initWithFrame:frame]) {
-    // Initialization code
   }
   return self;
 }
 
 - (CGPoint)wandCenterPoint {
-  return CGPointMake(155.0f, 370.0f);
+  return CGPointMake(155.0f, 350.0f);
 }
 
 - (void)launchBubble:(CGPoint)touchPoint {  
   CGRect bubbleFrame = CGRectMake(10.0f, 0.0f,
                                   300.0f, 300.0f);
   OneBubbleView *oneBubble = [[OneBubbleView alloc] initWithFrame:bubbleFrame];
-  oneBubble.velocity = 60;  
+  oneBubble.velocity = controller.velocity;
   [self addSubview:oneBubble];
   [oneBubble animateBirthAtPoint:[self wandCenterPoint]];  
 }

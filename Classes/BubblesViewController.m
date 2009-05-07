@@ -8,10 +8,30 @@
 
 #import "BubblesViewController.h"
 #import "OneBubbleView.h"
+#import "BubblesView.h"
+
+void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
+	// This callback, being outside the implementation block, needs a reference 
+	// to the BubblesViewController object
+	BubblesViewController *controller = (BubblesViewController *) inUserData;
+	
+	if (interruptionState == kAudioSessionBeginInterruption) {
+		if (controller.audioRecorder) {
+			[controller stopRecording];
+		}		
+	}
+}
+
+
 
 @implementation BubblesViewController
 
+@synthesize monitorTimer;
 @synthesize blowTimer;
+@synthesize audioRecorder;
+@synthesize audioLevels; // an array of two floating point values that represents the current recording or playback audio level
+@synthesize peakLevels;
+@synthesize velocity;
 
 - (void)initTimers {
 	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.8 // seconds
@@ -54,7 +74,24 @@
 
   //[self initTimers];
 
+  self.view.controller = self;
   self.view.backgroundColor = [UIColor blackColor];
+  
+  // allocate memory to hold audio level values
+  audioLevels = calloc (2, sizeof (AudioQueueLevelMeterState));
+  peakLevels = calloc (2, sizeof (AudioQueueLevelMeterState));
+  
+  // initialize the audio session object for this application,
+  //		registering the callback that Audio Session Services will invoke 
+  //		when there's an interruption
+  AudioSessionInitialize (
+                          NULL,
+                          NULL,
+                          interruptionListenerCallback,
+                          self
+                          );
+  
+  [self startRecording];  
 }
 
 
@@ -65,11 +102,133 @@
   return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
+
+- (void)stopRecording {
 	
-	// Release any cached data, images, etc that aren't in use.
+	NSLog (@"stopRecording");
+	
+	if (self.audioRecorder) {
+		
+		[self.audioRecorder setStopping: YES];				// this flag lets the property listener callback
+		//	know that the user has tapped Stop
+		NSLog (@"sending stop message to recorder object.");
+		[self.audioRecorder stop];							// stops the recording audio queue object. the object 
+		//	remains in existence until it actually stops, at
+		//	which point the property listener callback calls
+		//	this class's updateUserInterfaceOnAudioQueueStateChange:
+		//	method, which releases the recording object.
+		// now that recording has stopped, deactivate the audio session
+		AudioSessionSetActive (false);
+	}
+}
+
+- (void)startRecording {
+	
+	NSLog (@"startRecording");
+	
+	// if not recording, start recording
+	if (self.audioRecorder == nil) {
+		
+		// before instantiating the recording audio queue object, 
+		//	set the audio session category
+		UInt32 sessionCategory = kAudioSessionCategory_RecordAudio;
+		AudioSessionSetProperty (
+                             kAudioSessionProperty_AudioCategory,
+                             sizeof (sessionCategory),
+                             &sessionCategory
+                             );
+		
+		// the first step in recording is to instantiate a recording audio queue object
+		AudioRecorder *theRecorder = [[AudioRecorder alloc] init];
+		
+		// if the audio queue was successfully created, initiate recording.
+		if (theRecorder) {
+			
+			self.audioRecorder = theRecorder;
+			[theRecorder release];								// decrements the retain count for the theRecorder object
+			
+      // set up the recorder object to receive property change notifications 
+			// from the recording audio queue object
+			[self.audioRecorder setNotificationDelegate: self];	
+			
+			// activate the audio session immediately before recording starts
+			AudioSessionSetActive (true);
+			NSLog (@"sending record message to recorder object.");
+			[self.audioRecorder record];	// starts the recording audio queue object
+		}	
+	}
+}
+
+- (void)setNormalizedVelocity:(float)level {
+  //NSLog(@"velocity: %@", self.view);
+  //self.view.velocity = 40;
+  
+}
+
+- (void)analyzeSound:(NSTimer *)timer {
+	AudioQueueObject *activeQueue = (AudioQueueObject *) [timer userInfo];
+	
+	if (activeQueue) {		
+		[activeQueue getAudioLevels: self.audioLevels peakLevels: self.peakLevels];
+    //NSLog(@"Average: %f, Peak: %f", audioLevels[0], peakLevels[0]);
+    [self setNormalizedVelocity:audioLevels[0]];
+	}  
+}
+
+// this method gets called (by property listener callback functions) when a recording or playback 
+// audio queue object starts or stops. 
+- (void) updateUserInterfaceOnAudioQueueStateChange: (AudioQueueObject *) inQueue {
+	
+	NSAutoreleasePool *uiUpdatePool = [[NSAutoreleasePool alloc] init];
+	
+	// the audio queue (playback or record) just started
+	if ([inQueue isRunning]) {
+    
+		// create a timer for updating the audio level meter
+		self.monitorTimer = [NSTimer scheduledTimerWithTimeInterval:	0.25
+                                                         target:	self
+                                                       selector:	@selector (analyzeSound:)
+                                                       userInfo:	inQueue
+                                                        repeats:	YES];
+		
+		if (inQueue == self.audioRecorder) {			
+			NSLog (@"recording just started.");
+		}
+		
+	} else {
+		
+		// playback just stopped
+		if (inQueue == self.audioRecorder) {
+			NSLog (@"recording just stopped.");
+			
+			[audioRecorder release];
+			audioRecorder = nil;
+		}				
+		
+		if (self.monitorTimer) {			
+			[self.monitorTimer invalidate];
+			[self.monitorTimer release];
+			monitorTimer = nil;
+		}
+		
+	}
+	
+	[uiUpdatePool drain];
+}
+
+- (void)didReceiveMemoryWarning {
+  [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
+  
+	if (self.audioRecorder) {
+		//[self stopRecording];
+	}
+}
+
+- (void)dealloc {
+	[blowTimer dealloc];
+	[monitorTimer dealloc];
+  [audioRecorder dealloc];
+  [super dealloc];
 }
 
 - (void)viewDidUnload {
@@ -78,8 +237,5 @@
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 @end

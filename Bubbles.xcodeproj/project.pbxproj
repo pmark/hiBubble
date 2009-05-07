@@ -20,6 +20,9 @@
 		4D2B03EA0FB0212100CFC1C7 /* bubble1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2B03E90FB0212100CFC1C7 /* bubble1.png */; };
 		4D2B03EC0FB0228A00CFC1C7 /* bubble2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2B03EB0FB0228A00CFC1C7 /* bubble2.png */; };
 		4D2B09150FB26DEA00CFC1C7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2B09140FB26DEA00CFC1C7 /* QuartzCore.framework */; };
+		4D2B0B370FB2C1DF00CFC1C7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2B0B360FB2C1DF00CFC1C7 /* AudioToolbox.framework */; };
+		4D38DEAE0FB2D8F900231B96 /* AudioQueueObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D38DEAB0FB2D8F900231B96 /* AudioQueueObject.m */; };
+		4D38DEAF0FB2D8F900231B96 /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D38DEAD0FB2D8F900231B96 /* AudioRecorder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,12 @@
 		4D2B03E90FB0212100CFC1C7 /* bubble1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble1.png; sourceTree = "<group>"; };
 		4D2B03EB0FB0228A00CFC1C7 /* bubble2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble2.png; sourceTree = "<group>"; };
 		4D2B09140FB26DEA00CFC1C7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4D2B0B360FB2C1DF00CFC1C7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4D38DEA90FB2D8F900231B96 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		4D38DEAA0FB2D8F900231B96 /* AudioQueueObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioQueueObject.h; sourceTree = "<group>"; };
+		4D38DEAB0FB2D8F900231B96 /* AudioQueueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioQueueObject.m; sourceTree = "<group>"; };
+		4D38DEAC0FB2D8F900231B96 /* AudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioRecorder.h; sourceTree = "<group>"; };
+		4D38DEAD0FB2D8F900231B96 /* AudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioRecorder.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Bubbles-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Bubbles-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +63,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				4D2B09150FB26DEA00CFC1C7 /* QuartzCore.framework in Frameworks */,
+				4D2B0B370FB2C1DF00CFC1C7 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +109,11 @@
 			isa = PBXGroup;
 			children = (
 				32CA4F630368D1EE00C91783 /* Bubbles_Prefix.pch */,
+				4D38DEA90FB2D8F900231B96 /* SynthesizeSingleton.h */,
+				4D38DEAA0FB2D8F900231B96 /* AudioQueueObject.h */,
+				4D38DEAB0FB2D8F900231B96 /* AudioQueueObject.m */,
+				4D38DEAC0FB2D8F900231B96 /* AudioRecorder.h */,
+				4D38DEAD0FB2D8F900231B96 /* AudioRecorder.m */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -119,6 +134,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D2B0B360FB2C1DF00CFC1C7 /* AudioToolbox.framework */,
 				4D2B09140FB26DEA00CFC1C7 /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -188,6 +204,8 @@
 				28D7ACF80DDB3853001CB0EB /* BubblesViewController.m in Sources */,
 				4D2B02430FAF689E00CFC1C7 /* BubblesView.m in Sources */,
 				4D2B02AD0FAF7B9000CFC1C7 /* OneBubbleView.m in Sources */,
+				4D38DEAE0FB2D8F900231B96 /* AudioQueueObject.m in Sources */,
+				4D38DEAF0FB2D8F900231B96 /* AudioRecorder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

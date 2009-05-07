@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "OneBubbleView.h"
+#import "BubblesViewController.h"
 
 @interface BubblesView : UIView {
+  BubblesViewController *controller;
 }
 
 -(void)launchBubble:(CGPoint)touchPoint;
+
+@property (nonatomic, retain) BubblesViewController *controller;
 
 @end
