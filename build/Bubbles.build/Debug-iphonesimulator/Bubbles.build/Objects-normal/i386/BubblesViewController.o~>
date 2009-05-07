@@ -1,2 +1,0 @@
-/Users/mark/projects/iphone/exploration/Bubble/Classes/BubblesViewController.m: In function '-[BubblesViewController viewDidLoad]':
-/Users/mark/projects/iphone/exploration/Bubble/Classes/BubblesViewController.m:77: error: request for member 'controller' in something not a structure or union
