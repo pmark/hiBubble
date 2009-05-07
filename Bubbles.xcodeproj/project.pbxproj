@@ -23,6 +23,7 @@
 		4D2B0B370FB2C1DF00CFC1C7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2B0B360FB2C1DF00CFC1C7 /* AudioToolbox.framework */; };
 		4D38DEAE0FB2D8F900231B96 /* AudioQueueObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D38DEAB0FB2D8F900231B96 /* AudioQueueObject.m */; };
 		4D38DEAF0FB2D8F900231B96 /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D38DEAD0FB2D8F900231B96 /* AudioRecorder.m */; };
+		4DD85A640FB2F07A00A61B5B /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD85A630FB2F07A00A61B5B /* Session.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		4D38DEAB0FB2D8F900231B96 /* AudioQueueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioQueueObject.m; sourceTree = "<group>"; };
 		4D38DEAC0FB2D8F900231B96 /* AudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioRecorder.h; sourceTree = "<group>"; };
 		4D38DEAD0FB2D8F900231B96 /* AudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioRecorder.m; sourceTree = "<group>"; };
+		4DD85A620FB2F07A00A61B5B /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		4DD85A630FB2F07A00A61B5B /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Bubbles-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Bubbles-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +84,8 @@
 				4D2B02420FAF689E00CFC1C7 /* BubblesView.m */,
 				4D2B02AB0FAF7B9000CFC1C7 /* OneBubbleView.h */,
 				4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */,
+				4DD85A620FB2F07A00A61B5B /* Session.h */,
+				4DD85A630FB2F07A00A61B5B /* Session.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				4D2B02AD0FAF7B9000CFC1C7 /* OneBubbleView.m in Sources */,
 				4D38DEAE0FB2D8F900231B96 /* AudioQueueObject.m in Sources */,
 				4D38DEAF0FB2D8F900231B96 /* AudioRecorder.m in Sources */,
+				4DD85A640FB2F07A00A61B5B /* Session.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

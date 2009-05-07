@@ -11,11 +11,12 @@
 #import "BubblesViewController.h"
 
 @interface BubblesView : UIView {
-  BubblesViewController *controller;
+  //NSInteger velocity;
 }
 
 -(void)launchBubble:(CGPoint)touchPoint;
 
-@property (nonatomic, retain) BubblesViewController *controller;
+//@property (assign) NSInteger velocity;
+
 
 @end

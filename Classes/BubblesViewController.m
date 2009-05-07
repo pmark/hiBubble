@@ -9,6 +9,7 @@
 #import "BubblesViewController.h"
 #import "OneBubbleView.h"
 #import "BubblesView.h"
+#import "Session.h"
 
 void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 	// This callback, being outside the implementation block, needs a reference 
@@ -31,7 +32,6 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 @synthesize audioRecorder;
 @synthesize audioLevels; // an array of two floating point values that represents the current recording or playback audio level
 @synthesize peakLevels;
-@synthesize velocity;
 
 - (void)initTimers {
 	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.8 // seconds
@@ -74,7 +74,6 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 
   //[self initTimers];
 
-  self.view.controller = self;
   self.view.backgroundColor = [UIColor blackColor];
   
   // allocate memory to hold audio level values
@@ -160,9 +159,13 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 }
 
 - (void)setNormalizedVelocity:(float)level {
-  //NSLog(@"velocity: %@", self.view);
-  //self.view.velocity = 40;
-  
+  float max = 0.6f;
+  float min = 0.002f;
+  float range = max - min;
+  if (level < min) level = min;
+  if (level > max) level = max;
+  NSInteger newVelocity = ((level - min) / range) * 100;
+  [[Session sharedSession] setNewVelocity:newVelocity];  
 }
 
 - (void)analyzeSound:(NSTimer *)timer {

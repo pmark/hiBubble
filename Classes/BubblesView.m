@@ -8,22 +8,24 @@
 
 #import "BubblesView.h"
 #import "OneBubbleView.h"
+#import "Session.h"
 
 
 @implementation BubblesView
 
-@synthesize controller;
 
 CGPoint randomPointBetween(NSInteger x, NSInteger y) {
   return CGPointMake(random() % x, random() % y);
 }
 CGPoint randomPoint() {return randomPointBetween(256, 396);}
 
+/*
 - (id)initWithFrame:(CGRect)frame {
   if (self = [super initWithFrame:frame]) {
   }
   return self;
 }
+*/
 
 - (CGPoint)wandCenterPoint {
   return CGPointMake(155.0f, 350.0f);
@@ -33,7 +35,7 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
   CGRect bubbleFrame = CGRectMake(10.0f, 0.0f,
                                   300.0f, 300.0f);
   OneBubbleView *oneBubble = [[OneBubbleView alloc] initWithFrame:bubbleFrame];
-  oneBubble.velocity = controller.velocity;
+  oneBubble.velocity = [[Session sharedSession] getVelocity];
   [self addSubview:oneBubble];
   [oneBubble animateBirthAtPoint:[self wandCenterPoint]];  
 }

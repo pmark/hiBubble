@@ -78,6 +78,8 @@ int randomPolarity() {
 
 -(void)animateBirthAtPoint:(CGPoint)point {
   
+  NSLog(@"new bubble with velocity: %i", self.velocity);
+
   // move bubble to point
   self.center = point;
 

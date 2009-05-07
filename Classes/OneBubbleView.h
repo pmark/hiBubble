@@ -20,7 +20,7 @@
 -(void)animateFloatPhase:(OneBubbleView*)oneBubble;
 
 @property (nonatomic) CGFloat startWidth;
-@property (nonatomic) NSInteger velocity;
+@property (assign) NSInteger velocity;
 @property (nonatomic,retain) UIImage *image;
 
 @end
