@@ -13,7 +13,6 @@
 
 @implementation BubblesView
 
-
 CGPoint randomPointBetween(NSInteger x, NSInteger y) {
   return CGPointMake(random() % x, random() % y);
 }
@@ -47,15 +46,7 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
     // double tap, anyone?
   }
 	//CGPoint touchPoint = [touch locationInView:self];
-	[self launchBubble];
-  
-  if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) { 
-    self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera; 
-  } else { 
-    self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; 
-  } 
-  self.imagePicker.allowsImageEditing = YES; 
-  [self presentModalViewController:self.imagePicker animated:YES];
+	[self launchBubble];  
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {	

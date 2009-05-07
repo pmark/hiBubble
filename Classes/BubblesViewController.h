@@ -16,7 +16,7 @@
 	Float32 *audioLevels;
 	Float32 *peakLevels;
 	AudioRecorder *audioRecorder;
-//  NSInteger velocity;
+  UIImagePickerController *imagePicker;
 }
 
 @property (nonatomic,retain) NSTimer *blowTimer;
@@ -24,7 +24,7 @@
 @property (nonatomic, retain) AudioRecorder *audioRecorder;
 @property (readwrite) Float32 *audioLevels;
 @property (readwrite) Float32 *peakLevels;
-//@property (assign) NSInteger velocity;
+@property(nonatomic, retain) UIImagePickerController *imagePicker;
 
 - (void)stopRecording;
 - (void)startRecording;

@@ -32,6 +32,8 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 @synthesize audioRecorder;
 @synthesize audioLevels; // an array of two floating point values that represents the current recording or playback audio level
 @synthesize peakLevels;
+@synthesize imagePicker;
+
 
 - (void)initTimers {
 	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.15 // seconds
@@ -70,6 +72,19 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
   [self initTimers];
 
   self.view.backgroundColor = [UIColor blackColor];
+
+  /*
+  //
+  // TODO: display what the camera sees in the background
+  //
+  if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) { 
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera; 
+  } else { 
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; 
+  } 
+  self.imagePicker.allowsImageEditing = YES; 
+  [self presentModalViewController:self.imagePicker animated:YES];
+  */
   
   // allocate memory to hold audio level values
   audioLevels = calloc (2, sizeof (AudioQueueLevelMeterState));
