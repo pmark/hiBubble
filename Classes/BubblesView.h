@@ -8,15 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "OneBubbleView.h"
-#import "BubblesViewController.h"
 
 @interface BubblesView : UIView {
-  //NSInteger velocity;
 }
 
--(void)launchBubble:(CGPoint)touchPoint;
+-(void)launchBubble;
 
-//@property (assign) NSInteger velocity;
 
 
 @end

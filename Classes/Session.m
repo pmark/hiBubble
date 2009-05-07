@@ -25,4 +25,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(Session);
   return self.velocity;
 }
 
+-(bool)bubblesShouldAppear {
+  return self.velocity > 0.05f;
+}
+
+
 @end

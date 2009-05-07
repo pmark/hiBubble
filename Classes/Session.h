@@ -15,5 +15,6 @@
 
 -(void)setNewVelocity:(NSInteger)newVelocity;
 -(NSInteger)getVelocity;
+-(bool)bubblesShouldAppear;
 
 @end

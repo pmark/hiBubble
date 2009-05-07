@@ -34,7 +34,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 @synthesize peakLevels;
 
 - (void)initTimers {
-	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.8 // seconds
+	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.15 // seconds
                                 target:	self
                               selector:	@selector(blow:)
                               userInfo:	nil		// extra info
@@ -42,14 +42,9 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 }
 
 - (void)blow:(NSTimer *)timer {
-  NSLog(@"blowing");
-  /*  
-  // use entire screen to draw bubble view
-  CGRect bubbleRect = CGRectMake(0.0f, 0.0f, 320.0f, 480.0f);
-  OneBubbleView *oneBubble = [[OneBubbleView alloc] initWithFrame:bubbleRect];
-  [self.view addSubview:oneBubble];
-  [oneBubble release];
-  */
+  if ([[Session sharedSession] bubblesShouldAppear]) {
+    [self.view launchBubble];
+  }
 }
 
 
@@ -72,7 +67,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  //[self initTimers];
+  [self initTimers];
 
   self.view.backgroundColor = [UIColor blackColor];
   
@@ -104,13 +99,10 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 
 - (void)stopRecording {
 	
-	NSLog (@"stopRecording");
-	
 	if (self.audioRecorder) {
 		
 		[self.audioRecorder setStopping: YES];				// this flag lets the property listener callback
 		//	know that the user has tapped Stop
-		NSLog (@"sending stop message to recorder object.");
 		[self.audioRecorder stop];							// stops the recording audio queue object. the object 
 		//	remains in existence until it actually stops, at
 		//	which point the property listener callback calls
@@ -122,8 +114,6 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 }
 
 - (void)startRecording {
-	
-	NSLog (@"startRecording");
 	
 	// if not recording, start recording
 	if (self.audioRecorder == nil) {
@@ -152,7 +142,6 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 			
 			// activate the audio session immediately before recording starts
 			AudioSessionSetActive (true);
-			NSLog (@"sending record message to recorder object.");
 			[self.audioRecorder record];	// starts the recording audio queue object
 		}	
 	}
@@ -160,7 +149,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 
 - (void)setNormalizedVelocity:(float)level {
   float max = 0.6f;
-  float min = 0.002f;
+  float min = 0.05f;
   float range = max - min;
   if (level < min) level = min;
   if (level > max) level = max;
@@ -173,7 +162,6 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 	
 	if (activeQueue) {		
 		[activeQueue getAudioLevels: self.audioLevels peakLevels: self.peakLevels];
-    //NSLog(@"Average: %f, Peak: %f", audioLevels[0], peakLevels[0]);
     [self setNormalizedVelocity:audioLevels[0]];
 	}  
 }
@@ -195,15 +183,12 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
                                                         repeats:	YES];
 		
 		if (inQueue == self.audioRecorder) {			
-			NSLog (@"recording just started.");
 		}
 		
 	} else {
 		
 		// playback just stopped
 		if (inQueue == self.audioRecorder) {
-			NSLog (@"recording just stopped.");
-			
 			[audioRecorder release];
 			audioRecorder = nil;
 		}				

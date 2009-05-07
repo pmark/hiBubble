@@ -28,12 +28,13 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
 */
 
 - (CGPoint)wandCenterPoint {
-  return CGPointMake(155.0f, 350.0f);
+  return CGPointMake(155.0f, 370.0f);
 }
 
-- (void)launchBubble:(CGPoint)touchPoint {  
+- (void)launchBubble {
   CGRect bubbleFrame = CGRectMake(10.0f, 0.0f,
                                   300.0f, 300.0f);
+
   OneBubbleView *oneBubble = [[OneBubbleView alloc] initWithFrame:bubbleFrame];
   oneBubble.velocity = [[Session sharedSession] getVelocity];
   [self addSubview:oneBubble];
@@ -45,8 +46,16 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
   if ([touch tapCount] == 2) {
     // double tap, anyone?
   }
-	CGPoint touchPoint = [touch locationInView:self];
-	[self launchBubble:touchPoint];
+	//CGPoint touchPoint = [touch locationInView:self];
+	[self launchBubble];
+  
+  if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) { 
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera; 
+  } else { 
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; 
+  } 
+  self.imagePicker.allowsImageEditing = YES; 
+  [self presentModalViewController:self.imagePicker animated:YES];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {	

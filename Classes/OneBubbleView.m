@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 
-#define GROW_ANIMATION_DURATION_SECONDS 0.4
+#define GROW_ANIMATION_DURATION_SECONDS 1.2
 #define FLOAT_ANIMATION_DURATION_SECONDS 3.5
 
 
@@ -37,11 +37,14 @@ int randomPolarity() {
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
       NSString *imgName;
+      
+      /*
       if (randomNumber(2) == 0) {
         imgName = @"bubble1.png";
       } else {
         imgName = @"bubble2.png";
       }
+      */
       
       imgName = @"bubble2.png";
       [self setImageByName:imgName];
@@ -72,22 +75,19 @@ int randomPolarity() {
   int randomRadius = randomNumber(radius);
   int phi = randomNumber(360);
   int x = cos(phi) * randomRadius + 160;
-  int y = sin(phi) * randomRadius * 0.33f + 150;
+  int y = sin(phi) * randomRadius * 0.33f + 120;
   self.center = CGPointMake(x, y);
 }
 
--(void)animateBirthAtPoint:(CGPoint)point {
-  
-  NSLog(@"new bubble with velocity: %i", self.velocity);
-
-  // move bubble to point
+-(void)animateBirthAtPoint:(CGPoint)point {  
   self.center = point;
-
   [self setup];
   
   // scale the image back up to size
+  CGFloat duration = GROW_ANIMATION_DURATION_SECONDS * ([self velocityScalar] + 0.2f);
+
   [UIView beginAnimations:nil context:self];
-  [UIView setAnimationDuration:GROW_ANIMATION_DURATION_SECONDS];
+  [UIView setAnimationDuration:duration];
   [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
   [UIView setAnimationDelegate:self];
   [UIView setAnimationDidStopSelector:@selector(bubbleBirthAnimationDidStop:finished:context:)];
@@ -97,8 +97,11 @@ int randomPolarity() {
   
   CGAffineTransform transform = CGAffineTransformConcat(
       CGAffineTransformMakeScale(scaleValue, scaleValue),
-      CGAffineTransformMakeRotation(randomNumber(85) * dir));
-  
+      CGAffineTransformMakeRotation(randomNumber(60) * dir));
+
+  int varier = randomNumber(120);
+  self.center = CGPointMake(self.center.x + varier * randomPolarity(), 
+                            self.center.y - varier);
   self.transform = transform;
   [UIView commitAnimations];
   // the oneBubble instance will be released when animation ends  
@@ -118,14 +121,14 @@ int randomPolarity() {
   [UIView setAnimationDelegate:oneBubble];
    
   CGAffineTransform transform = CGAffineTransformConcat(
-      CGAffineTransformMakeScale(0.15f, 0.15f),
+      CGAffineTransformMakeScale(0.08f, 0.08f),
       CGAffineTransformMakeRotation(randomNumber(180) + 180.0f));
 
   oneBubble.transform = transform;
   [oneBubble setCenterToEndPoint];
   
   // fade out too
-  [CATransaction setValue:[NSNumber numberWithFloat:duration+0.02f] forKey:kCATransactionAnimationDuration];
+  [CATransaction setValue:[NSNumber numberWithFloat:duration+0.5f] forKey:kCATransactionAnimationDuration];
   CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
   fadeAnimation.toValue = [NSNumber numberWithFloat:0.3f];
   fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];

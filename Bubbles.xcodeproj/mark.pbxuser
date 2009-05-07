@@ -23,15 +23,15 @@
 	28D7ACF60DDB3853001CB0EB /* BubblesViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1111, 925}}";
-			sepNavSelRange = "{684, 0}";
-			sepNavVisRange = "{145, 797}";
+			sepNavSelRange = "{312, 0}";
+			sepNavVisRange = "{86, 856}";
 		};
 	};
 	28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1383.82, 5904}}";
-			sepNavSelRange = "{5222, 0}";
-			sepNavVisRange = "{4826, 887}";
+			sepNavIntBoundsRect = "{{0, 0}, {1383.82, 5889}}";
+			sepNavSelRange = "{958, 0}";
+			sepNavVisRange = "{1772, 894}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -777,6 +777,124 @@
 			4DD85B270FB2FB5A00A61B5B /* PBXTextBookmark */ = 4DD85B270FB2FB5A00A61B5B /* PBXTextBookmark */;
 			4DD85B280FB2FB5A00A61B5B /* PBXTextBookmark */ = 4DD85B280FB2FB5A00A61B5B /* PBXTextBookmark */;
 			4DD85B290FB2FB6000A61B5B /* PBXTextBookmark */ = 4DD85B290FB2FB6000A61B5B /* PBXTextBookmark */;
+			4DD85B2E0FB2FCEC00A61B5B /* PBXTextBookmark */ = 4DD85B2E0FB2FCEC00A61B5B /* PBXTextBookmark */;
+			4DD85B2F0FB2FCEC00A61B5B /* PBXTextBookmark */ = 4DD85B2F0FB2FCEC00A61B5B /* PBXTextBookmark */;
+			4DD85B300FB2FCEC00A61B5B /* PBXTextBookmark */ = 4DD85B300FB2FCEC00A61B5B /* PBXTextBookmark */;
+			4DD85B310FB2FCEC00A61B5B /* PBXTextBookmark */ = 4DD85B310FB2FCEC00A61B5B /* PBXTextBookmark */;
+			4DD85B320FB2FCEC00A61B5B /* PBXTextBookmark */ = 4DD85B320FB2FCEC00A61B5B /* PBXTextBookmark */;
+			4DD85B330FB2FCEC00A61B5B /* PBXTextBookmark */ = 4DD85B330FB2FCEC00A61B5B /* PBXTextBookmark */;
+			4DD85B340FB2FCEC00A61B5B /* PBXTextBookmark */ = 4DD85B340FB2FCEC00A61B5B /* PBXTextBookmark */;
+			4DD85B350FB2FCEC00A61B5B /* PBXTextBookmark */ = 4DD85B350FB2FCEC00A61B5B /* PBXTextBookmark */;
+			4DD85B360FB2FCEC00A61B5B /* PBXTextBookmark */ = 4DD85B360FB2FCEC00A61B5B /* PBXTextBookmark */;
+			4DD85B370FB2FCEC00A61B5B /* PBXTextBookmark */ = 4DD85B370FB2FCEC00A61B5B /* PBXTextBookmark */;
+			4DD85B380FB2FCEC00A61B5B /* PBXTextBookmark */ = 4DD85B380FB2FCEC00A61B5B /* PBXTextBookmark */;
+			4DD85B390FB2FCEC00A61B5B /* PBXTextBookmark */ = 4DD85B390FB2FCEC00A61B5B /* PBXTextBookmark */;
+			4DD85B3A0FB2FCEC00A61B5B /* PBXTextBookmark */ = 4DD85B3A0FB2FCEC00A61B5B /* PBXTextBookmark */;
+			4DD85B3B0FB2FCEC00A61B5B /* PBXTextBookmark */ = 4DD85B3B0FB2FCEC00A61B5B /* PBXTextBookmark */;
+			4DD85B3C0FB2FCEC00A61B5B /* PBXTextBookmark */ = 4DD85B3C0FB2FCEC00A61B5B /* PBXTextBookmark */;
+			4DD85B3D0FB2FCEC00A61B5B /* PBXTextBookmark */ = 4DD85B3D0FB2FCEC00A61B5B /* PBXTextBookmark */;
+			4DD85B3E0FB2FCED00A61B5B /* PBXTextBookmark */ = 4DD85B3E0FB2FCED00A61B5B /* PBXTextBookmark */;
+			4DD85B3F0FB2FCFF00A61B5B /* PBXTextBookmark */ = 4DD85B3F0FB2FCFF00A61B5B /* PBXTextBookmark */;
+			4DD85B420FB2FE0A00A61B5B /* PBXTextBookmark */ = 4DD85B420FB2FE0A00A61B5B /* PBXTextBookmark */;
+			4DD85B430FB2FE0A00A61B5B /* PBXTextBookmark */ = 4DD85B430FB2FE0A00A61B5B /* PBXTextBookmark */;
+			4DD85B440FB2FE0A00A61B5B /* PBXTextBookmark */ = 4DD85B440FB2FE0A00A61B5B /* PBXTextBookmark */;
+			4DD85B450FB2FE0A00A61B5B /* PBXTextBookmark */ = 4DD85B450FB2FE0A00A61B5B /* PBXTextBookmark */;
+			4DD85B460FB2FE0A00A61B5B /* PBXTextBookmark */ = 4DD85B460FB2FE0A00A61B5B /* PBXTextBookmark */;
+			4DD85B470FB2FE0A00A61B5B /* PBXTextBookmark */ = 4DD85B470FB2FE0A00A61B5B /* PBXTextBookmark */;
+			4DD85B480FB2FE0A00A61B5B /* PBXTextBookmark */ = 4DD85B480FB2FE0A00A61B5B /* PBXTextBookmark */;
+			4DD85B490FB2FE0B00A61B5B /* PBXTextBookmark */ = 4DD85B490FB2FE0B00A61B5B /* PBXTextBookmark */;
+			4DD85B4A0FB2FE3300A61B5B /* PBXTextBookmark */ = 4DD85B4A0FB2FE3300A61B5B /* PBXTextBookmark */;
+			4DD85B4B0FB2FE3300A61B5B /* PBXTextBookmark */ = 4DD85B4B0FB2FE3300A61B5B /* PBXTextBookmark */;
+			4DD85B4D0FB2FE8E00A61B5B /* PBXTextBookmark */ = 4DD85B4D0FB2FE8E00A61B5B /* PBXTextBookmark */;
+			4DD85B4E0FB2FE8E00A61B5B /* PBXTextBookmark */ = 4DD85B4E0FB2FE8E00A61B5B /* PBXTextBookmark */;
+			4DD85B4F0FB2FE8E00A61B5B /* PBXTextBookmark */ = 4DD85B4F0FB2FE8E00A61B5B /* PBXTextBookmark */;
+			4DD85B500FB2FE8E00A61B5B /* PBXTextBookmark */ = 4DD85B500FB2FE8E00A61B5B /* PBXTextBookmark */;
+			4DD85B510FB2FE8E00A61B5B /* PBXTextBookmark */ = 4DD85B510FB2FE8E00A61B5B /* PBXTextBookmark */;
+			4DD85B520FB2FE8E00A61B5B /* PBXTextBookmark */ = 4DD85B520FB2FE8E00A61B5B /* PBXTextBookmark */;
+			4DD85B530FB2FE8E00A61B5B /* PBXTextBookmark */ = 4DD85B530FB2FE8E00A61B5B /* PBXTextBookmark */;
+			4DD85B540FB2FE8E00A61B5B /* PBXTextBookmark */ = 4DD85B540FB2FE8E00A61B5B /* PBXTextBookmark */;
+			4DD85B550FB2FE8E00A61B5B /* PBXTextBookmark */ = 4DD85B550FB2FE8E00A61B5B /* PBXTextBookmark */;
+			4DD85B560FB2FE8E00A61B5B /* PBXTextBookmark */ = 4DD85B560FB2FE8E00A61B5B /* PBXTextBookmark */;
+			4DD85B570FB2FE8E00A61B5B /* PBXTextBookmark */ = 4DD85B570FB2FE8E00A61B5B /* PBXTextBookmark */;
+			4DD85B580FB2FE8E00A61B5B /* PBXTextBookmark */ = 4DD85B580FB2FE8E00A61B5B /* PBXTextBookmark */;
+			4DD85B590FB2FE8E00A61B5B /* PBXTextBookmark */ = 4DD85B590FB2FE8E00A61B5B /* PBXTextBookmark */;
+			4DD85B5A0FB2FE8E00A61B5B /* PBXTextBookmark */ = 4DD85B5A0FB2FE8E00A61B5B /* PBXTextBookmark */;
+			4DD85B5B0FB2FE8E00A61B5B /* PBXTextBookmark */ = 4DD85B5B0FB2FE8E00A61B5B /* PBXTextBookmark */;
+			4DD85B5C0FB2FE8F00A61B5B /* PBXTextBookmark */ = 4DD85B5C0FB2FE8F00A61B5B /* PBXTextBookmark */;
+			4DD85B5D0FB3001A00A61B5B /* PBXTextBookmark */ = 4DD85B5D0FB3001A00A61B5B /* PBXTextBookmark */;
+			4DD85B5E0FB3001A00A61B5B /* PBXTextBookmark */ = 4DD85B5E0FB3001A00A61B5B /* PBXTextBookmark */;
+			4DD85B600FB300D000A61B5B /* PBXTextBookmark */ = 4DD85B600FB300D000A61B5B /* PBXTextBookmark */;
+			4DD85B610FB300D000A61B5B /* PBXTextBookmark */ = 4DD85B610FB300D000A61B5B /* PBXTextBookmark */;
+			4DD85B620FB300D000A61B5B /* PBXTextBookmark */ = 4DD85B620FB300D000A61B5B /* PBXTextBookmark */;
+			4DD85B630FB300D000A61B5B /* PBXTextBookmark */ = 4DD85B630FB300D000A61B5B /* PBXTextBookmark */;
+			4DD85B640FB300D100A61B5B /* PBXTextBookmark */ = 4DD85B640FB300D100A61B5B /* PBXTextBookmark */;
+			4DD85B660FB300FE00A61B5B /* PBXTextBookmark */ = 4DD85B660FB300FE00A61B5B /* PBXTextBookmark */;
+			4DD85B670FB3012500A61B5B /* PBXTextBookmark */ = 4DD85B670FB3012500A61B5B /* PBXTextBookmark */;
+			4DD85B680FB3012500A61B5B /* PBXTextBookmark */ = 4DD85B680FB3012500A61B5B /* PBXTextBookmark */;
+			4DD85B6A0FB3014700A61B5B /* PBXTextBookmark */ = 4DD85B6A0FB3014700A61B5B /* PBXTextBookmark */;
+			4DD85B6B0FB3014700A61B5B /* PBXTextBookmark */ = 4DD85B6B0FB3014700A61B5B /* PBXTextBookmark */;
+			4DD85B6C0FB3014700A61B5B /* PBXTextBookmark */ = 4DD85B6C0FB3014700A61B5B /* PBXTextBookmark */;
+			4DD85B6D0FB3014700A61B5B /* PBXTextBookmark */ = 4DD85B6D0FB3014700A61B5B /* PBXTextBookmark */;
+			4DD85B6E0FB3014700A61B5B /* PBXTextBookmark */ = 4DD85B6E0FB3014700A61B5B /* PBXTextBookmark */;
+			4DD85B6F0FB3014700A61B5B /* PBXTextBookmark */ = 4DD85B6F0FB3014700A61B5B /* PBXTextBookmark */;
+			4DD85B700FB3014700A61B5B /* PBXTextBookmark */ = 4DD85B700FB3014700A61B5B /* PBXTextBookmark */;
+			4DD85B710FB3014700A61B5B /* PBXTextBookmark */ = 4DD85B710FB3014700A61B5B /* PBXTextBookmark */;
+			4DD85B720FB3014700A61B5B /* PBXTextBookmark */ = 4DD85B720FB3014700A61B5B /* PBXTextBookmark */;
+			4DD85B730FB3014700A61B5B /* PBXTextBookmark */ = 4DD85B730FB3014700A61B5B /* PBXTextBookmark */;
+			4DD85B750FB3016800A61B5B /* PBXTextBookmark */ = 4DD85B750FB3016800A61B5B /* PBXTextBookmark */;
+			4DD85B760FB301BF00A61B5B /* PBXTextBookmark */ = 4DD85B760FB301BF00A61B5B /* PBXTextBookmark */;
+			4DD85B770FB301BF00A61B5B /* PBXTextBookmark */ = 4DD85B770FB301BF00A61B5B /* PBXTextBookmark */;
+			4DD85B790FB302DB00A61B5B /* PBXTextBookmark */ = 4DD85B790FB302DB00A61B5B /* PBXTextBookmark */;
+			4DD85B7A0FB302DB00A61B5B /* PBXTextBookmark */ = 4DD85B7A0FB302DB00A61B5B /* PBXTextBookmark */;
+			4DD85B7B0FB302DB00A61B5B /* PBXTextBookmark */ = 4DD85B7B0FB302DB00A61B5B /* PBXTextBookmark */;
+			4DD85B7C0FB302DB00A61B5B /* PBXTextBookmark */ = 4DD85B7C0FB302DB00A61B5B /* PBXTextBookmark */;
+			4DD85B7D0FB302DC00A61B5B /* PBXTextBookmark */ = 4DD85B7D0FB302DC00A61B5B /* PBXTextBookmark */;
+			4DD85B7F0FB3034700A61B5B /* PBXTextBookmark */ = 4DD85B7F0FB3034700A61B5B /* PBXTextBookmark */;
+			4DD85B810FB3037F00A61B5B /* PBXTextBookmark */ = 4DD85B810FB3037F00A61B5B /* PBXTextBookmark */;
+			4DD85B830FB303E400A61B5B /* PBXTextBookmark */ = 4DD85B830FB303E400A61B5B /* PBXTextBookmark */;
+			4DD85B850FB303FE00A61B5B /* PBXTextBookmark */ = 4DD85B850FB303FE00A61B5B /* PBXTextBookmark */;
+			4DD85B860FB3049C00A61B5B /* PBXTextBookmark */ = 4DD85B860FB3049C00A61B5B /* PBXTextBookmark */;
+			4DD85B870FB3049C00A61B5B /* PBXTextBookmark */ = 4DD85B870FB3049C00A61B5B /* PBXTextBookmark */;
+			4DD85B890FB304DF00A61B5B /* PBXTextBookmark */ = 4DD85B890FB304DF00A61B5B /* PBXTextBookmark */;
+			4DD85B8A0FB304E000A61B5B /* PBXTextBookmark */ = 4DD85B8A0FB304E000A61B5B /* PBXTextBookmark */;
+			4DD85B8B0FB3050100A61B5B /* PBXTextBookmark */ = 4DD85B8B0FB3050100A61B5B /* PBXTextBookmark */;
+			4DD85B8D0FB3050B00A61B5B /* PBXTextBookmark */ = 4DD85B8D0FB3050B00A61B5B /* PBXTextBookmark */;
+			4DD85B8E0FB3050B00A61B5B /* PBXTextBookmark */ = 4DD85B8E0FB3050B00A61B5B /* PBXTextBookmark */;
+			4DD85B8F0FB305A400A61B5B /* PBXTextBookmark */ = 4DD85B8F0FB305A400A61B5B /* PBXTextBookmark */;
+			4DD85B930FB3060400A61B5B /* PBXTextBookmark */ = 4DD85B930FB3060400A61B5B /* PBXTextBookmark */;
+			4DD85B940FB3060400A61B5B /* PBXTextBookmark */ = 4DD85B940FB3060400A61B5B /* PBXTextBookmark */;
+			4DD85B950FB3060400A61B5B /* PBXTextBookmark */ = 4DD85B950FB3060400A61B5B /* PBXTextBookmark */;
+			4DD85B960FB3060400A61B5B /* PBXTextBookmark */ = 4DD85B960FB3060400A61B5B /* PBXTextBookmark */;
+			4DD85B970FB3060400A61B5B /* PBXTextBookmark */ = 4DD85B970FB3060400A61B5B /* PBXTextBookmark */;
+			4DD85B980FB3060500A61B5B /* PBXTextBookmark */ = 4DD85B980FB3060500A61B5B /* PBXTextBookmark */;
+			4DD85B990FB3061400A61B5B /* PBXTextBookmark */ = 4DD85B990FB3061400A61B5B /* PBXTextBookmark */;
+			4DD85B9B0FB3064A00A61B5B /* PBXTextBookmark */ = 4DD85B9B0FB3064A00A61B5B /* PBXTextBookmark */;
+			4DD85B9C0FB3064B00A61B5B /* PBXTextBookmark */ = 4DD85B9C0FB3064B00A61B5B /* PBXTextBookmark */;
+			4DD85B9E0FB3066300A61B5B /* PBXTextBookmark */ = 4DD85B9E0FB3066300A61B5B /* PBXTextBookmark */;
+			4DD85B9F0FB306DE00A61B5B /* PBXTextBookmark */ = 4DD85B9F0FB306DE00A61B5B /* PBXTextBookmark */;
+			4DD85BA10FB3071900A61B5B /* PBXTextBookmark */ = 4DD85BA10FB3071900A61B5B /* PBXTextBookmark */;
+			4DD85BA20FB3071900A61B5B /* PBXTextBookmark */ = 4DD85BA20FB3071900A61B5B /* PBXTextBookmark */;
+			4DD85BA30FB3071900A61B5B /* PBXTextBookmark */ = 4DD85BA30FB3071900A61B5B /* PBXTextBookmark */;
+			4DD85BA40FB3071900A61B5B /* PBXTextBookmark */ = 4DD85BA40FB3071900A61B5B /* PBXTextBookmark */;
+			4DD85BA50FB3071900A61B5B /* PBXTextBookmark */ = 4DD85BA50FB3071900A61B5B /* PBXTextBookmark */;
+			4DD85BA60FB3071900A61B5B /* PBXTextBookmark */ = 4DD85BA60FB3071900A61B5B /* PBXTextBookmark */;
+			4DD85BA70FB3071900A61B5B /* PBXTextBookmark */ = 4DD85BA70FB3071900A61B5B /* PBXTextBookmark */;
+			4DD85BA80FB3071900A61B5B /* PBXTextBookmark */ = 4DD85BA80FB3071900A61B5B /* PBXTextBookmark */;
+			4DD85BA90FB3071A00A61B5B /* PBXTextBookmark */ = 4DD85BA90FB3071A00A61B5B /* PBXTextBookmark */;
+			4DD85BAA0FB3073500A61B5B /* PBXTextBookmark */ = 4DD85BAA0FB3073500A61B5B /* PBXTextBookmark */;
+			4DD85BAB0FB3073500A61B5B /* PBXTextBookmark */ = 4DD85BAB0FB3073500A61B5B /* PBXTextBookmark */;
+			4DD85BAD0FB3074900A61B5B /* PBXTextBookmark */ = 4DD85BAD0FB3074900A61B5B /* PBXTextBookmark */;
+			4DD85BAE0FB3074900A61B5B /* PBXTextBookmark */ = 4DD85BAE0FB3074900A61B5B /* PBXTextBookmark */;
+			4DD85BAF0FB3074900A61B5B /* PBXTextBookmark */ = 4DD85BAF0FB3074900A61B5B /* PBXTextBookmark */;
+			4DD85BB00FB3074900A61B5B /* PBXTextBookmark */ = 4DD85BB00FB3074900A61B5B /* PBXTextBookmark */;
+			4DD85BB10FB3074A00A61B5B /* PBXTextBookmark */ = 4DD85BB10FB3074A00A61B5B /* PBXTextBookmark */;
+			4DD85BB30FB3089900A61B5B /* PBXTextBookmark */ = 4DD85BB30FB3089900A61B5B /* PBXTextBookmark */;
+			4DD85BB40FB3089900A61B5B /* PBXTextBookmark */ = 4DD85BB40FB3089900A61B5B /* PBXTextBookmark */;
+			4DD85BB50FB3089C00A61B5B /* PBXTextBookmark */ = 4DD85BB50FB3089C00A61B5B /* PBXTextBookmark */;
+			4DD85BB80FB309B600A61B5B /* PBXTextBookmark */ = 4DD85BB80FB309B600A61B5B /* PBXTextBookmark */;
+			4DD85BB90FB309B600A61B5B /* PBXTextBookmark */ = 4DD85BB90FB309B600A61B5B /* PBXTextBookmark */;
+			4DD85BBA0FB309B600A61B5B /* PBXTextBookmark */ = 4DD85BBA0FB309B600A61B5B /* PBXTextBookmark */;
+			4DD85BBB0FB309B600A61B5B /* PBXTextBookmark */ = 4DD85BBB0FB309B600A61B5B /* PBXTextBookmark */;
 		};
 		sourceControlManager = 4D2B01E70FAF669E00CFC1C7 /* Source Control */;
 		userBuildSettings = {
@@ -848,15 +966,15 @@
 	4D2B02410FAF689E00CFC1C7 /* BubblesView.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1111, 718}}";
-			sepNavSelRange = "{329, 0}";
-			sepNavVisRange = "{0, 375}";
+			sepNavSelRange = "{189, 0}";
+			sepNavVisRange = "{0, 256}";
 		};
 	};
 	4D2B02420FAF689E00CFC1C7 /* BubblesView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1379, 1979}}";
-			sepNavSelRange = "{813, 0}";
-			sepNavVisRange = "{547, 417}";
+			sepNavIntBoundsRect = "{{0, 0}, {1111, 2129}}";
+			sepNavSelRange = "{1382, 0}";
+			sepNavVisRange = "{1114, 1053}";
 		};
 	};
 	4D2B024B0FAF68BD00CFC1C7 /* PBXTextBookmark */ = {
@@ -864,7 +982,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 54";
 		rLen = 0;
-		rLoc = 3064;
+		rLoc = 2876;
 		rType = 0;
 		vrLen = 1077;
 		vrLoc = 901;
@@ -914,7 +1032,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 54";
 		rLen = 0;
-		rLoc = 3064;
+		rLoc = 2876;
 		rType = 0;
 		vrLen = 718;
 		vrLoc = 1418;
@@ -934,7 +1052,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 47";
 		rLen = 0;
-		rLoc = 3064;
+		rLoc = 2876;
 		rType = 0;
 		vrLen = 649;
 		vrLoc = 814;
@@ -948,9 +1066,9 @@
 	};
 	4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1567.45, 4375}}";
-			sepNavSelRange = "{1981, 0}";
-			sepNavVisRange = "{1653, 621}";
+			sepNavIntBoundsRect = "{{0, 0}, {1567.45, 4450}}";
+			sepNavSelRange = "{964, 0}";
+			sepNavVisRange = "{583, 605}";
 		};
 	};
 	4D2B02DA0FAF8B8D00CFC1C7 /* PBXTextBookmark */ = {
@@ -958,7 +1076,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 43";
 		rLen = 0;
-		rLoc = 1806;
+		rLoc = 2165;
 		rType = 0;
 		vrLen = 847;
 		vrLoc = 275;
@@ -998,7 +1116,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 43";
 		rLen = 0;
-		rLoc = 1806;
+		rLoc = 2165;
 		rType = 0;
 		vrLen = 820;
 		vrLoc = 302;
@@ -1018,7 +1136,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 23";
 		rLen = 0;
-		rLoc = 1806;
+		rLoc = 2165;
 		rType = 0;
 		vrLen = 403;
 		vrLoc = 3;
@@ -1028,7 +1146,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 46";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 827;
 		vrLoc = 339;
@@ -1038,7 +1156,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 23";
 		rLen = 0;
-		rLoc = 1806;
+		rLoc = 2165;
 		rType = 0;
 		vrLen = 406;
 		vrLoc = 0;
@@ -1048,7 +1166,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 46";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 844;
 		vrLoc = 200;
@@ -1068,7 +1186,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 28";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 812;
 		vrLoc = 314;
@@ -1168,7 +1286,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 47";
 		rLen = 0;
-		rLoc = 3064;
+		rLoc = 2876;
 		rType = 0;
 		vrLen = 651;
 		vrLoc = 812;
@@ -1198,7 +1316,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 47";
 		rLen = 0;
-		rLoc = 3064;
+		rLoc = 2876;
 		rType = 0;
 		vrLen = 651;
 		vrLoc = 812;
@@ -1208,7 +1326,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 23";
 		rLen = 0;
-		rLoc = 1806;
+		rLoc = 2165;
 		rType = 0;
 		vrLen = 406;
 		vrLoc = 0;
@@ -1228,7 +1346,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 17";
 		rLen = 0;
-		rLoc = 1030;
+		rLoc = 1055;
 		rType = 0;
 		vrLen = 622;
 		vrLoc = 35;
@@ -1248,7 +1366,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 17";
 		rLen = 0;
-		rLoc = 1030;
+		rLoc = 1055;
 		rType = 0;
 		vrLen = 622;
 		vrLoc = 35;
@@ -1268,7 +1386,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 17";
 		rLen = 0;
-		rLoc = 1030;
+		rLoc = 1055;
 		rType = 0;
 		vrLen = 622;
 		vrLoc = 35;
@@ -1288,7 +1406,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 17";
 		rLen = 0;
-		rLoc = 1030;
+		rLoc = 1055;
 		rType = 0;
 		vrLen = 622;
 		vrLoc = 35;
@@ -1358,7 +1476,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 17";
 		rLen = 0;
-		rLoc = 1030;
+		rLoc = 1055;
 		rType = 0;
 		vrLen = 622;
 		vrLoc = 35;
@@ -1378,7 +1496,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 17";
 		rLen = 0;
-		rLoc = 1030;
+		rLoc = 1055;
 		rType = 0;
 		vrLen = 622;
 		vrLoc = 35;
@@ -1398,7 +1516,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 41";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 633;
 		vrLoc = 169;
@@ -1408,7 +1526,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 47";
 		rLen = 0;
-		rLoc = 3064;
+		rLoc = 2876;
 		rType = 0;
 		vrLen = 651;
 		vrLoc = 812;
@@ -1418,7 +1536,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 23";
 		rLen = 0;
-		rLoc = 1806;
+		rLoc = 2165;
 		rType = 0;
 		vrLen = 406;
 		vrLoc = 0;
@@ -1428,7 +1546,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 37";
 		rLen = 0;
-		rLoc = 2770;
+		rLoc = 2582;
 		rType = 0;
 		vrLen = 659;
 		vrLoc = 818;
@@ -1458,7 +1576,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 37";
 		rLen = 0;
-		rLoc = 2770;
+		rLoc = 2582;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 817;
@@ -1468,7 +1586,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 41";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 598;
 		vrLoc = 0;
@@ -1478,7 +1596,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 42";
 		rLen = 0;
-		rLoc = 2768;
+		rLoc = 2580;
 		rType = 0;
 		vrLen = 767;
 		vrLoc = 522;
@@ -1488,7 +1606,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 23";
 		rLen = 0;
-		rLoc = 1806;
+		rLoc = 2165;
 		rType = 0;
 		vrLen = 406;
 		vrLoc = 0;
@@ -1498,7 +1616,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 41";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 634;
 		vrLoc = 168;
@@ -1518,7 +1636,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 23";
 		rLen = 0;
-		rLoc = 1806;
+		rLoc = 2165;
 		rType = 0;
 		vrLen = 406;
 		vrLoc = 0;
@@ -1528,7 +1646,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 46";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 356;
 		vrLoc = 305;
@@ -1548,7 +1666,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 46";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 592;
 		vrLoc = 140;
@@ -1558,7 +1676,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 40";
 		rLen = 0;
-		rLoc = 2768;
+		rLoc = 2580;
 		rType = 0;
 		vrLen = 980;
 		vrLoc = 576;
@@ -1568,7 +1686,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 42";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 623;
 		vrLoc = 3;
@@ -1588,7 +1706,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 22";
 		rLen = 1;
-		rLoc = 4429;
+		rLoc = 4589;
 		rType = 0;
 		vrLen = 589;
 		vrLoc = 0;
@@ -1598,7 +1716,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 23";
 		rLen = 0;
-		rLoc = 1806;
+		rLoc = 2165;
 		rType = 0;
 		vrLen = 385;
 		vrLoc = 21;
@@ -1608,7 +1726,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 38";
 		rLen = 0;
-		rLoc = 2130;
+		rLoc = 1942;
 		rType = 0;
 		vrLen = 967;
 		vrLoc = 689;
@@ -1618,7 +1736,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 23";
 		rLen = 0;
-		rLoc = 1806;
+		rLoc = 2165;
 		rType = 0;
 		vrLen = 403;
 		vrLoc = 3;
@@ -1628,7 +1746,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 38";
 		rLen = 0;
-		rLoc = 2130;
+		rLoc = 1942;
 		rType = 0;
 		vrLen = 883;
 		vrLoc = 573;
@@ -1638,7 +1756,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 44";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 721;
 		vrLoc = 364;
@@ -1658,7 +1776,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 43";
 		rLen = 0;
-		rLoc = 2768;
+		rLoc = 2580;
 		rType = 0;
 		vrLen = 883;
 		vrLoc = 573;
@@ -1676,7 +1794,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 69";
 		rLen = 0;
-		rLoc = 4872;
+		rLoc = 5032;
 		rType = 0;
 		vrLen = 583;
 		vrLoc = 896;
@@ -1696,7 +1814,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 69";
 		rLen = 0;
-		rLoc = 4872;
+		rLoc = 5032;
 		rType = 0;
 		vrLen = 586;
 		vrLoc = 893;
@@ -1716,7 +1834,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 67";
 		rLen = 0;
-		rLoc = 4866;
+		rLoc = 5026;
 		rType = 0;
 		vrLen = 640;
 		vrLoc = 168;
@@ -1734,7 +1852,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 43";
 		rLen = 0;
-		rLoc = 2768;
+		rLoc = 2580;
 		rType = 0;
 		vrLen = 692;
 		vrLoc = 0;
@@ -1744,7 +1862,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 18";
 		rLen = 0;
-		rLoc = 1030;
+		rLoc = 1055;
 		rType = 0;
 		vrLen = 693;
 		vrLoc = 200;
@@ -1754,7 +1872,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 31";
 		rLen = 0;
-		rLoc = 1553;
+		rLoc = 1367;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 145;
@@ -1774,7 +1892,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 21";
 		rLen = 0;
-		rLoc = 1193;
+		rLoc = 1194;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 145;
@@ -1794,7 +1912,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 55";
 		rLen = 0;
-		rLoc = 2108;
+		rLoc = 1920;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 688;
@@ -1804,7 +1922,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 18";
 		rLen = 0;
-		rLoc = 1030;
+		rLoc = 1055;
 		rType = 0;
 		vrLen = 781;
 		vrLoc = 370;
@@ -1814,7 +1932,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 55";
 		rLen = 0;
-		rLoc = 2108;
+		rLoc = 1920;
 		rType = 0;
 		vrLen = 894;
 		vrLoc = 656;
@@ -1834,7 +1952,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 18";
 		rLen = 0;
-		rLoc = 1030;
+		rLoc = 1055;
 		rType = 0;
 		vrLen = 625;
 		vrLoc = 0;
@@ -1844,7 +1962,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 57";
 		rLen = 640;
-		rLoc = 2128;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 821;
 		vrLoc = 1267;
@@ -1854,7 +1972,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 41";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 793;
 		vrLoc = 486;
@@ -1864,7 +1982,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 29";
 		rLen = 0;
-		rLoc = 1408;
+		rLoc = 1365;
 		rType = 0;
 		vrLen = 1041;
 		vrLoc = 209;
@@ -1874,7 +1992,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 53";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 595;
 		vrLoc = 140;
@@ -1914,7 +2032,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 61";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 696;
 		vrLoc = 429;
@@ -1934,7 +2052,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 63";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 886;
 		vrLoc = 970;
@@ -1954,7 +2072,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 57";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 723;
 		vrLoc = 1001;
@@ -1974,7 +2092,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 53";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 727;
 		vrLoc = 869;
@@ -1984,7 +2102,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 31";
 		rLen = 0;
-		rLoc = 1408;
+		rLoc = 1365;
 		rType = 0;
 		vrLen = 852;
 		vrLoc = 657;
@@ -1994,7 +2112,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 49";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 698;
 		vrLoc = 907;
@@ -2004,7 +2122,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 30";
 		rLen = 0;
-		rLoc = 1399;
+		rLoc = 1365;
 		rType = 0;
 		vrLen = 852;
 		vrLoc = 657;
@@ -2014,7 +2132,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 45";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 743;
 		vrLoc = 580;
@@ -2024,7 +2142,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 30";
 		rLen = 0;
-		rLoc = 1401;
+		rLoc = 1365;
 		rType = 0;
 		vrLen = 982;
 		vrLoc = 272;
@@ -2034,7 +2152,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 31";
 		rLen = 0;
-		rLoc = 4735;
+		rLoc = 4895;
 		rType = 0;
 		vrLen = 746;
 		vrLoc = 524;
@@ -2044,7 +2162,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 79";
 		rLen = 0;
-		rLoc = 1772;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 391;
 		vrLoc = 1430;
@@ -2054,7 +2172,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 54";
 		rLen = 0;
-		rLoc = 2093;
+		rLoc = 1907;
 		rType = 0;
 		vrLen = 819;
 		vrLoc = 0;
@@ -2064,7 +2182,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 84";
 		rLen = 0;
-		rLoc = 1772;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 1821;
@@ -2073,8 +2191,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 32";
-		rLen = 64;
-		rLoc = 1487;
+		rLen = 0;
+		rLoc = 1365;
 		rType = 0;
 		vrLen = 994;
 		vrLoc = 351;
@@ -2084,7 +2202,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 84";
 		rLen = 0;
-		rLoc = 1772;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 1821;
@@ -2104,7 +2222,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 39";
 		rLen = 0;
-		rLoc = 1221;
+		rLoc = 1580;
 		rType = 0;
 		vrLen = 978;
 		vrLoc = 712;
@@ -2114,7 +2232,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 21";
 		rLen = 0;
-		rLoc = 1030;
+		rLoc = 1055;
 		rType = 0;
 		vrLen = 762;
 		vrLoc = 200;
@@ -2124,7 +2242,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 39";
 		rLen = 0;
-		rLoc = 1221;
+		rLoc = 1580;
 		rType = 0;
 		vrLen = 878;
 		vrLoc = 614;
@@ -2144,7 +2262,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 64";
 		rLen = 0;
-		rLoc = 1221;
+		rLoc = 1580;
 		rType = 0;
 		vrLen = 793;
 		vrLoc = 323;
@@ -2154,7 +2272,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 42";
 		rLen = 0;
-		rLoc = 4656;
+		rLoc = 4816;
 		rType = 0;
 		vrLen = 473;
 		vrLoc = 545;
@@ -2183,8 +2301,8 @@
 		isa = PBXTextBookmark;
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 34";
-		rLen = 14;
-		rLoc = 1205;
+		rLen = 392;
+		rLoc = 1186;
 		rType = 0;
 		vrLen = 391;
 		vrLoc = 347;
@@ -2204,7 +2322,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 94";
 		rLen = 0;
-		rLoc = 1772;
+		rLoc = 2131;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 1821;
@@ -2214,7 +2332,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 41";
 		rLen = 0;
-		rLoc = 4519;
+		rLoc = 4679;
 		rType = 0;
 		vrLen = 813;
 		vrLoc = 716;
@@ -2234,7 +2352,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 45";
 		rLen = 0;
-		rLoc = 4656;
+		rLoc = 4816;
 		rType = 0;
 		vrLen = 817;
 		vrLoc = 277;
@@ -2254,7 +2372,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 26";
 		rLen = 0;
-		rLoc = 1300;
+		rLoc = 1365;
 		rType = 0;
 		vrLen = 697;
 		vrLoc = 1464;
@@ -2274,7 +2392,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 51";
 		rLen = 0;
-		rLoc = 4709;
+		rLoc = 4869;
 		rType = 0;
 		vrLen = 665;
 		vrLoc = 769;
@@ -2294,7 +2412,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 16";
 		rLen = 0;
-		rLoc = 370;
+		rLoc = 251;
 		rType = 0;
 		vrLen = 274;
 		vrLoc = 0;
@@ -2314,7 +2432,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 16";
 		rLen = 0;
-		rLoc = 370;
+		rLoc = 251;
 		rType = 0;
 		vrLen = 274;
 		vrLoc = 0;
@@ -2334,7 +2452,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 42";
 		rLen = 0;
-		rLoc = 4656;
+		rLoc = 4816;
 		rType = 0;
 		vrLen = 744;
 		vrLoc = 547;
@@ -2354,7 +2472,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 36";
 		rLen = 0;
-		rLoc = 4656;
+		rLoc = 4816;
 		rType = 0;
 		vrLen = 774;
 		vrLoc = 445;
@@ -2384,7 +2502,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 30";
 		rLen = 0;
-		rLoc = 4517;
+		rLoc = 4677;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 355;
@@ -2424,7 +2542,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 29";
 		rLen = 0;
-		rLoc = 1136;
+		rLoc = 1161;
 		rType = 0;
 		vrLen = 679;
 		vrLoc = 777;
@@ -2444,7 +2562,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 29";
 		rLen = 0;
-		rLoc = 1136;
+		rLoc = 1161;
 		rType = 0;
 		vrLen = 545;
 		vrLoc = 911;
@@ -2474,7 +2592,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 17";
 		rLen = 0;
-		rLoc = 369;
+		rLoc = 250;
 		rType = 0;
 		vrLen = 274;
 		vrLoc = 0;
@@ -2484,7 +2602,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 29";
 		rLen = 0;
-		rLoc = 1136;
+		rLoc = 1161;
 		rType = 0;
 		vrLen = 787;
 		vrLoc = 585;
@@ -2504,7 +2622,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 17";
 		rLen = 0;
-		rLoc = 369;
+		rLoc = 250;
 		rType = 0;
 		vrLen = 274;
 		vrLoc = 0;
@@ -2524,7 +2642,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 29";
 		rLen = 0;
-		rLoc = 1136;
+		rLoc = 1161;
 		rType = 0;
 		vrLen = 745;
 		vrLoc = 585;
@@ -2544,7 +2662,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 17";
 		rLen = 0;
-		rLoc = 370;
+		rLoc = 251;
 		rType = 0;
 		vrLen = 274;
 		vrLoc = 0;
@@ -2574,7 +2692,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 48";
 		rLen = 0;
-		rLoc = 4734;
+		rLoc = 4894;
 		rType = 0;
 		vrLen = 661;
 		vrLoc = 758;
@@ -2594,7 +2712,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 28";
 		rLen = 0;
-		rLoc = 1023;
+		rLoc = 1048;
 		rType = 0;
 		vrLen = 881;
 		vrLoc = 200;
@@ -2614,7 +2732,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 41";
 		rLen = 0;
-		rLoc = 4656;
+		rLoc = 4816;
 		rType = 0;
 		vrLen = 846;
 		vrLoc = 457;
@@ -2634,7 +2752,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 38";
 		rLen = 0;
-		rLoc = 4517;
+		rLoc = 4677;
 		rType = 0;
 		vrLen = 800;
 		vrLoc = 506;
@@ -2654,7 +2772,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 26";
 		rLen = 0;
-		rLoc = 1300;
+		rLoc = 1365;
 		rType = 0;
 		vrLen = 847;
 		vrLoc = 148;
@@ -2674,7 +2792,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 40";
 		rLen = 0;
-		rLoc = 4656;
+		rLoc = 4816;
 		rType = 0;
 		vrLen = 892;
 		vrLoc = 428;
@@ -2704,7 +2822,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 42";
 		rLen = 0;
-		rLoc = 4656;
+		rLoc = 4816;
 		rType = 0;
 		vrLen = 817;
 		vrLoc = 587;
@@ -2724,7 +2842,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 30";
 		rLen = 0;
-		rLoc = 1075;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 948;
 		vrLoc = 320;
@@ -2744,7 +2862,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 38";
 		rLen = 0;
-		rLoc = 4517;
+		rLoc = 4677;
 		rType = 0;
 		vrLen = 923;
 		vrLoc = 276;
@@ -2764,7 +2882,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 47";
 		rLen = 0;
-		rLoc = 4734;
+		rLoc = 4894;
 		rType = 0;
 		vrLen = 926;
 		vrLoc = 491;
@@ -2774,7 +2892,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 17";
 		rLen = 0;
-		rLoc = 370;
+		rLoc = 251;
 		rType = 0;
 		vrLen = 274;
 		vrLoc = 0;
@@ -2794,7 +2912,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 47";
 		rLen = 0;
-		rLoc = 4734;
+		rLoc = 4894;
 		rType = 0;
 		vrLen = 915;
 		vrLoc = 169;
@@ -2814,7 +2932,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 41";
 		rLen = 0;
-		rLoc = 4550;
+		rLoc = 4710;
 		rType = 0;
 		vrLen = 839;
 		vrLoc = 540;
@@ -2834,7 +2952,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 30";
 		rLen = 0;
-		rLoc = 1075;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 932;
 		vrLoc = 403;
@@ -2854,7 +2972,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 43";
 		rLen = 0;
-		rLoc = 4656;
+		rLoc = 4816;
 		rType = 0;
 		vrLen = 668;
 		vrLoc = 767;
@@ -2874,7 +2992,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 24";
 		rLen = 0;
-		rLoc = 948;
+		rLoc = 964;
 		rType = 0;
 		vrLen = 912;
 		vrLoc = 428;
@@ -2884,7 +3002,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 26";
 		rLen = 0;
-		rLoc = 1300;
+		rLoc = 1365;
 		rType = 0;
 		vrLen = 847;
 		vrLoc = 148;
@@ -2894,7 +3012,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 33";
 		rLen = 0;
-		rLoc = 731;
+		rLoc = 710;
 		rType = 0;
 		vrLen = 1199;
 		vrLoc = 438;
@@ -2904,7 +3022,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 26";
 		rLen = 0;
-		rLoc = 1300;
+		rLoc = 1365;
 		rType = 0;
 		vrLen = 697;
 		vrLoc = 1464;
@@ -2914,7 +3032,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 30";
 		rLen = 0;
-		rLoc = 630;
+		rLoc = 610;
 		rType = 0;
 		vrLen = 1194;
 		vrLoc = 439;
@@ -2934,7 +3052,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 41";
 		rLen = 0;
-		rLoc = 4550;
+		rLoc = 4710;
 		rType = 0;
 		vrLen = 759;
 		vrLoc = 140;
@@ -2944,7 +3062,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 31";
 		rLen = 0;
-		rLoc = 630;
+		rLoc = 610;
 		rType = 0;
 		vrLen = 944;
 		vrLoc = 281;
@@ -2964,7 +3082,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 31";
 		rLen = 0;
-		rLoc = 731;
+		rLoc = 710;
 		rType = 0;
 		vrLen = 854;
 		vrLoc = 280;
@@ -2984,7 +3102,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 27";
 		rLen = 0;
-		rLoc = 961;
+		rLoc = 940;
 		rType = 0;
 		vrLen = 876;
 		vrLoc = 280;
@@ -3004,7 +3122,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 31";
 		rLen = 0;
-		rLoc = 963;
+		rLoc = 942;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 436;
@@ -3024,7 +3142,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 59";
 		rLen = 0;
-		rLoc = 2366;
+		rLoc = 2370;
 		rType = 0;
 		vrLen = 575;
 		vrLoc = 789;
@@ -3034,7 +3152,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 30";
 		rLen = 0;
-		rLoc = 963;
+		rLoc = 942;
 		rType = 0;
 		vrLen = 1196;
 		vrLoc = 625;
@@ -3044,7 +3162,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 73";
 		rLen = 0;
-		rLoc = 4550;
+		rLoc = 4710;
 		rType = 0;
 		vrLen = 632;
 		vrLoc = 1477;
@@ -3054,7 +3172,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 28";
 		rLen = 0;
-		rLoc = 959;
+		rLoc = 938;
 		rType = 0;
 		vrLen = 493;
 		vrLoc = 310;
@@ -3094,7 +3212,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 44";
 		rLen = 0;
-		rLoc = 2067;
+		rLoc = 2006;
 		rType = 0;
 		vrLen = 600;
 		vrLoc = 787;
@@ -3104,7 +3222,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 28";
 		rLen = 0;
-		rLoc = 937;
+		rLoc = 916;
 		rType = 0;
 		vrLen = 451;
 		vrLoc = 390;
@@ -3114,7 +3232,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 36";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1956;
 		rType = 0;
 		vrLen = 459;
 		vrLoc = 737;
@@ -3124,7 +3242,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 25";
 		rLen = 0;
-		rLoc = 617;
+		rLoc = 608;
 		rType = 0;
 		vrLen = 496;
 		vrLoc = 346;
@@ -3134,7 +3252,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 36";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1956;
 		rType = 0;
 		vrLen = 434;
 		vrLoc = 761;
@@ -3154,7 +3272,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 36";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1956;
 		rType = 0;
 		vrLen = 541;
 		vrLoc = 656;
@@ -3164,7 +3282,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 77";
 		rLen = 0;
-		rLoc = 1144;
+		rLoc = 1125;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 1821;
@@ -3174,7 +3292,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 36";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1956;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 786;
@@ -3184,7 +3302,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 27";
 		rLen = 0;
-		rLoc = 882;
+		rLoc = 861;
 		rType = 0;
 		vrLen = 651;
 		vrLoc = 438;
@@ -3204,7 +3322,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 28";
 		rLen = 0;
-		rLoc = 937;
+		rLoc = 916;
 		rType = 0;
 		vrLen = 407;
 		vrLoc = 281;
@@ -3224,7 +3342,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 28";
 		rLen = 0;
-		rLoc = 922;
+		rLoc = 901;
 		rType = 0;
 		vrLen = 457;
 		vrLoc = 281;
@@ -3234,7 +3352,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 36";
 		rLen = 6;
-		rLoc = 1924;
+		rLoc = 1949;
 		rType = 0;
 		vrLen = 443;
 		vrLoc = 786;
@@ -3244,7 +3362,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 28";
 		rLen = 0;
-		rLoc = 904;
+		rLoc = 883;
 		rType = 0;
 		vrLen = 451;
 		vrLoc = 417;
@@ -3264,7 +3382,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 41";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1956;
 		rType = 0;
 		vrLen = 507;
 		vrLoc = 793;
@@ -3274,7 +3392,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 28";
 		rLen = 0;
-		rLoc = 904;
+		rLoc = 883;
 		rType = 0;
 		vrLen = 345;
 		vrLoc = 139;
@@ -3294,7 +3412,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 34";
 		rLen = 0;
-		rLoc = 904;
+		rLoc = 883;
 		rType = 0;
 		vrLen = 546;
 		vrLoc = 591;
@@ -3304,7 +3422,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 36";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1956;
 		rType = 0;
 		vrLen = 541;
 		vrLoc = 624;
@@ -3314,7 +3432,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 113";
 		rLen = 5;
-		rLoc = 1850;
+		rLoc = 2209;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 1821;
@@ -3334,7 +3452,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 36";
 		rLen = 19;
-		rLoc = 1903;
+		rLoc = 1928;
 		rType = 0;
 		vrLen = 459;
 		vrLoc = 737;
@@ -3344,7 +3462,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 108";
 		rLen = 0;
-		rLoc = 1826;
+		rLoc = 2185;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 1821;
@@ -3354,7 +3472,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 15";
 		rLen = 0;
-		rLoc = 304;
+		rLoc = 246;
 		rType = 0;
 		vrLen = 271;
 		vrLoc = 3;
@@ -3364,7 +3482,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 15";
 		rLen = 0;
-		rLoc = 304;
+		rLoc = 246;
 		rType = 0;
 		vrLen = 274;
 		vrLoc = 0;
@@ -3374,7 +3492,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 35";
 		rLen = 0;
-		rLoc = 904;
+		rLoc = 883;
 		rType = 0;
 		vrLen = 923;
 		vrLoc = 478;
@@ -3384,7 +3502,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 48";
 		rLen = 0;
-		rLoc = 4192;
+		rLoc = 4352;
 		rType = 0;
 		vrLen = 925;
 		vrLoc = 784;
@@ -3404,7 +3522,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 37";
 		rLen = 0;
-		rLoc = 2066;
+		rLoc = 2005;
 		rType = 0;
 		vrLen = 926;
 		vrLoc = 784;
@@ -3424,7 +3542,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 15";
 		rLen = 0;
-		rLoc = 304;
+		rLoc = 246;
 		rType = 0;
 		vrLen = 274;
 		vrLoc = 0;
@@ -3434,7 +3552,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 32";
 		rLen = 0;
-		rLoc = 731;
+		rLoc = 710;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 516;
@@ -3444,7 +3562,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 36";
 		rLen = 0;
-		rLoc = 2066;
+		rLoc = 2005;
 		rType = 0;
 		vrLen = 840;
 		vrLoc = 784;
@@ -3454,7 +3572,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 39";
 		rLen = 0;
-		rLoc = 904;
+		rLoc = 883;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 753;
@@ -3464,7 +3582,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 36";
 		rLen = 0;
-		rLoc = 2066;
+		rLoc = 2005;
 		rType = 0;
 		vrLen = 840;
 		vrLoc = 784;
@@ -3474,7 +3592,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 42";
 		rLen = 0;
-		rLoc = 904;
+		rLoc = 883;
 		rType = 0;
 		vrLen = 1063;
 		vrLoc = 609;
@@ -3484,7 +3602,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 40";
 		rLen = 0;
-		rLoc = 2066;
+		rLoc = 2005;
 		rType = 0;
 		vrLen = 651;
 		vrLoc = 609;
@@ -3494,7 +3612,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 42";
 		rLen = 0;
-		rLoc = 904;
+		rLoc = 883;
 		rType = 0;
 		vrLen = 1063;
 		vrLoc = 609;
@@ -3504,7 +3622,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 49";
 		rLen = 0;
-		rLoc = 3074;
+		rLoc = 3235;
 		rType = 0;
 		vrLen = 653;
 		vrLoc = 609;
@@ -3524,7 +3642,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 41";
 		rLen = 0;
-		rLoc = 2067;
+		rLoc = 2006;
 		rType = 0;
 		vrLen = 818;
 		vrLoc = 693;
@@ -3534,7 +3652,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 40";
 		rLen = 0;
-		rLoc = 903;
+		rLoc = 882;
 		rType = 0;
 		vrLen = 1017;
 		vrLoc = 608;
@@ -3544,7 +3662,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 40";
 		rLen = 0;
-		rLoc = 2051;
+		rLoc = 1990;
 		rType = 0;
 		vrLen = 699;
 		vrLoc = 137;
@@ -3554,7 +3672,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 40";
 		rLen = 0;
-		rLoc = 903;
+		rLoc = 882;
 		rType = 0;
 		vrLen = 670;
 		vrLoc = 138;
@@ -3564,7 +3682,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 50";
 		rLen = 0;
-		rLoc = 2145;
+		rLoc = 2172;
 		rType = 0;
 		vrLen = 989;
 		vrLoc = 1039;
@@ -3574,7 +3692,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 42";
 		rLen = 0;
-		rLoc = 965;
+		rLoc = 944;
 		rType = 0;
 		vrLen = 930;
 		vrLoc = 638;
@@ -3584,7 +3702,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 59";
 		rLen = 0;
-		rLoc = 2366;
+		rLoc = 2370;
 		rType = 0;
 		vrLen = 1125;
 		vrLoc = 1178;
@@ -3604,7 +3722,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 75";
 		rLen = 25;
-		rLoc = 3049;
+		rLoc = 3210;
 		rType = 0;
 		vrLen = 567;
 		vrLoc = 1886;
@@ -3624,7 +3742,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 83";
 		rLen = 0;
-		rLoc = 3339;
+		rLoc = 3500;
 		rType = 0;
 		vrLen = 1122;
 		vrLoc = 2216;
@@ -3644,7 +3762,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 101";
 		rLen = 0;
-		rLoc = 4370;
+		rLoc = 4530;
 		rType = 0;
 		vrLen = 880;
 		vrLoc = 2885;
@@ -3734,7 +3852,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 43";
 		rLen = 0;
-		rLoc = 1264;
+		rLoc = 1289;
 		rType = 0;
 		vrLen = 255;
 		vrLoc = 35;
@@ -3784,7 +3902,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 69";
 		rLen = 0;
-		rLoc = 2683;
+		rLoc = 2844;
 		rType = 0;
 		vrLen = 1119;
 		vrLoc = 1235;
@@ -3804,7 +3922,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 69";
 		rLen = 0;
-		rLoc = 2683;
+		rLoc = 2844;
 		rType = 0;
 		vrLen = 1093;
 		vrLoc = 1261;
@@ -3824,7 +3942,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 104";
 		rLen = 0;
-		rLoc = 4195;
+		rLoc = 4355;
 		rType = 0;
 		vrLen = 1136;
 		vrLoc = 2579;
@@ -3844,7 +3962,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 99";
 		rLen = 0;
-		rLoc = 4085;
+		rLoc = 4245;
 		rType = 0;
 		vrLen = 1219;
 		vrLoc = 2626;
@@ -3864,7 +3982,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 52";
 		rLen = 0;
-		rLoc = 1893;
+		rLoc = 1918;
 		rType = 0;
 		vrLen = 1326;
 		vrLoc = 2574;
@@ -3894,7 +4012,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 120";
 		rLen = 0;
-		rLoc = 4656;
+		rLoc = 4816;
 		rType = 0;
 		vrLen = 707;
 		vrLoc = 651;
@@ -3924,7 +4042,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 873;
+		rLoc = 852;
 		rType = 0;
 		vrLen = 784;
 		vrLoc = 497;
@@ -3954,7 +4072,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 37";
 		rLen = 0;
-		rLoc = 873;
+		rLoc = 852;
 		rType = 0;
 		vrLen = 843;
 		vrLoc = 935;
@@ -3964,7 +4082,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 70";
 		rLen = 0;
-		rLoc = 1668;
+		rLoc = 1693;
 		rType = 0;
 		vrLen = 883;
 		vrLoc = 1211;
@@ -3974,7 +4092,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 835;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 831;
 		vrLoc = 426;
@@ -3984,7 +4102,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 74";
 		rLen = 0;
-		rLoc = 1808;
+		rLoc = 1833;
 		rType = 0;
 		vrLen = 881;
 		vrLoc = 1210;
@@ -3994,7 +4112,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 835;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 897;
 		vrLoc = 497;
@@ -4004,7 +4122,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 74";
 		rLen = 0;
-		rLoc = 1849;
+		rLoc = 1874;
 		rType = 0;
 		vrLen = 815;
 		vrLoc = 1211;
@@ -4014,7 +4132,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 835;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 1040;
 		vrLoc = 589;
@@ -4034,7 +4152,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 871;
+		rLoc = 850;
 		rType = 0;
 		vrLen = 833;
 		vrLoc = 426;
@@ -4044,7 +4162,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 68";
 		rLen = 0;
-		rLoc = 1653;
+		rLoc = 1678;
 		rType = 0;
 		vrLen = 817;
 		vrLoc = 1163;
@@ -4064,7 +4182,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 111";
 		rLen = 0;
-		rLoc = 3160;
+		rLoc = 3321;
 		rType = 0;
 		vrLen = 1164;
 		vrLoc = 2491;
@@ -4074,7 +4192,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 835;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 1040;
 		vrLoc = 589;
@@ -4084,7 +4202,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 69";
 		rLen = 0;
-		rLoc = 1585;
+		rLoc = 1610;
 		rType = 0;
 		vrLen = 803;
 		vrLoc = 1178;
@@ -4104,7 +4222,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 69";
 		rLen = 0;
-		rLoc = 1589;
+		rLoc = 1614;
 		rType = 0;
 		vrLen = 796;
 		vrLoc = 1257;
@@ -4114,7 +4232,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 835;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 586;
 		vrLoc = 0;
@@ -4124,7 +4242,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 94";
 		rLen = 0;
-		rLoc = 2498;
+		rLoc = 2502;
 		rType = 0;
 		vrLen = 608;
 		vrLoc = 554;
@@ -4144,7 +4262,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 128";
 		rLen = 0;
-		rLoc = 3977;
+		rLoc = 4137;
 		rType = 0;
 		vrLen = 1387;
 		vrLoc = 2925;
@@ -4154,7 +4272,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 128";
 		rLen = 0;
-		rLoc = 3977;
+		rLoc = 4137;
 		rType = 0;
 		vrLen = 1387;
 		vrLoc = 2925;
@@ -4164,7 +4282,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 835;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 830;
 		vrLoc = 426;
@@ -4174,7 +4292,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 835;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 830;
 		vrLoc = 426;
@@ -4204,7 +4322,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 222";
 		rLen = 0;
-		rLoc = 7233;
+		rLoc = 6720;
 		rType = 0;
 		vrLen = 420;
 		vrLoc = 6564;
@@ -4224,7 +4342,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 167";
 		rLen = 0;
-		rLoc = 5713;
+		rLoc = 5282;
 		rType = 0;
 		vrLen = 1181;
 		vrLoc = 5060;
@@ -4244,7 +4362,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 200";
 		rLen = 0;
-		rLoc = 6800;
+		rLoc = 6287;
 		rType = 0;
 		vrLen = 1056;
 		vrLoc = 5564;
@@ -4313,7 +4431,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 222";
 		rLen = 0;
-		rLoc = 7206;
+		rLoc = 6693;
 		rType = 0;
 		vrLen = 689;
 		vrLoc = 484;
@@ -4333,7 +4451,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 222";
 		rLen = 0;
-		rLoc = 7206;
+		rLoc = 6693;
 		rType = 0;
 		vrLen = 623;
 		vrLoc = 0;
@@ -4363,7 +4481,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 222";
 		rLen = 0;
-		rLoc = 7206;
+		rLoc = 6693;
 		rType = 0;
 		vrLen = 623;
 		vrLoc = 0;
@@ -4383,7 +4501,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 232";
 		rLen = 0;
-		rLoc = 7365;
+		rLoc = 6852;
 		rType = 0;
 		vrLen = 200;
 		vrLoc = 6961;
@@ -4403,7 +4521,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 0;
-		rLoc = 5705;
+		rLoc = 5274;
 		rType = 0;
 		vrLen = 842;
 		vrLoc = 0;
@@ -4423,7 +4541,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 234";
 		rLen = 5;
-		rLoc = 7366;
+		rLoc = 6853;
 		rType = 0;
 		vrLen = 169;
 		vrLoc = 6992;
@@ -4443,7 +4561,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 158";
 		rLen = 40;
-		rLoc = 5372;
+		rLoc = 5011;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 4790;
@@ -4463,7 +4581,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 189";
 		rLen = 13;
-		rLoc = 6549;
+		rLoc = 6118;
 		rType = 0;
 		vrLen = 961;
 		vrLoc = 5733;
@@ -4493,7 +4611,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 173";
 		rLen = 7;
-		rLoc = 5861;
+		rLoc = 5430;
 		rType = 0;
 		vrLen = 1022;
 		vrLoc = 5430;
@@ -4632,7 +4750,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 173";
 		rLen = 7;
-		rLoc = 5861;
+		rLoc = 5430;
 		rType = 0;
 		vrLen = 820;
 		vrLoc = 5430;
@@ -4652,7 +4770,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 91";
 		rLen = 0;
-		rLoc = 2741;
+		rLoc = 2553;
 		rType = 0;
 		vrLen = 672;
 		vrLoc = 2314;
@@ -4662,7 +4780,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 91";
 		rLen = 0;
-		rLoc = 2741;
+		rLoc = 2553;
 		rType = 0;
 		vrLen = 669;
 		vrLoc = 2317;
@@ -4672,7 +4790,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 91";
 		rLen = 0;
-		rLoc = 2741;
+		rLoc = 2553;
 		rType = 0;
 		vrLen = 534;
 		vrLoc = 2452;
@@ -4695,7 +4813,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 91";
 		rLen = 0;
-		rLoc = 2741;
+		rLoc = 2553;
 		rType = 0;
 		vrLen = 534;
 		vrLoc = 2452;
@@ -4728,7 +4846,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 154";
 		rLen = 0;
-		rLoc = 4993;
+		rLoc = 4633;
 		rType = 0;
 		vrLen = 1217;
 		vrLoc = 4509;
@@ -4748,7 +4866,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 154";
 		rLen = 0;
-		rLoc = 4993;
+		rLoc = 4633;
 		rType = 0;
 		vrLen = 1217;
 		vrLoc = 4509;
@@ -4847,7 +4965,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 112";
 		rLen = 0;
-		rLoc = 3165;
+		rLoc = 3326;
 		rType = 0;
 		vrLen = 1447;
 		vrLoc = 2656;
@@ -4867,7 +4985,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 164";
 		rLen = 0;
-		rLoc = 5614;
+		rLoc = 5225;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 5021;
@@ -4904,7 +5022,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 112";
 		rLen = 0;
-		rLoc = 3165;
+		rLoc = 3326;
 		rType = 0;
 		vrLen = 1447;
 		vrLoc = 2656;
@@ -4924,7 +5042,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 164";
 		rLen = 0;
-		rLoc = 5614;
+		rLoc = 5225;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 5021;
@@ -5014,7 +5132,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 14";
 		rLen = 0;
-		rLoc = 282;
+		rLoc = 224;
 		rType = 0;
 		vrLen = 402;
 		vrLoc = 0;
@@ -5024,7 +5142,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 160";
 		rLen = 0;
-		rLoc = 5311;
+		rLoc = 4950;
 		rType = 0;
 		vrLen = 999;
 		vrLoc = 4468;
@@ -5044,7 +5162,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 165";
 		rLen = 0;
-		rLoc = 5705;
+		rLoc = 5274;
 		rType = 0;
 		vrLen = 1108;
 		vrLoc = 4377;
@@ -5084,7 +5202,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 871;
+		rLoc = 850;
 		rType = 0;
 		vrLen = 822;
 		vrLoc = 189;
@@ -5104,7 +5222,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 18";
 		rLen = 0;
-		rLoc = 369;
+		rLoc = 250;
 		rType = 0;
 		vrLen = 347;
 		vrLoc = 0;
@@ -5134,7 +5252,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 11;
-		rLoc = 5544;
+		rLoc = 5183;
 		rType = 0;
 		vrLen = 1057;
 		vrLoc = 4682;
@@ -5154,7 +5272,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 169";
 		rLen = 0;
-		rLoc = 5713;
+		rLoc = 5282;
 		rType = 0;
 		vrLen = 908;
 		vrLoc = 4682;
@@ -5174,7 +5292,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 160";
 		rLen = 0;
-		rLoc = 5311;
+		rLoc = 4950;
 		rType = 0;
 		vrLen = 978;
 		vrLoc = 4472;
@@ -5184,7 +5302,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 18";
 		rLen = 0;
-		rLoc = 369;
+		rLoc = 250;
 		rType = 0;
 		vrLen = 339;
 		vrLoc = 0;
@@ -5204,7 +5322,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 13";
 		rLen = 0;
-		rLoc = 282;
+		rLoc = 224;
 		rType = 0;
 		vrLen = 339;
 		vrLoc = 0;
@@ -5224,7 +5342,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 159";
 		rLen = 0;
-		rLoc = 5113;
+		rLoc = 4753;
 		rType = 0;
 		vrLen = 944;
 		vrLoc = 4604;
@@ -5244,7 +5362,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 157";
 		rLen = 0;
-		rLoc = 5074;
+		rLoc = 4714;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 4604;
@@ -5264,7 +5382,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 160";
 		rLen = 0;
-		rLoc = 5311;
+		rLoc = 4950;
 		rType = 0;
 		vrLen = 998;
 		vrLoc = 4468;
@@ -5274,7 +5392,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 20";
 		rLen = 0;
-		rLoc = 369;
+		rLoc = 250;
 		rType = 0;
 		vrLen = 398;
 		vrLoc = 0;
@@ -5304,7 +5422,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 20";
 		rLen = 0;
-		rLoc = 369;
+		rLoc = 250;
 		rType = 0;
 		vrLen = 402;
 		vrLoc = 0;
@@ -5324,7 +5442,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 160";
 		rLen = 0;
-		rLoc = 5311;
+		rLoc = 4950;
 		rType = 0;
 		vrLen = 999;
 		vrLoc = 4468;
@@ -5354,7 +5472,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 14";
 		rLen = 0;
-		rLoc = 282;
+		rLoc = 224;
 		rType = 0;
 		vrLen = 402;
 		vrLoc = 0;
@@ -5364,7 +5482,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 160";
 		rLen = 0;
-		rLoc = 5311;
+		rLoc = 4950;
 		rType = 0;
 		vrLen = 1089;
 		vrLoc = 4468;
@@ -5374,7 +5492,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 160";
 		rLen = 0;
-		rLoc = 5311;
+		rLoc = 4950;
 		rType = 0;
 		vrLen = 1088;
 		vrLoc = 4509;
@@ -5394,7 +5512,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 160";
 		rLen = 0;
-		rLoc = 5311;
+		rLoc = 4950;
 		rType = 0;
 		vrLen = 546;
 		vrLoc = 4855;
@@ -5404,7 +5522,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 160";
 		rLen = 0;
-		rLoc = 5311;
+		rLoc = 4950;
 		rType = 0;
 		vrLen = 1172;
 		vrLoc = 4509;
@@ -5424,7 +5542,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 160";
 		rLen = 0;
-		rLoc = 5311;
+		rLoc = 4950;
 		rType = 0;
 		vrLen = 1172;
 		vrLoc = 4509;
@@ -5454,7 +5572,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 160";
 		rLen = 0;
-		rLoc = 5311;
+		rLoc = 4950;
 		rType = 0;
 		vrLen = 546;
 		vrLoc = 4855;
@@ -5484,7 +5602,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 160";
 		rLen = 0;
-		rLoc = 5311;
+		rLoc = 4950;
 		rType = 0;
 		vrLen = 1002;
 		vrLoc = 4604;
@@ -5504,7 +5622,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 160";
 		rLen = 0;
-		rLoc = 5311;
+		rLoc = 4950;
 		rType = 0;
 		vrLen = 1002;
 		vrLoc = 4604;
@@ -5524,7 +5642,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 160";
 		rLen = 0;
-		rLoc = 5311;
+		rLoc = 4950;
 		rType = 0;
 		vrLen = 995;
 		vrLoc = 4604;
@@ -5534,7 +5652,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 160";
 		rLen = 0;
-		rLoc = 5311;
+		rLoc = 4950;
 		rType = 0;
 		vrLen = 959;
 		vrLoc = 4600;
@@ -5554,7 +5672,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5371;
+		rLoc = 5010;
 		rType = 0;
 		vrLen = 548;
 		vrLoc = 4855;
@@ -5564,7 +5682,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 179";
 		rLen = 0;
-		rLoc = 6009;
+		rLoc = 5578;
 		rType = 0;
 		vrLen = 1032;
 		vrLoc = 5452;
@@ -5594,7 +5712,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 179";
 		rLen = 0;
-		rLoc = 6009;
+		rLoc = 5578;
 		rType = 0;
 		vrLen = 1032;
 		vrLoc = 5452;
@@ -5654,7 +5772,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5371;
+		rLoc = 5010;
 		rType = 0;
 		vrLen = 511;
 		vrLoc = 4946;
@@ -5694,7 +5812,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 13";
 		rLen = 0;
-		rLoc = 281;
+		rLoc = 224;
 		rType = 0;
 		vrLen = 320;
 		vrLoc = 0;
@@ -5714,7 +5832,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 240";
 		rLen = 5;
-		rLoc = 7366;
+		rLoc = 6853;
 		rType = 0;
 		vrLen = 262;
 		vrLoc = 6944;
@@ -5734,7 +5852,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 161";
 		rLen = 0;
-		rLoc = 5368;
+		rLoc = 5007;
 		rType = 0;
 		vrLen = 962;
 		vrLoc = 4600;
@@ -5754,7 +5872,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 18";
 		rLen = 0;
-		rLoc = 369;
+		rLoc = 250;
 		rType = 0;
 		vrLen = 445;
 		vrLoc = 0;
@@ -5774,7 +5892,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 161";
 		rLen = 0;
-		rLoc = 5366;
+		rLoc = 5005;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 4600;
@@ -5784,7 +5902,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 18";
 		rLen = 0;
-		rLoc = 369;
+		rLoc = 250;
 		rType = 0;
 		vrLen = 445;
 		vrLoc = 0;
@@ -5834,7 +5952,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 14";
 		rLen = 0;
-		rLoc = 282;
+		rLoc = 224;
 		rType = 0;
 		vrLen = 426;
 		vrLoc = 0;
@@ -5854,7 +5972,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5365;
+		rLoc = 5004;
 		rType = 0;
 		vrLen = 899;
 		vrLoc = 5053;
@@ -5864,7 +5982,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 17";
 		rLen = 0;
-		rLoc = 369;
+		rLoc = 250;
 		rType = 0;
 		vrLen = 317;
 		vrLoc = 0;
@@ -5884,7 +6002,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 13";
 		rLen = 0;
-		rLoc = 281;
+		rLoc = 224;
 		rType = 0;
 		vrLen = 320;
 		vrLoc = 0;
@@ -5894,7 +6012,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 240";
 		rLen = 5;
-		rLoc = 7366;
+		rLoc = 6853;
 		rType = 0;
 		vrLen = 233;
 		vrLoc = 6973;
@@ -5934,7 +6052,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 13";
 		rLen = 0;
-		rLoc = 258;
+		rLoc = 224;
 		rType = 0;
 		vrLen = 277;
 		vrLoc = 0;
@@ -5994,7 +6112,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 13";
 		rLen = 0;
-		rLoc = 258;
+		rLoc = 224;
 		rType = 0;
 		vrLen = 277;
 		vrLoc = 0;
@@ -6054,7 +6172,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 19";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 249;
 		rType = 0;
 		vrLen = 411;
 		vrLoc = 0;
@@ -6094,7 +6212,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 34";
 		rLen = 0;
-		rLoc = 698;
+		rLoc = 676;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 300;
@@ -6114,7 +6232,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 0;
-		rLoc = 5366;
+		rLoc = 5005;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 4828;
@@ -6124,7 +6242,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 77";
 		rLen = 0;
-		rLoc = 2128;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 862;
 		vrLoc = 1941;
@@ -6134,7 +6252,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 19";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 249;
 		rType = 0;
 		vrLen = 411;
 		vrLoc = 0;
@@ -6144,7 +6262,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 813;
+		rLoc = 792;
 		rType = 0;
 		vrLen = 600;
 		vrLoc = 414;
@@ -6154,7 +6272,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 77";
 		rLen = 0;
-		rLoc = 2128;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 588;
 		vrLoc = 1941;
@@ -6224,7 +6342,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 66";
 		rLen = 0;
-		rLoc = 1871;
+		rLoc = 1685;
 		rType = 0;
 		vrLen = 672;
 		vrLoc = 1489;
@@ -6244,7 +6362,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 77";
 		rLen = 0;
-		rLoc = 2128;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 651;
 		vrLoc = 1941;
@@ -6274,7 +6392,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 77";
 		rLen = 0;
-		rLoc = 2128;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 619;
 		vrLoc = 1941;
@@ -6314,7 +6432,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 77";
 		rLen = 0;
-		rLoc = 2128;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 848;
 		vrLoc = 1744;
@@ -6324,7 +6442,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 34";
 		rLen = 0;
-		rLoc = 698;
+		rLoc = 676;
 		rType = 0;
 		vrLen = 921;
 		vrLoc = 245;
@@ -6334,7 +6452,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 77";
 		rLen = 0;
-		rLoc = 2128;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 848;
 		vrLoc = 1744;
@@ -6354,7 +6472,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 34";
 		rLen = 0;
-		rLoc = 698;
+		rLoc = 676;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 300;
@@ -6364,7 +6482,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 0;
-		rLoc = 5366;
+		rLoc = 5005;
 		rType = 0;
 		vrLen = 998;
 		vrLoc = 4828;
@@ -6384,7 +6502,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 0;
-		rLoc = 5366;
+		rLoc = 5005;
 		rType = 0;
 		vrLen = 998;
 		vrLoc = 4828;
@@ -6394,7 +6512,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 0;
-		rLoc = 5366;
+		rLoc = 5005;
 		rType = 0;
 		vrLen = 1023;
 		vrLoc = 4646;
@@ -6404,7 +6522,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 0;
-		rLoc = 5366;
+		rLoc = 5005;
 		rType = 0;
 		vrLen = 475;
 		vrLoc = 4828;
@@ -6424,7 +6542,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 0;
-		rLoc = 5366;
+		rLoc = 5005;
 		rType = 0;
 		vrLen = 1019;
 		vrLoc = 4650;
@@ -6434,7 +6552,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 0;
-		rLoc = 5366;
+		rLoc = 5005;
 		rType = 0;
 		vrLen = 1019;
 		vrLoc = 4650;
@@ -6454,7 +6572,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 0;
-		rLoc = 5353;
+		rLoc = 4992;
 		rType = 0;
 		vrLen = 1020;
 		vrLoc = 4650;
@@ -6464,7 +6582,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 0;
-		rLoc = 5353;
+		rLoc = 4992;
 		rType = 0;
 		vrLen = 1104;
 		vrLoc = 4650;
@@ -6474,7 +6592,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 0;
-		rLoc = 5353;
+		rLoc = 4992;
 		rType = 0;
 		vrLen = 1024;
 		vrLoc = 4646;
@@ -6484,7 +6602,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 0;
-		rLoc = 5353;
+		rLoc = 4992;
 		rType = 0;
 		vrLen = 540;
 		vrLoc = 4934;
@@ -6494,7 +6612,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 0;
-		rLoc = 5369;
+		rLoc = 5008;
 		rType = 0;
 		vrLen = 1079;
 		vrLoc = 4832;
@@ -6504,7 +6622,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 0;
-		rLoc = 5369;
+		rLoc = 5008;
 		rType = 0;
 		vrLen = 1026;
 		vrLoc = 4646;
@@ -6514,7 +6632,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 0;
-		rLoc = 5369;
+		rLoc = 5008;
 		rType = 0;
 		vrLen = 691;
 		vrLoc = 4141;
@@ -6524,7 +6642,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 3;
-		rLoc = 5345;
+		rLoc = 4984;
 		rType = 0;
 		vrLen = 1160;
 		vrLoc = 4555;
@@ -6534,7 +6652,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 873;
+		rLoc = 852;
 		rType = 0;
 		vrLen = 954;
 		vrLoc = 245;
@@ -6554,7 +6672,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 3;
-		rLoc = 5345;
+		rLoc = 4984;
 		rType = 0;
 		vrLen = 1160;
 		vrLoc = 4555;
@@ -6564,7 +6682,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 873;
+		rLoc = 852;
 		rType = 0;
 		vrLen = 954;
 		vrLoc = 245;
@@ -6574,7 +6692,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 81";
 		rLen = 0;
-		rLoc = 1988;
+		rLoc = 1967;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 1465;
@@ -6584,7 +6702,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 81";
 		rLen = 0;
-		rLoc = 1988;
+		rLoc = 1967;
 		rType = 0;
 		vrLen = 936;
 		vrLoc = 1506;
@@ -6594,7 +6712,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 163";
 		rLen = 0;
-		rLoc = 5369;
+		rLoc = 5008;
 		rType = 0;
 		vrLen = 691;
 		vrLoc = 4141;
@@ -6604,7 +6722,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 81";
 		rLen = 0;
-		rLoc = 1981;
+		rLoc = 1967;
 		rType = 0;
 		vrLen = 413;
 		vrLoc = 1694;
@@ -6624,7 +6742,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 81";
 		rLen = 0;
-		rLoc = 1981;
+		rLoc = 1967;
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 1507;
@@ -6634,7 +6752,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 873;
+		rLoc = 852;
 		rType = 0;
 		vrLen = 849;
 		vrLoc = 350;
@@ -6644,7 +6762,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 81";
 		rLen = 0;
-		rLoc = 1981;
+		rLoc = 1967;
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 1507;
@@ -6664,7 +6782,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 81";
 		rLen = 0;
-		rLoc = 1981;
+		rLoc = 1967;
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 1507;
@@ -6674,7 +6792,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 835;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 857;
 		vrLoc = 350;
@@ -6684,7 +6802,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 835;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 413;
@@ -6694,7 +6812,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 835;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 413;
@@ -6704,7 +6822,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 81";
 		rLen = 0;
-		rLoc = 1981;
+		rLoc = 1967;
 		rType = 0;
 		vrLen = 415;
 		vrLoc = 1737;
@@ -6714,23 +6832,23 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 835;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 353;
 		vrLoc = 163;
 	};
 	4DD85A620FB2F07A00A61B5B /* Session.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1111, 509}}";
-			sepNavSelRange = "{245, 0}";
-			sepNavVisRange = "{0, 309}";
+			sepNavIntBoundsRect = "{{0, 0}, {1111, 718}}";
+			sepNavSelRange = "{303, 28}";
+			sepNavVisRange = "{0, 337}";
 		};
 	};
 	4DD85A630FB2F07A00A61B5B /* Session.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1111, 725}}";
-			sepNavSelRange = "{360, 0}";
-			sepNavVisRange = "{135, 317}";
+			sepNavIntBoundsRect = "{{0, 0}, {1379, 850}}";
+			sepNavSelRange = "{506, 0}";
+			sepNavVisRange = "{313, 204}";
 		};
 	};
 	4DD85A860FB2F34F00A61B5B /* PBXTextBookmark */ = {
@@ -6748,7 +6866,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 81";
 		rLen = 0;
-		rLoc = 1981;
+		rLoc = 1967;
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 1507;
@@ -6768,7 +6886,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 19";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 249;
 		rType = 0;
 		vrLen = 375;
 		vrLoc = 0;
@@ -6798,7 +6916,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5365;
+		rLoc = 5004;
 		rType = 0;
 		vrLen = 536;
 		vrLoc = 4770;
@@ -6818,7 +6936,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 835;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 871;
 		vrLoc = 244;
@@ -6838,7 +6956,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 37";
 		rLen = 0;
-		rLoc = 873;
+		rLoc = 852;
 		rType = 0;
 		vrLen = 870;
 		vrLoc = 245;
@@ -6848,7 +6966,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 77";
 		rLen = 0;
-		rLoc = 2128;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 921;
 		vrLoc = 1850;
@@ -6868,7 +6986,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 77";
 		rLen = 0;
-		rLoc = 2128;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 921;
 		vrLoc = 1850;
@@ -6878,7 +6996,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 19";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 249;
 		rType = 0;
 		vrLen = 411;
 		vrLoc = 0;
@@ -6888,7 +7006,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 37";
 		rLen = 0;
-		rLoc = 873;
+		rLoc = 852;
 		rType = 0;
 		vrLen = 870;
 		vrLoc = 245;
@@ -6908,7 +7026,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 77";
 		rLen = 0;
-		rLoc = 2128;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 917;
 		vrLoc = 1850;
@@ -6918,7 +7036,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 19";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 249;
 		rType = 0;
 		vrLen = 411;
 		vrLoc = 0;
@@ -6938,7 +7056,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 15";
 		rLen = 0;
-		rLoc = 281;
+		rLoc = 224;
 		rType = 0;
 		vrLen = 433;
 		vrLoc = 0;
@@ -6958,7 +7076,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 18";
 		rLen = 0;
-		rLoc = 285;
+		rLoc = 227;
 		rType = 0;
 		vrLen = 473;
 		vrLoc = 0;
@@ -6968,7 +7086,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 871;
+		rLoc = 850;
 		rType = 0;
 		vrLen = 850;
 		vrLoc = 412;
@@ -6978,7 +7096,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 19";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 249;
 		rType = 0;
 		vrLen = 371;
 		vrLoc = 0;
@@ -6988,7 +7106,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 871;
+		rLoc = 850;
 		rType = 0;
 		vrLen = 850;
 		vrLoc = 412;
@@ -7008,7 +7126,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 81";
 		rLen = 0;
-		rLoc = 1981;
+		rLoc = 1967;
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 1507;
@@ -7018,7 +7136,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 77";
 		rLen = 0;
-		rLoc = 2128;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 917;
 		vrLoc = 1850;
@@ -7028,7 +7146,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 19";
 		rLen = 0;
-		rLoc = 346;
+		rLoc = 249;
 		rType = 0;
 		vrLen = 382;
 		vrLoc = 0;
@@ -7038,7 +7156,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 77";
 		rLen = 0;
-		rLoc = 2128;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 917;
 		vrLoc = 1850;
@@ -7048,7 +7166,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 19";
 		rLen = 0;
-		rLoc = 346;
+		rLoc = 249;
 		rType = 0;
 		vrLen = 373;
 		vrLoc = 0;
@@ -7058,7 +7176,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 77";
 		rLen = 0;
-		rLoc = 2128;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 917;
 		vrLoc = 1850;
@@ -7068,7 +7186,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 19";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 249;
 		rType = 0;
 		vrLen = 371;
 		vrLoc = 0;
@@ -7078,7 +7196,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 75";
 		rLen = 0;
-		rLoc = 2119;
+		rLoc = 1931;
 		rType = 0;
 		vrLen = 917;
 		vrLoc = 1850;
@@ -7128,7 +7246,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 36";
 		rLen = 0;
-		rLoc = 811;
+		rLoc = 790;
 		rType = 0;
 		vrLen = 831;
 		vrLoc = 492;
@@ -7138,7 +7256,7 @@
 		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
 		name = "BubblesView.h: 19";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 249;
 		rType = 0;
 		vrLen = 375;
 		vrLoc = 0;
@@ -7158,7 +7276,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 75";
 		rLen = 0;
-		rLoc = 2119;
+		rLoc = 1931;
 		rType = 0;
 		vrLen = 917;
 		vrLoc = 1850;
@@ -7218,7 +7336,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5365;
+		rLoc = 5004;
 		rType = 0;
 		vrLen = 536;
 		vrLoc = 4770;
@@ -7238,7 +7356,7 @@
 		fRef = 4DD85A630FB2F07A00A61B5B /* Session.m */;
 		name = "Session.m: 23";
 		rLen = 0;
-		rLoc = 446;
+		rLoc = 511;
 		rType = 0;
 		vrLen = 331;
 		vrLoc = 32;
@@ -7278,7 +7396,7 @@
 		fRef = 4DD85A630FB2F07A00A61B5B /* Session.m */;
 		name = "Session.m: 23";
 		rLen = 0;
-		rLoc = 446;
+		rLoc = 511;
 		rType = 0;
 		vrLen = 331;
 		vrLoc = 32;
@@ -7298,7 +7416,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 871;
+		rLoc = 850;
 		rType = 0;
 		vrLen = 614;
 		vrLoc = 514;
@@ -7308,7 +7426,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 871;
+		rLoc = 850;
 		rType = 0;
 		vrLen = 587;
 		vrLoc = 514;
@@ -7318,7 +7436,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 871;
+		rLoc = 850;
 		rType = 0;
 		vrLen = 450;
 		vrLoc = 514;
@@ -7350,7 +7468,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 871;
+		rLoc = 850;
 		rType = 0;
 		vrLen = 450;
 		vrLoc = 514;
@@ -7415,7 +7533,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 871;
+		rLoc = 850;
 		rType = 0;
 		vrLen = 817;
 		vrLoc = 512;
@@ -7434,7 +7552,7 @@
 		isa = PBXTextBookmark;
 		fRef = 4DD85A620FB2F07A00A61B5B /* Session.h */;
 		name = "Session.h: 17";
-		rLen = 25;
+		rLen = 53;
 		rLoc = 278;
 		rType = 0;
 		vrLen = 306;
@@ -7475,7 +7593,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 863;
+		rLoc = 842;
 		rType = 0;
 		vrLen = 547;
 		vrLoc = 0;
@@ -7485,7 +7603,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 863;
+		rLoc = 842;
 		rType = 0;
 		vrLen = 518;
 		vrLoc = 0;
@@ -7495,7 +7613,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 863;
+		rLoc = 842;
 		rType = 0;
 		vrLen = 518;
 		vrLoc = 0;
@@ -7505,7 +7623,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 863;
+		rLoc = 842;
 		rType = 0;
 		vrLen = 518;
 		vrLoc = 0;
@@ -7525,7 +7643,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 863;
+		rLoc = 842;
 		rType = 0;
 		vrLen = 307;
 		vrLoc = 211;
@@ -7535,7 +7653,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 863;
+		rLoc = 842;
 		rType = 0;
 		vrLen = 306;
 		vrLoc = 211;
@@ -7545,7 +7663,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 863;
+		rLoc = 842;
 		rType = 0;
 		vrLen = 547;
 		vrLoc = 0;
@@ -7555,7 +7673,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5365;
+		rLoc = 5004;
 		rType = 0;
 		vrLen = 1086;
 		vrLoc = 4648;
@@ -7565,7 +7683,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 863;
+		rLoc = 842;
 		rType = 0;
 		vrLen = 547;
 		vrLoc = 0;
@@ -7575,7 +7693,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5313;
+		rLoc = 4952;
 		rType = 0;
 		vrLen = 1088;
 		vrLoc = 4648;
@@ -7585,7 +7703,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5313;
+		rLoc = 4952;
 		rType = 0;
 		vrLen = 960;
 		vrLoc = 4553;
@@ -7595,7 +7713,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 863;
+		rLoc = 842;
 		rType = 0;
 		vrLen = 306;
 		vrLoc = 211;
@@ -7605,7 +7723,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5311;
+		rLoc = 4950;
 		rType = 0;
 		vrLen = 409;
 		vrLoc = 4899;
@@ -7635,7 +7753,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 863;
+		rLoc = 842;
 		rType = 0;
 		vrLen = 672;
 		vrLoc = 547;
@@ -7645,7 +7763,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5313;
+		rLoc = 4952;
 		rType = 0;
 		vrLen = 638;
 		vrLoc = 4644;
@@ -7655,7 +7773,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5311;
+		rLoc = 4950;
 		rType = 0;
 		vrLen = 1008;
 		vrLoc = 4644;
@@ -7685,7 +7803,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 863;
+		rLoc = 842;
 		rType = 0;
 		vrLen = 882;
 		vrLoc = 547;
@@ -7695,7 +7813,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5313;
+		rLoc = 4952;
 		rType = 0;
 		vrLen = 638;
 		vrLoc = 4644;
@@ -7725,7 +7843,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 863;
+		rLoc = 842;
 		rType = 0;
 		vrLen = 672;
 		vrLoc = 547;
@@ -7735,7 +7853,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5344;
+		rLoc = 4983;
 		rType = 0;
 		vrLen = 641;
 		vrLoc = 4644;
@@ -7745,7 +7863,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5344;
+		rLoc = 4983;
 		rType = 0;
 		vrLen = 561;
 		vrLoc = 4826;
@@ -7755,7 +7873,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5344;
+		rLoc = 4983;
 		rType = 0;
 		vrLen = 386;
 		vrLoc = 4899;
@@ -7775,7 +7893,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 81";
 		rLen = 0;
-		rLoc = 1981;
+		rLoc = 1967;
 		rType = 0;
 		vrLen = 621;
 		vrLoc = 1653;
@@ -7784,8 +7902,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 49";
-		rLen = 4;
-		rLoc = 1410;
+		rLen = 0;
+		rLoc = 1365;
 		rType = 0;
 		vrLen = 742;
 		vrLoc = 1077;
@@ -7795,7 +7913,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 863;
+		rLoc = 842;
 		rType = 0;
 		vrLen = 672;
 		vrLoc = 547;
@@ -7805,7 +7923,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5344;
+		rLoc = 4983;
 		rType = 0;
 		vrLen = 631;
 		vrLoc = 4826;
@@ -7825,7 +7943,7 @@
 		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
 		name = "OneBubbleView.m: 81";
 		rLen = 0;
-		rLoc = 1981;
+		rLoc = 1967;
 		rType = 0;
 		vrLen = 621;
 		vrLoc = 1653;
@@ -7834,8 +7952,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 49";
-		rLen = 4;
-		rLoc = 1410;
+		rLen = 0;
+		rLoc = 1365;
 		rType = 0;
 		vrLen = 742;
 		vrLoc = 1077;
@@ -7845,7 +7963,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 813;
+		rLoc = 792;
 		rType = 0;
 		vrLen = 592;
 		vrLoc = 512;
@@ -7855,7 +7973,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 813;
+		rLoc = 792;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 514;
@@ -7865,7 +7983,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 162";
 		rLen = 0;
-		rLoc = 5344;
+		rLoc = 4983;
 		rType = 0;
 		vrLen = 355;
 		vrLoc = 4932;
@@ -7875,7 +7993,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 813;
+		rLoc = 792;
 		rType = 0;
 		vrLen = 517;
 		vrLoc = 587;
@@ -7885,7 +8003,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 39";
 		rLen = 0;
-		rLoc = 903;
+		rLoc = 882;
 		rType = 0;
 		vrLen = 1074;
 		vrLoc = 585;
@@ -7894,8 +8012,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 49";
-		rLen = 4;
-		rLoc = 1410;
+		rLen = 0;
+		rLoc = 1365;
 		rType = 0;
 		vrLen = 911;
 		vrLoc = 936;
@@ -7905,7 +8023,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 39";
 		rLen = 0;
-		rLoc = 903;
+		rLoc = 882;
 		rType = 0;
 		vrLen = 1074;
 		vrLoc = 585;
@@ -7915,7 +8033,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 167";
 		rLen = 0;
-		rLoc = 5254;
+		rLoc = 4893;
 		rType = 0;
 		vrLen = 913;
 		vrLoc = 4899;
@@ -7925,7 +8043,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 167";
 		rLen = 0;
-		rLoc = 5254;
+		rLoc = 4893;
 		rType = 0;
 		vrLen = 886;
 		vrLoc = 4826;
@@ -7935,7 +8053,7 @@
 		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
 		name = "BubblesView.m: 38";
 		rLen = 0;
-		rLoc = 813;
+		rLoc = 792;
 		rType = 0;
 		vrLen = 487;
 		vrLoc = 547;
@@ -7945,7 +8063,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 166";
 		rLen = 0;
-		rLoc = 5222;
+		rLoc = 4861;
 		rType = 0;
 		vrLen = 339;
 		vrLoc = 5073;
@@ -7955,9 +8073,1189 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
 		name = "BubblesViewController.m: 166";
 		rLen = 0;
-		rLoc = 5222;
+		rLoc = 4861;
 		rType = 0;
 		vrLen = 887;
 		vrLoc = 4826;
+	};
+	4DD85B2E0FB2FCEC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
+		name = "BubblesView.h: 11";
+		rLen = 0;
+		rLoc = 189;
+		rType = 0;
+		vrLen = 256;
+		vrLoc = 0;
+	};
+	4DD85B2F0FB2FCEC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* BubblesViewController.h */;
+		name = "BubblesViewController.h: 15";
+		rLen = 0;
+		rLoc = 312;
+		rType = 0;
+		vrLen = 856;
+		vrLoc = 86;
+	};
+	4DD85B300FB2FCEC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 34";
+		rLen = 12;
+		rLoc = 596;
+		rType = 0;
+		vrLen = 879;
+		vrLoc = 517;
+	};
+	4DD85B310FB2FCEC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 45";
+		rLen = 0;
+		rLoc = 1365;
+		rType = 0;
+		vrLen = 890;
+		vrLoc = 937;
+	};
+	4DD85B320FB2FCEC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 155";
+		rLen = 0;
+		rLoc = 4630;
+		rType = 0;
+		vrLen = 983;
+		vrLoc = 3062;
+	};
+	4DD85B330FB2FCEC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 34";
+		rLen = 0;
+		rLoc = 608;
+		rType = 0;
+		vrLen = 769;
+		vrLoc = 346;
+	};
+	4DD85B340FB2FCEC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
+		name = "BubblesView.h: 11";
+		rLen = 0;
+		rLoc = 189;
+		rType = 0;
+		vrLen = 256;
+		vrLoc = 0;
+	};
+	4DD85B350FB2FCEC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 168";
+		rLen = 58;
+		rLoc = 4950;
+		rType = 0;
+		vrLen = 586;
+		vrLoc = 5070;
+	};
+	4DD85B360FB2FCEC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 34";
+		rLen = 0;
+		rLoc = 588;
+		rType = 0;
+		vrLen = 882;
+		vrLoc = 517;
+	};
+	4DD85B370FB2FCEC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 168";
+		rLen = 58;
+		rLoc = 4950;
+		rType = 0;
+		vrLen = 982;
+		vrLoc = 4830;
+	};
+	4DD85B380FB2FCEC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
+		name = "BubblesView.h: 11";
+		rLen = 0;
+		rLoc = 189;
+		rType = 0;
+		vrLen = 256;
+		vrLoc = 0;
+	};
+	4DD85B390FB2FCEC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 168";
+		rLen = 58;
+		rLoc = 4950;
+		rType = 0;
+		vrLen = 982;
+		vrLoc = 4830;
+	};
+	4DD85B3A0FB2FCEC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* BubblesViewController.h */;
+		name = "BubblesViewController.h: 15";
+		rLen = 0;
+		rLoc = 312;
+		rType = 0;
+		vrLen = 856;
+		vrLoc = 86;
+	};
+	4DD85B3B0FB2FCEC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 45";
+		rLen = 0;
+		rLoc = 1365;
+		rType = 0;
+		vrLen = 891;
+		vrLoc = 937;
+	};
+	4DD85B3C0FB2FCEC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 34";
+		rLen = 12;
+		rLoc = 596;
+		rType = 0;
+		vrLen = 879;
+		vrLoc = 517;
+	};
+	4DD85B3D0FB2FCEC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 45";
+		rLen = 0;
+		rLoc = 1341;
+		rType = 0;
+		vrLen = 895;
+		vrLoc = 937;
+	};
+	4DD85B3E0FB2FCED00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 45";
+		rLen = 0;
+		rLoc = 1341;
+		rType = 0;
+		vrLen = 983;
+		vrLoc = 708;
+	};
+	4DD85B3F0FB2FCFF00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 45";
+		rLen = 0;
+		rLoc = 1341;
+		rType = 0;
+		vrLen = 421;
+		vrLoc = 1411;
+	};
+	4DD85B420FB2FE0A00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 45";
+		rLen = 0;
+		rLoc = 1307;
+		rType = 0;
+		vrLen = 816;
+		vrLoc = 936;
+	};
+	4DD85B430FB2FE0A00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DD85A620FB2F07A00A61B5B /* Session.h */;
+		name = "Session.h: 18";
+		rLen = 28;
+		rLoc = 303;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	4DD85B440FB2FE0A00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DD85A630FB2F07A00A61B5B /* Session.m */;
+		name = "Session.m: 21";
+		rLen = 0;
+		rLoc = 360;
+		rType = 0;
+		vrLen = 452;
+		vrLoc = 0;
+	};
+	4DD85B450FB2FE0A00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 45";
+		rLen = 0;
+		rLoc = 1307;
+		rType = 0;
+		vrLen = 816;
+		vrLoc = 936;
+	};
+	4DD85B460FB2FE0A00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DD85A630FB2F07A00A61B5B /* Session.m */;
+		name = "Session.m: 21";
+		rLen = 0;
+		rLoc = 360;
+		rType = 0;
+		vrLen = 452;
+		vrLoc = 0;
+	};
+	4DD85B470FB2FE0A00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DD85A620FB2F07A00A61B5B /* Session.h */;
+		name = "Session.h: 18";
+		rLen = 28;
+		rLoc = 303;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	4DD85B480FB2FE0A00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DD85A630FB2F07A00A61B5B /* Session.m */;
+		name = "Session.m: 29";
+		rLen = 0;
+		rLoc = 507;
+		rType = 0;
+		vrLen = 492;
+		vrLoc = 17;
+	};
+	4DD85B490FB2FE0B00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DD85A630FB2F07A00A61B5B /* Session.m */;
+		name = "Session.m: 29";
+		rLen = 0;
+		rLoc = 507;
+		rType = 0;
+		vrLen = 385;
+		vrLoc = 131;
+	};
+	4DD85B4A0FB2FE3300A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 46";
+		rLen = 0;
+		rLoc = 1341;
+		rType = 0;
+		vrLen = 279;
+		vrLoc = 1193;
+	};
+	4DD85B4B0FB2FE3300A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DD85A630FB2F07A00A61B5B /* Session.m */;
+		name = "Session.m: 29";
+		rLen = 0;
+		rLoc = 506;
+		rType = 0;
+		vrLen = 261;
+		vrLoc = 248;
+	};
+	4DD85B4D0FB2FE8E00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DD85A630FB2F07A00A61B5B /* Session.m */;
+		name = "Session.m: 29";
+		rLen = 0;
+		rLoc = 506;
+		rType = 0;
+		vrLen = 485;
+		vrLoc = 32;
+	};
+	4DD85B4E0FB2FE8E00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DD85A620FB2F07A00A61B5B /* Session.h */;
+		name = "Session.h: 18";
+		rLen = 28;
+		rLoc = 303;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	4DD85B4F0FB2FE8E00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 34";
+		rLen = 12;
+		rLoc = 596;
+		rType = 0;
+		vrLen = 913;
+		vrLoc = 790;
+	};
+	4DD85B500FB2FE8E00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 129";
+		rLen = 3;
+		rLoc = 4159;
+		rType = 0;
+		vrLen = 1235;
+		vrLoc = 3255;
+	};
+	4DD85B510FB2FE8E00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 158";
+		rLen = 0;
+		rLoc = 4799;
+		rType = 0;
+		vrLen = 978;
+		vrLoc = 4537;
+	};
+	4DD85B520FB2FE8E00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DD85A630FB2F07A00A61B5B /* Session.m */;
+		name = "Session.m: 29";
+		rLen = 0;
+		rLoc = 506;
+		rType = 0;
+		vrLen = 444;
+		vrLoc = 72;
+	};
+	4DD85B530FB2FE8E00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 81";
+		rLen = 0;
+		rLoc = 1967;
+		rType = 0;
+		vrLen = 946;
+		vrLoc = 1809;
+	};
+	4DD85B540FB2FE8E00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 34";
+		rLen = 12;
+		rLoc = 596;
+		rType = 0;
+		vrLen = 952;
+		vrLoc = 790;
+	};
+	4DD85B550FB2FE8E00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 158";
+		rLen = 0;
+		rLoc = 4799;
+		rType = 0;
+		vrLen = 978;
+		vrLoc = 4537;
+	};
+	4DD85B560FB2FE8E00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DD85A630FB2F07A00A61B5B /* Session.m */;
+		name = "Session.m: 29";
+		rLen = 0;
+		rLoc = 506;
+		rType = 0;
+		vrLen = 485;
+		vrLoc = 32;
+	};
+	4DD85B570FB2FE8E00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DD85A620FB2F07A00A61B5B /* Session.h */;
+		name = "Session.h: 18";
+		rLen = 28;
+		rLoc = 303;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	4DD85B580FB2FE8E00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 81";
+		rLen = 0;
+		rLoc = 1967;
+		rType = 0;
+		vrLen = 945;
+		vrLoc = 1809;
+	};
+	4DD85B590FB2FE8E00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 34";
+		rLen = 12;
+		rLoc = 596;
+		rType = 0;
+		vrLen = 913;
+		vrLoc = 790;
+	};
+	4DD85B5A0FB2FE8E00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 129";
+		rLen = 3;
+		rLoc = 4159;
+		rType = 0;
+		vrLen = 1235;
+		vrLoc = 3255;
+	};
+	4DD85B5B0FB2FE8E00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 158";
+		rLen = 0;
+		rLoc = 4799;
+		rType = 0;
+		vrLen = 983;
+		vrLoc = 4537;
+	};
+	4DD85B5C0FB2FE8F00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 158";
+		rLen = 0;
+		rLoc = 4799;
+		rType = 0;
+		vrLen = 941;
+		vrLoc = 4455;
+	};
+	4DD85B5D0FB3001A00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4DD85A630FB2F07A00A61B5B /* Session.m */;
+		name = "Session.m: 29";
+		rLen = 0;
+		rLoc = 506;
+		rType = 0;
+		vrLen = 204;
+		vrLoc = 313;
+	};
+	4DD85B5E0FB3001A00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 158";
+		rLen = 0;
+		rLoc = 4799;
+		rType = 0;
+		vrLen = 380;
+		vrLoc = 4801;
+	};
+	4DD85B600FB300D000A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 118";
+		rLen = 0;
+		rLoc = 3509;
+		rType = 0;
+		vrLen = 1258;
+		vrLoc = 2930;
+	};
+	4DD85B610FB300D000A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 129";
+		rLen = 3;
+		rLoc = 4159;
+		rType = 0;
+		vrLen = 1359;
+		vrLoc = 3197;
+	};
+	4DD85B620FB300D000A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 118";
+		rLen = 0;
+		rLoc = 3509;
+		rType = 0;
+		vrLen = 1258;
+		vrLoc = 2930;
+	};
+	4DD85B630FB300D000A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 106";
+		rLen = 0;
+		rLoc = 3181;
+		rType = 0;
+		vrLen = 1140;
+		vrLoc = 1768;
+	};
+	4DD85B640FB300D100A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 106";
+		rLen = 0;
+		rLoc = 3181;
+		rType = 0;
+		vrLen = 1023;
+		vrLoc = 1768;
+	};
+	4DD85B660FB300FE00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 106";
+		rLen = 0;
+		rLoc = 3181;
+		rType = 0;
+		vrLen = 1052;
+		vrLoc = 1737;
+	};
+	4DD85B670FB3012500A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 152";
+		rLen = 0;
+		rLoc = 4799;
+		rType = 0;
+		vrLen = 380;
+		vrLoc = 4629;
+	};
+	4DD85B680FB3012500A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 13";
+		rLen = 0;
+		rLoc = 246;
+		rType = 0;
+		vrLen = 412;
+		vrLoc = 140;
+	};
+	4DD85B6A0FB3014700A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 13";
+		rLen = 0;
+		rLoc = 246;
+		rType = 0;
+		vrLen = 647;
+		vrLoc = 0;
+	};
+	4DD85B6B0FB3014700A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
+		name = "BubblesView.h: 11";
+		rLen = 0;
+		rLoc = 189;
+		rType = 0;
+		vrLen = 256;
+		vrLoc = 0;
+	};
+	4DD85B6C0FB3014700A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 34";
+		rLen = 12;
+		rLoc = 596;
+		rType = 0;
+		vrLen = 757;
+		vrLoc = 410;
+	};
+	4DD85B6D0FB3014700A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 118";
+		rLen = 0;
+		rLoc = 3509;
+		rType = 0;
+		vrLen = 1162;
+		vrLoc = 3026;
+	};
+	4DD85B6E0FB3014700A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 13";
+		rLen = 0;
+		rLoc = 246;
+		rType = 0;
+		vrLen = 647;
+		vrLoc = 0;
+	};
+	4DD85B6F0FB3014700A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 118";
+		rLen = 0;
+		rLoc = 3509;
+		rType = 0;
+		vrLen = 1162;
+		vrLoc = 3026;
+	};
+	4DD85B700FB3014700A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02410FAF689E00CFC1C7 /* BubblesView.h */;
+		name = "BubblesView.h: 11";
+		rLen = 0;
+		rLoc = 189;
+		rType = 0;
+		vrLen = 256;
+		vrLoc = 0;
+	};
+	4DD85B710FB3014700A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 34";
+		rLen = 12;
+		rLoc = 596;
+		rType = 0;
+		vrLen = 757;
+		vrLoc = 410;
+	};
+	4DD85B720FB3014700A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 37";
+		rLen = 0;
+		rLoc = 1021;
+		rType = 0;
+		vrLen = 963;
+		vrLoc = 669;
+	};
+	4DD85B730FB3014700A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 37";
+		rLen = 0;
+		rLoc = 1021;
+		rType = 0;
+		vrLen = 709;
+		vrLoc = 655;
+	};
+	4DD85B750FB3016800A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 37";
+		rLen = 0;
+		rLoc = 1021;
+		rType = 0;
+		vrLen = 710;
+		vrLoc = 655;
+	};
+	4DD85B760FB301BF00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 13";
+		rLen = 0;
+		rLoc = 246;
+		rType = 0;
+		vrLen = 393;
+		vrLoc = 78;
+	};
+	4DD85B770FB301BF00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 37";
+		rLen = 0;
+		rLoc = 958;
+		rType = 0;
+		vrLen = 428;
+		vrLoc = 937;
+	};
+	4DD85B790FB302DB00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 37";
+		rLen = 0;
+		rLoc = 958;
+		rType = 0;
+		vrLen = 729;
+		vrLoc = 936;
+	};
+	4DD85B7A0FB302DB00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 13";
+		rLen = 0;
+		rLoc = 246;
+		rType = 0;
+		vrLen = 647;
+		vrLoc = 0;
+	};
+	4DD85B7B0FB302DB00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 37";
+		rLen = 0;
+		rLoc = 958;
+		rType = 0;
+		vrLen = 729;
+		vrLoc = 936;
+	};
+	4DD85B7C0FB302DB00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 100";
+		rLen = 0;
+		rLoc = 2833;
+		rType = 0;
+		vrLen = 1232;
+		vrLoc = 1895;
+	};
+	4DD85B7D0FB302DC00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 100";
+		rLen = 0;
+		rLoc = 2833;
+		rType = 0;
+		vrLen = 1146;
+		vrLoc = 2108;
+	};
+	4DD85B7F0FB3034700A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 101";
+		rLen = 0;
+		rLoc = 2833;
+		rType = 0;
+		vrLen = 1264;
+		vrLoc = 2108;
+	};
+	4DD85B810FB3037F00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 100";
+		rLen = 0;
+		rLoc = 2833;
+		rType = 0;
+		vrLen = 1243;
+		vrLoc = 2108;
+	};
+	4DD85B830FB303E400A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 101";
+		rLen = 0;
+		rLoc = 2833;
+		rType = 0;
+		vrLen = 1241;
+		vrLoc = 2108;
+	};
+	4DD85B850FB303FE00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 101";
+		rLen = 0;
+		rLoc = 2833;
+		rType = 0;
+		vrLen = 1241;
+		vrLoc = 2108;
+	};
+	4DD85B860FB3049C00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 37";
+		rLen = 0;
+		rLoc = 958;
+		rType = 0;
+		vrLen = 568;
+		vrLoc = 708;
+	};
+	4DD85B870FB3049C00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 103";
+		rLen = 0;
+		rLoc = 2903;
+		rType = 0;
+		vrLen = 676;
+		vrLoc = 2480;
+	};
+	4DD85B890FB304DF00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 121";
+		rLen = 0;
+		rLoc = 3724;
+		rType = 0;
+		vrLen = 1421;
+		vrLoc = 3118;
+	};
+	4DD85B8A0FB304E000A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 121";
+		rLen = 0;
+		rLoc = 3724;
+		rType = 0;
+		vrLen = 1381;
+		vrLoc = 2947;
+	};
+	4DD85B8B0FB3050100A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 121";
+		rLen = 0;
+		rLoc = 3724;
+		rType = 0;
+		vrLen = 651;
+		vrLoc = 3118;
+	};
+	4DD85B8D0FB3050B00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 121";
+		rLen = 0;
+		rLoc = 3717;
+		rType = 0;
+		vrLen = 1381;
+		vrLoc = 2948;
+	};
+	4DD85B8E0FB3050B00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 121";
+		rLen = 0;
+		rLoc = 3717;
+		rType = 0;
+		vrLen = 1381;
+		vrLoc = 2947;
+	};
+	4DD85B8F0FB305A400A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 121";
+		rLen = 0;
+		rLoc = 3717;
+		rType = 0;
+		vrLen = 668;
+		vrLoc = 3300;
+	};
+	4DD85B930FB3060400A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 34";
+		rLen = 12;
+		rLoc = 596;
+		rType = 0;
+		vrLen = 878;
+		vrLoc = 518;
+	};
+	4DD85B940FB3060400A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 121";
+		rLen = 0;
+		rLoc = 3717;
+		rType = 0;
+		vrLen = 1380;
+		vrLoc = 2948;
+	};
+	4DD85B950FB3060400A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 121";
+		rLen = 0;
+		rLoc = 3717;
+		rType = 0;
+		vrLen = 1380;
+		vrLoc = 2948;
+	};
+	4DD85B960FB3060400A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 34";
+		rLen = 12;
+		rLoc = 596;
+		rType = 0;
+		vrLen = 878;
+		vrLoc = 518;
+	};
+	4DD85B970FB3060400A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 124";
+		rLen = 0;
+		rLoc = 3795;
+		rType = 0;
+		vrLen = 1402;
+		vrLoc = 2948;
+	};
+	4DD85B980FB3060500A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 124";
+		rLen = 0;
+		rLoc = 3795;
+		rType = 0;
+		vrLen = 1262;
+		vrLoc = 3118;
+	};
+	4DD85B990FB3061400A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 124";
+		rLen = 0;
+		rLoc = 3795;
+		rType = 0;
+		vrLen = 627;
+		vrLoc = 3212;
+	};
+	4DD85B9B0FB3064A00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 75";
+		rLen = 0;
+		rLoc = 1880;
+		rType = 0;
+		vrLen = 985;
+		vrLoc = 1436;
+	};
+	4DD85B9C0FB3064B00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 75";
+		rLen = 0;
+		rLoc = 1880;
+		rType = 0;
+		vrLen = 886;
+		vrLoc = 1405;
+	};
+	4DD85B9E0FB3066300A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 75";
+		rLen = 0;
+		rLoc = 1880;
+		rType = 0;
+		vrLen = 886;
+		vrLoc = 1405;
+	};
+	4DD85B9F0FB306DE00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 46";
+		rLen = 0;
+		rLoc = 1029;
+		rType = 0;
+		vrLen = 369;
+		vrLoc = 1139;
+	};
+	4DD85BA10FB3071900A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 37";
+		rLen = 0;
+		rLoc = 958;
+		rType = 0;
+		vrLen = 918;
+		vrLoc = 1665;
+	};
+	4DD85BA20FB3071900A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 79";
+		rLen = 19;
+		rLoc = 1928;
+		rType = 0;
+		vrLen = 1036;
+		vrLoc = 1506;
+	};
+	4DD85BA30FB3071900A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 35";
+		rLen = 0;
+		rLoc = 640;
+		rType = 0;
+		vrLen = 879;
+		vrLoc = 517;
+	};
+	4DD85BA40FB3071900A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 46";
+		rLen = 0;
+		rLoc = 1029;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 949;
+	};
+	4DD85BA50FB3071900A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 35";
+		rLen = 0;
+		rLoc = 640;
+		rType = 0;
+		vrLen = 881;
+		vrLoc = 517;
+	};
+	4DD85BA60FB3071900A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */;
+		name = "BubblesViewController.m: 37";
+		rLen = 0;
+		rLoc = 958;
+		rType = 0;
+		vrLen = 918;
+		vrLoc = 1665;
+	};
+	4DD85BA70FB3071900A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 79";
+		rLen = 19;
+		rLoc = 1928;
+		rType = 0;
+		vrLen = 1036;
+		vrLoc = 1506;
+	};
+	4DD85BA80FB3071900A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 31";
+		rLen = 0;
+		rLoc = 578;
+		rType = 0;
+		vrLen = 762;
+		vrLoc = 348;
+	};
+	4DD85BA90FB3071A00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 31";
+		rLen = 0;
+		rLoc = 578;
+		rType = 0;
+		vrLen = 706;
+		vrLoc = 240;
+	};
+	4DD85BAA0FB3073500A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 46";
+		rLen = 0;
+		rLoc = 1029;
+		rType = 0;
+		vrLen = 367;
+		vrLoc = 1139;
+	};
+	4DD85BAB0FB3073500A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 31";
+		rLen = 0;
+		rLoc = 578;
+		rType = 0;
+		vrLen = 263;
+		vrLoc = 348;
+	};
+	4DD85BAD0FB3074900A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 31";
+		rLen = 0;
+		rLoc = 578;
+		rType = 0;
+		vrLen = 773;
+		vrLoc = 240;
+	};
+	4DD85BAE0FB3074900A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 79";
+		rLen = 19;
+		rLoc = 1928;
+		rType = 0;
+		vrLen = 979;
+		vrLoc = 1506;
+	};
+	4DD85BAF0FB3074900A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 31";
+		rLen = 0;
+		rLoc = 578;
+		rType = 0;
+		vrLen = 773;
+		vrLoc = 240;
+	};
+	4DD85BB00FB3074900A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 41";
+		rLen = 0;
+		rLoc = 881;
+		rType = 0;
+		vrLen = 582;
+		vrLoc = 621;
+	};
+	4DD85BB10FB3074A00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 41";
+		rLen = 0;
+		rLoc = 881;
+		rType = 0;
+		vrLen = 604;
+		vrLoc = 583;
+	};
+	4DD85BB30FB3089900A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 31";
+		rLen = 0;
+		rLoc = 578;
+		rType = 0;
+		vrLen = 341;
+		vrLoc = 449;
+	};
+	4DD85BB40FB3089900A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 44";
+		rLen = 0;
+		rLoc = 964;
+		rType = 0;
+		vrLen = 334;
+		vrLoc = 758;
+	};
+	4DD85BB50FB3089C00A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 44";
+		rLen = 0;
+		rLoc = 964;
+		rType = 0;
+		vrLen = 605;
+		vrLoc = 583;
+	};
+	4DD85BB80FB309B600A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 44";
+		rLen = 0;
+		rLoc = 964;
+		rType = 0;
+		vrLen = 605;
+		vrLoc = 583;
+	};
+	4DD85BB90FB309B600A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 31";
+		rLen = 0;
+		rLoc = 578;
+		rType = 0;
+		vrLen = 773;
+		vrLoc = 240;
+	};
+	4DD85BBA0FB309B600A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */;
+		name = "OneBubbleView.m: 44";
+		rLen = 0;
+		rLoc = 964;
+		rType = 0;
+		vrLen = 605;
+		vrLoc = 583;
+	};
+	4DD85BBB0FB309B600A61B5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 55";
+		rLen = 0;
+		rLoc = 1382;
+		rType = 0;
+		vrLen = 1053;
+		vrLoc = 1114;
 	};
 }
