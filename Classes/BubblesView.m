@@ -13,6 +13,8 @@
 
 @implementation BubblesView
 
+@synthesize wandImage;
+
 CGPoint randomPointBetween(NSInteger x, NSInteger y) {
   return CGPointMake(random() % x, random() % y);
 }
@@ -27,12 +29,12 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
 */
 
 - (CGPoint)wandCenterPoint {
-  return CGPointMake(155.0f, 370.0f);
+  return CGPointMake(160.0f, 410.0f);
 }
 
 - (void)launchBubble {
   CGRect bubbleFrame = CGRectMake(10.0f, 0.0f,
-                                  300.0f, 300.0f);
+                                  155.0f, 155.0f);
 
   OneBubbleView *oneBubble = [[OneBubbleView alloc] initWithFrame:bubbleFrame];
   oneBubble.velocity = [[Session sharedSession] getVelocity];
@@ -66,7 +68,9 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
 }
 
 
-- (void)drawRect:(CGRect)rect { 
+- (void)drawRect:(CGRect)rect {
+  // TODO: render the wand (above the bubbles)
+  //[self.wandImage drawInRect:wandFrame];
 }
 
 - (void)dealloc {

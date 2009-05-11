@@ -32,7 +32,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 @synthesize audioRecorder;
 @synthesize audioLevels; // an array of two floating point values that represents the current recording or playback audio level
 @synthesize peakLevels;
-@synthesize imagePicker;
+//@synthesize imagePicker;
 
 
 - (void)initTimers {
@@ -163,7 +163,8 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 }
 
 - (void)setNormalizedVelocity:(float)level {
-  float max = 0.6f;
+  // the min and max levels come directly from the mic
+  float max = 0.8f;
   float min = 0.05f;
   float range = max - min;
   if (level < min) level = min;
@@ -233,6 +234,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
   [audioRecorder dealloc];
   [super dealloc];
 }
+
 
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.

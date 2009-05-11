@@ -17,9 +17,12 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
     
-    // Override point for customization after app launch    
-    [window addSubview:viewController.view];
-    [window makeKeyAndVisible];
+  // Override point for customization after app launch    
+  //[application setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:NO];
+  [application setStatusBarHidden:YES animated:YES];
+
+  [window addSubview:viewController.view];
+  [window makeKeyAndVisible];
 }
 
 

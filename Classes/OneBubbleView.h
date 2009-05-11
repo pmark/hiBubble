@@ -15,7 +15,9 @@
   UIImage *image; 
 }
 
++ (NSString*)defaultImageName;
 -(void)setImageByName:(NSString*)name;
+-(void)changeImage:(NSString*)name;
 -(void)animateBirthAtPoint:(CGPoint)point;
 -(void)animateFloatPhase:(OneBubbleView*)oneBubble;
 

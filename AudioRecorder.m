@@ -79,7 +79,7 @@ static void propertyListenerCallback (
 @synthesize stopping;
 
 - (id) init { //WithURL: fileURL {
-	NSLog (@"initializing a recorder object.");
+	//NSLog (@"initializing a recorder object.");
 	self = [super init];
 	
 	if (self != nil) {

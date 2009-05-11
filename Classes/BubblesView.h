@@ -10,9 +10,11 @@
 #import "OneBubbleView.h"
 
 @interface BubblesView : UIView {
+  UIImage *wandImage; 
 }
 
 -(void)launchBubble;
+@property (nonatomic,retain) UIImage *wandImage;
 
 
 
