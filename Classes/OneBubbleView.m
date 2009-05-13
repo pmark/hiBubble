@@ -40,7 +40,7 @@ int randomPolarity() {
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
       // only select bubble 2, 3, or 4
-      int bubbleNum = randomNumber(5) + 6;
+      int bubbleNum = randomNumber(5) + 7;
       [self setImageByName:[NSString stringWithFormat:@"bubble%i.png", bubbleNum]];
       //[self setImageByName:@"bubble7.png"];
 

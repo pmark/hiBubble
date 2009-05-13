@@ -273,28 +273,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>20</integer>
-									<integer>13</integer>
-									<integer>0</integer>
-								</array>
-								<array>
-									<integer>21</integer>
-									<integer>13</integer>
-									<integer>0</integer>
-								</array>
-								<array>
-									<integer>22</integer>
-									<integer>13</integer>
-									<integer>0</integer>
-								</array>
-								<array>
-									<integer>23</integer>
-									<integer>13</integer>
-									<integer>0</integer>
-								</array>
-								<array>
-									<integer>24</integer>
-									<integer>13</integer>
+									<integer>9</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -342,7 +322,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4DF29CDE0FB8A870009342C8</string>
+										<string>4D332FE70FBB64A7002FE2C8</string>
 										<key>history</key>
 										<array>
 											<string>4DD85C5D0FB369F100A61B5B</string>
@@ -352,7 +332,6 @@
 											<string>4DD85CD80FB387AD00A61B5B</string>
 											<string>4DD85CD90FB387AD00A61B5B</string>
 											<string>4DD85D320FB39CD200A61B5B</string>
-											<string>4DD85D340FB39CD200A61B5B</string>
 											<string>4DD85D5F0FB39D4500A61B5B</string>
 											<string>4DD85E1C0FB4DF3C00A61B5B</string>
 											<string>4DD85E1E0FB4DF3C00A61B5B</string>
@@ -366,7 +345,9 @@
 											<string>4DF29C310FB808EA009342C8</string>
 											<string>4DF29C6E0FB80DA3009342C8</string>
 											<string>4DF29C870FB80F2D009342C8</string>
-											<string>4DF29CD00FB8A765009342C8</string>
+											<string>4DF29CF80FB8AC43009342C8</string>
+											<string>4DF29CF90FB8AC43009342C8</string>
+											<string>4DF29D000FB8AD37009342C8</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -392,19 +373,7 @@
 											<string>4DD85D8A0FB39E0F00A61B5B</string>
 											<string>4DD85D8B0FB39E0F00A61B5B</string>
 											<string>4DD85E700FB4E26E00A61B5B</string>
-											<string>4DF29C200FB8055A009342C8</string>
-											<string>4DF29C210FB8055A009342C8</string>
-											<string>4DF29C220FB8055A009342C8</string>
-											<string>4DF29C330FB808EA009342C8</string>
-											<string>4DF29C340FB808EA009342C8</string>
-											<string>4DF29C4E0FB80A41009342C8</string>
-											<string>4DF29C590FB80A7A009342C8</string>
-											<string>4DF29C6B0FB80CCE009342C8</string>
-											<string>4DF29C700FB80DA3009342C8</string>
-											<string>4DF29C7F0FB80EC6009342C8</string>
-											<string>4DF29C890FB80F2D009342C8</string>
-											<string>4DF29C9F0FB81133009342C8</string>
-											<string>4DF29CC70FB8A593009342C8</string>
+											<string>4DF29CFB0FB8AC43009342C8</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -523,11 +492,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4DF29C120FB7FFA4009342C8</string>
+				<string>4D332FDD0FBB6427002FE2C8</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>4DF29C130FB7FFA4009342C8</string>
+				<string>4D332FDE0FBB6427002FE2C8</string>
 				<string>4D2B020E0FAF66DE00CFC1C7</string>
-				<string>4DF29C140FB7FFA4009342C8</string>
+				<string>4D332FDF0FBB6427002FE2C8</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -580,7 +549,7 @@
 						<key>Frame</key>
 						<string>{{0, 0}, {1440, 158}}</string>
 						<key>RubberWindowFrame</key>
-						<string>-2 209 1440 819 0 0 1680 1028 </string>
+						<string>-2 59 1440 819 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -604,8 +573,8 @@
 								<string>yes</string>
 								<key>sizes</key>
 								<array>
-									<string>{{0, 0}, {697, 196}}</string>
-									<string>{{697, 0}, {743, 196}}</string>
+									<string>{{0, 0}, {697, 198}}</string>
+									<string>{{697, 0}, {743, 198}}</string>
 								</array>
 							</dict>
 							<key>VerticalSplitView</key>
@@ -620,8 +589,8 @@
 								<string>yes</string>
 								<key>sizes</key>
 								<array>
-									<string>{{0, 0}, {1440, 196}}</string>
-									<string>{{0, 196}, {1440, 419}}</string>
+									<string>{{0, 0}, {1440, 198}}</string>
+									<string>{{0, 198}, {1440, 417}}</string>
 								</array>
 							</dict>
 						</dict>
@@ -654,12 +623,12 @@
 								<real>513</real>
 							</array>
 							<key>Frame</key>
-							<string>{{697, 0}, {743, 196}}</string>
+							<string>{{697, 0}, {743, 198}}</string>
 							<key>RubberWindowFrame</key>
-							<string>-2 209 1440 819 0 0 1680 1028 </string>
+							<string>-2 59 1440 819 0 0 1440 878 </string>
 						</dict>
 						<key>RubberWindowFrame</key>
-						<string>-2 209 1440 819 0 0 1680 1028 </string>
+						<string>-2 59 1440 819 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -682,14 +651,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4DF29C150FB7FFA4009342C8</string>
+				<string>4D332FE00FBB6427002FE2C8</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>4DF29C160FB7FFA4009342C8</string>
-				<string>4DF29C170FB7FFA4009342C8</string>
-				<string>4DF29C180FB7FFA4009342C8</string>
-				<string>4DF29C190FB7FFA4009342C8</string>
-				<string>4DF29C0D0FB7FF98009342C8</string>
+				<string>4D332FE10FBB6427002FE2C8</string>
+				<string>4D332FE20FBB6427002FE2C8</string>
+				<string>4D332FE30FBB6427002FE2C8</string>
+				<string>4D332FE40FBB6427002FE2C8</string>
+				<string>4D332FD60FBB6423002FE2C8</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -722,7 +691,7 @@
 		<string>/Users/mark/projects/iphone/exploration/Bubble Blow/Bubble.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>-2 209 1440 819 0 0 1680 1028 </string>
+	<string>-2 59 1440 819 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

@@ -34,6 +34,9 @@
 		4DF29CC20FB8A582009342C8 /* bubble8.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF29CBD0FB8A582009342C8 /* bubble8.png */; };
 		4DF29CC30FB8A582009342C8 /* bubble10.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF29CBE0FB8A582009342C8 /* bubble10.png */; };
 		4DF29CC40FB8A582009342C8 /* bubble7.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF29CBF0FB8A582009342C8 /* bubble7.png */; };
+		4DF29CE90FB8AB55009342C8 /* bubble11.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF29CE80FB8AB55009342C8 /* bubble11.png */; };
+		4DF29CF50FB8AC37009342C8 /* bubble12.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF29CF30FB8AC37009342C8 /* bubble12.png */; };
+		4DF29CF60FB8AC37009342C8 /* bubble13.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF29CF40FB8AC37009342C8 /* bubble13.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,9 @@
 		4DF29CBD0FB8A582009342C8 /* bubble8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble8.png; sourceTree = "<group>"; };
 		4DF29CBE0FB8A582009342C8 /* bubble10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble10.png; sourceTree = "<group>"; };
 		4DF29CBF0FB8A582009342C8 /* bubble7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble7.png; sourceTree = "<group>"; };
+		4DF29CE80FB8AB55009342C8 /* bubble11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble11.png; sourceTree = "<group>"; };
+		4DF29CF30FB8AC37009342C8 /* bubble12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble12.png; sourceTree = "<group>"; };
+		4DF29CF40FB8AC37009342C8 /* bubble13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble13.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Bubble-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Bubble-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,7 +159,10 @@
 				4DD85D240FB39BFD00A61B5B /* bubble1.png */,
 				4D2B03EB0FB0228A00CFC1C7 /* bubble2.png */,
 				4DD85D260FB39C0600A61B5B /* bubble3.png */,
+				4DF29CE80FB8AB55009342C8 /* bubble11.png */,
 				4DF29CBB0FB8A582009342C8 /* bubble9.png */,
+				4DF29CF30FB8AC37009342C8 /* bubble12.png */,
+				4DF29CF40FB8AC37009342C8 /* bubble13.png */,
 				4DF29CBC0FB8A582009342C8 /* bubble6.png */,
 				4DF29CBD0FB8A582009342C8 /* bubble8.png */,
 				4DF29CBE0FB8A582009342C8 /* bubble10.png */,
@@ -234,6 +243,9 @@
 				4DF29CC20FB8A582009342C8 /* bubble8.png in Resources */,
 				4DF29CC30FB8A582009342C8 /* bubble10.png in Resources */,
 				4DF29CC40FB8A582009342C8 /* bubble7.png in Resources */,
+				4DF29CE90FB8AB55009342C8 /* bubble11.png in Resources */,
+				4DF29CF50FB8AC37009342C8 /* bubble12.png in Resources */,
+				4DF29CF60FB8AC37009342C8 /* bubble13.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
