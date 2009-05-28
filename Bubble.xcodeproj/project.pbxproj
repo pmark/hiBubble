@@ -22,28 +22,22 @@
 		4D2B0B370FB2C1DF00CFC1C7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2B0B360FB2C1DF00CFC1C7 /* AudioToolbox.framework */; };
 		4D38DEAE0FB2D8F900231B96 /* AudioQueueObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D38DEAB0FB2D8F900231B96 /* AudioQueueObject.m */; };
 		4D38DEAF0FB2D8F900231B96 /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D38DEAD0FB2D8F900231B96 /* AudioRecorder.m */; };
+		4D57734B0FC3470E002B2086 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D57734A0FC3470E002B2086 /* MenuViewController.m */; };
+		4D57734D0FC34738002B2086 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D57734C0FC34738002B2086 /* MenuView.xib */; };
+		4D5773510FC34934002B2086 /* menu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5773500FC34934002B2086 /* menu_bg.png */; };
+		4D5773540FC34AFF002B2086 /* seanote.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5773530FC34AFF002B2086 /* seanote.png */; };
+		4D5773560FC34BAB002B2086 /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5773550FC34BAB002B2086 /* logo1.png */; };
 		4DD85A640FB2F07A00A61B5B /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD85A630FB2F07A00A61B5B /* Session.m */; };
 		4DD85C9C0FB373E900A61B5B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD85C9B0FB373E900A61B5B /* Default.png */; };
 		4DD85CA90FB3810400A61B5B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD85CA80FB3810400A61B5B /* Icon.png */; };
 		4DD85D250FB39BFD00A61B5B /* bubble1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD85D240FB39BFD00A61B5B /* bubble1.png */; };
 		4DD85D290FB39C0600A61B5B /* bubble3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD85D260FB39C0600A61B5B /* bubble3.png */; };
-		4DD85D2A0FB39C0600A61B5B /* bubble4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD85D270FB39C0600A61B5B /* bubble4.png */; };
-		4DD85D2B0FB39C0600A61B5B /* bubble5.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD85D280FB39C0600A61B5B /* bubble5.png */; };
-		4DF29CC00FB8A582009342C8 /* bubble9.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF29CBB0FB8A582009342C8 /* bubble9.png */; };
-		4DF29CC10FB8A582009342C8 /* bubble6.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF29CBC0FB8A582009342C8 /* bubble6.png */; };
-		4DF29CC20FB8A582009342C8 /* bubble8.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF29CBD0FB8A582009342C8 /* bubble8.png */; };
-		4DF29CC30FB8A582009342C8 /* bubble10.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF29CBE0FB8A582009342C8 /* bubble10.png */; };
-		4DF29CC40FB8A582009342C8 /* bubble7.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF29CBF0FB8A582009342C8 /* bubble7.png */; };
-		4DF29CE90FB8AB55009342C8 /* bubble11.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF29CE80FB8AB55009342C8 /* bubble11.png */; };
-		4DF29CF50FB8AC37009342C8 /* bubble12.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF29CF30FB8AC37009342C8 /* bubble12.png */; };
-		4DF29CF60FB8AC37009342C8 /* bubble13.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF29CF40FB8AC37009342C8 /* bubble13.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* BubblesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubblesAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* BubblesAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubblesAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* Bubble Blow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bubble Blow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2899E5210DE3E06400AC0155 /* BubblesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BubblesViewController.xib; sourceTree = "<group>"; };
@@ -64,22 +58,19 @@
 		4D38DEAB0FB2D8F900231B96 /* AudioQueueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioQueueObject.m; sourceTree = "<group>"; };
 		4D38DEAC0FB2D8F900231B96 /* AudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioRecorder.h; sourceTree = "<group>"; };
 		4D38DEAD0FB2D8F900231B96 /* AudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioRecorder.m; sourceTree = "<group>"; };
+		4D5773490FC3470E002B2086 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		4D57734A0FC3470E002B2086 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		4D57734C0FC34738002B2086 /* MenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
+		4D5773500FC34934002B2086 /* menu_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_bg.png; sourceTree = "<group>"; };
+		4D5773530FC34AFF002B2086 /* seanote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seanote.png; sourceTree = "<group>"; };
+		4D5773550FC34BAB002B2086 /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
+		4D7635E50FCD24100003451E /* hiBubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = hiBubble.app; path = "build/Distribution-iphoneos/hiBubble.app"; sourceTree = "<group>"; };
 		4DD85A620FB2F07A00A61B5B /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		4DD85A630FB2F07A00A61B5B /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		4DD85C9B0FB373E900A61B5B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4DD85CA80FB3810400A61B5B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		4DD85D240FB39BFD00A61B5B /* bubble1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble1.png; sourceTree = "<group>"; };
 		4DD85D260FB39C0600A61B5B /* bubble3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble3.png; sourceTree = "<group>"; };
-		4DD85D270FB39C0600A61B5B /* bubble4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble4.png; sourceTree = "<group>"; };
-		4DD85D280FB39C0600A61B5B /* bubble5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble5.png; sourceTree = "<group>"; };
-		4DF29CBB0FB8A582009342C8 /* bubble9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble9.png; sourceTree = "<group>"; };
-		4DF29CBC0FB8A582009342C8 /* bubble6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble6.png; sourceTree = "<group>"; };
-		4DF29CBD0FB8A582009342C8 /* bubble8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble8.png; sourceTree = "<group>"; };
-		4DF29CBE0FB8A582009342C8 /* bubble10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble10.png; sourceTree = "<group>"; };
-		4DF29CBF0FB8A582009342C8 /* bubble7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble7.png; sourceTree = "<group>"; };
-		4DF29CE80FB8AB55009342C8 /* bubble11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble11.png; sourceTree = "<group>"; };
-		4DF29CF30FB8AC37009342C8 /* bubble12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble12.png; sourceTree = "<group>"; };
-		4DF29CF40FB8AC37009342C8 /* bubble13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble13.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Bubble-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Bubble-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +103,8 @@
 				4D2B02AC0FAF7B9000CFC1C7 /* OneBubbleView.m */,
 				4DD85A620FB2F07A00A61B5B /* Session.h */,
 				4DD85A630FB2F07A00A61B5B /* Session.m */,
+				4D5773490FC3470E002B2086 /* MenuViewController.h */,
+				4D57734A0FC3470E002B2086 /* MenuViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -119,7 +112,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Bubble Blow.app */,
+				4D7635E50FCD24100003451E /* hiBubble.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,23 +147,17 @@
 			isa = PBXGroup;
 			children = (
 				2899E5210DE3E06400AC0155 /* BubblesViewController.xib */,
+				4D5773550FC34BAB002B2086 /* logo1.png */,
 				4DD85C9B0FB373E900A61B5B /* Default.png */,
 				4DD85CA80FB3810400A61B5B /* Icon.png */,
 				4DD85D240FB39BFD00A61B5B /* bubble1.png */,
+				4D5773530FC34AFF002B2086 /* seanote.png */,
 				4D2B03EB0FB0228A00CFC1C7 /* bubble2.png */,
+				4D5773500FC34934002B2086 /* menu_bg.png */,
 				4DD85D260FB39C0600A61B5B /* bubble3.png */,
-				4DF29CE80FB8AB55009342C8 /* bubble11.png */,
-				4DF29CBB0FB8A582009342C8 /* bubble9.png */,
-				4DF29CF30FB8AC37009342C8 /* bubble12.png */,
-				4DF29CF40FB8AC37009342C8 /* bubble13.png */,
-				4DF29CBC0FB8A582009342C8 /* bubble6.png */,
-				4DF29CBD0FB8A582009342C8 /* bubble8.png */,
-				4DF29CBE0FB8A582009342C8 /* bubble10.png */,
-				4DF29CBF0FB8A582009342C8 /* bubble7.png */,
-				4DD85D270FB39C0600A61B5B /* bubble4.png */,
-				4DD85D280FB39C0600A61B5B /* bubble5.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Bubble-Info.plist */,
+				4D57734C0FC34738002B2086 /* MenuView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -190,9 +177,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* Bubble */ = {
+		1D6058900D05DD3D006BFB54 /* hiBubble */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Bubble" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "hiBubble" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -202,9 +189,9 @@
 			);
 			dependencies = (
 			);
-			name = Bubble;
+			name = hiBubble;
 			productName = Bubbles;
-			productReference = 1D6058910D05DD3D006BFB54 /* Bubble Blow.app */;
+			productReference = 4D7635E50FCD24100003451E /* hiBubble.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -219,7 +206,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* Bubble */,
+				1D6058900D05DD3D006BFB54 /* hiBubble */,
 			);
 		};
 /* End PBXProject section */
@@ -236,16 +223,10 @@
 				4DD85CA90FB3810400A61B5B /* Icon.png in Resources */,
 				4DD85D250FB39BFD00A61B5B /* bubble1.png in Resources */,
 				4DD85D290FB39C0600A61B5B /* bubble3.png in Resources */,
-				4DD85D2A0FB39C0600A61B5B /* bubble4.png in Resources */,
-				4DD85D2B0FB39C0600A61B5B /* bubble5.png in Resources */,
-				4DF29CC00FB8A582009342C8 /* bubble9.png in Resources */,
-				4DF29CC10FB8A582009342C8 /* bubble6.png in Resources */,
-				4DF29CC20FB8A582009342C8 /* bubble8.png in Resources */,
-				4DF29CC30FB8A582009342C8 /* bubble10.png in Resources */,
-				4DF29CC40FB8A582009342C8 /* bubble7.png in Resources */,
-				4DF29CE90FB8AB55009342C8 /* bubble11.png in Resources */,
-				4DF29CF50FB8AC37009342C8 /* bubble12.png in Resources */,
-				4DF29CF60FB8AC37009342C8 /* bubble13.png in Resources */,
+				4D57734D0FC34738002B2086 /* MenuView.xib in Resources */,
+				4D5773510FC34934002B2086 /* menu_bg.png in Resources */,
+				4D5773540FC34AFF002B2086 /* seanote.png in Resources */,
+				4D5773560FC34BAB002B2086 /* logo1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +245,7 @@
 				4D38DEAE0FB2D8F900231B96 /* AudioQueueObject.m in Sources */,
 				4D38DEAF0FB2D8F900231B96 /* AudioRecorder.m in Sources */,
 				4DD85A640FB2F07A00A61B5B /* Session.m in Sources */,
+				4D57734B0FC3470E002B2086 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +262,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Bubble_Prefix.pch;
 				INFOPLIST_FILE = "Bubble-Info.plist";
-				PRODUCT_NAME = "Bubble Blow";
+				PRODUCT_NAME = hiBubble;
 			};
 			name = Debug;
 		};
@@ -288,13 +270,43 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bordertown Labs, LLC";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Bubble_Prefix.pch;
 				INFOPLIST_FILE = "Bubble-Info.plist";
-				PRODUCT_NAME = "Bubble Blow";
+				PRODUCT_NAME = hiBubble;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D3339582-5747-41DE-9E10-E207AB727348";
 			};
 			name = Release;
+		};
+		4D3330EF0FBC8E1D002FE2C8 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bordertown Labs, LLC";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D3339582-5747-41DE-9E10-E207AB727348";
+				SDKROOT = iphoneos2.2.1;
+			};
+			name = Distribution;
+		};
+		4D3330F00FBC8E1D002FE2C8 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bordertown Labs, LLC";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Bubble_Prefix.pch;
+				INFOPLIST_FILE = "Bubble-Info.plist";
+				PRODUCT_NAME = hiBubble;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D3339582-5747-41DE-9E10-E207AB727348";
+			};
+			name = Distribution;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -326,11 +338,12 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Bubble" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "hiBubble" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				4D3330F00FBC8E1D002FE2C8 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -340,6 +353,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				4D3330EF0FBC8E1D002FE2C8 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

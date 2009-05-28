@@ -29,7 +29,8 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
 */
 
 - (CGPoint)wandCenterPoint {
-  return CGPointMake(160.0f, 410.0f);
+  // 316 = 480 * 0.66
+  return CGPointMake(160.0f, 316.0f);
 }
 
 - (void)launchBubble {

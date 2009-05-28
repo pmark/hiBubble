@@ -36,7 +36,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 
 
 - (void)initTimers {
-	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.15 // seconds
+	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.05 // seconds
                                 target:	self
                               selector:	@selector(blow:)
                               userInfo:	nil		// extra info
@@ -165,12 +165,12 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 - (void)setNormalizedVelocity:(float)level {
   // the min and max levels come directly from the mic
   float max = 0.8f;
-  float min = 0.05f;
+  float min = 0.1f;
   float range = max - min;
   if (level < min) level = min;
   if (level > max) level = max;
   NSInteger newVelocity = ((level - min) / range) * 100;
-  [[Session sharedSession] setNewVelocity:newVelocity];  
+  [[Session sharedSession] setNewVelocity:newVelocity];
 }
 
 - (void)analyzeSound:(NSTimer *)timer {
@@ -192,7 +192,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 	if ([inQueue isRunning]) {
     
 		// create a timer for updating the audio level meter
-		self.monitorTimer = [NSTimer scheduledTimerWithTimeInterval:	0.25
+		self.monitorTimer = [NSTimer scheduledTimerWithTimeInterval:	0.12
                                                          target:	self
                                                        selector:	@selector (analyzeSound:)
                                                        userInfo:	inQueue

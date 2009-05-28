@@ -11,18 +11,21 @@
 
 @interface OneBubbleView : UIView {
   CGFloat startWidth;
+  CGFloat sizeScalar;
   NSInteger velocity;
   UIImage *image; 
+  NSTimer *popTimer;
 }
 
 + (NSString*)defaultImageName;
 -(void)setImageByName:(NSString*)name;
--(void)changeImage:(NSString*)name;
 -(void)animateBirthAtPoint:(CGPoint)point;
 -(void)animateFloatPhase:(OneBubbleView*)oneBubble;
 
 @property (nonatomic) CGFloat startWidth;
+@property (nonatomic) CGFloat sizeScalar;
 @property (assign) NSInteger velocity;
 @property (nonatomic,retain) UIImage *image;
+@property (nonatomic,retain) NSTimer *popTimer;
 
 @end
