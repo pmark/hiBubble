@@ -85,6 +85,8 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
   self.imagePicker.allowsImageEditing = YES; 
   [self presentModalViewController:self.imagePicker animated:YES];
   */
+	
+	[self askForRating];
   
   // allocate memory to hold audio level values
   audioLevels = calloc (2, sizeof (AudioQueueLevelMeterState));
@@ -103,6 +105,28 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
   [self startRecording];  
 }
 
+-(void)askForRating {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+	if (! [defaults objectForKey:@"firstRun"]) {
+		[defaults setObject:[NSDate date] forKey:@"firstRun"];
+	}
+
+	NSInteger daysSinceInstall = [[NSDate date] timeIntervalSinceDate:[defaults objectForKey:@"firstRun"]] / 86400;
+	//if (daysSinceInstall > 10 && [defaults boolForKey:@"askedForRating"] == NO) {
+		[[[UIAlertView alloc] initWithTitle:@"How do you like this app?" message:@"Your rating is extremely valuable!" delegate:self cancelButtonTitle:@"Later" otherButtonTitles:@"Rate it now", nil] show];
+		[defaults setBool:YES forKey:@"askedForRating"];
+	//}
+
+	[[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if (buttonIndex == 1) {
+		NSURL *url = [NSURL URLWithString:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=316682771&mt=8"];
+		[[UIApplication sharedApplication] openURL:url];
+	}
+}
 
 /*
 // Override to allow orientations other than the default portrait orientation.

@@ -64,7 +64,7 @@
 		4D5773500FC34934002B2086 /* menu_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_bg.png; sourceTree = "<group>"; };
 		4D5773530FC34AFF002B2086 /* seanote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seanote.png; sourceTree = "<group>"; };
 		4D5773550FC34BAB002B2086 /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
-		4D7635E50FCD24100003451E /* hiBubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = hiBubble.app; path = "build/Distribution-iphoneos/hiBubble.app"; sourceTree = "<group>"; };
+		4D7635E50FCD24100003451E /* hiBubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hiBubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD85A620FB2F07A00A61B5B /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		4DD85A630FB2F07A00A61B5B /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		4DD85C9B0FB373E900A61B5B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };

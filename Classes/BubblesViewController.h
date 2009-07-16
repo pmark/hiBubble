@@ -10,7 +10,7 @@
 #import "AudioQueueObject.h"
 #import "AudioRecorder.h"
 
-@interface BubblesViewController : UIViewController {
+@interface BubblesViewController : UIViewController <UIAlertViewDelegate> {
   NSTimer *blowTimer;
   NSTimer *monitorTimer;
 	Float32 *audioLevels;
@@ -31,6 +31,7 @@
 - (void)analyzeSound:(NSTimer *)timer;
 - (void)updateUserInterfaceOnAudioQueueStateChange: (AudioQueueObject *) inQueue;
 - (void)setNormalizedVelocity:(float)level;
-
+- (void)askForRating;
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 @end
 
