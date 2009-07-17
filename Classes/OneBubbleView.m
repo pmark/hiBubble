@@ -7,6 +7,8 @@
 //
 
 #import "OneBubbleView.h"
+#import "BubblesView.h"
+#import "BubblesAppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
 
 
@@ -52,7 +54,11 @@ int randomPolarity() {
 }
 
 - (void)popBubble:(NSTimer *)timer {
-  [self removeFromSuperview];  
+	[(BubblesView*)self.superview popBubble:self];
+}
+
+-(BOOL)containsPoint:(CGPoint)point {
+	return true;
 }
 
 - (id)initWithFrame:(CGRect)frame {

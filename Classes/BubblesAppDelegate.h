@@ -18,5 +18,7 @@
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet BubblesViewController *viewController;
 
+- (void)playSoundFile:(NSString*)fileName ofType:(NSString*)fileType;
+
 @end
 

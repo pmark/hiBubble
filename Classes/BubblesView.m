@@ -9,24 +9,21 @@
 #import "BubblesView.h"
 #import "OneBubbleView.h"
 #import "Session.h"
+#import "BubblesAppDelegate.h"
 
 
 @implementation BubblesView
 
-@synthesize wandImage;
+@synthesize wandImage, bubbleStack;
 
 CGPoint randomPointBetween(NSInteger x, NSInteger y) {
   return CGPointMake(random() % x, random() % y);
 }
 CGPoint randomPoint() {return randomPointBetween(256, 396);}
 
-/*
-- (id)initWithFrame:(CGRect)frame {
-  if (self = [super initWithFrame:frame]) {
-  }
-  return self;
+-(void)initBubbleStack {
+	bubbleStack = [[NSMutableArray alloc] init];
 }
-*/
 
 - (CGPoint)wandCenterPoint {
   // 316 = 480 * 0.66
@@ -40,7 +37,22 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
   OneBubbleView *oneBubble = [[OneBubbleView alloc] initWithFrame:bubbleFrame];
   oneBubble.velocity = [[Session sharedSession] getVelocity];
   [self addSubview:oneBubble];
-  [oneBubble animateBirthAtPoint:[self wandCenterPoint]];  
+  [oneBubble animateBirthAtPoint:[self wandCenterPoint]];
+	
+	// push bubble onto stack
+	[bubbleStack addObject:oneBubble];
+}
+
+-(void)popBubble:(OneBubbleView*)bubbleView {
+	[bubbleView retain];
+	
+	// this calls release
+	[bubbleStack removeObject:bubbleView];
+
+	// this calls release
+  [bubbleView removeFromSuperview];  
+	[(BubblesAppDelegate*)[[UIApplication sharedApplication] delegate] playSoundFile:@"pop1" ofType:@"wav"];
+	
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -48,8 +60,15 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
   if ([touch tapCount] == 2) {
     // double tap, anyone?
   }
-	//CGPoint touchPoint = [touch locationInView:self];
-	[self launchBubble];  
+	
+	// pop the bubble!
+	CGPoint touchPoint = [touch locationInView:self];
+	for (OneBubbleView *bubbleView in bubbleStack) {
+		if ([bubbleView containsPoint:touchPoint]) {
+			[self popBubble:bubbleView];
+			break;
+		}
+	}
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {	
@@ -75,6 +94,7 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
 }
 
 - (void)dealloc {
+	[bubbleStack release];
   [super dealloc];
 }
 

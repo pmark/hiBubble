@@ -36,7 +36,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 
 
 - (void)initTimers {
-	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.05 // seconds
+	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.08 // seconds
                                 target:	self
                               selector:	@selector(blow:)
                               userInfo:	nil		// extra info
@@ -44,8 +44,8 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 }
 
 - (void)blow:(NSTimer *)timer {
-  if ([[Session sharedSession] bubblesShouldAppear]) {
-    [self.view launchBubble];
+  if ([(Session*)[Session sharedSession] bubblesShouldAppear]) {
+    [(BubblesView*)self.view launchBubble];
   }
 }
 
@@ -70,6 +70,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
   [super viewDidLoad];
 
   [self initTimers];
+	[(BubblesView*)self.view initBubbleStack];
 
   self.view.backgroundColor = [UIColor blackColor];
 
@@ -113,10 +114,10 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 	}
 
 	NSInteger daysSinceInstall = [[NSDate date] timeIntervalSinceDate:[defaults objectForKey:@"firstRun"]] / 86400;
-	//if (daysSinceInstall > 10 && [defaults boolForKey:@"askedForRating"] == NO) {
+	if (daysSinceInstall > 10 && [defaults boolForKey:@"askedForRating"] == NO) {
 		[[[UIAlertView alloc] initWithTitle:@"How do you like this app?" message:@"Your rating is extremely valuable!" delegate:self cancelButtonTitle:@"Later" otherButtonTitles:@"Rate it now", nil] show];
 		[defaults setBool:YES forKey:@"askedForRating"];
-	//}
+	}
 
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }

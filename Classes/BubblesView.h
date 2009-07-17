@@ -11,11 +11,15 @@
 
 @interface BubblesView : UIView {
   UIImage *wandImage; 
+	NSMutableArray *bubbleStack;
 }
 
--(void)launchBubble;
 @property (nonatomic,retain) UIImage *wandImage;
+@property (nonatomic,retain) NSMutableArray *bubbleStack;
 
+-(void)launchBubble;
+-(void)initBubbleStack;
+-(void)popBubble:(OneBubbleView*)bubbleView;
 
 
 @end
