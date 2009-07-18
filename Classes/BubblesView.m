@@ -14,7 +14,7 @@
 
 @implementation BubblesView
 
-@synthesize wandImage, bubbleStack;
+@synthesize wandImage, bubbleStack, bubbleCounter;
 
 CGPoint randomPointBetween(NSInteger x, NSInteger y) {
   return CGPointMake(random() % x, random() % y);
@@ -23,6 +23,7 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
 
 -(void)initBubbleStack {
 	bubbleStack = [[NSMutableArray alloc] init];
+	bubbleCounter = 0;
 }
 
 - (CGPoint)wandCenterPoint {
@@ -31,46 +32,61 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
 }
 
 - (void)launchBubble {
-  CGRect bubbleFrame = CGRectMake(10.0f, 0.0f,
-                                  155.0f, 155.0f);
+  CGRect bubbleFrame = CGRectMake(10.0f, 0.0f, 155.0f, 155.0f);
 
   OneBubbleView *oneBubble = [[OneBubbleView alloc] initWithFrame:bubbleFrame];
+	oneBubble.tag = [self nextBubbleTag];
   oneBubble.velocity = [[Session sharedSession] getVelocity];
   [self addSubview:oneBubble];
   [oneBubble animateBirthAtPoint:[self wandCenterPoint]];
 	
 	// push bubble onto stack
-	[bubbleStack addObject:oneBubble];
+	//[bubbleStack addObject:oneBubble];
 }
 
 -(void)popBubble:(OneBubbleView*)bubbleView {
-	[bubbleView retain];
-	
-	// this calls release
-	[bubbleStack removeObject:bubbleView];
-
-	// this calls release
-  [bubbleView removeFromSuperview];  
-	[(BubblesAppDelegate*)[[UIApplication sharedApplication] delegate] playSoundFile:@"pop1" ofType:@"wav"];
-	
+	[self releaseBubble:bubbleView];
+	[(BubblesAppDelegate*)[[UIApplication sharedApplication] delegate] playSoundFile:@"pop1" ofType:@"wav"];	
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	UITouch *touch = [touches anyObject];
-  if ([touch tapCount] == 2) {
-    // double tap, anyone?
-  }
+-(void)releaseBubble:(OneBubbleView*)bubbleView {
+	// TODO: check for memory leak with Instruments
+	//[bubbleView retain];
 	
-	// pop the bubble!
-	CGPoint touchPoint = [touch locationInView:self];
-	for (OneBubbleView *bubbleView in bubbleStack) {
-		if ([bubbleView containsPoint:touchPoint]) {
-			[self popBubble:bubbleView];
+	// this calls release
+	//[bubbleStack removeObject:bubbleView];
+
+	// this calls release
+  [bubbleView removeFromSuperview];
+}
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	//NSLog(@"BubblesView was touched");
+	UITouch *touch = [touches anyObject];
+	CGPoint point = [touch locationInView:self]; 
+
+	for (OneBubbleView *oneBubble in [self.subviews reverseObjectEnumerator]) {
+		NSLog(@"Checking %i", oneBubble.tag);
+		
+		id preslay = [oneBubble.layer presentationLayer];
+		CGRect bframe;
+		if (preslay == nil) {
+			bframe = oneBubble.frame;
+		} else {
+			bframe = [preslay frame];
+		}
+
+		if (CGRectContainsPoint(bframe, point) == 1) {
+		//if ([[(CALayer*)oneBubble.layer presentationLayer] containsPoint:point]) {
+			NSLog(@"Bubble %i touched by parent", oneBubble.tag);
+			[self popBubble:oneBubble];	
 			break;
 		}
 	}
 }
 
+/*
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {	
   // probably don't care about this event
 	//UITouch *touch = [touches anyObject];	
@@ -86,11 +102,16 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
   // not sure why/when this happens
 }
+*/
 
 
 - (void)drawRect:(CGRect)rect {
   // TODO: render the wand (above the bubbles)
   //[self.wandImage drawInRect:wandFrame];
+}
+
+-(NSInteger)nextBubbleTag {
+	return self.bubbleCounter--;
 }
 
 - (void)dealloc {

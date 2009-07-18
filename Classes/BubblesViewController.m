@@ -36,7 +36,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 
 
 - (void)initTimers {
-	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.08 // seconds
+	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.08 // 0.08 seconds is nice
                                 target:	self
                               selector:	@selector(blow:)
                               userInfo:	nil		// extra info
@@ -72,7 +72,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
   [self initTimers];
 	[(BubblesView*)self.view initBubbleStack];
 
-  self.view.backgroundColor = [UIColor blackColor];
+  self.view.backgroundColor = [UIColor whiteColor];
 
   /*
   //

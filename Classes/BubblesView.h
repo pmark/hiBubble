@@ -12,14 +12,16 @@
 @interface BubblesView : UIView {
   UIImage *wandImage; 
 	NSMutableArray *bubbleStack;
+	NSInteger bubbleCounter;
 }
 
 @property (nonatomic,retain) UIImage *wandImage;
 @property (nonatomic,retain) NSMutableArray *bubbleStack;
+@property (nonatomic,assign) NSInteger bubbleCounter;
 
 -(void)launchBubble;
 -(void)initBubbleStack;
 -(void)popBubble:(OneBubbleView*)bubbleView;
-
-
+-(void)releaseBubble:(OneBubbleView*)bubbleView;
+-(NSInteger)nextBubbleTag;
 @end

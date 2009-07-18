@@ -21,7 +21,6 @@
 -(void)setImageByName:(NSString*)name;
 -(void)animateBirthAtPoint:(CGPoint)point;
 -(void)animateFloatPhase:(OneBubbleView*)oneBubble;
--(BOOL)containsPoint:(CGPoint)point;
 
 @property (nonatomic) CGFloat startWidth;
 @property (nonatomic) CGFloat sizeScalar;

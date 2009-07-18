@@ -57,20 +57,19 @@ int randomPolarity() {
 	[(BubblesView*)self.superview popBubble:self];
 }
 
--(BOOL)containsPoint:(CGPoint)point {
-	return true;
-}
-
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
       // only select bubble 2, 3, or 4
       int bubbleNum = randomNumber(3) + 1;
       [self setImageByName:[NSString stringWithFormat:@"bubble%i.png", bubbleNum]];
-      self.opaque = NO;      
+      self.opaque = NO;
       
+			/*
+			// randomly pop some bubbles
       if (randomNumber(4) == 0) {
         [self createPopTimer];        
       }
+			*/
     }
     return self;
 }
@@ -150,7 +149,7 @@ int randomPolarity() {
   [UIView setAnimationDidStopSelector:@selector(bubbleFloatPhaseAnimationDidStop:finished:context:)];
   [UIView setAnimationDelegate:oneBubble];
   
-  CGFloat endScalar = oneBubble.sizeScalar * 0.1f;
+  CGFloat endScalar = oneBubble.sizeScalar * 0.4f;
   CGAffineTransform transform = CGAffineTransformConcat(
       CGAffineTransformMakeScale(endScalar, endScalar),
       CGAffineTransformMakeRotation((randomNumber(120) + 33) * randomPolarity()));
@@ -159,31 +158,39 @@ int randomPolarity() {
   [oneBubble setCenterToEndPoint];
   
   // fade out too
-  [CATransaction setValue:[NSNumber numberWithFloat:duration+0.3f] forKey:kCATransactionAnimationDuration];
-  CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-  fadeAnimation.toValue = [NSNumber numberWithFloat:0.33f];
-  fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-  [[oneBubble layer] addAnimation:fadeAnimation forKey:@"fadeAnimation"];  
+//  [CATransaction setValue:[NSNumber numberWithFloat:duration+0.3f] forKey:kCATransactionAnimationDuration];
+//  CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+//  fadeAnimation.toValue = [NSNumber numberWithFloat:0.33f];
+//  fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+//  [[oneBubble layer] addAnimation:fadeAnimation forKey:@"fadeAnimation"];  
   
 	[UIView commitAnimations];
 }
 
 - (void)bubbleFloatPhaseAnimationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
-  OneBubbleView *oneBubble = (OneBubbleView*)context;
-  [oneBubble removeFromSuperview];
-	[oneBubble release];
+//	[(BubblesView*)self.superview releaseBubble:(OneBubbleView*)context];
 }
 
 - (void)drawRect:(CGRect)rect {
   CGFloat alpha = (randomNumber(30) / 100.0f) + 0.5f;
-  CGRect frame = [self frame];
+	CGRect frame = [self bounds];
   frame.size.width = frame.size.height = self.image.size.width;
   frame.origin.x = frame.origin.y = 0.0f;
+
   [self.image drawInRect:frame blendMode:kCGBlendModeDifference alpha:alpha];
+	
+	NSString *str = [NSString stringWithFormat:@"%i", self.tag];
+	[str drawAtPoint:CGPointMake(0,0) withFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
 }
 
 - (void)setImageByName:(NSString*)name {
   self.image = [UIImage imageNamed:name];
+}
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	NSLog(@"Bubble %i touched", self.tag);	
+	[(BubblesView*)self.superview popBubble:self];	
 }
 
 - (void)dealloc {
