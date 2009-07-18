@@ -13,9 +13,10 @@
 
 
 #define GROW_ANIMATION_DURATION_SECONDS 0.6
-#define FLOAT_ANIMATION_DURATION_SECONDS 9.0
-#define MIN_BUBBLE_SCALAR 0.7
-#define FINAL_OPACITY 0.2
+#define FLOAT_ANIMATION_DURATION_SECONDS 7.0
+#define MIN_BUBBLE_SCALAR 0.8
+#define FINAL_OPACITY 0.25
+#define MAX_HORIZON_RADIUS 150.0
 
 @implementation OneBubbleView
 
@@ -91,6 +92,20 @@ int randomPolarity() {
 // Each bubble ends at a random point 
 // within a circular area with radius determined by velocity
 // where higher velocity makes a smaller radius.
+- (CGPoint)computeEndPoint {
+  int centerX = 160;
+  int centerY = 180;
+  int minRadius = 65;  
+  CGFloat maxRadius = MAX_HORIZON_RADIUS;  
+  CGFloat scaledRadius = maxRadius * [self velocityScalar];
+  int radius = scaledRadius + minRadius;
+  int randomRadius = randomNumber(radius);
+  int phi = randomNumber(360);
+  int x = cos(phi) * randomRadius + centerX;
+  int y = sin(phi) * randomRadius * 0.33f + centerY;
+  return CGPointMake(x, y);
+}
+
 - (void)setCenterToEndPoint {
   int centerX = 160;
   int centerY = 180;
@@ -142,7 +157,81 @@ int randomPolarity() {
 }
 
 -(void)animateFloatPhase:(OneBubbleView*)oneBubble {
+	oneBubble.alpha = 1.0f;
+	CGRect imageFrame = oneBubble.layer.frame;
+	CGPoint viewOrigin = oneBubble.layer.position;
+	
+	// Set up fade out effect
+	CABasicAnimation *fadeOutAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+	[fadeOutAnimation setToValue:[NSNumber numberWithFloat:FINAL_OPACITY]];
+	fadeOutAnimation.fillMode = kCAFillModeForwards;
+	fadeOutAnimation.removedOnCompletion = NO;
+	
+	// Set up rotation
+	CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+  rotationAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
+	NSNumber *radians = [NSNumber numberWithFloat:((randomNumber(160) + 33) * randomPolarity() * M_PI / 180.0f)];
+  rotationAnimation.toValue = radians;
+//	NSLog(@"rot to: %@", rotationAnimation.toValue * M_PI / 180);
+			
+	// Set up scaling
+	CABasicAnimation *resizeAnimation = [CABasicAnimation animationWithKeyPath:@"bounds.size"];
+	CGFloat endScalar = oneBubble.sizeScalar * 0.4f;
 
+	[resizeAnimation setToValue:[NSValue valueWithCGSize:CGSizeMake(
+			imageFrame.size.width * endScalar,
+			imageFrame.size.height * endScalar)]];
+	resizeAnimation.fillMode = kCAFillModeForwards;
+	resizeAnimation.removedOnCompletion = NO;
+	
+	// Set up path movement
+	CAKeyframeAnimation *pathAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+	pathAnimation.calculationMode = kCAAnimationPaced;
+	pathAnimation.fillMode = kCAFillModeForwards;
+	pathAnimation.removedOnCompletion = NO;
+	[pathAnimation setTimingFunctions:[NSArray arrayWithObjects:
+			[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut],
+			[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut], nil]];
+	
+	CGPoint startPoint = CGPointMake(
+			oneBubble.layer.position.x + randomNumberInRange(30, 70) * randomPolarity(), 
+			oneBubble.layer.position.y + randomNumberInRange(80, 200) * randomPolarity());
+	CGPoint midPoint = [self computeEndPoint];
+	CGPoint endPoint = [self computeEndPoint];
+	CGMutablePathRef curvedPath = CGPathCreateMutable();
+			
+	CGPathMoveToPoint(curvedPath, 
+			NULL,
+			viewOrigin.x, viewOrigin.y);
+	CGPathAddCurveToPoint(curvedPath, NULL, startPoint.x, startPoint.y, midPoint.x, midPoint.y, endPoint.x, endPoint.y);
+	pathAnimation.path = curvedPath;
+	//pathAnimation.duration = FLOAT_ANIMATION_DURATION_SECONDS / 2.0f;
+	CGPathRelease(curvedPath);
+	
+	CAAnimationGroup *group = [CAAnimationGroup animation];
+	group.delegate = self;
+	group.autoreverses = NO;
+	group.fillMode = kCAFillModeForwards;
+	group.removedOnCompletion = NO;
+	[group setAnimations:[NSArray arrayWithObjects:fadeOutAnimation, pathAnimation, 
+			resizeAnimation, rotationAnimation, nil]];
+	group.duration = FLOAT_ANIMATION_DURATION_SECONDS;
+	group.delegate = self;
+	[group setValue:oneBubble forKey:@"viewBeingAnimated"];
+	
+	[oneBubble.layer addAnimation:group forKey:@"savingAnimation"];
+}
+
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
+	OneBubbleView *bubble = (OneBubbleView*)[theAnimation valueForKey:@"viewBeingAnimated"];
+	[(BubblesView*)self.superview releaseBubble:bubble];
+}
+
+- (void)bubbleFloatPhaseAnimationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
+	[(BubblesView*)self.superview releaseBubble:(OneBubbleView*)context];
+}
+
+-(void)animateFloatPhase2:(OneBubbleView*)oneBubble {
   CGFloat duration = FLOAT_ANIMATION_DURATION_SECONDS * ([self velocityScalar] + 0.3f);
 	[UIView beginAnimations:nil context:oneBubble];
 	[UIView setAnimationDuration:duration];
@@ -162,14 +251,10 @@ int randomPolarity() {
   [CATransaction setValue:[NSNumber numberWithFloat:duration+0.3f] forKey:kCATransactionAnimationDuration];
   CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
   fadeAnimation.toValue = [NSNumber numberWithFloat:FINAL_OPACITY];
-  fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+  fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
   [[oneBubble layer] addAnimation:fadeAnimation forKey:@"fadeAnimation"];  
   
 	[UIView commitAnimations];
-}
-
-- (void)bubbleFloatPhaseAnimationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
-	[(BubblesView*)self.superview releaseBubble:(OneBubbleView*)context];
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -180,8 +265,8 @@ int randomPolarity() {
 
   [self.image drawInRect:frame blendMode:kCGBlendModeDifference alpha:alpha];
 	
-//	NSString *str = [NSString stringWithFormat:@"%i", self.tag];
-//	[str drawAtPoint:CGPointMake(0,0) withFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
+	NSString *str = [NSString stringWithFormat:@"%i", self.tag];
+	[str drawAtPoint:CGPointMake(0,0) withFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
 }
 
 - (void)setImageByName:(NSString*)name {
@@ -189,8 +274,12 @@ int randomPolarity() {
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	//NSLog(@"Bubble %i touched", self.tag);	
-	[(BubblesView*)self.superview popBubble:self];	
+	UITouch *touch = [touches anyObject];
+	CGPoint point = [touch locationInView:self]; 
+	if (CGRectContainsPoint([[self.layer presentationLayer] frame], point) == 1) {
+		NSLog(@"Bubble %i touched", self.tag);	
+		[(BubblesView*)self.superview popBubble:self];	
+	}
 }
 
 - (void)dealloc {
