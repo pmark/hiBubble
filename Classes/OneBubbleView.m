@@ -158,17 +158,17 @@ int randomPolarity() {
   [oneBubble setCenterToEndPoint];
   
   // fade out too
-//  [CATransaction setValue:[NSNumber numberWithFloat:duration+0.3f] forKey:kCATransactionAnimationDuration];
-//  CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-//  fadeAnimation.toValue = [NSNumber numberWithFloat:0.33f];
-//  fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-//  [[oneBubble layer] addAnimation:fadeAnimation forKey:@"fadeAnimation"];  
+  [CATransaction setValue:[NSNumber numberWithFloat:duration+0.3f] forKey:kCATransactionAnimationDuration];
+  CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+  fadeAnimation.toValue = [NSNumber numberWithFloat:0.40f];
+  fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+  [[oneBubble layer] addAnimation:fadeAnimation forKey:@"fadeAnimation"];  
   
 	[UIView commitAnimations];
 }
 
 - (void)bubbleFloatPhaseAnimationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
-//	[(BubblesView*)self.superview releaseBubble:(OneBubbleView*)context];
+	[(BubblesView*)self.superview releaseBubble:(OneBubbleView*)context];
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -179,17 +179,16 @@ int randomPolarity() {
 
   [self.image drawInRect:frame blendMode:kCGBlendModeDifference alpha:alpha];
 	
-	NSString *str = [NSString stringWithFormat:@"%i", self.tag];
-	[str drawAtPoint:CGPointMake(0,0) withFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
+//	NSString *str = [NSString stringWithFormat:@"%i", self.tag];
+//	[str drawAtPoint:CGPointMake(0,0) withFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
 }
 
 - (void)setImageByName:(NSString*)name {
   self.image = [UIImage imageNamed:name];
 }
 
-
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	NSLog(@"Bubble %i touched", self.tag);	
+	//NSLog(@"Bubble %i touched", self.tag);	
 	[(BubblesView*)self.superview popBubble:self];	
 }
 

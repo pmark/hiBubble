@@ -62,24 +62,14 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	//NSLog(@"BubblesView was touched");
 	UITouch *touch = [touches anyObject];
 	CGPoint point = [touch locationInView:self]; 
 
 	for (OneBubbleView *oneBubble in [self.subviews reverseObjectEnumerator]) {
-		NSLog(@"Checking %i", oneBubble.tag);
+		//NSLog(@"Checking %i", oneBubble.tag);
 		
-		id preslay = [oneBubble.layer presentationLayer];
-		CGRect bframe;
-		if (preslay == nil) {
-			bframe = oneBubble.frame;
-		} else {
-			bframe = [preslay frame];
-		}
-
-		if (CGRectContainsPoint(bframe, point) == 1) {
-		//if ([[(CALayer*)oneBubble.layer presentationLayer] containsPoint:point]) {
-			NSLog(@"Bubble %i touched by parent", oneBubble.tag);
+		if (CGRectContainsPoint([[oneBubble.layer presentationLayer] frame], point) == 1) {
+			//NSLog(@"Bubble %i touched by parent", oneBubble.tag);
 			[self popBubble:oneBubble];	
 			break;
 		}
