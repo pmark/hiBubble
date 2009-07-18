@@ -14,15 +14,14 @@
 
 @implementation BubblesView
 
-@synthesize wandImage, bubbleStack, bubbleCounter;
+@synthesize wandImage, bubbleCounter;
 
 CGPoint randomPointBetween(NSInteger x, NSInteger y) {
   return CGPointMake(random() % x, random() % y);
 }
 CGPoint randomPoint() {return randomPointBetween(256, 396);}
 
--(void)initBubbleStack {
-	bubbleStack = [[NSMutableArray alloc] init];
+-(void)initBubbleCounter {
 	bubbleCounter = 0;
 }
 
@@ -39,9 +38,6 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
   oneBubble.velocity = [[Session sharedSession] getVelocity];
   [self addSubview:oneBubble];
   [oneBubble animateBirthAtPoint:[self wandCenterPoint]];
-	
-	// push bubble onto stack
-	//[bubbleStack addObject:oneBubble];
 }
 
 -(void)popBubble:(OneBubbleView*)bubbleView {
@@ -51,11 +47,8 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
 
 -(void)releaseBubble:(OneBubbleView*)bubbleView {
 	// TODO: check for memory leak with Instruments
-	//[bubbleView retain];
+	[bubbleView retain];
 	
-	// this calls release
-	//[bubbleStack removeObject:bubbleView];
-
 	// this calls release
   [bubbleView removeFromSuperview];
 }
@@ -66,13 +59,23 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
 	CGPoint point = [touch locationInView:self]; 
 
 	for (OneBubbleView *oneBubble in [self.subviews reverseObjectEnumerator]) {
-		//NSLog(@"Checking %i", oneBubble.tag);
 		
 		if (CGRectContainsPoint([[oneBubble.layer presentationLayer] frame], point) == 1) {
 			//NSLog(@"Bubble %i touched by parent", oneBubble.tag);
 			[self popBubble:oneBubble];	
 			break;
+		} else {
+			if ([touch tapCount] > 1) {
+				[UIView beginAnimations:nil	context:nil];
+				[UIView setAnimationDelegate:self];
+				[UIView setAnimationDuration:1.0f];
+				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+				[UIView setAnimationBeginsFromCurrentState:YES];				
+				oneBubble.center = point;
+				[UIView commitAnimations];
+			}
 		}
+
 	}
 }
 
@@ -101,11 +104,13 @@ CGPoint randomPoint() {return randomPointBetween(256, 396);}
 }
 
 -(NSInteger)nextBubbleTag {
+	if (self.bubbleCounter == NSIntegerMin) {
+		self.bubbleCounter = 0;
+	}
 	return self.bubbleCounter--;
 }
 
 - (void)dealloc {
-	[bubbleStack release];
   [super dealloc];
 }
 

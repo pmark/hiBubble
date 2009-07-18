@@ -70,7 +70,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
   [super viewDidLoad];
 
   [self initTimers];
-	[(BubblesView*)self.view initBubbleStack];
+	[(BubblesView*)self.view initBubbleCounter];
 
   self.view.backgroundColor = [UIColor blackColor];
 

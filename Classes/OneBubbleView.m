@@ -12,9 +12,10 @@
 #import <QuartzCore/QuartzCore.h>
 
 
-#define GROW_ANIMATION_DURATION_SECONDS 0.7
-#define FLOAT_ANIMATION_DURATION_SECONDS 6.0
-#define MIN_BUBBLE_SCALAR 0.5
+#define GROW_ANIMATION_DURATION_SECONDS 0.6
+#define FLOAT_ANIMATION_DURATION_SECONDS 9.0
+#define MIN_BUBBLE_SCALAR 0.7
+#define FINAL_OPACITY 0.2
 
 @implementation OneBubbleView
 
@@ -160,7 +161,7 @@ int randomPolarity() {
   // fade out too
   [CATransaction setValue:[NSNumber numberWithFloat:duration+0.3f] forKey:kCATransactionAnimationDuration];
   CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-  fadeAnimation.toValue = [NSNumber numberWithFloat:0.40f];
+  fadeAnimation.toValue = [NSNumber numberWithFloat:FINAL_OPACITY];
   fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
   [[oneBubble layer] addAnimation:fadeAnimation forKey:@"fadeAnimation"];  
   
