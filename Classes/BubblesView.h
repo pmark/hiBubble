@@ -12,14 +12,20 @@
 @interface BubblesView : UIView {
   UIImage *wandImage; 
 	NSInteger bubbleCounter;
+	CGPoint wandCenterPoint;
+	id shakeDelegate;
 }
 
 @property (nonatomic,retain) UIImage *wandImage;
 @property (nonatomic,assign) NSInteger bubbleCounter;
+@property (nonatomic,assign) CGPoint wandCenterPoint;
+@property (nonatomic, retain) id shakeDelegate; 
 
--(void)launchBubble;
+-(void)launchBubble:(NSInteger)velocity;
 -(void)initBubbleCounter;
 -(void)popBubble:(OneBubbleView*)bubbleView;
--(void)releaseBubble:(OneBubbleView*)bubbleView;
+-(void)releaseBubble:(OneBubbleView*)bubbleView withSound:(NSString*)soundName;
 -(NSInteger)nextBubbleTag;
+-(void)popAllBubbles;
+
 @end

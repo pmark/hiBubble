@@ -9,9 +9,13 @@
 
 @interface Session : NSObject {
 	NSInteger velocity;
+	BOOL crazyMode;
+	BOOL appIsActive;
 }
 
 @property (assign) NSInteger velocity;
+@property (assign) BOOL crazyMode;
+@property (assign) BOOL appIsActive;
 
 -(void)setNewVelocity:(NSInteger)newVelocity;
 -(NSInteger)getVelocity;

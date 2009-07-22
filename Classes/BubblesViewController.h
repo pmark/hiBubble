@@ -17,6 +17,7 @@
 	Float32 *peakLevels;
 	AudioRecorder *audioRecorder;
   //UIImagePickerController *imagePicker;
+	CGPoint startTouchPosition;
 }
 
 @property (nonatomic,retain) NSTimer *blowTimer;
@@ -25,6 +26,7 @@
 @property (readwrite) Float32 *audioLevels;
 @property (readwrite) Float32 *peakLevels;
 //@property(nonatomic, retain) UIImagePickerController *imagePicker;
+@property (nonatomic) CGPoint startTouchPosition;
 
 - (void)stopRecording;
 - (void)startRecording;
@@ -33,5 +35,13 @@
 - (void)setNormalizedVelocity:(float)level;
 - (void)askForRating;
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
+
+-(void)singleTap:(NSSet*)touches;
+-(void)doubleTap:(NSSet*)touches;
+-(void)tripleTap:(NSSet*)touches;
+-(void)swipeRight:(NSSet *)touches withEvent:(UIEvent *)event;
+-(void)swipeLeft:(NSSet *)touches withEvent:(UIEvent *)event;
+-(void)shakeMotionBegan:(UIEvent *)event;
+
 @end
 

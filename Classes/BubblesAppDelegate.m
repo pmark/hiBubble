@@ -8,6 +8,7 @@
 
 #import "BubblesAppDelegate.h"
 #import "BubblesViewController.h"
+#import "Session.h"
 #import <AudioToolbox/AudioToolbox.h>
 
 @implementation BubblesAppDelegate
@@ -17,15 +18,23 @@
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
-    
   // Override point for customization after app launch    
   //[application setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:NO];
   [application setStatusBarHidden:YES animated:YES];
+	[UIAccelerometer sharedAccelerometer].delegate = self;
 
   [window addSubview:viewController.view];
   [window makeKeyAndVisible];
 }
 
+- (void)applicationWillResignActive:(UIApplication *)application {
+	// turn off the bubble maker
+	[Session sharedSession].appIsActive = false;
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+	[Session sharedSession].appIsActive = true;
+}
 
 - (void)dealloc {
     [viewController release];

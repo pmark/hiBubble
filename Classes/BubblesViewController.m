@@ -6,10 +6,17 @@
 //  Copyright __MyCompanyName__ 2009. All rights reserved.
 //
 
+#import "BubblesAppDelegate.h"
 #import "BubblesViewController.h"
 #import "OneBubbleView.h"
 #import "BubblesView.h"
 #import "Session.h"
+#import "BtlUtilities.h"
+#import <QuartzCore/QuartzCore.h>
+
+
+#define HORIZ_SWIPE_DRAG_MIN 170
+#define VERT_SWIPE_DRAG_MAX 100
 
 void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 	// This callback, being outside the implementation block, needs a reference 
@@ -33,10 +40,11 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 @synthesize audioLevels; // an array of two floating point values that represents the current recording or playback audio level
 @synthesize peakLevels;
 //@synthesize imagePicker;
+@synthesize startTouchPosition;
 
 
 - (void)initTimers {
-	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.08 // 0.08 seconds is nice
+	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.11 // 0.08 seconds is nice
                                 target:	self
                               selector:	@selector(blow:)
                               userInfo:	nil		// extra info
@@ -45,7 +53,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 
 - (void)blow:(NSTimer *)timer {
   if ([(Session*)[Session sharedSession] bubblesShouldAppear]) {
-    [(BubblesView*)self.view launchBubble];
+    [(BubblesView*)self.view launchBubble:false];
   }
 }
 
@@ -72,7 +80,11 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
   [self initTimers];
 	[(BubblesView*)self.view initBubbleCounter];
 
-  self.view.backgroundColor = [UIColor whiteColor];
+	self.view.clipsToBounds = YES;
+  self.view.backgroundColor = [UIColor blackColor];
+	
+	// 316 = 480 * 0.66
+	[(BubblesView*)self.view setWandCenterPoint:CGPointMake(160.0f, 316.0f)];
 
   /*
   //
@@ -87,8 +99,6 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
   [self presentModalViewController:self.imagePicker animated:YES];
   */
 	
-	[self askForRating];
-  
   // allocate memory to hold audio level values
   audioLevels = calloc (2, sizeof (AudioQueueLevelMeterState));
   peakLevels = calloc (2, sizeof (AudioQueueLevelMeterState));
@@ -106,6 +116,14 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
   [self startRecording];  
 }
 
+- (void) viewDidAppear:(BOOL)animated { 
+	[self.view becomeFirstResponder];
+	((BubblesView*)self.view).shakeDelegate = self;
+
+	[self askForRating];
+  	
+}
+
 -(void)askForRating {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
@@ -114,7 +132,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 	}
 
 	NSInteger daysSinceInstall = [[NSDate date] timeIntervalSinceDate:[defaults objectForKey:@"firstRun"]] / 86400;
-	if (daysSinceInstall > 10 && [defaults boolForKey:@"askedForRating"] == NO) {
+	if (daysSinceInstall > 9 && [defaults boolForKey:@"askedForRating"] == NO) {
 		[[[UIAlertView alloc] initWithTitle:@"How do you like this app?" message:@"Your rating is extremely valuable!" delegate:self cancelButtonTitle:@"Later" otherButtonTitles:@"Rate it now", nil] show];
 		[defaults setBool:YES forKey:@"askedForRating"];
 	}
@@ -160,7 +178,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 		
 		// before instantiating the recording audio queue object, 
 		//	set the audio session category
-		UInt32 sessionCategory = kAudioSessionCategory_RecordAudio;
+		UInt32 sessionCategory = kAudioSessionCategory_PlayAndRecord;
 		AudioSessionSetProperty (
                              kAudioSessionProperty_AudioCategory,
                              sizeof (sessionCategory),
@@ -254,6 +272,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 }
 
 - (void)dealloc {
+	[self.view resignFirstResponder];
 	[blowTimer dealloc];
 	[monitorTimer dealloc];
   [audioRecorder dealloc];
@@ -266,6 +285,154 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 	// e.g. self.myOutlet = nil;
 }
 
+
+#pragma mark 
+#pragma mark Touches
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	UITouch *touch = [touches anyObject];
+	CGPoint point = [touch locationInView:self.view];
+	self.startTouchPosition = point;
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+	UITouch *touch = [touches anyObject];
+	if (touch.view == self.view) {
+		CGPoint point = [touch locationInView:self.view];
+		//NSLog(@"Main view tapped at: %f, %f", point.x, point.y);
+		((BubblesView*)self.view).wandCenterPoint = point;
+		[(BubblesView*)self.view launchBubble:25];
+	}
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+	UITouch *touch = [touches anyObject];
+	CGPoint currentTouchPosition = [touch locationInView:self.view];
+	
+	// If the swipe tracks correctly.
+	if (fabsf(startTouchPosition.x - currentTouchPosition.x) >= HORIZ_SWIPE_DRAG_MIN &&
+			fabsf(startTouchPosition.y - currentTouchPosition.y) <= VERT_SWIPE_DRAG_MAX)
+	{
+		// It appears to be a swipe.
+		[NSObject cancelPreviousPerformRequestsWithTarget:self];
+		if (startTouchPosition.x < currentTouchPosition.x) {
+			[self swipeRight:touches withEvent:event];
+		} else {
+			[self swipeLeft:touches withEvent:event];
+		}
+		self.startTouchPosition = currentTouchPosition;
+	}
+	else
+	{
+		// Process a non-swipe event.
+	}
+}
+
+
+/*******
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event { 
+	UITouch *touch = [touches anyObject]; 
+	CGPoint point = [touch locationInView:nil];
+	self.startTouchPosition = point;
+	
+	NSLog(@"Begin Point: %f, %f", point.x, point.y);
+
+	if (touch.tapCount == 2) { 
+		[[self class] cancelPreviousPerformRequestsWithTarget:self];
+	} else if (touch.tapCount == 3) { 
+		[[self class] cancelPreviousPerformRequestsWithTarget:self];
+	} 
+} 
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event { 
+	UITouch *touch = [touches anyObject]; 
+	CGPoint point = [touch locationInView:nil];
+	NSLog(@"End Point: %f, %f", point.x, point.y);
+
+	if (touch.tapCount == 1) { 
+		[self performSelector:@selector(singleTap:) withObject:touches afterDelay:0.15f]; 
+		
+	} else if (touch.tapCount == 2) { 
+		[self performSelector:@selector(doubleTap:) withObject:touches afterDelay:0.15f]; 
+	} else if (touch.tapCount == 3) { 
+		[self tripleTap:touches];
+	} 
+}
+************/
+
+/*
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+	UITouch *touch = [touches anyObject];
+	NSUInteger tapCount = [touch tapCount];
+	startTouchPosition = [touch locationInView:self.view];
+	
+	switch (tapCount) {
+		case 1:
+			[self performSelector:@selector(singleTap:) withObject:touches afterDelay:.4];
+			break;
+		case 2:
+			[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(singleTap:) object:touches];
+			[self performSelector:@selector(doubleTap:) withObject:touches afterDelay:.4];
+			break;
+		case 3:
+			[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(doubleTap:) object:touches];
+			[self performSelector:@selector(tripleTap:) withObject:touches afterDelay:.4];
+			break;
+		case 4:
+			[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(tripleTap:) object:touches];
+			[self quadrupleTap:touches];
+			break;
+		default:
+			break;
+	}
+}
+*/
+
+-(void)singleTap:(NSSet*)touches {
+	UITouch *touch = [touches anyObject];
+	//CGPoint point = [touch locationInView:nil];
+	NSLog(@"\nsingle tap: %@", touch);
+	// if on a bubble, pop it
+}
+
+-(void)doubleTap:(NSSet*)touches {
+	UITouch *touch = [touches anyObject];
+	CGPoint point = [touch locationInView:nil];
+	NSLog(@"\ndouble tap: %f, %f", point.x, point.y);
+	// move spawn point
+	// TODO: display the circular part of a round wand and drag to move
+	//UITouch *touch = [touches anyObject];
+	//CGPoint point = [touch locationInView:nil];
+	((BubblesView*)self.view).wandCenterPoint = [BtlUtilities randomPoint];	
+}
+
+-(void)tripleTap:(NSSet*)touches {
+}
+
+-(void)swipeRight:(NSSet*)touches withEvent:(UIEvent *)event {
+	self.view.backgroundColor = [BtlUtilities randomVgaColor];
+}
+
+-(void)swipeLeft:(NSSet*)touches withEvent:(UIEvent *)event {
+	self.view.backgroundColor = [UIColor blackColor];
+}
+
+
+#pragma mark
+#pragma mark Motion
+-(void)shakeMotionBegan:(UIEvent *)event {
+	if (![Session sharedSession].appIsActive) { return; }
+
+	[Session sharedSession].crazyMode = ![Session sharedSession].crazyMode;
+	[(BubblesAppDelegate*)[[UIApplication sharedApplication] delegate] playSoundFile:@"bark" ofType:@"aif"];
+	if ([Session sharedSession].crazyMode) {
+		self.view.backgroundColor = [BtlUtilities randomVgaColor];
+		[(BubblesView*)self.view popAllBubbles];
+		[(BubblesView*)self.view launchBubble:100];
+
+	} else {
+		self.view.backgroundColor = [UIColor blackColor];
+	}
+} 
 
 
 @end

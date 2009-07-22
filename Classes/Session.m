@@ -15,7 +15,7 @@
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(Session);
 
-@synthesize velocity;
+@synthesize velocity, crazyMode, appIsActive;
 
 -(void)setNewVelocity:(NSInteger)newVelocity {
   self.velocity = newVelocity;
@@ -26,8 +26,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(Session);
 }
 
 -(bool)bubblesShouldAppear {
-  return self.velocity > 0.05f;
+  return self.appIsActive && self.velocity > 0.05f;
 }
-
 
 @end

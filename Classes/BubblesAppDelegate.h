@@ -10,9 +10,10 @@
 
 @class BubblesViewController;
 
-@interface BubblesAppDelegate : NSObject <UIApplicationDelegate> {
+@interface BubblesAppDelegate : NSObject <UIApplicationDelegate, UIAccelerometerDelegate> {
   UIWindow *window;
   BubblesViewController *viewController;
+	
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
