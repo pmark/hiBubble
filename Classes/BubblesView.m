@@ -45,6 +45,10 @@
 	}
 }
 
+-(void)releaseBubbleSilently:(OneBubbleView*)bubbleView {
+  [self releaseBubble:bubbleView withSound:nil];
+}
+
 -(void)releaseBubble:(OneBubbleView*)bubbleView withSound:(NSString*)soundName {
 	// this calls release
   [bubbleView removeFromSuperview];

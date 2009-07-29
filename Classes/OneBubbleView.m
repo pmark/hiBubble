@@ -3,7 +3,7 @@
 //  Bubbles
 //
 //  Created by Mark Anderson on 5/4/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 Bordertown Labs. All rights reserved.
 //
 
 #import "Session.h"
@@ -14,10 +14,10 @@
 #import <QuartzCore/QuartzCore.h>
 
 
-#define GROW_ANIMATION_DURATION_SECONDS 1.7
-#define FLOAT_ANIMATION_DURATION_SECONDS 10.5
-#define MIN_BUBBLE_SCALAR 0.2
-#define FINAL_OPACITY 0.65
+#define GROW_ANIMATION_DURATION_SECONDS 0.73
+#define FLOAT_ANIMATION_DURATION_SECONDS 11.5
+#define MIN_SIZE_SCALAR 0.3
+#define FINAL_OPACITY 0.55
 #define MIN_HORIZON_RADIUS 120.0
 #define MAX_HORIZON_RADIUS 300.0
 
@@ -112,6 +112,12 @@
   self.center = CGPointMake(x, y);
 }
 
+// percent: 0 - 100: factor of velocity to use
+-(CGFloat)scaleDownByVelocity:(CGFloat)original percent:(NSInteger)percent {
+  CGFloat factor = percent / 100.0;
+  return original - (original * ((1.0 - [self velocityScalar]) * factor));
+}
+
 -(void)animateBirthAtPoint:(CGPoint)point {
   point.x += [BtlUtilities randomNumber:16] * [BtlUtilities randomPolarity];
   point.y += [BtlUtilities randomNumber:14] * [BtlUtilities randomPolarity];
@@ -120,18 +126,21 @@
   
   // scale the image back up to size
   // duration is proportional to velocity
-  CGFloat duration = GROW_ANIMATION_DURATION_SECONDS * (([self velocityScalar] + 0.2f) / 2.0f);
+  CGFloat duration = [self scaleDownByVelocity:GROW_ANIMATION_DURATION_SECONDS percent:85];
 
   [UIView beginAnimations:nil context:self];
   [UIView setAnimationDuration:duration];
-  [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+  [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
   [UIView setAnimationDelegate:self];
   [UIView setAnimationDidStopSelector:@selector(bubbleBirthAnimationDidStop:finished:context:)];
 
   // Higher velocity means smaller bubbles
-  int randomRange = (1.0f - MIN_BUBBLE_SCALAR) * 100 + 1;
-  self.sizeScalar = ([BtlUtilities randomNumber:randomRange] * [self velocityScalar]) / 100.0f + MIN_BUBBLE_SCALAR;
-  if (self.sizeScalar < MIN_BUBBLE_SCALAR) { self.sizeScalar = MIN_BUBBLE_SCALAR; }
+  int maxSizeScalarInt = [self scaleDownByVelocity:78 percent:91];
+
+  self.sizeScalar = [BtlUtilities randomNumberInRange:(maxSizeScalarInt / 2.3)
+                                              maximum:maxSizeScalarInt] / 100.0;
+  
+  if (self.sizeScalar < MIN_SIZE_SCALAR) { self.sizeScalar = MIN_SIZE_SCALAR; }
   CGAffineTransform transform = CGAffineTransformMakeScale(self.sizeScalar, self.sizeScalar);
   
   // The varier is used to move the birth end point
@@ -149,7 +158,8 @@
 }
 
 -(void)animateFloatPhase:(OneBubbleView*)oneBubble {
-  CGFloat duration = 4.0 + FLOAT_ANIMATION_DURATION_SECONDS * ([self velocityScalar]);
+  //CGFloat duration = FLOAT_ANIMATION_DURATION_SECONDS + ([self velocityScalar] * 5);
+  CGFloat duration = [self scaleDownByVelocity:FLOAT_ANIMATION_DURATION_SECONDS percent:55];
 	oneBubble.alpha = 1.0f;
 	CGRect imageFrame = oneBubble.layer.frame;
 	CGPoint viewOrigin = oneBubble.layer.position;
@@ -163,7 +173,7 @@
 	// Set up rotation
 	CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
   rotationAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
-	NSNumber *radians = [NSNumber numberWithFloat:(([BtlUtilities randomNumber:160] + 33) * 
+	NSNumber *radians = [NSNumber numberWithFloat:(([BtlUtilities randomNumber:420] + 33) * 
 											 [BtlUtilities randomPolarity] * M_PI / 180.0f)];
   rotationAnimation.toValue = radians;
 			
@@ -183,8 +193,8 @@
 	pathAnimation.fillMode = kCAFillModeForwards;
 	pathAnimation.removedOnCompletion = NO;
 	[pathAnimation setTimingFunctions:[NSArray arrayWithObjects:
-			[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
-			[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut], nil]];
+			[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut],
+			[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn], nil]];
 	
 	CGPoint startPoint = CGPointMake(
 			oneBubble.layer.position.x + [BtlUtilities randomNumberInRange:30 maximum:70] * 
@@ -239,14 +249,12 @@
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-  NSLog(@"OBV began");
   [Session sharedSession].machineOn = NO;    
 	UITouch *touch = [touches anyObject];
 	CGPoint point = [touch locationInView:self];
 
   if ([touch tapCount] == 1 &&
       CGRectContainsPoint([[self.layer presentationLayer] frame], point) == 1) {
-    NSLog(@"OneBubble %i touched", self.tag);	
     [(BubblesView*)self.superview popBubble:self];	
   }
 }

@@ -244,7 +244,6 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 #pragma mark 
 #pragma mark Touches
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-  NSLog(@"BVC began");
 	UITouch *touch = [touches anyObject];
 	CGPoint point = [touch locationInView:self.view];
 	self.startTouchPosition = point;
@@ -253,7 +252,6 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-  NSLog(@"BVC end");
 	UITouch *touch = [touches anyObject];
 	CGPoint point = [touch locationInView:self.view];
   
@@ -271,7 +269,6 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
     ((BubblesView*)self.view).wandCenterPoint = point;  
 
 	} else if ([touch tapCount] == 2) {
-    NSLog(@"BVC double tap");
     ((BubblesView*)self.view).wandCenterPoint = point;
     [Session sharedSession].machineOn = YES;    
   }
@@ -285,7 +282,6 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
   ((BubblesView*)self.view).wandCenterPoint = currentTouchPosition;
   
   //[(BubblesView*)self.view launchBubble:[BtlUtilities randomNumberInRange:1 maximum:100]];
-  NSLog(@"BVC move");
   [Session sharedSession].machineOn = YES;
 	
 	// If the swipe tracks correctly.

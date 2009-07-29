@@ -17,16 +17,17 @@
   NSTimer *popTimer;
 }
 
-+ (NSString*)defaultImageName;
--(void)setImageByName:(NSString*)name;
--(void)animateBirthAtPoint:(CGPoint)point;
--(void)animateFloatPhase:(OneBubbleView*)oneBubble;
-- (CGPoint)computeEndPoint;
-
 @property (nonatomic) CGFloat startWidth;
 @property (nonatomic) CGFloat sizeScalar;
 @property (assign) NSInteger velocity;
 @property (nonatomic,retain) UIImage *image;
 @property (nonatomic,retain) NSTimer *popTimer;
+
++ (NSString*)defaultImageName;
+-(void)setImageByName:(NSString*)name;
+-(void)animateBirthAtPoint:(CGPoint)point;
+-(void)animateFloatPhase:(OneBubbleView*)oneBubble;
+- (CGPoint)computeEndPoint;
+-(CGFloat)scaleDownByVelocity:(CGFloat)original percent:(NSInteger)percent;
 
 @end

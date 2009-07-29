@@ -25,6 +25,7 @@
 -(void)initBubbleCounter;
 -(void)popBubble:(OneBubbleView*)bubbleView;
 -(void)releaseBubble:(OneBubbleView*)bubbleView withSound:(NSString*)soundName;
+-(void)releaseBubbleSilently:(OneBubbleView*)bubbleView;
 -(NSInteger)nextBubbleTag;
 -(void)popAllBubbles;
 

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Project</string>
+	<string>Debug</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -333,7 +333,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
+									<integer>7</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -355,8 +355,6 @@
 							<string>MainColumn</string>
 							<real>246</real>
 						</array>
-						<key>RubberWindowFrame</key>
-						<string>0 59 1440 819 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -367,14 +365,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>4D2B020E0FAF66DE00CFC1C7</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>asm __dyld__dyld_start  0x2fe01028</string>
+								<string>OneBubbleView.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -382,29 +378,34 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>4D2B020F0FAF66DE00CFC1C7</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>asm __dyld__dyld_start  0x2fe01028</string>
+										<string>OneBubbleView.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4D92CA571020447100F44F8B</string>
+										<string>4D92CB7910205F6C00F44F8B</string>
 										<key>history</key>
 										<array>
-											<string>4D92C7D11020211A00F44F8B</string>
 											<string>4D92C80C102028E300F44F8B</string>
 											<string>4D92C975102039EA00F44F8B</string>
 											<string>4D92C976102039EA00F44F8B</string>
 											<string>4D92C977102039EA00F44F8B</string>
 											<string>4D92C978102039EA00F44F8B</string>
 											<string>4D92C979102039EA00F44F8B</string>
-											<string>4D92CA0D10203FFD00F44F8B</string>
-											<string>4D92CA4C1020434E00F44F8B</string>
-											<string>4D92CA4D1020434E00F44F8B</string>
+											<string>4D92CAE21020535B00F44F8B</string>
+											<string>4D92CB5610205CF700F44F8B</string>
+											<string>4D92CB6310205D7300F44F8B</string>
+											<string>4D92CB6410205D7300F44F8B</string>
+											<string>4D92CB7610205F4500F44F8B</string>
+										</array>
+										<key>nextStack</key>
+										<array>
+											<string>4D92CB6610205D7300F44F8B</string>
+											<string>4D92CB6710205D7300F44F8B</string>
+											<string>4D92CB6810205D7300F44F8B</string>
 										</array>
 										<key>prevStack</key>
 										<array>
 											<string>4D92C79E10201D8100F44F8B</string>
-											<string>4D92C7AE10201E5500F44F8B</string>
-											<string>4D92C7D51020211A00F44F8B</string>
 											<string>4D92C8021020283400F44F8B</string>
 											<string>4D92C808102028A500F44F8B</string>
 											<string>4D92C80E102028E300F44F8B</string>
@@ -426,15 +427,16 @@
 											<string>4D92C984102039EA00F44F8B</string>
 											<string>4D92C985102039EA00F44F8B</string>
 											<string>4D92C9A910203B2100F44F8B</string>
-											<string>4D92C7211020175D00F44F8B</string>
-											<string>4D92C9D610203CD700F44F8B</string>
 											<string>4D92C9F210203EF800F44F8B</string>
 											<string>4D92C9F310203EF800F44F8B</string>
-											<string>4D92C9F410203EF800F44F8B</string>
 											<string>4D92CA0F10203FFD00F44F8B</string>
-											<string>4D92CA1010203FFD00F44F8B</string>
 											<string>4D92CA1110203FFD00F44F8B</string>
-											<string>4D92CA4E1020434E00F44F8B</string>
+											<string>4D92CA5C102044A400F44F8B</string>
+											<string>4D92CA9F1020474700F44F8B</string>
+											<string>4D92CABD10204B8300F44F8B</string>
+											<string>4D92CAE51020535B00F44F8B</string>
+											<string>4D92C7211020175D00F44F8B</string>
+											<string>4D92C7AE10201E5500F44F8B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -449,8 +451,6 @@
 							<dict>
 								<key>Frame</key>
 								<string>{{0, 0}, {1172, 752}}</string>
-								<key>RubberWindowFrame</key>
-								<string>0 59 1440 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -528,8 +528,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1172, -27}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 59 1440 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -600,6 +598,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -611,6 +611,8 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1440, 295}}</string>
+						<key>RubberWindowFrame</key>
+						<string>0 59 1440 819 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -685,7 +687,11 @@
 							</array>
 							<key>Frame</key>
 							<string>{{697, 0}, {743, 146}}</string>
+							<key>RubberWindowFrame</key>
+							<string>0 59 1440 819 0 0 1440 878 </string>
 						</dict>
+						<key>RubberWindowFrame</key>
+						<string>0 59 1440 819 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -730,7 +736,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>270550129.61975402</real>
+	<real>270557036.70464998</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -745,7 +751,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>4D92CA581020447100F44F8B</string>
 		<string>4D92C6D8101FF4CD00F44F8B</string>
 		<string>4D92C6D9101FF4CD00F44F8B</string>
 		<string>/Users/mark/projects/seanote/hiBubble/Bubble.xcodeproj</string>
