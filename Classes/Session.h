@@ -11,11 +11,13 @@
 	NSInteger velocity;
 	BOOL crazyMode;
 	BOOL appIsActive;
+  BOOL machineOn;
 }
 
 @property (assign) NSInteger velocity;
 @property (assign) BOOL crazyMode;
 @property (assign) BOOL appIsActive;
+@property (assign) BOOL machineOn;
 
 -(void)setNewVelocity:(NSInteger)newVelocity;
 -(NSInteger)getVelocity;

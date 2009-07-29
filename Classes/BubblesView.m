@@ -26,7 +26,7 @@
 
   OneBubbleView *oneBubble = [[OneBubbleView alloc] initWithFrame:bubbleFrame];
 	oneBubble.tag = [self nextBubbleTag];
-	if (velocity) {
+	if (velocity && velocity > 0) {
 		oneBubble.velocity = velocity;
 	} else {
 		oneBubble.velocity = [[Session sharedSession] getVelocity];

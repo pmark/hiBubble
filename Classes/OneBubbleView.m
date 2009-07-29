@@ -14,12 +14,12 @@
 #import <QuartzCore/QuartzCore.h>
 
 
-#define GROW_ANIMATION_DURATION_SECONDS 0.6
-#define FLOAT_ANIMATION_DURATION_SECONDS 6.5
-#define MIN_BUBBLE_SCALAR 0.55
-#define FINAL_OPACITY 0.4
+#define GROW_ANIMATION_DURATION_SECONDS 1.7
+#define FLOAT_ANIMATION_DURATION_SECONDS 10.5
+#define MIN_BUBBLE_SCALAR 0.2
+#define FINAL_OPACITY 0.65
 #define MIN_HORIZON_RADIUS 120.0
-#define MAX_HORIZON_RADIUS 320.0
+#define MAX_HORIZON_RADIUS 300.0
 
 @implementation OneBubbleView
 
@@ -54,9 +54,9 @@
       self.opaque = NO;
       
 			// randomly pop some bubbles
-      if ([BtlUtilities randomNumber:6] == 0) {
-        [self createPopTimer];        
-      }
+//      if ([BtlUtilities randomNumber:6] == 0) {
+//        [self createPopTimer];        
+//      }
     }
     return self;
 }
@@ -78,17 +78,24 @@
 // within a circular area with radius determined by velocity
 // where higher velocity makes a smaller radius.
 - (CGPoint)computeEndPoint {
-  int centerX = 160;
-  int centerY = 180;
-  int minRadius = MIN_HORIZON_RADIUS;
-  CGFloat maxRadius = MAX_HORIZON_RADIUS;
-  CGFloat scaledRadius = maxRadius * [self velocityScalar];
-  int radius = scaledRadius + minRadius;
-  int randomRadius = [BtlUtilities randomNumber:radius];
-  int phi = [BtlUtilities randomNumber:360];
-  int x = cos(phi) * randomRadius + centerX;
-  int y = sin(phi) * randomRadius * 0.33f + centerY;
-  return CGPointMake(x, y);
+  if ([[Session sharedSession] crazyMode]) {
+    CGPoint p = [BtlUtilities randomPoint];
+    return CGPointMake(p.x + (53 * [BtlUtilities randomPolarity]),
+                       p.y + (80 * [BtlUtilities randomPolarity]));
+    
+  } else {
+    int centerX = 160;
+    int centerY = 180;
+    int minRadius = MIN_HORIZON_RADIUS;
+    CGFloat maxRadius = MAX_HORIZON_RADIUS;
+    CGFloat scaledRadius = maxRadius * [self velocityScalar];
+    int radius = scaledRadius + minRadius;
+    int randomRadius = [BtlUtilities randomNumber:radius];
+    int phi = [BtlUtilities randomNumber:360];
+    int x = cos(phi) * randomRadius + centerX;
+    int y = sin(phi) * randomRadius * 0.33f + centerY;
+    return CGPointMake(x, y);
+  }
 }
 
 - (void)setCenterToEndPoint {
@@ -117,7 +124,7 @@
 
   [UIView beginAnimations:nil context:self];
   [UIView setAnimationDuration:duration];
-  [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+  [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
   [UIView setAnimationDelegate:self];
   [UIView setAnimationDidStopSelector:@selector(bubbleBirthAnimationDidStop:finished:context:)];
 
@@ -159,7 +166,6 @@
 	NSNumber *radians = [NSNumber numberWithFloat:(([BtlUtilities randomNumber:160] + 33) * 
 											 [BtlUtilities randomPolarity] * M_PI / 180.0f)];
   rotationAnimation.toValue = radians;
-//	NSLog(@"rot to: %@", rotationAnimation.toValue * M_PI / 180);
 			
 	// Set up scaling
 	CABasicAnimation *resizeAnimation = [CABasicAnimation animationWithKeyPath:@"bounds.size"];
@@ -177,8 +183,8 @@
 	pathAnimation.fillMode = kCAFillModeForwards;
 	pathAnimation.removedOnCompletion = NO;
 	[pathAnimation setTimingFunctions:[NSArray arrayWithObjects:
-			[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut],
-			[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut], nil]];
+			[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
+			[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut], nil]];
 	
 	CGPoint startPoint = CGPointMake(
 			oneBubble.layer.position.x + [BtlUtilities randomNumberInRange:30 maximum:70] * 
@@ -233,17 +239,20 @@
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+  NSLog(@"OBV began");
+  [Session sharedSession].machineOn = NO;    
 	UITouch *touch = [touches anyObject];
-	
-	if (touch.view == self) {
-//		CGPoint point = [touch locationInView:self]; 
-//		if (CGRectContainsPoint([[self.layer presentationLayer] frame], point) == 1) {
-//			NSLog(@"Bubble %i touched", self.tag);	
-			[(BubblesView*)self.superview popBubble:self];	
-//		}
-	}
+	CGPoint point = [touch locationInView:self];
+
+  if ([touch tapCount] == 1 &&
+      CGRectContainsPoint([[self.layer presentationLayer] frame], point) == 1) {
+    NSLog(@"OneBubble %i touched", self.tag);	
+    [(BubblesView*)self.superview popBubble:self];	
+  }
 }
 
+//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+//}
 
 - (void)dealloc {
   //[self.image dealloc];

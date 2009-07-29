@@ -28,6 +28,7 @@
 		4D5773510FC34934002B2086 /* menu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5773500FC34934002B2086 /* menu_bg.png */; };
 		4D5773540FC34AFF002B2086 /* seanote.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5773530FC34AFF002B2086 /* seanote.png */; };
 		4D5773560FC34BAB002B2086 /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5773550FC34BAB002B2086 /* logo1.png */; };
+		4D8B2AD4101FDEDF00E88314 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B2AD3101FDEDF00E88314 /* CameraViewController.m */; };
 		4DCA243B1015467500E20EC9 /* pop1.aif in Resources */ = {isa = PBXBuildFile; fileRef = 4DCA243A1015467500E20EC9 /* pop1.aif */; };
 		4DCA243D1015468500E20EC9 /* bark.aif in Resources */ = {isa = PBXBuildFile; fileRef = 4DCA243C1015468500E20EC9 /* bark.aif */; };
 		4DCA243F101546F300E20EC9 /* pop2.aif in Resources */ = {isa = PBXBuildFile; fileRef = 4DCA243E101546F300E20EC9 /* pop2.aif */; };
@@ -71,6 +72,8 @@
 		4D5773530FC34AFF002B2086 /* seanote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seanote.png; sourceTree = "<group>"; };
 		4D5773550FC34BAB002B2086 /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
 		4D7635E50FCD24100003451E /* hiBubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hiBubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D8B2AD2101FDEDF00E88314 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		4D8B2AD3101FDEDF00E88314 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		4DCA243A1015467500E20EC9 /* pop1.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = pop1.aif; sourceTree = "<group>"; };
 		4DCA243C1015468500E20EC9 /* bark.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bark.aif; sourceTree = "<group>"; };
 		4DCA243E101546F300E20EC9 /* pop2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = pop2.aif; sourceTree = "<group>"; };
@@ -116,6 +119,8 @@
 				4D57734A0FC3470E002B2086 /* MenuViewController.m */,
 				4D0C984F1014E92600B6D451 /* BtlUtilities.h */,
 				4D0C98501014E92600B6D451 /* BtlUtilities.m */,
+				4D8B2AD2101FDEDF00E88314 /* CameraViewController.h */,
+				4D8B2AD3101FDEDF00E88314 /* CameraViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				4DD85A640FB2F07A00A61B5B /* Session.m in Sources */,
 				4D57734B0FC3470E002B2086 /* MenuViewController.m in Sources */,
 				4D0C98511014E92600B6D451 /* BtlUtilities.m in Sources */,
+				4D8B2AD4101FDEDF00E88314 /* CameraViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

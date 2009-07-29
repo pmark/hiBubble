@@ -10,14 +10,15 @@
 #import "AudioQueueObject.h"
 #import "AudioRecorder.h"
 
-@interface BubblesViewController : UIViewController <UIAlertViewDelegate> {
+@interface BubblesViewController : UIViewController <UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
   NSTimer *blowTimer;
   NSTimer *monitorTimer;
 	Float32 *audioLevels;
 	Float32 *peakLevels;
 	AudioRecorder *audioRecorder;
-  //UIImagePickerController *imagePicker;
 	CGPoint startTouchPosition;
+  IBOutlet UIImageView *cameraView;
+  UIImagePickerController *cameraController;
 }
 
 @property (nonatomic,retain) NSTimer *blowTimer;
@@ -25,8 +26,9 @@
 @property (nonatomic, retain) AudioRecorder *audioRecorder;
 @property (readwrite) Float32 *audioLevels;
 @property (readwrite) Float32 *peakLevels;
-//@property(nonatomic, retain) UIImagePickerController *imagePicker;
 @property (nonatomic) CGPoint startTouchPosition;
+//@property (nonatomic, retain) IBOutlet UIImageView *cameraView;
+@property(nonatomic, retain) UIImagePickerController *cameraController;
 
 - (void)stopRecording;
 - (void)startRecording;
@@ -39,9 +41,11 @@
 -(void)singleTap:(NSSet*)touches;
 -(void)doubleTap:(NSSet*)touches;
 -(void)tripleTap:(NSSet*)touches;
+-(void)shakeMotionBegan:(UIEvent *)event;
 -(void)swipeRight:(NSSet *)touches withEvent:(UIEvent *)event;
 -(void)swipeLeft:(NSSet *)touches withEvent:(UIEvent *)event;
--(void)shakeMotionBegan:(UIEvent *)event;
+-(void)swipeUp:(NSSet *)touches withEvent:(UIEvent *)event;
+-(void)swipeDown:(NSSet *)touches withEvent:(UIEvent *)event;
 
 @end
 

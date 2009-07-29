@@ -12,11 +12,16 @@
 #import "BubblesView.h"
 #import "Session.h"
 #import "BtlUtilities.h"
+#import "CameraViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-
-#define HORIZ_SWIPE_DRAG_MIN 170
+// horizontal swipe
+#define HORIZ_SWIPE_DRAG_MIN 180
 #define VERT_SWIPE_DRAG_MAX 100
+
+// vertical swipe
+#define HORIZ_SWIPE_DRAG_MAX 100
+#define VERT_SWIPE_DRAG_MIN 250
 
 void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 	// This callback, being outside the implementation block, needs a reference 
@@ -39,12 +44,12 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 @synthesize audioRecorder;
 @synthesize audioLevels; // an array of two floating point values that represents the current recording or playback audio level
 @synthesize peakLevels;
-//@synthesize imagePicker;
+@synthesize cameraController;
 @synthesize startTouchPosition;
 
 
 - (void)initTimers {
-	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.11 // 0.08 seconds is nice
+	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.075 // 0.08 seconds is nice
                                 target:	self
                               selector:	@selector(blow:)
                               userInfo:	nil		// extra info
@@ -52,34 +57,22 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 }
 
 - (void)blow:(NSTimer *)timer {
-  if ([(Session*)[Session sharedSession] bubblesShouldAppear]) {
-    [(BubblesView*)self.view launchBubble:false];
+  if ([[Session sharedSession] bubblesShouldAppear]) {
+    NSInteger velocity = 0;
+    if ([Session sharedSession].machineOn) {
+      velocity = [BtlUtilities randomNumberInRange:1 maximum:100];
+    }
+    [(BubblesView*)self.view launchBubble:velocity];
   }
 }
 
 
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-    }
-    return self;
-}
-*/
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
   [super viewDidLoad];
 
   [self initTimers];
 	[(BubblesView*)self.view initBubbleCounter];
-
+  //[Session sharedSession].crazyMode = YES;
 	self.view.clipsToBounds = YES;
   self.view.backgroundColor = [UIColor blackColor];
 	
@@ -87,16 +80,18 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 	[(BubblesView*)self.view setWandCenterPoint:CGPointMake(160.0f, 316.0f)];
 
   /*
-  //
-  // TODO: display what the camera sees in the background
-  //
+  // TODO: wait for OS 3.1
+  // fire up the camera
   if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) { 
-    self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera; 
+    self.cameraController = [[CameraViewController alloc] init];
+    self.cameraController.allowsImageEditing = NO;
+    self.cameraController.sourceType = UIImagePickerControllerSourceTypeCamera; 
+    //self.cameraController.delegate = self;
   } else { 
-    self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; 
+    NSLog(@"Camera not available");
   } 
-  self.imagePicker.allowsImageEditing = YES; 
-  [self presentModalViewController:self.imagePicker animated:YES];
+  NSLog(@"Starting camera...");
+  [self presentModalViewController:self.cameraController animated:NO];
   */
 	
   // allocate memory to hold audio level values
@@ -119,7 +114,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 - (void) viewDidAppear:(BOOL)animated { 
 	[self.view becomeFirstResponder];
 	((BubblesView*)self.view).shakeDelegate = self;
-
+  
 	[self askForRating];
   	
 }
@@ -147,37 +142,16 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 	}
 }
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-  return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
-- (void)stopRecording {
-	
-	if (self.audioRecorder) {
-		
-		[self.audioRecorder setStopping: YES];				// this flag lets the property listener callback
-		//	know that the user has tapped Stop
-		[self.audioRecorder stop];							// stops the recording audio queue object. the object 
-		//	remains in existence until it actually stops, at
-		//	which point the property listener callback calls
-		//	this class's updateUserInterfaceOnAudioQueueStateChange:
-		//	method, which releases the recording object.
-		// now that recording has stopped, deactivate the audio session
+- (void)stopRecording {	
+	if (self.audioRecorder) {		
+		[self.audioRecorder setStopping: YES];
+		[self.audioRecorder stop];
 		AudioSessionSetActive (false);
 	}
 }
 
 - (void)startRecording {
-	
-	// if not recording, start recording
 	if (self.audioRecorder == nil) {
-		
-		// before instantiating the recording audio queue object, 
-		//	set the audio session category
 		UInt32 sessionCategory = kAudioSessionCategory_PlayAndRecord;
 		AudioSessionSetProperty (
                              kAudioSessionProperty_AudioCategory,
@@ -185,29 +159,20 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
                              &sessionCategory
                              );
 		
-		// the first step in recording is to instantiate a recording audio queue object
 		AudioRecorder *theRecorder = [[AudioRecorder alloc] init];
-		
-		// if the audio queue was successfully created, initiate recording.
-		if (theRecorder) {
-			
+		if (theRecorder) {			
 			self.audioRecorder = theRecorder;
-			[theRecorder release];								// decrements the retain count for the theRecorder object
-			
-      // set up the recorder object to receive property change notifications 
-			// from the recording audio queue object
+			[theRecorder release];			
 			[self.audioRecorder setNotificationDelegate: self];	
-			
-			// activate the audio session immediately before recording starts
 			AudioSessionSetActive (true);
-			[self.audioRecorder record];	// starts the recording audio queue object
+			[self.audioRecorder record];
 		}	
 	}
 }
 
 - (void)setNormalizedVelocity:(float)level {
   // the min and max levels come directly from the mic
-  float max = 0.8f;
+  float max = 0.85f;
   float min = 0.1f;
   float range = max - min;
   if (level < min) level = min;
@@ -225,16 +190,9 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 	}  
 }
 
-// this method gets called (by property listener callback functions) when a recording or playback 
-// audio queue object starts or stops. 
 - (void) updateUserInterfaceOnAudioQueueStateChange: (AudioQueueObject *) inQueue {
-	
 	NSAutoreleasePool *uiUpdatePool = [[NSAutoreleasePool alloc] init];
-	
-	// the audio queue (playback or record) just started
 	if ([inQueue isRunning]) {
-    
-		// create a timer for updating the audio level meter
 		self.monitorTimer = [NSTimer scheduledTimerWithTimeInterval:	0.12
                                                          target:	self
                                                        selector:	@selector (analyzeSound:)
@@ -242,10 +200,8 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
                                                         repeats:	YES];
 		
 		if (inQueue == self.audioRecorder) {			
-		}
-		
+		}		
 	} else {
-		
 		// playback just stopped
 		if (inQueue == self.audioRecorder) {
 			[audioRecorder release];
@@ -256,10 +212,9 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 			[self.monitorTimer invalidate];
 			[self.monitorTimer release];
 			monitorTimer = nil;
-		}
-		
+		}		
 	}
-	
+  	
 	[uiUpdatePool drain];
 }
 
@@ -289,30 +244,54 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 #pragma mark 
 #pragma mark Touches
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+  NSLog(@"BVC began");
 	UITouch *touch = [touches anyObject];
 	CGPoint point = [touch locationInView:self.view];
 	self.startTouchPosition = point;
+  [Session sharedSession].machineOn = NO;
 }
 
+
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+  NSLog(@"BVC end");
 	UITouch *touch = [touches anyObject];
-	if (touch.view == self.view) {
-		CGPoint point = [touch locationInView:self.view];
-		//NSLog(@"Main view tapped at: %f, %f", point.x, point.y);
-		((BubblesView*)self.view).wandCenterPoint = point;
-		[(BubblesView*)self.view launchBubble:25];
-	}
+	CGPoint point = [touch locationInView:self.view];
+  
+  [Session sharedSession].machineOn = NO;    
+
+  if ([touch tapCount] == 1) { 
+
+    for (OneBubbleView *bubble in [self.view.subviews reverseObjectEnumerator]) {
+      if (CGRectContainsPoint([[bubble.layer presentationLayer] frame], point) == 1) {
+        [(BubblesView*)self.view popBubble:bubble];	
+        return;
+      }
+    }
+
+    ((BubblesView*)self.view).wandCenterPoint = point;  
+
+	} else if ([touch tapCount] == 2) {
+    NSLog(@"BVC double tap");
+    ((BubblesView*)self.view).wandCenterPoint = point;
+    [Session sharedSession].machineOn = YES;    
+  }
 }
+
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *touch = [touches anyObject];
 	CGPoint currentTouchPosition = [touch locationInView:self.view];
+  
+  ((BubblesView*)self.view).wandCenterPoint = currentTouchPosition;
+  
+  //[(BubblesView*)self.view launchBubble:[BtlUtilities randomNumberInRange:1 maximum:100]];
+  NSLog(@"BVC move");
+  [Session sharedSession].machineOn = YES;
 	
 	// If the swipe tracks correctly.
 	if (fabsf(startTouchPosition.x - currentTouchPosition.x) >= HORIZ_SWIPE_DRAG_MIN &&
 			fabsf(startTouchPosition.y - currentTouchPosition.y) <= VERT_SWIPE_DRAG_MAX)
 	{
-		// It appears to be a swipe.
 		[NSObject cancelPreviousPerformRequestsWithTarget:self];
 		if (startTouchPosition.x < currentTouchPosition.x) {
 			[self swipeRight:touches withEvent:event];
@@ -320,9 +299,19 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 			[self swipeLeft:touches withEvent:event];
 		}
 		self.startTouchPosition = currentTouchPosition;
-	}
-	else
-	{
+    
+	} else if (fabsf(startTouchPosition.y - currentTouchPosition.y) >= VERT_SWIPE_DRAG_MIN &&
+             fabsf(startTouchPosition.x - currentTouchPosition.x) <= HORIZ_SWIPE_DRAG_MAX)
+  {
+		[NSObject cancelPreviousPerformRequestsWithTarget:self];
+		if (startTouchPosition.y < currentTouchPosition.y) {
+			[self swipeDown:touches withEvent:event];
+		} else {
+			[self swipeUp:touches withEvent:event];
+		}
+		self.startTouchPosition = currentTouchPosition;  
+
+  } else {
 		// Process a non-swipe event.
 	}
 }
@@ -388,21 +377,9 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 */
 
 -(void)singleTap:(NSSet*)touches {
-	UITouch *touch = [touches anyObject];
-	//CGPoint point = [touch locationInView:nil];
-	NSLog(@"\nsingle tap: %@", touch);
-	// if on a bubble, pop it
 }
 
 -(void)doubleTap:(NSSet*)touches {
-	UITouch *touch = [touches anyObject];
-	CGPoint point = [touch locationInView:nil];
-	NSLog(@"\ndouble tap: %f, %f", point.x, point.y);
-	// move spawn point
-	// TODO: display the circular part of a round wand and drag to move
-	//UITouch *touch = [touches anyObject];
-	//CGPoint point = [touch locationInView:nil];
-	((BubblesView*)self.view).wandCenterPoint = [BtlUtilities randomPoint];	
 }
 
 -(void)tripleTap:(NSSet*)touches {
@@ -415,6 +392,16 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 -(void)swipeLeft:(NSSet*)touches withEvent:(UIEvent *)event {
 	self.view.backgroundColor = [UIColor blackColor];
 }
+
+-(void)swipeUp:(NSSet*)touches withEvent:(UIEvent *)event {
+	self.view.backgroundColor = [BtlUtilities randomVgaColor];
+}
+
+-(void)swipeDown:(NSSet*)touches withEvent:(UIEvent *)event {
+	self.view.backgroundColor = [BtlUtilities randomVgaColor];
+}
+
+
 
 
 #pragma mark
