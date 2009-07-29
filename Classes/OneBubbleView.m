@@ -16,8 +16,8 @@
 
 #define GROW_ANIMATION_DURATION_SECONDS 0.73
 #define FLOAT_ANIMATION_DURATION_SECONDS 11.5
-#define MIN_SIZE_SCALAR 0.3
-#define FINAL_OPACITY 0.55
+#define MIN_SIZE_SCALAR 0.4
+#define FINAL_OPACITY 0.65
 #define MIN_HORIZON_RADIUS 120.0
 #define MAX_HORIZON_RADIUS 300.0
 
@@ -135,9 +135,9 @@
   [UIView setAnimationDidStopSelector:@selector(bubbleBirthAnimationDidStop:finished:context:)];
 
   // Higher velocity means smaller bubbles
-  int maxSizeScalarInt = [self scaleDownByVelocity:78 percent:91];
+  int maxSizeScalarInt = [self scaleDownByVelocity:79 percent:100];
 
-  self.sizeScalar = [BtlUtilities randomNumberInRange:(maxSizeScalarInt / 2.3)
+  self.sizeScalar = [BtlUtilities randomNumberInRange:(maxSizeScalarInt / 3.3)
                                               maximum:maxSizeScalarInt] / 100.0;
   
   if (self.sizeScalar < MIN_SIZE_SCALAR) { self.sizeScalar = MIN_SIZE_SCALAR; }

@@ -49,7 +49,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 
 
 - (void)initTimers {
-	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.075 // 0.08 seconds is nice
+	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.082 // 0.08 seconds is nice
                                 target:	self
                               selector:	@selector(blow:)
                               userInfo:	nil		// extra info
