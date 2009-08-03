@@ -370,7 +370,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>4D2B020E0FAF66DE00CFC1C7</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>OneBubbleView.m</string>
+								<string>asm __dyld__dyld_start  0x2fe01028</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -378,11 +378,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>4D2B020F0FAF66DE00CFC1C7</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>OneBubbleView.m</string>
+										<string>asm __dyld__dyld_start  0x2fe01028</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4D92CBB4102062A300F44F8B</string>
+										<string>4D9B33AA10268E85009546E7</string>
 										<key>history</key>
 										<array>
 											<string>4D92C80C102028E300F44F8B</string>
@@ -395,44 +395,20 @@
 											<string>4D92CB6310205D7300F44F8B</string>
 											<string>4D92CB6410205D7300F44F8B</string>
 											<string>4D92CBAE102061E000F44F8B</string>
-											<string>4D92CBAF102061E000F44F8B</string>
+											<string>4D9B337C10268A8F009546E7</string>
 										</array>
 										<key>prevStack</key>
 										<array>
 											<string>4D92C79E10201D8100F44F8B</string>
 											<string>4D92C8021020283400F44F8B</string>
 											<string>4D92C808102028A500F44F8B</string>
-											<string>4D92C80E102028E300F44F8B</string>
-											<string>4D92C8C5102031EF00F44F8B</string>
-											<string>4D92C8C7102031EF00F44F8B</string>
 											<string>4D92C7011020144500F44F8B</string>
-											<string>4D92C8F41020342E00F44F8B</string>
-											<string>4D92C9111020351300F44F8B</string>
 											<string>4D92C9131020351300F44F8B</string>
-											<string>4D92C96A1020394800F44F8B</string>
 											<string>4D92C97C102039EA00F44F8B</string>
-											<string>4D92C97D102039EA00F44F8B</string>
-											<string>4D92C97E102039EA00F44F8B</string>
 											<string>4D92C97F102039EA00F44F8B</string>
-											<string>4D92C980102039EA00F44F8B</string>
 											<string>4D92C981102039EA00F44F8B</string>
-											<string>4D92C982102039EA00F44F8B</string>
-											<string>4D92C983102039EA00F44F8B</string>
-											<string>4D92C984102039EA00F44F8B</string>
-											<string>4D92C985102039EA00F44F8B</string>
-											<string>4D92C9A910203B2100F44F8B</string>
-											<string>4D92C9F210203EF800F44F8B</string>
-											<string>4D92C9F310203EF800F44F8B</string>
-											<string>4D92CA0F10203FFD00F44F8B</string>
-											<string>4D92CA1110203FFD00F44F8B</string>
-											<string>4D92CA5C102044A400F44F8B</string>
-											<string>4D92CA9F1020474700F44F8B</string>
-											<string>4D92CABD10204B8300F44F8B</string>
-											<string>4D92CAE51020535B00F44F8B</string>
 											<string>4D92C7211020175D00F44F8B</string>
 											<string>4D92C7AE10201E5500F44F8B</string>
-											<string>4D92CBB0102061E000F44F8B</string>
-											<string>4D92CBB1102061E000F44F8B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -551,11 +527,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4D92C6BC101FF43800F44F8B</string>
+				<string>4D9B325710266648009546E7</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>4D92C6BD101FF43800F44F8B</string>
+				<string>4D9B325810266648009546E7</string>
 				<string>4D2B020E0FAF66DE00CFC1C7</string>
-				<string>4D92C6BE101FF43800F44F8B</string>
+				<string>4D9B325910266648009546E7</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -710,14 +686,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4D92C6D2101FF4CD00F44F8B</string>
+				<string>4D9B325A10266648009546E7</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>4D92C6D3101FF4CD00F44F8B</string>
-				<string>4D92C6D4101FF4CD00F44F8B</string>
-				<string>4D92C6D5101FF4CD00F44F8B</string>
-				<string>4D92C6D6101FF4CD00F44F8B</string>
-				<string>4D2B020E0FAF66DE00CFC1C7</string>
+				<string>4D9B325B10266648009546E7</string>
+				<string>4D9B325C10266648009546E7</string>
+				<string>4D9B325D10266648009546E7</string>
+				<string>4D9B325E10266648009546E7</string>
+				<string>4D9B325210266642009546E7</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -732,7 +708,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>270557859.82186198</real>
+	<real>270962309.127617</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -747,8 +723,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>4D92C6D8101FF4CD00F44F8B</string>
-		<string>4D92C6D9101FF4CD00F44F8B</string>
+		<string>4D9B33AB10268E85009546E7</string>
+		<string>4D9B333B102683E5009546E7</string>
+		<string>4D9B326F102669DB009546E7</string>
 		<string>/Users/mark/projects/seanote/hiBubble/Bubble.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -1125,7 +1102,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D5B069F1CE1000CFCEE</string>
-				<string>4D2B0BE30FB2D3DE00CFC1C7</string>
+				<string>4DB776221022993700E06F1A</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
