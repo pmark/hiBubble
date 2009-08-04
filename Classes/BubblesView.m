@@ -53,12 +53,12 @@
 	// this calls release
   [bubbleView removeFromSuperview];
 
-	if (soundName != nil) {
-		[(BubblesAppDelegate*)[[UIApplication sharedApplication] delegate] playSoundFile:soundName ofType:@"aif"];	
-	}
-	
 	// TODO: check for memory leak with Instruments
 	[bubbleView release];	
+  
+  if (soundName != nil) {
+		[(BubblesAppDelegate*)[[UIApplication sharedApplication] delegate] playSoundFile:soundName ofType:@"aif"];	
+	}  
 }
 
 
