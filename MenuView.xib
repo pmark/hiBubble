@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.03">
 	<data>
 		<int key="IBDocument.SystemTarget">528</int>
-		<string key="IBDocument.SystemVersion">9G55</string>
-		<string key="IBDocument.InterfaceBuilderVersion">677</string>
-		<string key="IBDocument.AppKitVersion">949.43</string>
+		<string key="IBDocument.SystemVersion">9J61</string>
+		<string key="IBDocument.InterfaceBuilderVersion">680</string>
+		<string key="IBDocument.AppKitVersion">949.46</string>
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -64,10 +64,6 @@
 							<int key="NSfFlags">16</int>
 						</object>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUIHighlightedTitle"/>
-						<string key="IBUIDisabledTitle"/>
-						<string key="IBUISelectedTitle"/>
-						<string key="IBUINormalTitle"/>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="695363759">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -75,6 +71,10 @@
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MyAwLjMwOTgwMzkzIDAuNTIxNTY4NjYAA</bytes>
+						</object>
+						<object class="NSColor" key="IBUINormalTitleShadowColor" id="408873373">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MAA</bytes>
 						</object>
 					</object>
 					<object class="IBUISwitch" id="498225181">
@@ -159,6 +159,7 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MyAwLjMwOTgwMzkzIDAuNTIxNTY4NjYAA</bytes>
 						</object>
+						<reference key="IBUINormalTitleShadowColor" ref="408873373"/>
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
@@ -195,9 +196,9 @@
 							<reference ref="498225181"/>
 							<reference ref="832305761"/>
 							<reference ref="243835576"/>
-							<reference ref="37691893"/>
 							<reference ref="374570472"/>
 							<reference ref="7731212"/>
+							<reference ref="37691893"/>
 						</object>
 						<reference key="parent" ref="360949347"/>
 					</object>
@@ -269,13 +270,13 @@
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">11</int>
-						<reference key="object" ref="37691893"/>
+						<int key="objectID">12</int>
+						<reference key="object" ref="7731212"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">12</int>
-						<reference key="object" ref="7731212"/>
+						<int key="objectID">11</int>
+						<reference key="object" ref="37691893"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>
@@ -302,7 +303,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>MenuViewController</string>
 					<string>UIResponder</string>
-					<string>{{326, 241}, {320, 480}}</string>
+					<string>{{612, 213}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -353,5 +354,6 @@
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.LastKnownRelativeProjectPath">Bubble.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<string key="IBCocoaTouchPluginVersion">3.1</string>
 	</data>
 </archive>
