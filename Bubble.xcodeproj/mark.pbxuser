@@ -337,6 +337,11 @@
 			4D9B35BA1028AE8D009546E7 /* PBXTextBookmark */ = 4D9B35BA1028AE8D009546E7 /* PBXTextBookmark */;
 			4D9B35BB1028AE8D009546E7 /* PBXTextBookmark */ = 4D9B35BB1028AE8D009546E7 /* PBXTextBookmark */;
 			4D9B35BC1028AE8F009546E7 /* PBXTextBookmark */ = 4D9B35BC1028AE8F009546E7 /* PBXTextBookmark */;
+			4D9B35CA1028B28C009546E7 /* PBXTextBookmark */ = 4D9B35CA1028B28C009546E7 /* PBXTextBookmark */;
+			4D9B35CB1028B28C009546E7 /* PlistBookmark */ = 4D9B35CB1028B28C009546E7 /* PlistBookmark */;
+			4D9B35CC1028B28C009546E7 /* PBXTextBookmark */ = 4D9B35CC1028B28C009546E7 /* PBXTextBookmark */;
+			4D9B35CD1028B28C009546E7 /* PlistBookmark */ = 4D9B35CD1028B28C009546E7 /* PlistBookmark */;
+			4D9B35CE1028B2DD009546E7 /* PlistBookmark */ = 4D9B35CE1028B2DD009546E7 /* PlistBookmark */;
 			4DB77616102298B500E06F1A = 4DB77616102298B500E06F1A /* PBXTextBookmark */;
 			4DB776191022993700E06F1A = 4DB776191022993700E06F1A /* PBXTextBookmark */;
 		};
@@ -392,9 +397,9 @@
 	};
 	4D2B02420FAF689E00CFC1C7 /* BubblesView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1221.8, 3925}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1221.8, 3850}}";
 			sepNavSelRange = "{1431, 0}";
-			sepNavVisRange = "{1107, 545}";
+			sepNavVisRange = "{1107, 544}";
 		};
 	};
 	4D2B02AB0FAF7B9000CFC1C7 /* OneBubbleView.h */ = {
@@ -2788,6 +2793,59 @@
 		rType = 0;
 		vrLen = 545;
 		vrLoc = 1107;
+	};
+	4D9B35CA1028B28C009546E7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 58";
+		rLen = 0;
+		rLoc = 1431;
+		rType = 0;
+		vrLen = 544;
+		vrLoc = 1107;
+	};
+	4D9B35CB1028B28C009546E7 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Bubble-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/mark/projects/seanote/hiBubble/Bubble-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	4D9B35CC1028B28C009546E7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D2B02420FAF689E00CFC1C7 /* BubblesView.m */;
+		name = "BubblesView.m: 58";
+		rLen = 0;
+		rLoc = 1431;
+		rType = 0;
+		vrLen = 544;
+		vrLoc = 1107;
+	};
+	4D9B35CD1028B28C009546E7 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Bubble-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/mark/projects/seanote/hiBubble/Bubble-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	4D9B35CE1028B2DD009546E7 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Bubble-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/mark/projects/seanote/hiBubble/Bubble-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
 	};
 	4DB77616102298B500E06F1A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

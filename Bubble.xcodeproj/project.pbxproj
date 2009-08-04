@@ -313,6 +313,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
+				PRODUCT_NAME = hiBubble;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D3339582-5747-41DE-9E10-E207AB727348";
 				SDKROOT = iphoneos2.2.1;
 			};
@@ -342,6 +343,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
+				PRODUCT_NAME = hiBubble;
 				SDKROOT = iphoneos2.2.1;
 			};
 			name = Debug;
@@ -355,6 +357,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
+				PRODUCT_NAME = hiBubble;
 				SDKROOT = iphoneos2.2.1;
 			};
 			name = Release;

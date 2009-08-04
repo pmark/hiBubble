@@ -288,6 +288,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -333,13 +335,11 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
-									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 19}, {246, 739}}</string>
+							<string>{{0, 0}, {246, 739}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -372,7 +372,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>4D2B020E0FAF66DE00CFC1C7</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BubblesView.m</string>
+								<string>Bubble-Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -380,11 +380,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>4D2B020F0FAF66DE00CFC1C7</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BubblesView.m</string>
+										<string>Bubble-Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4D9B35BC1028AE8F009546E7</string>
+										<string>4D9B35CE1028B2DD009546E7</string>
 										<key>history</key>
 										<array>
 											<string>4D92C80C102028E300F44F8B</string>
@@ -397,7 +397,8 @@
 											<string>4D92CB6310205D7300F44F8B</string>
 											<string>4D92CBAE102061E000F44F8B</string>
 											<string>4D9B35AE1027D390009546E7</string>
-											<string>4D9B35BB1028AE8D009546E7</string>
+											<string>4D9B35CA1028B28C009546E7</string>
+											<string>4D9B35CB1028B28C009546E7</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -412,6 +413,7 @@
 											<string>4D92C7211020175D00F44F8B</string>
 											<string>4D92C7AE10201E5500F44F8B</string>
 											<string>4D9B35B01027D390009546E7</string>
+											<string>4D9B35CC1028B28C009546E7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -450,7 +452,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1172, -27}}</string>
+										<string>{{10, 27}, {1172, 199}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 59 1440 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -490,8 +494,6 @@
 									<string>PBXCVSModule</string>
 								</dict>
 								<dict>
-									<key>BecomeActive</key>
-									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
@@ -506,9 +508,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1172, 199}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 59 1440 819 0 0 1440 878 </string>
+										<string>{{10, 27}, {1172, -27}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -709,7 +709,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>271101583.59801501</real>
+	<real>271102685.24642903</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
