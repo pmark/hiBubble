@@ -14,6 +14,7 @@
 #import "BtlUtilities.h"
 #import "CameraViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "SCListener.h"
 
 // horizontal swipe
 #define HORIZ_SWIPE_DRAG_MIN 180
@@ -23,27 +24,11 @@
 #define HORIZ_SWIPE_DRAG_MAX 100
 #define VERT_SWIPE_DRAG_MIN 250
 
-void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
-	// This callback, being outside the implementation block, needs a reference 
-	// to the BubblesViewController object
-	BubblesViewController *controller = (BubblesViewController *) inUserData;
-	
-	if (interruptionState == kAudioSessionBeginInterruption) {
-		if (controller.audioRecorder) {
-			[controller stopRecording];
-		}		
-	}
-}
-
-
 
 @implementation BubblesViewController
 
 @synthesize monitorTimer;
 @synthesize blowTimer;
-@synthesize audioRecorder;
-@synthesize audioLevels; // an array of two floating point values that represents the current recording or playback audio level
-@synthesize peakLevels;
 @synthesize cameraController;
 @synthesize startTouchPosition;
 
@@ -54,10 +39,19 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
                               selector:	@selector(blow:)
                               userInfo:	nil		// extra info
                                repeats:	YES];	
+
+  [[NSRunLoop currentRunLoop] addTimer: self.blowTimer
+                               forMode: NSDefaultRunLoopMode];
 }
 
 - (void)blow:(NSTimer *)timer {
-  if ([[Session sharedSession] bubblesShouldAppear]) {
+  // set the velocity
+  if ([SCListener sharedListener] != nil) {
+    Float32 volume = [[SCListener sharedListener] averagePower];
+    [self setNormalizedVelocity:volume];
+  }  
+  
+  if ([[Session sharedSession] bubblesShouldAppear]) {  
     NSInteger velocity = 0;
     if ([Session sharedSession].machineOn) {
       velocity = [BtlUtilities randomNumberInRange:1 maximum:100];
@@ -94,21 +88,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
   [self presentModalViewController:self.cameraController animated:NO];
   */
 	
-  // allocate memory to hold audio level values
-  audioLevels = calloc (2, sizeof (AudioQueueLevelMeterState));
-  peakLevels = calloc (2, sizeof (AudioQueueLevelMeterState));
-  
-  // initialize the audio session object for this application,
-  //		registering the callback that Audio Session Services will invoke 
-  //		when there's an interruption
-  AudioSessionInitialize (
-                          NULL,
-                          NULL,
-                          interruptionListenerCallback,
-                          self
-                          );
-  
-  [self startRecording];  
+  [[SCListener sharedListener] listen];
 }
 
 - (void) viewDidAppear:(BOOL)animated { 
@@ -142,34 +122,6 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
 	}
 }
 
-- (void)stopRecording {	
-	if (self.audioRecorder) {		
-		[self.audioRecorder setStopping: YES];
-		[self.audioRecorder stop];
-		AudioSessionSetActive (false);
-	}
-}
-
-- (void)startRecording {
-	if (self.audioRecorder == nil) {
-		UInt32 sessionCategory = kAudioSessionCategory_PlayAndRecord;
-		AudioSessionSetProperty (
-                             kAudioSessionProperty_AudioCategory,
-                             sizeof (sessionCategory),
-                             &sessionCategory
-                             );
-		
-		AudioRecorder *theRecorder = [[AudioRecorder alloc] init];
-		if (theRecorder) {			
-			self.audioRecorder = theRecorder;
-			[theRecorder release];			
-			[self.audioRecorder setNotificationDelegate: self];	
-			AudioSessionSetActive (true);
-			[self.audioRecorder record];
-		}	
-	}
-}
-
 - (void)setNormalizedVelocity:(float)level {
   // the min and max levels come directly from the mic
   float max = 0.85f;
@@ -181,65 +133,23 @@ void interruptionListenerCallback (void	*inUserData, UInt32	interruptionState) {
   [[Session sharedSession] setNewVelocity:newVelocity];
 }
 
-- (void)analyzeSound:(NSTimer *)timer {
-	AudioQueueObject *activeQueue = (AudioQueueObject *) [timer userInfo];
-	
-	if (activeQueue) {		
-		[activeQueue getAudioLevels: self.audioLevels peakLevels: self.peakLevels];
-    [self setNormalizedVelocity:audioLevels[0]];
-	}  
-}
-
-- (void) updateUserInterfaceOnAudioQueueStateChange: (AudioQueueObject *) inQueue {
-	NSAutoreleasePool *uiUpdatePool = [[NSAutoreleasePool alloc] init];
-	if ([inQueue isRunning]) {
-		self.monitorTimer = [NSTimer scheduledTimerWithTimeInterval:	0.12
-                                                         target:	self
-                                                       selector:	@selector (analyzeSound:)
-                                                       userInfo:	inQueue
-                                                        repeats:	YES];
-		
-		if (inQueue == self.audioRecorder) {			
-		}		
-	} else {
-		// playback just stopped
-		if (inQueue == self.audioRecorder) {
-			[audioRecorder release];
-			audioRecorder = nil;
-		}				
-		
-		if (self.monitorTimer) {			
-			[self.monitorTimer invalidate];
-			[self.monitorTimer release];
-			monitorTimer = nil;
-		}		
-	}
-  	
-	[uiUpdatePool drain];
-}
-
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
-  
-	if (self.audioRecorder) {
-		//[self stopRecording];
-	}
+  [[SCListener sharedListener] stop];
 }
 
 - (void)dealloc {
+  [[SCListener sharedListener] stop];
 	[self.view resignFirstResponder];
 	[blowTimer dealloc];
 	[monitorTimer dealloc];
-  [audioRecorder dealloc];
   [super dealloc];
 }
-
 
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
 }
-
 
 #pragma mark 
 #pragma mark Touches
