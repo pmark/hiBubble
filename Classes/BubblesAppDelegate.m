@@ -15,13 +15,17 @@
 
 @synthesize window;
 @synthesize viewController;
+@synthesize sounds;
 
 
+#pragma mark
+#pragma mark Application
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
   // Override point for customization after app launch    
   //[application setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:NO];
   [application setStatusBarHidden:YES animated:YES];
 	[UIAccelerometer sharedAccelerometer].delegate = self;
+  [self initSounds];
 
   [window addSubview:viewController.view];
   [window makeKeyAndVisible];
@@ -37,54 +41,25 @@
 }
 
 - (void)dealloc {
-    [viewController release];
-    [window release];
-    [super dealloc];
+  [sounds release];
+  [viewController release];
+  [window release];
+  [super dealloc];
 }
 
-void SystemSoundsDemoCompletionProc (
-		 SystemSoundID  soundID,
-		 void           *clientData)
-{
-	AudioServicesDisposeSystemSoundID(soundID);
-	// ((BubblesAppDelegate*)clientData).something
-};
+#pragma mark
+#pragma mark Sounds
+- (void)initSounds {
+  NSBundle *mainBundle = [NSBundle mainBundle];
 
-- (void)playSoundFile:(NSString*)fileName ofType:(NSString*)fileType {
-	SystemSoundID soundID;
-	OSStatus err = kAudioServicesNoError;
+  self.sounds = [NSDictionary dictionaryWithObjectsAndKeys:
+      [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"pop1" ofType:@"aif"]], @"pop1",
+      [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"bark" ofType:@"aif"]], @"bark",
+      nil];
+}
 
-	// find corresponding audio file
-	NSString *audioFilePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileType]; 
-	NSURL *audioFileURL = [NSURL fileURLWithPath:audioFilePath]; 
-	err = AudioServicesCreateSystemSoundID((CFURLRef) audioFileURL, &soundID); 
-	
-	if (err == kAudioServicesNoError) {
-		// set up callback for sound completion
-		err = AudioServicesAddSystemSoundCompletion 
-		(soundID,		// sound to monitor
-		 NULL,			// run loop (NULL==main)
-		 NULL,			// run loop mode (NULL==default)
-		 SystemSoundsDemoCompletionProc, // callback function 
-		 self			  // data to provide on callback
-		 ); 
-		
-		AudioServicesPlaySystemSound(soundID); 
-	}
-	
-	if (err != kAudioServicesNoError) { 
-		CFErrorRef error = CFErrorCreate(NULL, kCFErrorDomainOSStatus, err, NULL); 
-		NSString *errorDesc = (NSString*) CFErrorCopyDescription (error); 
-		UIAlertView *cantPlayAlert = [[UIAlertView alloc] initWithTitle:@"Cannot Play:"
-																														message: errorDesc
-																													 delegate:nil
-																									cancelButtonTitle:@"OK"
-																									otherButtonTitles:nil];
-		[cantPlayAlert show];
-		[cantPlayAlert release]; 
-		[errorDesc release]; 
-		CFRelease (error); 
-	}
+- (void)playSoundFile:(NSString*)soundName {
+  [(SoundEffect*)[self.sounds objectForKey:soundName] play];
 }
 
 

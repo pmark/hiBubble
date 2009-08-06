@@ -57,7 +57,7 @@
 	[bubbleView release];	
   
   if (soundName != nil) {
-		[(BubblesAppDelegate*)[[UIApplication sharedApplication] delegate] playSoundFile:soundName ofType:@"aif"];	
+		[(BubblesAppDelegate*)[[UIApplication sharedApplication] delegate] playSoundFile:soundName];	
 	}  
 }
 

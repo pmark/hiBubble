@@ -7,19 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SoundEffect.h"
 
 @class BubblesViewController;
 
 @interface BubblesAppDelegate : NSObject <UIApplicationDelegate, UIAccelerometerDelegate> {
   UIWindow *window;
   BubblesViewController *viewController;
-	
+  NSDictionary *sounds;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet BubblesViewController *viewController;
+@property (nonatomic, retain) NSDictionary *sounds;
 
-- (void)playSoundFile:(NSString*)fileName ofType:(NSString*)fileType;
+- (void)initSounds;
+- (void)playSoundFile:(NSString*)soundName;
 
 @end
 

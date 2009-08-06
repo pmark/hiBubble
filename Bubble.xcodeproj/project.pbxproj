@@ -26,6 +26,7 @@
 		4D5773540FC34AFF002B2086 /* seanote.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5773530FC34AFF002B2086 /* seanote.png */; };
 		4D5773560FC34BAB002B2086 /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5773550FC34BAB002B2086 /* logo1.png */; };
 		4D8B2AD4101FDEDF00E88314 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B2AD3101FDEDF00E88314 /* CameraViewController.m */; };
+		4DAA6EAF102B4F2900C082CB /* SoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA6EAE102B4F2900C082CB /* SoundEffect.m */; };
 		4DCA243B1015467500E20EC9 /* pop1.aif in Resources */ = {isa = PBXBuildFile; fileRef = 4DCA243A1015467500E20EC9 /* pop1.aif */; };
 		4DCA243D1015468500E20EC9 /* bark.aif in Resources */ = {isa = PBXBuildFile; fileRef = 4DCA243C1015468500E20EC9 /* bark.aif */; };
 		4DCA243F101546F300E20EC9 /* pop2.aif in Resources */ = {isa = PBXBuildFile; fileRef = 4DCA243E101546F300E20EC9 /* pop2.aif */; };
@@ -67,6 +68,8 @@
 		4D7635E50FCD24100003451E /* hiBubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hiBubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8B2AD2101FDEDF00E88314 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		4D8B2AD3101FDEDF00E88314 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		4DAA6EAD102B4F2900C082CB /* SoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffect.h; sourceTree = "<group>"; };
+		4DAA6EAE102B4F2900C082CB /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
 		4DCA243A1015467500E20EC9 /* pop1.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = pop1.aif; sourceTree = "<group>"; };
 		4DCA243C1015468500E20EC9 /* bark.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bark.aif; sourceTree = "<group>"; };
 		4DCA243E101546F300E20EC9 /* pop2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = pop2.aif; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4DAA6EAD102B4F2900C082CB /* SoundEffect.h */,
+				4DAA6EAE102B4F2900C082CB /* SoundEffect.m */,
 				4DFD1EAF102A5B6400008407 /* SCListener.h */,
 				4DFD1EB0102A5B6400008407 /* SCListener.m */,
 				32CA4F630368D1EE00C91783 /* Bubble_Prefix.pch */,
@@ -260,6 +265,7 @@
 				4D0C98511014E92600B6D451 /* BtlUtilities.m in Sources */,
 				4D8B2AD4101FDEDF00E88314 /* CameraViewController.m in Sources */,
 				4DFD1EB1102A5B6400008407 /* SCListener.m in Sources */,
+				4DAA6EAF102B4F2900C082CB /* SoundEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

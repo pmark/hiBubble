@@ -316,7 +316,7 @@
 	if (![Session sharedSession].appIsActive) { return; }
 
 	[Session sharedSession].crazyMode = ![Session sharedSession].crazyMode;
-	[(BubblesAppDelegate*)[[UIApplication sharedApplication] delegate] playSoundFile:@"bark" ofType:@"aif"];
+	[(BubblesAppDelegate*)[[UIApplication sharedApplication] delegate] playSoundFile:@"bark"];
 	if ([Session sharedSession].crazyMode) {
 		self.view.backgroundColor = [BtlUtilities randomVgaColor];
 		[(BubblesView*)self.view popAllBubbles];
