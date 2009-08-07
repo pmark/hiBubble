@@ -263,7 +263,7 @@
   frame.size.width = frame.size.height = self.image.size.width;
   frame.origin.x = frame.origin.y = 0.0f;
 
-  [self.image drawInRect:frame blendMode:kCGBlendModeDifference alpha:alpha];
+  [self.image drawInRect:frame blendMode:kCGBlendModeNormal alpha:alpha];
 	
 	//NSString *str = [NSString stringWithFormat:@"%i", self.tag];
 	//[str drawAtPoint:CGPointMake(0,0) withFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];

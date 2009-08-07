@@ -15,7 +15,7 @@
 
 @implementation BubblesView
 
-@synthesize wandCenterPoint, wandImage, bubbleCounter, shakeDelegate;
+@synthesize wandCenterPoint, wandImage, bubbleCounter, shakeDelegate, underlay;
 
 -(void)initBubbleCounter {
 	bubbleCounter = 0;
@@ -40,8 +40,10 @@
 }
 
 -(void)popAllBubbles {
-	for (OneBubbleView *bubble in self.subviews) {
-		[self releaseBubble:bubble withSound:nil];
+	for (UIView *subview in self.subviews) {
+    if ([[[subview class] description] isEqualToString:@"OneBubbleView"]) {
+      [self releaseBubble:(OneBubbleView*)subview withSound:nil];
+    }
 	}
 }
 
@@ -147,6 +149,7 @@
 
 - (void)dealloc {
   [super dealloc];
+  [underlay release];
   NSLog(@"\n\nBubblesView dealloc\n\n");
 }
 

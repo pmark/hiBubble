@@ -37,11 +37,18 @@
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
+
+
   BubblesView *tmpBubbleView = [[BubblesView alloc] init];
   self.bubblesView = tmpBubbleView;
   self.bubblesView.opaque = NO;
-  self.view = self.bubblesView;  
+  self.view = self.bubblesView;
   [tmpBubbleView release];
+
+  UIImageView *underlay = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"overlay2.png"]] autorelease];
+  underlay.alpha = 0.75f;
+  self.bubblesView.underlay = underlay;
+  [self.bubblesView addSubview:underlay];
 }
 
 /*
@@ -61,18 +68,18 @@
 
 - (void) initCamera {  
   if ([FullScreenCameraController isAvailable]) {  
-    NSLog(@"Init camera");
+    //NSLog(@"Init camera");
     FullScreenCameraController *tmpCamera = [[FullScreenCameraController alloc] init];
     self.camera = tmpCamera;
     self.camera.view.backgroundColor = [UIColor blackColor];
     [self.camera setCameraOverlayView:self.bubblesView];
     [tmpCamera release];
-    NSLog(@"Init camera: DONE");
+    //NSLog(@"Init camera: DONE");
   }
 }
 
 - (void)initTimers {
-	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.085 // 0.08 seconds is nice
+	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.18 // 0.08 seconds is nice
                                 target:	self
                               selector:	@selector(blow:)
                               userInfo:	nil		// extra info
@@ -189,10 +196,12 @@
 
   if ([touch tapCount] == 1) { 
 
-    for (OneBubbleView *bubble in [self.bubblesView.subviews reverseObjectEnumerator]) {
-      if (CGRectContainsPoint([[bubble.layer presentationLayer] frame], point) == 1) {
-        [self.bubblesView popBubble:bubble];	
-        return;
+    for (UIView *subview in [self.bubblesView.subviews reverseObjectEnumerator]) {
+      if ([[[subview class] description] isEqualToString:@"OneBubbleView"]) {
+        if (CGRectContainsPoint([[subview.layer presentationLayer] frame], point) == 1) {
+          [self.bubblesView popBubble:(OneBubbleView*)subview];	
+          return;
+        }
       }
     }
 

@@ -11,12 +11,14 @@
 
 @interface BubblesView : UIView {
   UIImage *wandImage; 
+  UIImageView *underlay;
 	NSInteger bubbleCounter;
 	CGPoint wandCenterPoint;
 	id shakeDelegate;
 }
 
 @property (nonatomic,retain) UIImage *wandImage;
+@property (nonatomic, retain) UIImageView *underlay; 
 @property (nonatomic,assign) NSInteger bubbleCounter;
 @property (nonatomic,assign) CGPoint wandCenterPoint;
 @property (nonatomic, retain) id shakeDelegate; 
