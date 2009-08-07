@@ -2,7 +2,7 @@
 //  OneBubbleView.m
 //  Bubbles
 //
-//  Created by Mark Anderson on 5/4/09.
+//  Created by P. Mark Anderson on 5/4/09.
 //  Copyright 2009 Bordertown Labs. All rights reserved.
 //
 
@@ -248,7 +248,7 @@
 	group.delegate = self;
 	[group setValue:oneBubble forKey:@"viewBeingAnimated"];
 	
-	[oneBubble.layer addAnimation:group forKey:@"savingAnimation"];
+	[oneBubble.layer addAnimation:group forKey:@"floatAnimation"];
 }
 
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {

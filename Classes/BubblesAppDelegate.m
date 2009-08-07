@@ -2,8 +2,8 @@
 //  BubblesAppDelegate.m
 //  Bubbles
 //
-//  Created by Mark Anderson on 5/4/09.
-//  Copyright __MyCompanyName__ 2009. All rights reserved.
+//  Created by P. Mark Anderson on 5/4/09.
+//  Copyright Bordertown Labs 2009. All rights reserved.
 //
 
 #import "BubblesAppDelegate.h"
@@ -22,7 +22,6 @@
 #pragma mark Application
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
   // Override point for customization after app launch    
-  //[application setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:NO];
   [application setStatusBarHidden:YES animated:YES];
 	[UIAccelerometer sharedAccelerometer].delegate = self;
   [self initSounds];

@@ -2,20 +2,22 @@
 //  Session.h
 //  Bubbles
 //
-//  Created by Mark Anderson on 5/7/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Created by P. Mark Anderson on 5/7/09.
+//  Copyright 2009 Bordertown Labs. All rights reserved.
 //
 
 
 @interface Session : NSObject {
 	NSInteger velocity;
 	BOOL crazyMode;
+  BOOL cameraMode;
 	BOOL appIsActive;
   BOOL machineOn;
 }
 
 @property (assign) NSInteger velocity;
 @property (assign) BOOL crazyMode;
+@property (assign) BOOL cameraMode;
 @property (assign) BOOL appIsActive;
 @property (assign) BOOL machineOn;
 

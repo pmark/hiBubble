@@ -2,8 +2,8 @@
 //  BubblesView.m
 //  Bubbles
 //
-//  Created by Mark Anderson on 5/4/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Created by P. Mark Anderson on 5/4/09.
+//  Copyright 2009 Bordertown Labs. All rights reserved.
 //
 
 #import "BubblesView.h"
@@ -51,6 +51,7 @@
 
 -(void)releaseBubble:(OneBubbleView*)bubbleView withSound:(NSString*)soundName {
 	// this calls release
+  [bubbleView.layer removeAllAnimations];
   [bubbleView removeFromSuperview];
 
 	// TODO: check for memory leak with Instruments
@@ -146,6 +147,7 @@
 
 - (void)dealloc {
   [super dealloc];
+  NSLog(@"\n\nBubblesView dealloc\n\n");
 }
 
 

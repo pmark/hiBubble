@@ -2,8 +2,8 @@
 //  BubblesViewController.m
 //  Bubbles
 //
-//  Created by Mark Anderson on 5/4/09.
-//  Copyright __MyCompanyName__ 2009. All rights reserved.
+//  Created by P. Mark Anderson on 5/4/09.
+//  Copyright Bordertown Labs 2009. All rights reserved.
 //
 
 #import "BubblesAppDelegate.h"
@@ -12,9 +12,9 @@
 #import "BubblesView.h"
 #import "Session.h"
 #import "BtlUtilities.h"
-#import "CameraViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SCListener.h"
+
 
 // horizontal swipe
 #define HORIZ_SWIPE_DRAG_MIN 180
@@ -29,12 +29,50 @@
 
 @synthesize monitorTimer;
 @synthesize blowTimer;
-@synthesize cameraController;
 @synthesize startTouchPosition;
+@synthesize spinner;
+@synthesize camera;
+@synthesize containerView, bubblesView;
 
+
+// Implement loadView to create a view hierarchy programmatically, without using a nib.
+- (void)loadView {
+  BubblesView *tmpBubbleView = [[BubblesView alloc] init];
+  self.bubblesView = tmpBubbleView;
+  self.bubblesView.opaque = NO;
+  self.view = self.bubblesView;  
+  [tmpBubbleView release];
+}
+
+/*
+- (void) viewWillAppear:(BOOL)animated { 
+  [super viewWillAppear:animated];  	
+}
+*/
+
+- (void) viewDidAppear:(BOOL)animated { 
+	[self askForRating];
+  
+	[self.bubblesView becomeFirstResponder];
+	self.bubblesView.shakeDelegate = self;
+  
+  [self initCamera];
+}
+
+- (void) initCamera {  
+  if ([FullScreenCameraController isAvailable]) {  
+    NSLog(@"Init camera");
+    FullScreenCameraController *tmpCamera = [[FullScreenCameraController alloc] init];
+    self.camera = tmpCamera;
+    self.camera.view.backgroundColor = [UIColor blackColor];
+    [self.camera setCameraOverlayView:self.bubblesView];
+    [tmpCamera release];
+    NSLog(@"Init camera: DONE");
+  }
+}
 
 - (void)initTimers {
-	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.082 // 0.08 seconds is nice
+	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.085 // 0.08 seconds is nice
                                 target:	self
                               selector:	@selector(blow:)
                               userInfo:	nil		// extra info
@@ -56,7 +94,7 @@
     if ([Session sharedSession].machineOn) {
       velocity = [BtlUtilities randomNumberInRange:1 maximum:100];
     }
-    [(BubblesView*)self.view launchBubble:velocity];
+    [self.bubblesView launchBubble:velocity];
   }
 }
 
@@ -65,38 +103,17 @@
   [super viewDidLoad];
 
   [self initTimers];
-	[(BubblesView*)self.view initBubbleCounter];
+	[self.bubblesView initBubbleCounter];
   //[Session sharedSession].crazyMode = YES;
 	self.view.clipsToBounds = YES;
+  self.view.opaque = NO;
+  self.view.alpha = 1.0f;
   self.view.backgroundColor = [UIColor blackColor];
 	
 	// 316 = 480 * 0.66
-	[(BubblesView*)self.view setWandCenterPoint:CGPointMake(160.0f, 316.0f)];
+	[self.bubblesView setWandCenterPoint:CGPointMake(160.0f, 316.0f)];
 
-  /*
-  // TODO: wait for OS 3.1
-  // fire up the camera
-  if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) { 
-    self.cameraController = [[CameraViewController alloc] init];
-    self.cameraController.allowsImageEditing = NO;
-    self.cameraController.sourceType = UIImagePickerControllerSourceTypeCamera; 
-    //self.cameraController.delegate = self;
-  } else { 
-    NSLog(@"Camera not available");
-  } 
-  NSLog(@"Starting camera...");
-  [self presentModalViewController:self.cameraController animated:NO];
-  */
-	
   [[SCListener sharedListener] listen];
-}
-
-- (void) viewDidAppear:(BOOL)animated { 
-	[self.view becomeFirstResponder];
-	((BubblesView*)self.view).shakeDelegate = self;
-  
-	[self askForRating];
-  	
 }
 
 -(void)askForRating {
@@ -141,8 +158,12 @@
 - (void)dealloc {
   [[SCListener sharedListener] stop];
 	[self.view resignFirstResponder];
-	[blowTimer dealloc];
-	[monitorTimer dealloc];
+	[blowTimer release];
+	[monitorTimer release];
+  [spinner release];
+  [camera release];
+  [containerView release];
+  [bubblesView release];
   [super dealloc];
 }
 
@@ -155,43 +176,41 @@
 #pragma mark Touches
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *touch = [touches anyObject];
-	CGPoint point = [touch locationInView:self.view];
+	CGPoint point = [touch locationInView:self.bubblesView];
 	self.startTouchPosition = point;
   [Session sharedSession].machineOn = NO;
 }
 
-
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *touch = [touches anyObject];
-	CGPoint point = [touch locationInView:self.view];
+	CGPoint point = [touch locationInView:self.bubblesView];
   
   [Session sharedSession].machineOn = NO;    
 
   if ([touch tapCount] == 1) { 
 
-    for (OneBubbleView *bubble in [self.view.subviews reverseObjectEnumerator]) {
+    for (OneBubbleView *bubble in [self.bubblesView.subviews reverseObjectEnumerator]) {
       if (CGRectContainsPoint([[bubble.layer presentationLayer] frame], point) == 1) {
-        [(BubblesView*)self.view popBubble:bubble];	
+        [self.bubblesView popBubble:bubble];	
         return;
       }
     }
 
-    ((BubblesView*)self.view).wandCenterPoint = point;  
+    self.bubblesView.wandCenterPoint = point;  
 
 	} else if ([touch tapCount] == 2) {
-    ((BubblesView*)self.view).wandCenterPoint = point;
+    self.bubblesView.wandCenterPoint = point;
     [Session sharedSession].machineOn = YES;    
   }
 }
 
-
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *touch = [touches anyObject];
-	CGPoint currentTouchPosition = [touch locationInView:self.view];
+	CGPoint currentTouchPosition = [touch locationInView:self.bubblesView];
   
-  ((BubblesView*)self.view).wandCenterPoint = currentTouchPosition;
+  self.bubblesView.wandCenterPoint = currentTouchPosition;
   
-  //[(BubblesView*)self.view launchBubble:[BtlUtilities randomNumberInRange:1 maximum:100]];
+  //[self.bubblesView launchBubble:[BtlUtilities randomNumberInRange:1 maximum:100]];
   [Session sharedSession].machineOn = YES;
 	
 	// If the swipe tracks correctly.
@@ -222,89 +241,26 @@
 	}
 }
 
-
-/*******
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event { 
-	UITouch *touch = [touches anyObject]; 
-	CGPoint point = [touch locationInView:nil];
-	self.startTouchPosition = point;
-	
-	NSLog(@"Begin Point: %f, %f", point.x, point.y);
-
-	if (touch.tapCount == 2) { 
-		[[self class] cancelPreviousPerformRequestsWithTarget:self];
-	} else if (touch.tapCount == 3) { 
-		[[self class] cancelPreviousPerformRequestsWithTarget:self];
-	} 
-} 
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event { 
-	UITouch *touch = [touches anyObject]; 
-	CGPoint point = [touch locationInView:nil];
-	NSLog(@"End Point: %f, %f", point.x, point.y);
-
-	if (touch.tapCount == 1) { 
-		[self performSelector:@selector(singleTap:) withObject:touches afterDelay:0.15f]; 
-		
-	} else if (touch.tapCount == 2) { 
-		[self performSelector:@selector(doubleTap:) withObject:touches afterDelay:0.15f]; 
-	} else if (touch.tapCount == 3) { 
-		[self tripleTap:touches];
-	} 
-}
-************/
-
-/*
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-	UITouch *touch = [touches anyObject];
-	NSUInteger tapCount = [touch tapCount];
-	startTouchPosition = [touch locationInView:self.view];
-	
-	switch (tapCount) {
-		case 1:
-			[self performSelector:@selector(singleTap:) withObject:touches afterDelay:.4];
-			break;
-		case 2:
-			[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(singleTap:) object:touches];
-			[self performSelector:@selector(doubleTap:) withObject:touches afterDelay:.4];
-			break;
-		case 3:
-			[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(doubleTap:) object:touches];
-			[self performSelector:@selector(tripleTap:) withObject:touches afterDelay:.4];
-			break;
-		case 4:
-			[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(tripleTap:) object:touches];
-			[self quadrupleTap:touches];
-			break;
-		default:
-			break;
-	}
-}
-*/
-
--(void)singleTap:(NSSet*)touches {
-}
-
--(void)doubleTap:(NSSet*)touches {
-}
-
--(void)tripleTap:(NSSet*)touches {
-}
-
 -(void)swipeRight:(NSSet*)touches withEvent:(UIEvent *)event {
-	self.view.backgroundColor = [BtlUtilities randomVgaColor];
+//  if (![Session sharedSession].cameraMode)
+    self.bubblesView.backgroundColor = [BtlUtilities randomVgaColor];
 }
 
 -(void)swipeLeft:(NSSet*)touches withEvent:(UIEvent *)event {
-	self.view.backgroundColor = [UIColor blackColor];
+  if (![Session sharedSession].cameraMode)
+    self.bubblesView.backgroundColor = [UIColor blackColor];
+  else
+    self.bubblesView.backgroundColor = nil;  
 }
 
 -(void)swipeUp:(NSSet*)touches withEvent:(UIEvent *)event {
-	self.view.backgroundColor = [BtlUtilities randomVgaColor];
+//  if (![Session sharedSession].cameraMode)
+    self.bubblesView.backgroundColor = [BtlUtilities randomVgaColor];
 }
 
 -(void)swipeDown:(NSSet*)touches withEvent:(UIEvent *)event {
-	self.view.backgroundColor = [BtlUtilities randomVgaColor];
+//  if (![Session sharedSession].cameraMode)
+    self.bubblesView.backgroundColor = [BtlUtilities randomVgaColor];
 }
 
 
@@ -312,19 +268,52 @@
 
 #pragma mark
 #pragma mark Motion
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+  // if landscape, put in camera mode
+  switch (interfaceOrientation) {
+  case UIInterfaceOrientationLandscapeLeft: 
+  case UIInterfaceOrientationLandscapeRight: 
+    [self toggleAugmentedReality];
+    break;
+  }
+  
+  return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(void)toggleAugmentedReality {
+  if ([FullScreenCameraController isAvailable]) {  
+    [Session sharedSession].cameraMode = ![Session sharedSession].cameraMode;
+    if ([Session sharedSession].cameraMode == YES) {
+      self.bubblesView.backgroundColor = [UIColor purpleColor];      
+      self.bubblesView.alpha = 0.65f;
+      if (!self.camera) { [self initCamera]; }
+      self.bubblesView.backgroundColor = nil;      
+      self.view = self.camera.view;      
+      [self.bubblesView becomeFirstResponder];
+      
+    } else {
+      self.view = self.bubblesView;
+      self.bubblesView.alpha = 1.0f;
+      self.bubblesView.backgroundColor = [UIColor blackColor];
+      [self.bubblesView becomeFirstResponder];
+      self.camera = nil;
+    }    
+  }
+}
+
 -(void)shakeMotionBegan:(UIEvent *)event {
+  NSLog(@"Shake!");
 	if (![Session sharedSession].appIsActive) { return; }
 
-	[Session sharedSession].crazyMode = ![Session sharedSession].crazyMode;
-	[(BubblesAppDelegate*)[[UIApplication sharedApplication] delegate] playSoundFile:@"bark"];
-	if ([Session sharedSession].crazyMode) {
-		self.view.backgroundColor = [BtlUtilities randomVgaColor];
-		[(BubblesView*)self.view popAllBubbles];
-		[(BubblesView*)self.view launchBubble:100];
-
-	} else {
-		self.view.backgroundColor = [UIColor blackColor];
-	}
+  [Session sharedSession].crazyMode = ![Session sharedSession].crazyMode;
+  [(BubblesAppDelegate*)[[UIApplication sharedApplication] delegate] playSoundFile:@"bark"];
+  if ([Session sharedSession].crazyMode) {
+    self.bubblesView.backgroundColor = [BtlUtilities randomVgaColor];
+    [self.bubblesView popAllBubbles];
+    [self.bubblesView launchBubble:100];
+  } else {
+    self.bubblesView.backgroundColor = [UIColor blackColor];
+  }
 } 
 
 

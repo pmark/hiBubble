@@ -2,8 +2,8 @@
 //  main.m
 //  Bubbles
 //
-//  Created by Mark Anderson on 5/4/09.
-//  Copyright __MyCompanyName__ 2009. All rights reserved.
+//  Created by P. Mark Anderson on 5/4/09.
+//  Copyright Bordertown Labs 2009. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

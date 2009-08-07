@@ -2,8 +2,8 @@
 //  Session.m
 //  Bubbles
 //
-//  Created by Mark Anderson on 5/7/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Created by P. Mark Anderson on 5/7/09.
+//  Copyright 2009 Bordertown Labs. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -15,7 +15,7 @@
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(Session);
 
-@synthesize velocity, crazyMode, appIsActive, machineOn;
+@synthesize velocity, crazyMode, cameraMode, appIsActive, machineOn;
 
 -(void)setNewVelocity:(NSInteger)newVelocity {
   self.velocity = newVelocity;

@@ -2,8 +2,8 @@
 //  MenuViewController.m
 //  Bubble
 //
-//  Created by Mark Anderson on 5/19/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Created by P. Mark Anderson on 5/19/09.
+//  Copyright 2009 Bordertown Labs. All rights reserved.
 //
 
 #import "MenuViewController.h"
