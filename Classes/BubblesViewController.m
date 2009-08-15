@@ -37,8 +37,6 @@
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
-
-
   BubblesView *tmpBubbleView = [[BubblesView alloc] init];
   self.bubblesView = tmpBubbleView;
   self.bubblesView.opaque = NO;
@@ -51,25 +49,21 @@
   [self.bubblesView addSubview:underlay];
 }
 
-/*
-- (void) viewWillAppear:(BOOL)animated { 
-  [super viewWillAppear:animated];  	
-}
-*/
-
 - (void) viewDidAppear:(BOOL)animated { 
 	[self askForRating];
   
 	[self.bubblesView becomeFirstResponder];
 	self.bubblesView.shakeDelegate = self;
   
-  [self initCamera];
+	[self toggleAugmentedReality];
+	[self.bubblesView launchBubble:20];
+	[self.bubblesView launchBubble:80];
 }
 
 - (void) initCamera {  
-  if ([FullScreenCameraController isAvailable]) {  
+  if ([BTLFullScreenCameraController isAvailable]) {  
     //NSLog(@"Init camera");
-    FullScreenCameraController *tmpCamera = [[FullScreenCameraController alloc] init];
+    BTLFullScreenCameraController *tmpCamera = [[BTLFullScreenCameraController alloc] init];
     self.camera = tmpCamera;
     self.camera.view.backgroundColor = [UIColor blackColor];
     [self.camera setCameraOverlayView:self.bubblesView];
@@ -101,6 +95,7 @@
     if ([Session sharedSession].machineOn) {
       velocity = [BtlUtilities randomNumberInRange:1 maximum:100];
     }
+    
     [self.bubblesView launchBubble:velocity];
   }
 }
@@ -290,11 +285,11 @@
 }
 
 -(void)toggleAugmentedReality {
-  if ([FullScreenCameraController isAvailable]) {  
+  if ([BTLFullScreenCameraController isAvailable]) {  
     [Session sharedSession].cameraMode = ![Session sharedSession].cameraMode;
     if ([Session sharedSession].cameraMode == YES) {
       self.bubblesView.backgroundColor = [UIColor purpleColor];      
-      self.bubblesView.alpha = 0.65f;
+      self.bubblesView.alpha = 0.72f;
       if (!self.camera) { [self initCamera]; }
       self.bubblesView.backgroundColor = nil;      
       self.view = self.camera.view;      

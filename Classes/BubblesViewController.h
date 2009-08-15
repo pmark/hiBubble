@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FullScreenCameraController.h"
+#import "BTLFullScreenCameraController.h"
 #import "BubblesView.h"
 
 @interface BubblesViewController : UIViewController <UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
   NSTimer *blowTimer;
   NSTimer *monitorTimer;
 	CGPoint startTouchPosition;
-  FullScreenCameraController *camera;
+  BTLFullScreenCameraController *camera;
   BubblesView *bubblesView;
   UIView *containerView;
   IBOutlet UIActivityIndicatorView *spinner;
@@ -24,7 +24,7 @@
 @property (nonatomic, retain) NSTimer *monitorTimer;
 @property (nonatomic) CGPoint startTouchPosition;
 @property (nonatomic, retain) UIActivityIndicatorView *spinner;
-@property (nonatomic, retain) FullScreenCameraController *camera;
+@property (nonatomic, retain) BTLFullScreenCameraController *camera;
 @property (nonatomic, retain) BubblesView *bubblesView;
 @property (nonatomic, retain) UIView *containerView;
 
