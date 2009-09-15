@@ -18,6 +18,7 @@
   BubblesView *bubblesView;
   UIView *containerView;
   IBOutlet UIActivityIndicatorView *spinner;
+	UILabel *statusLabel;
 }
 
 @property (nonatomic,retain) NSTimer *blowTimer;
@@ -27,6 +28,7 @@
 @property (nonatomic, retain) BTLFullScreenCameraController *camera;
 @property (nonatomic, retain) BubblesView *bubblesView;
 @property (nonatomic, retain) UIView *containerView;
+@property (nonatomic, retain) UILabel *statusLabel;
 
 -(void)setNormalizedVelocity:(float)level;
 -(void)askForRating;
@@ -38,6 +40,12 @@
 -(void)swipeDown:(NSSet *)touches withEvent:(UIEvent *)event;
 -(void)initCamera;
 -(void)toggleAugmentedReality;
+-(void)setRandomBackgroundColor;
+-(void)clearBackgroundColor;
+-(void)saveScreenshot;
+-(void)initStatusMessage;
+-(void)showStatusMessage:(NSString*)message;
+-(void)hideStatusMessage;
 
 @end
 

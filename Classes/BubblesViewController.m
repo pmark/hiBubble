@@ -17,12 +17,12 @@
 
 
 // horizontal swipe
-#define HORIZ_SWIPE_DRAG_MIN 180
+#define HORIZ_SWIPE_DRAG_MIN 280
 #define VERT_SWIPE_DRAG_MAX 100
 
 // vertical swipe
 #define HORIZ_SWIPE_DRAG_MAX 100
-#define VERT_SWIPE_DRAG_MIN 250
+#define VERT_SWIPE_DRAG_MIN 380
 
 
 @implementation BubblesViewController
@@ -32,11 +32,11 @@
 @synthesize startTouchPosition;
 @synthesize spinner;
 @synthesize camera;
-@synthesize containerView, bubblesView;
+@synthesize containerView, bubblesView, statusLabel;
 
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
+- (void) loadView {
   BubblesView *tmpBubbleView = [[BubblesView alloc] init];
   self.bubblesView = tmpBubbleView;
   self.bubblesView.opaque = NO;
@@ -46,7 +46,7 @@
   UIImageView *underlay = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"overlay2.png"]] autorelease];
   underlay.alpha = 0.75f;
   self.bubblesView.underlay = underlay;
-  [self.bubblesView addSubview:underlay];
+  [self.bubblesView addSubview:underlay];	
 }
 
 - (void) viewDidAppear:(BOOL)animated { 
@@ -55,20 +55,22 @@
 	[self.bubblesView becomeFirstResponder];
 	self.bubblesView.shakeDelegate = self;
   
-	[self toggleAugmentedReality];
-	[self.bubblesView launchBubble:20];
-	[self.bubblesView launchBubble:80];
+	[Session sharedSession].cameraMode = NO;
+  [self.bubblesView launchBubble:1];
+  [self.bubblesView launchBubble:50];
+  [self.bubblesView launchBubble:100];
+	[self setRandomBackgroundColor];
+	
+	[self initStatusMessage];
 }
 
 - (void) initCamera {  
-  if ([BTLFullScreenCameraController isAvailable]) {  
-    //NSLog(@"Init camera");
+  if ([BTLFullScreenCameraController isAvailable] && self.camera == nil) {  
     BTLFullScreenCameraController *tmpCamera = [[BTLFullScreenCameraController alloc] init];
     self.camera = tmpCamera;
     self.camera.view.backgroundColor = [UIColor blackColor];
     [self.camera setCameraOverlayView:self.bubblesView];
     [tmpCamera release];
-    //NSLog(@"Init camera: DONE");
   }
 }
 
@@ -110,12 +112,10 @@
 	self.view.clipsToBounds = YES;
   self.view.opaque = NO;
   self.view.alpha = 1.0f;
-  self.view.backgroundColor = [UIColor blackColor];
+	[self setRandomBackgroundColor];
 	
 	// 316 = 480 * 0.66
 	[self.bubblesView setWandCenterPoint:CGPointMake(160.0f, 316.0f)];
-
-  [[SCListener sharedListener] listen];
 }
 
 -(void)askForRating {
@@ -214,7 +214,6 @@
   
   self.bubblesView.wandCenterPoint = currentTouchPosition;
   
-  //[self.bubblesView launchBubble:[BtlUtilities randomNumberInRange:1 maximum:100]];
   [Session sharedSession].machineOn = YES;
 	
 	// If the swipe tracks correctly.
@@ -246,25 +245,26 @@
 }
 
 -(void)swipeRight:(NSSet*)touches withEvent:(UIEvent *)event {
-//  if (![Session sharedSession].cameraMode)
-    self.bubblesView.backgroundColor = [BtlUtilities randomVgaColor];
+	if ([Session sharedSession].cameraMode) {
+		[self.camera takePicture];
+	} else {
+		[self saveScreenshot];
+	}
+
 }
 
 -(void)swipeLeft:(NSSet*)touches withEvent:(UIEvent *)event {
-  if (![Session sharedSession].cameraMode)
-    self.bubblesView.backgroundColor = [UIColor blackColor];
-  else
-    self.bubblesView.backgroundColor = nil;  
+	self.bubblesView.backgroundColor = [UIColor blackColor];
+	[self toggleAugmentedReality];
 }
 
 -(void)swipeUp:(NSSet*)touches withEvent:(UIEvent *)event {
-//  if (![Session sharedSession].cameraMode)
-    self.bubblesView.backgroundColor = [BtlUtilities randomVgaColor];
+	[self setRandomBackgroundColor];
+
 }
 
 -(void)swipeDown:(NSSet*)touches withEvent:(UIEvent *)event {
-//  if (![Session sharedSession].cameraMode)
-    self.bubblesView.backgroundColor = [BtlUtilities randomVgaColor];
+	[self clearBackgroundColor];
 }
 
 
@@ -273,11 +273,12 @@
 #pragma mark
 #pragma mark Motion
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-  // if landscape, put in camera mode
   switch (interfaceOrientation) {
   case UIInterfaceOrientationLandscapeLeft: 
+		[self clearBackgroundColor];
+    break;
   case UIInterfaceOrientationLandscapeRight: 
-    [self toggleAugmentedReality];
+		[self setRandomBackgroundColor];
     break;
   }
   
@@ -285,40 +286,83 @@
 }
 
 -(void)toggleAugmentedReality {
+	[self hideStatusMessage];
   if ([BTLFullScreenCameraController isAvailable]) {  
     [Session sharedSession].cameraMode = ![Session sharedSession].cameraMode;
     if ([Session sharedSession].cameraMode == YES) {
-      self.bubblesView.backgroundColor = [UIColor purpleColor];      
-      self.bubblesView.alpha = 0.72f;
       if (!self.camera) { [self initCamera]; }
+      self.bubblesView.backgroundColor = [UIColor clearColor];
+      self.bubblesView.alpha = 0.74f;
       self.bubblesView.backgroundColor = nil;      
       self.view = self.camera.view;      
-      [self.bubblesView becomeFirstResponder];
-      
+      [self.camera.view becomeFirstResponder];
     } else {
       self.view = self.bubblesView;
-      self.bubblesView.alpha = 1.0f;
-      self.bubblesView.backgroundColor = [UIColor blackColor];
-      [self.bubblesView becomeFirstResponder];
+      self.bubblesView.alpha = 0.95f;
+			[self setRandomBackgroundColor];
+      //[self.bubblesView becomeFirstResponder];
       self.camera = nil;
     }    
   }
 }
 
 -(void)shakeMotionBegan:(UIEvent *)event {
-  NSLog(@"Shake!");
+	//NSLog(@"shake!");
 	if (![Session sharedSession].appIsActive) { return; }
-
-  [Session sharedSession].crazyMode = ![Session sharedSession].crazyMode;
-  [(BubblesAppDelegate*)[[UIApplication sharedApplication] delegate] playSoundFile:@"bark"];
-  if ([Session sharedSession].crazyMode) {
-    self.bubblesView.backgroundColor = [BtlUtilities randomVgaColor];
-    [self.bubblesView popAllBubbles];
-    [self.bubblesView launchBubble:100];
-  } else {
-    self.bubblesView.backgroundColor = [UIColor blackColor];
-  }
+	[self toggleAugmentedReality];
 } 
+
+-(void)setRandomBackgroundColor {
+	self.bubblesView.backgroundColor = [BtlUtilities randomVgaColor];
+}
+
+-(void)clearBackgroundColor {
+	if ([Session sharedSession].cameraMode) {
+		self.bubblesView.backgroundColor = [UIColor clearColor];
+	} else {
+		self.bubblesView.backgroundColor = [UIColor blackColor];
+	}
+	
+}
+
+- (void)saveScreenshot {
+	UIGraphicsBeginImageContext(self.bubblesView.bounds.size);
+	[self.bubblesView.layer renderInContext:UIGraphicsGetCurrentContext()];
+	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	UIImageWriteToSavedPhotosAlbum(viewImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+	[self showStatusMessage:@"Taking photo..."];
+	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:1.5];
+}
+
+- (void)image:(UIImage*)image didFinishSavingWithError:(NSError *)error contextInfo:(NSDictionary*)info {
+	[self hideStatusMessage];
+}
+
+- (void)initStatusMessage {
+	self.statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, self.bubblesView.bounds.size.height)];
+	self.statusLabel.textAlignment = UITextAlignmentCenter;
+	self.statusLabel.adjustsFontSizeToFitWidth = YES;
+	self.statusLabel.backgroundColor = [UIColor clearColor];
+	self.statusLabel.textColor = [UIColor whiteColor];
+	self.statusLabel.shadowOffset = CGSizeMake(0, -1);  
+	self.statusLabel.shadowColor = [UIColor blackColor];  
+	self.statusLabel.hidden = NO;
+	self.statusLabel.numberOfLines = 0;
+	self.statusLabel.text = @"Swipe right: take photo\nSwipe left: toggle camera\nTilt left or swipe up: change color\nTilt right or swipe down: reset color";
+	[self.bubblesView addSubview:self.statusLabel];	
+	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:7.5];
+}
+
+- (void)showStatusMessage:(NSString*)message {
+  self.statusLabel.text = message;
+	self.statusLabel.hidden = NO;
+	[self.bubblesView bringSubviewToFront:self.statusLabel];	
+}
+
+- (void)hideStatusMessage {
+	self.statusLabel.hidden = YES;
+}
 
 
 @end

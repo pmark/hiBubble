@@ -140,6 +140,8 @@
 - (BOOL)canBecomeFirstResponder { return YES; }
 
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event { 
+	NSLog(@"shake BubblesView!");
+
 	[super motionBegan: motion withEvent: event]; 
 	if ((motion == UIEventSubtypeMotionShake) && 
 				[self.shakeDelegate respondsToSelector:@selector(shakeMotionBegan:)]) { 

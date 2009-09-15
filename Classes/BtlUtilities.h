@@ -11,6 +11,7 @@
 @interface BtlUtilities : NSObject {
 }
 
++(void)seedRandomNumberGenerator;
 +(int)randomNumber:(int)max;
 +(int)randomNumberInRange:(int)min maximum:(int)max;
 +(int)randomPolarity;

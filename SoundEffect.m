@@ -81,12 +81,12 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 }
 
 -(void)dealloc {
-    AudioServicesDisposeSystemSoundID(_soundID);
-    [super dealloc];
+	AudioServicesDisposeSystemSoundID(_soundID);
+	[super dealloc];
 }
 
 -(void)play {
-    AudioServicesPlaySystemSound(_soundID);
+	AudioServicesPlaySystemSound(_soundID);
 }
 
 @end

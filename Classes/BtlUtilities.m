@@ -11,10 +11,14 @@
 
 @implementation BtlUtilities
 
++(void)seedRandomNumberGenerator {
+	srandom(time(NULL));
+}
+
 +(int)randomNumberInRange:(int)min maximum:(int)max {
   int range = (max - min);
   if (range == 0) {range = 1;}
-  return rand() % range + min;
+  return random() % range + min;
 }
 
 +(int)randomNumber:(int)max {
