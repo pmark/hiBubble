@@ -28,6 +28,7 @@
 @synthesize image;
 @synthesize velocity;
 @synthesize popTimer;
+@synthesize crazyMode;
 
 + (NSString*)defaultImageName {
   return @"bubble1.png";
@@ -52,11 +53,7 @@
       int bubbleNum = [BtlUtilities randomNumber:3] + 1;
       [self setImageByName:[NSString stringWithFormat:@"bubble%i.png", bubbleNum]];
       self.opaque = NO;
-      
-			// randomly pop some bubbles
-//      if ([BtlUtilities randomNumber:6] == 0) {
-//        [self createPopTimer];        
-//      }
+			self.crazyMode = [BtlUtilities randomChanceOutOf:7];      
     }
     return self;
 }
@@ -78,7 +75,7 @@
 // within a circular area with radius determined by velocity
 // where higher velocity makes a smaller radius.
 - (CGPoint)computeEndPoint {
-  if ([[Session sharedSession] crazyMode]) {
+  if (self.crazyMode) {
     CGPoint p = [BtlUtilities randomPoint];
     return CGPointMake(p.x + (106 * [BtlUtilities randomPolarity]),
                        p.y + (160 * [BtlUtilities randomPolarity]));
@@ -165,7 +162,7 @@
 	
 	// Set up fade out effect
 	CABasicAnimation *fadeOutAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-  if ([[Session sharedSession] crazyMode]) {
+  if (self.crazyMode) {
     [fadeOutAnimation setToValue:[NSNumber numberWithFloat:FINAL_OPACITY / 2.0f]];
   } else {
   	[fadeOutAnimation setToValue:[NSNumber numberWithFloat:FINAL_OPACITY]];
@@ -206,7 +203,7 @@
   
 	// Set up path movement
   CAAnimation *pathAnimation;
-  if ([[Session sharedSession] crazyMode]) {
+  if (self.crazyMode) {
     CABasicAnimation *tmpPathAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
     tmpPathAnimation.toValue = [NSValue valueWithCGPoint:[self computeEndPoint]];
     pathAnimation = tmpPathAnimation;
@@ -239,7 +236,7 @@
 	
 	CAAnimationGroup *group = [CAAnimationGroup animation];
 	group.delegate = self;
-	group.autoreverses = [[Session sharedSession] crazyMode];
+	group.autoreverses = self.crazyMode;
 	group.fillMode = kCAFillModeForwards;
 	group.removedOnCompletion = NO;
 	[group setAnimations:[NSArray arrayWithObjects:fadeOutAnimation, pathAnimation, 

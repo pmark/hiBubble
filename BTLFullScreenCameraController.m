@@ -128,15 +128,6 @@
 	[png writeToFile:[documentsDirectory stringByAppendingPathComponent:@"image.png"] options:NSAtomicWrite error:&error];
 }
 
-- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event { 
-	NSLog(@"shake cam!");
-
-} 
-
--(void)shakeMotionBegan:(UIEvent *)event {
-	NSLog(@"shake2!");
-} 
-
 - (BOOL)canBecomeFirstResponder { return YES; }
 
 - (void)dealloc {

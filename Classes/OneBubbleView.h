@@ -15,6 +15,7 @@
   NSInteger velocity;
   UIImage *image; 
   NSTimer *popTimer;
+	BOOL crazyMode;
 }
 
 @property (nonatomic) CGFloat startWidth;
@@ -22,6 +23,7 @@
 @property (assign) NSInteger velocity;
 @property (nonatomic,retain) UIImage *image;
 @property (nonatomic,retain) NSTimer *popTimer;
+@property (assign) BOOL crazyMode;
 
 + (NSString*)defaultImageName;
 -(void)setImageByName:(NSString*)name;

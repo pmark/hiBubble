@@ -19,7 +19,8 @@
 +(UIColor*)randomColor;
 +(CGPoint)randomPointBetween:(NSInteger)x y:(NSInteger)y;
 +(CGPoint)randomPoint;
++(BOOL)randomChanceOutOf:(int)max;
 
 @end
 
-#define VGA_COLORS [NSArray arrayWithObjects:[UIColor darkGrayColor],[UIColor lightGrayColor],[UIColor whiteColor],[UIColor grayColor],[UIColor redColor],[UIColor greenColor],[UIColor blueColor],[UIColor cyanColor],[UIColor yellowColor],[UIColor magentaColor],[UIColor orangeColor],[UIColor purpleColor],nil]
+#define VGA_COLORS [NSArray arrayWithObjects:[UIColor darkGrayColor],[UIColor lightGrayColor],[UIColor whiteColor],[UIColor grayColor],[UIColor redColor],[UIColor greenColor],[UIColor blueColor],[UIColor cyanColor],[UIColor yellowColor],[UIColor magentaColor],[UIColor orangeColor],[UIColor purpleColor],[UIColor blackColor],nil]

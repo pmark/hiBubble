@@ -49,7 +49,9 @@
 	return [BtlUtilities randomPointBetween:240 y:480];
 }
 
-
++(BOOL)randomChanceOutOf:(int)max {
+	return ([BtlUtilities randomNumber:max] == 0);
+}
 
 
 @end
