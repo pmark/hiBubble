@@ -25,6 +25,8 @@
 		4D5773510FC34934002B2086 /* menu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5773500FC34934002B2086 /* menu_bg.png */; };
 		4D5773540FC34AFF002B2086 /* seanote.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5773530FC34AFF002B2086 /* seanote.png */; };
 		4D5773560FC34BAB002B2086 /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5773550FC34BAB002B2086 /* logo1.png */; };
+		4D7837871060643C00A235DE /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D78367910604EB600A235DE /* OpenAL.framework */; };
+		4D7837C510606AC000A235DE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7835FA10604C0600A235DE /* AVFoundation.framework */; };
 		4DAA6EAF102B4F2900C082CB /* SoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA6EAE102B4F2900C082CB /* SoundEffect.m */; };
 		4DAA7098102B780900C082CB /* BTLFullScreenCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA7097102B780900C082CB /* BTLFullScreenCameraController.m */; };
 		4DAA7664102CB03A00C082CB /* overlay1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA7663102CB03A00C082CB /* overlay1.png */; };
@@ -68,6 +70,8 @@
 		4D5773530FC34AFF002B2086 /* seanote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seanote.png; sourceTree = "<group>"; };
 		4D5773550FC34BAB002B2086 /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
 		4D7635E50FCD24100003451E /* hiBubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hiBubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D7835FA10604C0600A235DE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4D78367910604EB600A235DE /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		4DAA6EAD102B4F2900C082CB /* SoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffect.h; sourceTree = "<group>"; };
 		4DAA6EAE102B4F2900C082CB /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
 		4DAA7096102B780900C082CB /* BTLFullScreenCameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLFullScreenCameraController.h; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				4D2B09150FB26DEA00CFC1C7 /* QuartzCore.framework in Frameworks */,
 				4D2B0B370FB2C1DF00CFC1C7 /* AudioToolbox.framework in Frameworks */,
+				4D7837871060643C00A235DE /* OpenAL.framework in Frameworks */,
+				4D7837C510606AC000A235DE /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +147,8 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				4D7835FA10604C0600A235DE /* AVFoundation.framework */,
+				4D78367910604EB600A235DE /* OpenAL.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";

@@ -117,6 +117,17 @@ static void listeningCallback(void *inUserData, AudioQueueRef inAQ, AudioQueueBu
 	[self setupBuffers];
 	AudioQueueNewInput(&format, listeningCallback, self, NULL, NULL, 0, &queue);
 	[self setupMetering];	
+	
+	// Testing some different methods
+	UInt32 v = 1;
+	AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryMixWithOthers, sizeof(v), &v);		
+
+	UInt32 sessionCategory = kAudioSessionCategory_PlayAndRecord;
+	AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(sessionCategory), &sessionCategory);	
+
+	UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_Speaker;
+	AudioSessionSetProperty (kAudioSessionProperty_OverrideAudioRoute,sizeof (audioRouteOverride),&audioRouteOverride);
+
 }
 
 - (void)setupFormat {

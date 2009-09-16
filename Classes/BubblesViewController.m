@@ -287,7 +287,8 @@
 
 -(void)toggleAugmentedReality {
 	[self hideStatusMessage];
-  if ([BTLFullScreenCameraController isAvailable]) {  
+  if ([BTLFullScreenCameraController isAvailable]) {
+		[(BubblesAppDelegate*)[[UIApplication sharedApplication] delegate] playSoundFile:@"bark"];
     [Session sharedSession].cameraMode = ![Session sharedSession].cameraMode;
     if ([Session sharedSession].cameraMode == YES) {
       if (!self.camera) { [self initCamera]; }
@@ -349,7 +350,7 @@
 	self.statusLabel.shadowColor = [UIColor blackColor];  
 	self.statusLabel.hidden = NO;
 	self.statusLabel.numberOfLines = 0;
-	self.statusLabel.text = @"Swipe right: take photo\nSwipe left: toggle camera\nTilt left or swipe up: change color\nTilt right or swipe down: reset color";
+	self.statusLabel.text = @"Swipe right: take photo\nSwipe left: toggle camera\nTilt left or swipe up: change color\nTilt right or swipe down: reset color\nDouble tap: bubble machine on/off";
 	[self.bubblesView addSubview:self.statusLabel];	
 	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:7.5];
 }

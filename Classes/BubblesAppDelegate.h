@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SoundEffect.h"
+#import "Finch.h"
 
 @class BubblesViewController;
 
@@ -15,6 +15,7 @@
   UIWindow *window;
   BubblesViewController *viewController;
   NSDictionary *sounds;
+	Finch *finch;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -22,6 +23,7 @@
 @property (nonatomic, retain) NSDictionary *sounds;
 
 - (void)initSounds;
+//- (void)initSystemSounds;
 - (void)playSoundFile:(NSString*)soundName;
 
 @end

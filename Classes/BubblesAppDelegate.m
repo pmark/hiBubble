@@ -10,8 +10,12 @@
 #import "BubblesViewController.h"
 #import "Session.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import "SoundEffect.h"
 #import "SCListener.h"
 #import "BtlUtilities.h"
+//#import "RevolverSound.h"
+#import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 
 @implementation BubblesAppDelegate
 
@@ -27,8 +31,10 @@
 	[application setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
   [application setStatusBarHidden:YES animated:NO];
 	[UIAccelerometer sharedAccelerometer].delegate = self;
-  [self initSounds];
 	[BtlUtilities seedRandomNumberGenerator];
+
+  [self initSounds];
+  [[SCListener sharedListener] listen];
 
   [window addSubview:viewController.view];
   [window makeKeyAndVisible];
@@ -42,7 +48,72 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
 	[Session sharedSession].appIsActive = true;
-	[[SCListener sharedListener] listen];
+	//[[SCListener sharedListener] listen];
+}
+
+#pragma mark
+#pragma mark Sounds
+/*
+- (void)initSystemSounds {
+  NSBundle *mainBundle = [NSBundle mainBundle];
+
+  self.sounds = [NSDictionary dictionaryWithObjectsAndKeys:
+      [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"pop1" ofType:@"aif"]], @"pop1",
+      [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"bark" ofType:@"aif"]], @"bark",
+      nil];
+}
+
+- (void)playSoundFile:(NSString*)soundName {
+  [(SoundEffect*)[self.sounds objectForKey:soundName] play];
+}
+*/
+
+/*
+- (void)initSounds {
+	finch = [[Finch alloc] init];
+	[finch setListenToo:YES];
+
+  NSBundle *bundle = [NSBundle mainBundle];
+
+	NSArray *names = [NSArray arrayWithObjects:@"pop1", @"bark", nil];
+	self.sounds = [NSMutableDictionary dictionaryWithCapacity:[names count]];
+
+	for (NSString *name in names) {
+		NSString *fileName = [bundle pathForResource:name ofType:@"wav"];
+		RevolverSound *sound = [[RevolverSound alloc] initWithFile:fileName rounds:5];
+		[self.sounds setValue:sound forKey:name];
+		[sound release];
+	}
+}
+
+- (void)playSoundFile:(NSString*)soundName {
+  [(RevolverSound*)[self.sounds objectForKey:soundName] play];
+}
+*/
+
+- (void)initSounds {
+  NSBundle *bundle = [NSBundle mainBundle];
+
+	NSArray *names = [NSArray arrayWithObjects:@"pop1", @"bark", nil];
+	self.sounds = [NSMutableDictionary dictionaryWithCapacity:[names count]];
+
+	for (NSString *name in names) {
+		NSURL *url = [NSURL URLWithString:[bundle pathForResource:name ofType:@"aif"]];
+		AVAudioPlayer	*sound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+		[sound prepareToPlay];
+		sound.numberOfLoops = 0;
+		sound.volume = 1.0;
+		[self.sounds setValue:sound forKey:name];
+		[sound release];
+	}
+}
+
+- (void)playSoundFile:(NSString*)soundName {
+	AVAudioPlayer *sound = (AVAudioPlayer*)[self.sounds objectForKey:soundName];
+	if(sound.playing == YES)
+		sound.currentTime = 0;
+	else
+    [sound play];
 }
 
 - (void)dealloc {
@@ -50,24 +121,6 @@
   [viewController release];
   [window release];
   [super dealloc];
-}
-
-#pragma mark
-#pragma mark Sounds
-- (void)initSounds {
-  NSBundle *mainBundle = [NSBundle mainBundle];
-
-  self.sounds = [NSDictionary dictionaryWithObjectsAndKeys:
-      [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"pop1" ofType:@"aif"]], @"pop1",
-      [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"bark" ofType:@"aif"]], @"bark",
-      nil];
-  [[SCListener sharedListener] listen];
-}
-
-- (void)playSoundFile:(NSString*)soundName {
-  [[SCListener sharedListener] pause];
-  [(SoundEffect*)[self.sounds objectForKey:soundName] play];
-  //[[SCListener sharedListener] listen];
 }
 
 
