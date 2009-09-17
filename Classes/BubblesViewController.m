@@ -24,6 +24,9 @@
 #define HORIZ_SWIPE_DRAG_MAX 200
 #define VERT_SWIPE_DRAG_MIN 200
 
+#define BUBBLE_COUNT 6
+#define STYLE_DURATION 5.0
+
 
 @implementation BubblesViewController
 
@@ -87,7 +90,7 @@
   [[NSRunLoop currentRunLoop] addTimer: self.blowTimer
                                forMode: NSDefaultRunLoopMode];
 
-	self.styleTimer = [NSTimer scheduledTimerWithTimeInterval: 8.0
+	self.styleTimer = [NSTimer scheduledTimerWithTimeInterval: STYLE_DURATION
                                 target:	self
                               selector:	@selector(changeBubbleStyle:)
                               userInfo:	nil		// extra info
@@ -118,11 +121,12 @@
 }
 
 - (void)changeBubbleStyle:(NSTimer *)timer {
-	int max = [BtlUtilities randomNumberInRange:1 maximum:8];
+	int max = [BtlUtilities randomNumberInRange:1 maximum:BUBBLE_COUNT];
 	[[Session sharedSession] setBubbleCount:max];
 	int bs = [BtlUtilities randomNumber:max];
 	[[Session sharedSession] setBubbleStyle:bs];
-	[BtlUtilities seedRandomNumberGenerator];
+	//NSLog(@"new style/count: %i/%i", max, bs);
+	//[BtlUtilities seedRandomNumberGenerator];
 }
 
 - (void)viewDidLoad {

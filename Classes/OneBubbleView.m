@@ -59,14 +59,14 @@
 				offset = [BtlUtilities randomNumber:count];
 			} else {
 				// single color
-				offset = style;
+				offset = count;
 			}
 			
       int bubbleNum = offset + 4;
 			
       [self setImageByName:[NSString stringWithFormat:@"bubble%i.png", bubbleNum]];
       self.opaque = NO;
-			self.crazyMode = [BtlUtilities randomChanceOutOf:16];      
+			self.crazyMode = [BtlUtilities randomChanceOutOf:13];      
     }
     return self;
 }
@@ -103,7 +103,7 @@
     int randomRadius = [BtlUtilities randomNumber:radius];
     int phi = [BtlUtilities randomNumber:360];
     int x = cos(phi) * randomRadius + centerX;
-    int y = sin(phi) * randomRadius * 0.33f + centerY;
+    int y = sin(phi) * randomRadius * 0.75f + centerY;
     return CGPointMake(x, y);
   }
 }
@@ -185,7 +185,7 @@
 	// Set up rotation
 	CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
   rotationAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
-	NSNumber *radians = [NSNumber numberWithFloat:(([BtlUtilities randomNumber:40] + 5) * 
+	NSNumber *radians = [NSNumber numberWithFloat:(([BtlUtilities randomNumber:70] + 5) * 
 											 [BtlUtilities randomPolarity] * M_PI / 180.0f)];
   rotationAnimation.toValue = radians;
 	
