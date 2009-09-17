@@ -12,7 +12,7 @@
 
 @interface BubblesViewController : UIViewController <UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
   NSTimer *blowTimer;
-  NSTimer *monitorTimer;
+  NSTimer *styleTimer;
 	CGPoint startTouchPosition;
   BTLFullScreenCameraController *camera;
   BubblesView *bubblesView;
@@ -22,7 +22,7 @@
 }
 
 @property (nonatomic,retain) NSTimer *blowTimer;
-@property (nonatomic, retain) NSTimer *monitorTimer;
+@property (nonatomic, retain) NSTimer *styleTimer;
 @property (nonatomic) CGPoint startTouchPosition;
 @property (nonatomic, retain) UIActivityIndicatorView *spinner;
 @property (nonatomic, retain) BTLFullScreenCameraController *camera;
@@ -30,7 +30,7 @@
 @property (nonatomic, retain) UIView *containerView;
 @property (nonatomic, retain) UILabel *statusLabel;
 
--(void)setNormalizedVelocity:(float)level;
+-(void)setNormalizedVelocity:(CGFloat)level;
 -(void)askForRating;
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 -(void)shakeMotionBegan:(UIEvent *)event;

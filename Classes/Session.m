@@ -15,7 +15,8 @@
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(Session);
 
-@synthesize velocity, crazyMode, cameraMode, appIsActive, machineOn;
+@synthesize velocity, crazyMode, cameraMode, appIsActive, machineOn, minSoundLevel, maxSoundLevel;
+@synthesize bubbleCount, bubbleStyle;
 
 -(void)setNewVelocity:(NSInteger)newVelocity {
   self.velocity = newVelocity;
@@ -25,8 +26,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(Session);
   return self.velocity;
 }
 
+-(bool)breathDetected {
+  return self.velocity > 28;
+}
+
 -(bool)bubblesShouldAppear {
-  return self.appIsActive && (self.velocity > 0.05f || self.machineOn);
+  return self.appIsActive && ([self breathDetected] || self.machineOn);
 }
 
 @end

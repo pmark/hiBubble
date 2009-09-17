@@ -14,12 +14,14 @@
 #import <QuartzCore/QuartzCore.h>
 
 
-#define GROW_ANIMATION_DURATION_SECONDS 0.78
+#define GROW_ANIMATION_DURATION_SECONDS 0.68
 #define FLOAT_ANIMATION_DURATION_SECONDS 11.5
-#define MIN_SIZE_SCALAR 0.52
-#define FINAL_OPACITY 0.6
-#define MIN_HORIZON_RADIUS 220.0
-#define MAX_HORIZON_RADIUS 270.0
+#define MIN_SIZE_SCALAR 0.10
+#define FINAL_OPACITY 0.45
+#define MIN_HORIZON_RADIUS 100.0
+#define MAX_HORIZON_RADIUS 320.0
+#define BIRTH_OFFSET_X 60
+#define BIRTH_OFFSET_Y 25
 
 @implementation OneBubbleView
 
@@ -49,11 +51,22 @@
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-      // only select bubble 2, 3, or 4
-      int bubbleNum = [BtlUtilities randomNumber:3] + 1;
+			int count = [[Session sharedSession] bubbleCount];
+			int style = [[Session sharedSession] bubbleStyle];
+			int offset;
+			if (style == 0) {
+				// full spectrum
+				offset = [BtlUtilities randomNumber:count];
+			} else {
+				// single color
+				offset = style;
+			}
+			
+      int bubbleNum = offset + 4;
+			
       [self setImageByName:[NSString stringWithFormat:@"bubble%i.png", bubbleNum]];
       self.opaque = NO;
-			self.crazyMode = [BtlUtilities randomChanceOutOf:7];      
+			self.crazyMode = [BtlUtilities randomChanceOutOf:16];      
     }
     return self;
 }
@@ -62,7 +75,7 @@
   // scale the high res image down
   [UIView beginAnimations:nil context:nil];
   [UIView setAnimationDuration:0.1f];
-  CGAffineTransform preTransform = CGAffineTransformMakeScale(0.1f, 0.1f);  
+  CGAffineTransform preTransform = CGAffineTransformMakeScale(MIN_SIZE_SCALAR+0.01f, MIN_SIZE_SCALAR+0.01f);
   self.transform = preTransform;
   [UIView commitAnimations];
 }
@@ -116,14 +129,15 @@
 }
 
 -(void)animateBirthAtPoint:(CGPoint)point {
-  point.x += [BtlUtilities randomNumber:16] * [BtlUtilities randomPolarity];
-  point.y += [BtlUtilities randomNumber:14] * [BtlUtilities randomPolarity];
+  point.x += [BtlUtilities randomNumber:BIRTH_OFFSET_X] * [BtlUtilities randomPolarity];
+  point.y += [BtlUtilities randomNumber:BIRTH_OFFSET_Y] * [BtlUtilities randomPolarity];
   self.center = point;
+	//NSLog(@"start x: %f, y: %f", point.x, point.y);
   [self setup];
   
   // scale the image back up to size
   // duration is proportional to velocity
-  CGFloat duration = [self scaleDownByVelocity:GROW_ANIMATION_DURATION_SECONDS percent:45];
+  CGFloat duration = [self scaleDownByVelocity:GROW_ANIMATION_DURATION_SECONDS percent:50];
 
   [UIView beginAnimations:nil context:self];
   [UIView setAnimationDuration:duration];
@@ -132,13 +146,14 @@
   [UIView setAnimationDidStopSelector:@selector(bubbleBirthAnimationDidStop:finished:context:)];
 
   // Higher velocity means smaller bubbles
-  self.sizeScalar = 0.999 - [self scaleDownByVelocity:1 percent:90];
+  self.sizeScalar = [self scaleDownByVelocity:1 percent:95];
   
   if (self.sizeScalar < MIN_SIZE_SCALAR) { self.sizeScalar = MIN_SIZE_SCALAR; }
+	//NSLog(@"vel: %i, sizeScalar: %f", self.velocity, self.sizeScalar);
   CGAffineTransform transform = CGAffineTransformMakeScale(self.sizeScalar, self.sizeScalar);
   
   // The varier is used to move the birth end point
-  int varier = [BtlUtilities randomNumber:20] * [self velocityScalar];
+  int varier = [self scaleDownByVelocity:30 percent:90];
   self.center = CGPointMake(self.center.x + (varier * [BtlUtilities randomPolarity]), 
                             self.center.y - varier);
   self.transform = transform;
@@ -152,13 +167,10 @@
 }
 
 -(void)animateFloatPhase:(OneBubbleView*)oneBubble {
-  //CGFloat duration = FLOAT_ANIMATION_DURATION_SECONDS + ([self velocityScalar] * 5);
-  CGFloat duration = [self scaleDownByVelocity:FLOAT_ANIMATION_DURATION_SECONDS percent:65];
+  CGFloat duration = [self scaleDownByVelocity:FLOAT_ANIMATION_DURATION_SECONDS percent:60];
 	oneBubble.alpha = 1.0f;
 	CGRect imageFrame = [[oneBubble.layer presentationLayer] frame];
 	CGPoint viewOrigin = [[oneBubble.layer presentationLayer] position];
-	//CGRect imageFrame = oneBubble.layer.frame;
-	//CGPoint viewOrigin = oneBubble.layer.position;
 	
 	// Set up fade out effect
 	CABasicAnimation *fadeOutAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
@@ -173,14 +185,13 @@
 	// Set up rotation
 	CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
   rotationAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
-	NSNumber *radians = [NSNumber numberWithFloat:(([BtlUtilities randomNumber:360] + 33) * 
+	NSNumber *radians = [NSNumber numberWithFloat:(([BtlUtilities randomNumber:40] + 5) * 
 											 [BtlUtilities randomPolarity] * M_PI / 180.0f)];
   rotationAnimation.toValue = radians;
-			
+	
 	// Set up scaling
 	CABasicAnimation *resizeAnimation = [CABasicAnimation animationWithKeyPath:@"bounds.size"];
-	CGFloat endScalar = 0.70f; //oneBubble.sizeScalar * 0.2;
-
+	CGFloat endScalar = MIN_SIZE_SCALAR;//oneBubble.sizeScalar * 0.2;
 	[resizeAnimation setToValue:[NSValue valueWithCGSize:CGSizeMake(
 			imageFrame.size.width * endScalar,
 			imageFrame.size.height * endScalar)]];
@@ -189,7 +200,7 @@
 	
 	// Set up pulsation
 	CABasicAnimation *pulseAnimation = [CABasicAnimation animationWithKeyPath:@"bounds.size"];
-  CGFloat pulseFactor = self.sizeScalar * 0.91f;
+  CGFloat pulseFactor = self.sizeScalar * 0.94f;
 	[pulseAnimation setToValue:[NSValue valueWithCGSize:CGSizeMake(
 			imageFrame.size.width / pulseFactor,
 			imageFrame.size.height / pulseFactor)]];
@@ -198,7 +209,7 @@
   pulseAnimation.repeatCount = 50;
   pulseAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
 	pulseAnimation.removedOnCompletion = NO;
-	pulseAnimation.duration = [BtlUtilities randomNumberInRange:30 maximum:100] / 100.0f;
+	pulseAnimation.duration = [BtlUtilities randomNumberInRange:50 maximum:100] / 100.0f;
   
   
 	// Set up path movement
@@ -216,11 +227,12 @@
         [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut],
         [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn], nil]];
     
-    CGPoint startPoint = CGPointMake(
-        oneBubble.layer.position.x + [BtlUtilities randomNumberInRange:30 maximum:70] * 
-                                     [BtlUtilities randomPolarity], 
-        oneBubble.layer.position.y + [BtlUtilities randomNumberInRange:80 maximum:200] * 
-                                     [BtlUtilities randomPolarity]);
+//    CGPoint startPoint = CGPointMake(
+//        oneBubble.layer.position.x + [BtlUtilities randomNumberInRange:30 maximum:70] * 
+//                                     [BtlUtilities randomPolarity], 
+//        oneBubble.layer.position.y + [BtlUtilities randomNumberInRange:80 maximum:200] * 
+//                                     [BtlUtilities randomPolarity]);
+    CGPoint startPoint = [self computeEndPoint];
     CGPoint midPoint = [self computeEndPoint];
     CGPoint endPoint = [self computeEndPoint];
     CGMutablePathRef curvedPath = CGPathCreateMutable();
@@ -254,11 +266,17 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-  //CGFloat alpha = ([BtlUtilities randomNumber:20] / 100.0f) + 0.8f;
-  CGFloat alpha = 0.8f;
+  CGFloat alpha = 1.0f;
+
+//	CGRect frame = 
+//	NSLog(@"bubble view frame: %f", frame.size.width);
+//  frame.size.width = frame.size.height = self.image.size.width;
+//  frame.origin.x = frame.origin.y = 0.0f;
+	
 	CGRect frame = [self bounds];
+//	NSLog(@"bubble view frame: %f", frame.size.width);
   frame.size.width = frame.size.height = self.image.size.width;
-  frame.origin.x = frame.origin.y = 0.0f;
+  //frame.origin.x = frame.origin.y = 0.5f;
 
   [self.image drawInRect:frame blendMode:kCGBlendModeNormal alpha:alpha];
 	
@@ -268,8 +286,8 @@
 
 - (void)setImageByName:(NSString*)name {
   self.image = [UIImage imageNamed:name];
+	//self.bounds = CGRectMake(0, 0, self.image.size.width, self.image.size.height);
 }
-
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
   [Session sharedSession].machineOn = NO;    

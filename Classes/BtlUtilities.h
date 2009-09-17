@@ -23,4 +23,4 @@
 
 @end
 
-#define VGA_COLORS [NSArray arrayWithObjects:[UIColor darkGrayColor],[UIColor lightGrayColor],[UIColor whiteColor],[UIColor grayColor],[UIColor redColor],[UIColor greenColor],[UIColor blueColor],[UIColor cyanColor],[UIColor yellowColor],[UIColor magentaColor],[UIColor orangeColor],[UIColor purpleColor],[UIColor blackColor],nil]
+#define VGA_COLORS [NSArray arrayWithObjects:[UIColor darkGrayColor],[UIColor whiteColor],[UIColor redColor],[UIColor blueColor],[UIColor cyanColor],[UIColor yellowColor],[UIColor magentaColor],[UIColor orangeColor],[UIColor purpleColor],nil]

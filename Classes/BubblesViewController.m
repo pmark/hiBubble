@@ -17,17 +17,17 @@
 
 
 // horizontal swipe
-#define HORIZ_SWIPE_DRAG_MIN 280
-#define VERT_SWIPE_DRAG_MAX 100
+#define HORIZ_SWIPE_DRAG_MIN 240
+#define VERT_SWIPE_DRAG_MAX 150
 
 // vertical swipe
-#define HORIZ_SWIPE_DRAG_MAX 100
-#define VERT_SWIPE_DRAG_MIN 380
+#define HORIZ_SWIPE_DRAG_MAX 200
+#define VERT_SWIPE_DRAG_MIN 200
 
 
 @implementation BubblesViewController
 
-@synthesize monitorTimer;
+@synthesize styleTimer;
 @synthesize blowTimer;
 @synthesize startTouchPosition;
 @synthesize spinner;
@@ -47,6 +47,9 @@
   underlay.alpha = 0.75f;
   self.bubblesView.underlay = underlay;
   [self.bubblesView addSubview:underlay];	
+	
+	[[Session sharedSession] setMinSoundLevel:0.9f];
+	[[Session sharedSession] setMaxSoundLevel:1.0f];
 }
 
 - (void) viewDidAppear:(BOOL)animated { 
@@ -58,7 +61,7 @@
 	[Session sharedSession].cameraMode = NO;
   [self.bubblesView launchBubble:1];
   [self.bubblesView launchBubble:50];
-  [self.bubblesView launchBubble:100];
+  [self.bubblesView launchBubble:80];
 	[self setRandomBackgroundColor];
 	
 	[self initStatusMessage];
@@ -75,7 +78,7 @@
 }
 
 - (void)initTimers {
-	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.18 // 0.08 seconds is nice
+	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.27
                                 target:	self
                               selector:	@selector(blow:)
                               userInfo:	nil		// extra info
@@ -83,6 +86,16 @@
 
   [[NSRunLoop currentRunLoop] addTimer: self.blowTimer
                                forMode: NSDefaultRunLoopMode];
+
+	self.styleTimer = [NSTimer scheduledTimerWithTimeInterval: 8.0
+                                target:	self
+                              selector:	@selector(changeBubbleStyle:)
+                              userInfo:	nil		// extra info
+                               repeats:	YES];	
+
+  [[NSRunLoop currentRunLoop] addTimer: self.styleTimer
+                               forMode: NSDefaultRunLoopMode];
+
 }
 
 - (void)blow:(NSTimer *)timer {
@@ -91,17 +104,26 @@
     Float32 volume = [[SCListener sharedListener] averagePower];
     [self setNormalizedVelocity:volume];
   }  
-  
-  if ([[Session sharedSession] bubblesShouldAppear]) {  
-    NSInteger velocity = 0;
-    if ([Session sharedSession].machineOn) {
-      velocity = [BtlUtilities randomNumberInRange:1 maximum:100];
-    }
-    
-    [self.bubblesView launchBubble:velocity];
-  }
+
+	if ([[Session sharedSession] appIsActive]) {	
+		if ([[Session sharedSession] breathDetected]) {
+			[Session sharedSession].machineOn = NO;
+			[self.bubblesView launchBubble:0];
+			[self hideStatusMessage];
+			[BtlUtilities seedRandomNumberGenerator];
+		} else if ([Session sharedSession].machineOn) {
+			[self.bubblesView launchBubble:[BtlUtilities randomNumberInRange:25 maximum:100]];
+		}
+	}
 }
 
+- (void)changeBubbleStyle:(NSTimer *)timer {
+	int max = [BtlUtilities randomNumberInRange:1 maximum:8];
+	[[Session sharedSession] setBubbleCount:max];
+	int bs = [BtlUtilities randomNumber:max];
+	[[Session sharedSession] setBubbleStyle:bs];
+	[BtlUtilities seedRandomNumberGenerator];
+}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -141,14 +163,22 @@
 	}
 }
 
-- (void)setNormalizedVelocity:(float)level {
-  // the min and max levels come directly from the mic
-  float max = 0.85f;
-  float min = 0.1f;
-  float range = max - min;
-  if (level < min) level = min;
-  if (level > max) level = max;
-  NSInteger newVelocity = ((level - min) / range) * 100;
+- (void)setNormalizedVelocity:(CGFloat)level {
+  CGFloat max = [[Session sharedSession] maxSoundLevel];	
+	if (level > max) {
+		max = level;
+		[[Session sharedSession] setMaxSoundLevel:max];
+	}
+
+  CGFloat min = [[Session sharedSession] minSoundLevel];
+	if (level > 0.0 && level < min) {
+		// gradually decrease the minimum level
+		min = level * 0.05f;
+		[[Session sharedSession] setMinSoundLevel:min];
+	}
+
+  CGFloat range = max - min;	
+  NSInteger newVelocity = ((level - min) / range) * 100.0f;
   [[Session sharedSession] setNewVelocity:newVelocity];
 }
 
@@ -161,7 +191,7 @@
   [[SCListener sharedListener] stop];
 	[self.view resignFirstResponder];
 	[blowTimer release];
-	[monitorTimer release];
+	[styleTimer release];
   [spinner release];
   [camera release];
   [containerView release];
@@ -181,6 +211,7 @@
 	CGPoint point = [touch locationInView:self.bubblesView];
 	self.startTouchPosition = point;
   [Session sharedSession].machineOn = NO;
+	[self hideStatusMessage];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -259,8 +290,9 @@
 }
 
 -(void)swipeUp:(NSSet*)touches withEvent:(UIEvent *)event {
-	[self setRandomBackgroundColor];
-
+	if (![Session sharedSession].cameraMode) {
+		[self setRandomBackgroundColor];
+	}
 }
 
 -(void)swipeDown:(NSSet*)touches withEvent:(UIEvent *)event {
@@ -278,7 +310,9 @@
 		[self clearBackgroundColor];
     break;
   case UIInterfaceOrientationLandscapeRight: 
-		[self setRandomBackgroundColor];
+		if (![Session sharedSession].cameraMode) {
+			[self setRandomBackgroundColor];
+		}
     break;
   }
   
@@ -293,13 +327,13 @@
     if ([Session sharedSession].cameraMode == YES) {
       if (!self.camera) { [self initCamera]; }
       self.bubblesView.backgroundColor = [UIColor clearColor];
-      self.bubblesView.alpha = 0.74f;
+      //self.bubblesView.alpha = 0.74f;
       self.bubblesView.backgroundColor = nil;      
       self.view = self.camera.view;      
       [self.camera.view becomeFirstResponder];
     } else {
       self.view = self.bubblesView;
-      self.bubblesView.alpha = 0.95f;
+      //self.bubblesView.alpha = 0.95f;
 			[self setRandomBackgroundColor];
       //[self.bubblesView becomeFirstResponder];
       self.camera = nil;
@@ -352,7 +386,7 @@
 	self.statusLabel.numberOfLines = 0;
 	self.statusLabel.text = @"Swipe right: take photo\nSwipe left: toggle camera\nTilt left or swipe up: change color\nTilt right or swipe down: reset color\nDouble tap: bubble machine on/off";
 	[self.bubblesView addSubview:self.statusLabel];	
-	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:7.5];
+	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:10.0];
 }
 
 - (void)showStatusMessage:(NSString*)message {

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Finch.h"
 
 @class BubblesViewController;
 
@@ -15,7 +14,6 @@
   UIWindow *window;
   BubblesViewController *viewController;
   NSDictionary *sounds;
-	Finch *finch;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

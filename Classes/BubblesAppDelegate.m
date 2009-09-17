@@ -48,7 +48,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
 	[Session sharedSession].appIsActive = true;
-	//[[SCListener sharedListener] listen];
+	[[SCListener sharedListener] listen];
 }
 
 #pragma mark

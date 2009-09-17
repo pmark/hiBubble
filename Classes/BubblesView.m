@@ -12,6 +12,7 @@
 #import "BubblesAppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
 
+#define BUBBLE_IMAGE_WIDTH 280
 
 @implementation BubblesView
 
@@ -22,7 +23,7 @@
 }
 
 - (void)launchBubble:(NSInteger)velocity {
-  CGRect bubbleFrame = CGRectMake(10.0f, 0.0f, 155.0f, 155.0f);
+  CGRect bubbleFrame = CGRectMake(0.0f, 0.0f, BUBBLE_IMAGE_WIDTH, BUBBLE_IMAGE_WIDTH);
 
   OneBubbleView *oneBubble = [[OneBubbleView alloc] initWithFrame:bubbleFrame];
 	oneBubble.tag = [self nextBubbleTag];

@@ -13,16 +13,25 @@
   BOOL cameraMode;
 	BOOL appIsActive;
   BOOL machineOn;
+	CGFloat minSoundLevel;
+	CGFloat maxSoundLevel;
+	NSInteger bubbleCount;
+	NSInteger bubbleStyle;
 }
 
 @property (assign) NSInteger velocity;
+@property (assign) NSInteger bubbleCount;
+@property (assign) NSInteger bubbleStyle;
 @property (assign) BOOL crazyMode;
 @property (assign) BOOL cameraMode;
 @property (assign) BOOL appIsActive;
 @property (assign) BOOL machineOn;
+@property (assign) CGFloat minSoundLevel;
+@property (assign) CGFloat maxSoundLevel;
 
 -(void)setNewVelocity:(NSInteger)newVelocity;
 -(NSInteger)getVelocity;
+-(bool)breathDetected;
 -(bool)bubblesShouldAppear;
 +(Session*)sharedSession;
 
