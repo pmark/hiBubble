@@ -27,7 +27,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(Session);
 }
 
 -(bool)breathDetected {
-  return self.velocity > 28;
+  return self.velocity > 24;
 }
 
 -(bool)bubblesShouldAppear {

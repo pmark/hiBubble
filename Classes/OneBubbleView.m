@@ -20,8 +20,8 @@
 #define FINAL_OPACITY 0.45
 #define MIN_HORIZON_RADIUS 100.0
 #define MAX_HORIZON_RADIUS 320.0
-#define BIRTH_OFFSET_X 60
-#define BIRTH_OFFSET_Y 25
+#define BIRTH_OFFSET_X 40
+#define BIRTH_OFFSET_Y 75
 
 @implementation OneBubbleView
 
@@ -87,20 +87,23 @@
 // Each bubble ends at a random point 
 // within a circular area with radius determined by velocity
 // where higher velocity makes a smaller radius.
-- (CGPoint)computeEndPoint {
+- (CGPoint)computeEndPoint:(BOOL)wide {
   if (self.crazyMode) {
     CGPoint p = [BtlUtilities randomPoint];
     return CGPointMake(p.x + (106 * [BtlUtilities randomPolarity]),
                        p.y + (160 * [BtlUtilities randomPolarity]));
-    
   } else {
     int centerX = 160;
     int centerY = 180;
     int minRadius = MIN_HORIZON_RADIUS;
-    CGFloat maxRadius = MAX_HORIZON_RADIUS;
-    CGFloat scaledRadius = maxRadius * [self velocityScalar];
-    int radius = scaledRadius + minRadius;
-    int randomRadius = [BtlUtilities randomNumber:radius];
+    CGFloat maxRadius = MAX_HORIZON_RADIUS * [self velocityScalar];
+
+		if (wide)
+			minRadius += minRadius * 0.75f;
+		if (maxRadius < MIN_HORIZON_RADIUS)
+			maxRadius = MIN_HORIZON_RADIUS;
+
+    int randomRadius = [BtlUtilities randomNumberInRange:minRadius maximum:maxRadius];
     int phi = [BtlUtilities randomNumber:360];
     int x = cos(phi) * randomRadius + centerX;
     int y = sin(phi) * randomRadius * 0.75f + centerY;
@@ -141,7 +144,7 @@
 
   [UIView beginAnimations:nil context:self];
   [UIView setAnimationDuration:duration];
-  [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+  [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
   [UIView setAnimationDelegate:self];
   [UIView setAnimationDidStopSelector:@selector(bubbleBirthAnimationDidStop:finished:context:)];
 
@@ -216,7 +219,7 @@
   CAAnimation *pathAnimation;
   if (self.crazyMode) {
     CABasicAnimation *tmpPathAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
-    tmpPathAnimation.toValue = [NSValue valueWithCGPoint:[self computeEndPoint]];
+    tmpPathAnimation.toValue = [NSValue valueWithCGPoint:[self computeEndPoint:NO]];
     pathAnimation = tmpPathAnimation;
   } else {
     CAKeyframeAnimation *tmpPathAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
@@ -227,14 +230,13 @@
         [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut],
         [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn], nil]];
     
-//    CGPoint startPoint = CGPointMake(
-//        oneBubble.layer.position.x + [BtlUtilities randomNumberInRange:30 maximum:70] * 
-//                                     [BtlUtilities randomPolarity], 
-//        oneBubble.layer.position.y + [BtlUtilities randomNumberInRange:80 maximum:200] * 
-//                                     [BtlUtilities randomPolarity]);
-    CGPoint startPoint = [self computeEndPoint];
-    CGPoint midPoint = [self computeEndPoint];
-    CGPoint endPoint = [self computeEndPoint];
+    CGPoint startPoint = CGPointMake(
+        oneBubble.layer.position.x + [BtlUtilities randomNumberInRange:30 maximum:70] * 
+                                     [BtlUtilities randomPolarity], 
+        oneBubble.layer.position.y + [BtlUtilities randomNumberInRange:80 maximum:200] * 
+                                     [BtlUtilities randomPolarity]);
+    CGPoint midPoint = [self computeEndPoint:YES];
+    CGPoint endPoint = [self computeEndPoint:NO];
     CGMutablePathRef curvedPath = CGPathCreateMutable();
         
     CGPathMoveToPoint(curvedPath, 

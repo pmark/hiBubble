@@ -26,7 +26,8 @@
 
 #define BUBBLE_COUNT 6
 #define STYLE_DURATION 5.0
-
+#define BUBBLE_MACHINE_SPACER 1
+#define BLOW_TIMER_INTERVAL 0.16
 
 @implementation BubblesViewController
 
@@ -53,6 +54,8 @@
 	
 	[[Session sharedSession] setMinSoundLevel:0.9f];
 	[[Session sharedSession] setMaxSoundLevel:1.0f];
+	
+	machineCounter = 0;
 }
 
 - (void) viewDidAppear:(BOOL)animated { 
@@ -81,7 +84,7 @@
 }
 
 - (void)initTimers {
-	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: 0.27
+	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: BLOW_TIMER_INTERVAL
                                 target:	self
                               selector:	@selector(blow:)
                               userInfo:	nil		// extra info
@@ -113,9 +116,13 @@
 			[Session sharedSession].machineOn = NO;
 			[self.bubblesView launchBubble:0];
 			[self hideStatusMessage];
-			[BtlUtilities seedRandomNumberGenerator];
+			
 		} else if ([Session sharedSession].machineOn) {
-			[self.bubblesView launchBubble:[BtlUtilities randomNumberInRange:25 maximum:100]];
+			machineCounter++;
+			if (machineCounter > BUBBLE_MACHINE_SPACER) {
+				machineCounter = 0;
+				[self.bubblesView launchBubble:[BtlUtilities randomNumberInRange:25 maximum:100]];
+			}
 		}
 	}
 }
@@ -126,7 +133,7 @@
 	int bs = [BtlUtilities randomNumber:max];
 	[[Session sharedSession] setBubbleStyle:bs];
 	//NSLog(@"new style/count: %i/%i", max, bs);
-	//[BtlUtilities seedRandomNumberGenerator];
+	[BtlUtilities seedRandomNumberGenerator];
 }
 
 - (void)viewDidLoad {
@@ -347,8 +354,8 @@
 
 -(void)shakeMotionBegan:(UIEvent *)event {
 	//NSLog(@"shake!");
-	if (![Session sharedSession].appIsActive) { return; }
-	[self toggleAugmentedReality];
+//	if (![Session sharedSession].appIsActive) { return; }
+//	[self toggleAugmentedReality];
 } 
 
 -(void)setRandomBackgroundColor {
@@ -371,7 +378,7 @@
 	UIGraphicsEndImageContext();
 	UIImageWriteToSavedPhotosAlbum(viewImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 	[self showStatusMessage:@"Taking photo..."];
-	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:1.5];
+	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:2.0];
 }
 
 - (void)image:(UIImage*)image didFinishSavingWithError:(NSError *)error contextInfo:(NSDictionary*)info {
@@ -390,7 +397,7 @@
 	self.statusLabel.numberOfLines = 0;
 	self.statusLabel.text = @"Swipe right: take photo\nSwipe left: toggle camera\nTilt left or swipe up: change color\nTilt right or swipe down: reset color\nDouble tap: bubble machine on/off";
 	[self.bubblesView addSubview:self.statusLabel];	
-	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:10.0];
+	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:15.0];
 }
 
 - (void)showStatusMessage:(NSString*)message {

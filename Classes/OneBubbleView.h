@@ -29,7 +29,7 @@
 -(void)setImageByName:(NSString*)name;
 -(void)animateBirthAtPoint:(CGPoint)point;
 -(void)animateFloatPhase:(OneBubbleView*)oneBubble;
-- (CGPoint)computeEndPoint;
+-(CGPoint)computeEndPoint:(BOOL)wide;
 -(CGFloat)scaleDownByVelocity:(CGFloat)original percent:(NSInteger)percent;
 
 @end

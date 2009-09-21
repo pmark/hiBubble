@@ -19,6 +19,7 @@
   UIView *containerView;
   IBOutlet UIActivityIndicatorView *spinner;
 	UILabel *statusLabel;
+	NSInteger machineCounter;
 }
 
 @property (nonatomic,retain) NSTimer *blowTimer;

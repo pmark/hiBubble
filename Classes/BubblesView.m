@@ -144,10 +144,33 @@
 	NSLog(@"shake BubblesView!");
 
 	[super motionBegan: motion withEvent: event]; 
-	if ((motion == UIEventSubtypeMotionShake) && 
-				[self.shakeDelegate respondsToSelector:@selector(shakeMotionBegan:)]) { 
-		[self.shakeDelegate shakeMotionBegan:event]; 
-	} 
+//	if ((motion == UIEventSubtypeMotionShake) && 
+//				[self.shakeDelegate respondsToSelector:@selector(shakeMotionBegan:)]) { 
+//		[self.shakeDelegate shakeMotionBegan:event]; 
+//	} 
+	
+	// TODO: test tilt effect
+	// for each bubble, translate Y by some amount
+	for (UIView *subview in self.subviews) {
+    if ([[[subview class] description] isEqualToString:@"OneBubbleView"]) {
+			NSLog(@"set center to %f, %f", subview.center.x, subview.center.y);
+			
+			[[subview layer] removeAllAnimations];
+				
+			 [UIView beginAnimations:nil context:subview];
+			 [UIView setAnimationDuration:1.5];
+			 [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+//			 [UIView setAnimationDelegate:self];
+//			 [UIView setAnimationDidStopSelector:@selector(bubbleBirthAnimationDidStop:finished:context:)];
+			 
+			CGPoint viewOrigin = [[subview.layer presentationLayer] position];
+			subview.center = CGPointMake(viewOrigin.x, viewOrigin.y + 350);
+			[UIView commitAnimations];
+
+    }
+	}
+	
+	
 } 
 
 - (void)dealloc {

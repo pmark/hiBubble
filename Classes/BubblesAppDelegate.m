@@ -10,10 +10,8 @@
 #import "BubblesViewController.h"
 #import "Session.h"
 #import <AudioToolbox/AudioToolbox.h>
-#import "SoundEffect.h"
 #import "SCListener.h"
 #import "BtlUtilities.h"
-//#import "RevolverSound.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
 
@@ -53,44 +51,6 @@
 
 #pragma mark
 #pragma mark Sounds
-/*
-- (void)initSystemSounds {
-  NSBundle *mainBundle = [NSBundle mainBundle];
-
-  self.sounds = [NSDictionary dictionaryWithObjectsAndKeys:
-      [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"pop1" ofType:@"aif"]], @"pop1",
-      [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"bark" ofType:@"aif"]], @"bark",
-      nil];
-}
-
-- (void)playSoundFile:(NSString*)soundName {
-  [(SoundEffect*)[self.sounds objectForKey:soundName] play];
-}
-*/
-
-/*
-- (void)initSounds {
-	finch = [[Finch alloc] init];
-	[finch setListenToo:YES];
-
-  NSBundle *bundle = [NSBundle mainBundle];
-
-	NSArray *names = [NSArray arrayWithObjects:@"pop1", @"bark", nil];
-	self.sounds = [NSMutableDictionary dictionaryWithCapacity:[names count]];
-
-	for (NSString *name in names) {
-		NSString *fileName = [bundle pathForResource:name ofType:@"wav"];
-		RevolverSound *sound = [[RevolverSound alloc] initWithFile:fileName rounds:5];
-		[self.sounds setValue:sound forKey:name];
-		[sound release];
-	}
-}
-
-- (void)playSoundFile:(NSString*)soundName {
-  [(RevolverSound*)[self.sounds objectForKey:soundName] play];
-}
-*/
-
 - (void)initSounds {
   NSBundle *bundle = [NSBundle mainBundle];
 
