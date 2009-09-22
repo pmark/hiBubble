@@ -16,7 +16,6 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* BubblesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* BubblesViewController.m */; };
 		4D0C98511014E92600B6D451 /* BtlUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C98501014E92600B6D451 /* BtlUtilities.m */; };
-		4D15F67710623B2000E199B8 /* bubble4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D15F67510623B2000E199B8 /* bubble4.png */; };
 		4D15F68B10623D7400E199B8 /* bubble7.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D15F68810623D7400E199B8 /* bubble7.png */; };
 		4D15F6AA106241BB00E199B8 /* bubble9.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D15F6A9106241BB00E199B8 /* bubble9.png */; };
 		4D15F70710624A9C00E199B8 /* bubble5.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D15F70610624A9C00E199B8 /* bubble5.png */; };
@@ -31,6 +30,7 @@
 		4D5773540FC34AFF002B2086 /* seanote.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5773530FC34AFF002B2086 /* seanote.png */; };
 		4D7837871060643C00A235DE /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D78367910604EB600A235DE /* OpenAL.framework */; };
 		4D7837C510606AC000A235DE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7835FA10604C0600A235DE /* AVFoundation.framework */; };
+		4D910E1D1069532B00331313 /* bubble4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D910E1C1069532B00331313 /* bubble4.png */; };
 		4DAA7098102B780900C082CB /* BTLFullScreenCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA7097102B780900C082CB /* BTLFullScreenCameraController.m */; };
 		4DAA7664102CB03A00C082CB /* overlay1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA7663102CB03A00C082CB /* overlay1.png */; };
 		4DAA76BC102CB4D200C082CB /* overlay2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA76BB102CB4D200C082CB /* overlay2.png */; };
@@ -57,7 +57,6 @@
 		32CA4F630368D1EE00C91783 /* Bubble_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bubble_Prefix.pch; sourceTree = "<group>"; };
 		4D0C984F1014E92600B6D451 /* BtlUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtlUtilities.h; sourceTree = "<group>"; };
 		4D0C98501014E92600B6D451 /* BtlUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BtlUtilities.m; sourceTree = "<group>"; };
-		4D15F67510623B2000E199B8 /* bubble4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble4.png; sourceTree = "<group>"; };
 		4D15F68810623D7400E199B8 /* bubble7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble7.png; sourceTree = "<group>"; };
 		4D15F6A9106241BB00E199B8 /* bubble9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble9.png; sourceTree = "<group>"; };
 		4D15F70610624A9C00E199B8 /* bubble5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble5.png; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		4D7635E50FCD24100003451E /* hiBubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hiBubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D7835FA10604C0600A235DE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		4D78367910604EB600A235DE /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		4D910E1C1069532B00331313 /* bubble4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble4.png; sourceTree = "<group>"; };
 		4DAA7096102B780900C082CB /* BTLFullScreenCameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLFullScreenCameraController.h; sourceTree = "<group>"; };
 		4DAA7097102B780900C082CB /* BTLFullScreenCameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLFullScreenCameraController.m; sourceTree = "<group>"; };
 		4DAA7663102CB03A00C082CB /* overlay1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay1.png; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 				2899E5210DE3E06400AC0155 /* BubblesViewController.xib */,
 				4DD85C9B0FB373E900A61B5B /* Default.png */,
 				4DD85CA80FB3810400A61B5B /* Icon.png */,
-				4D15F67510623B2000E199B8 /* bubble4.png */,
+				4D910E1C1069532B00331313 /* bubble4.png */,
 				4D15F70610624A9C00E199B8 /* bubble5.png */,
 				4D15F72810624C5C00E199B8 /* bubble6.png */,
 				4D15F68810623D7400E199B8 /* bubble7.png */,
@@ -258,12 +258,12 @@
 				4DCA243F101546F300E20EC9 /* pop2.aif in Resources */,
 				4DAA7664102CB03A00C082CB /* overlay1.png in Resources */,
 				4DAA76BC102CB4D200C082CB /* overlay2.png in Resources */,
-				4D15F67710623B2000E199B8 /* bubble4.png in Resources */,
 				4D15F68B10623D7400E199B8 /* bubble7.png in Resources */,
 				4D15F6AA106241BB00E199B8 /* bubble9.png in Resources */,
 				4D15F70710624A9C00E199B8 /* bubble5.png in Resources */,
 				4D15F72910624C5C00E199B8 /* bubble6.png in Resources */,
 				4D15F72B10624CBB00E199B8 /* bubble8.png in Resources */,
+				4D910E1D1069532B00331313 /* bubble4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

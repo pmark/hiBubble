@@ -87,7 +87,7 @@
 	self.blowTimer = [NSTimer scheduledTimerWithTimeInterval: BLOW_TIMER_INTERVAL
                                 target:	self
                               selector:	@selector(blow:)
-                              userInfo:	nil		// extra info
+                              userInfo:	nil
                                repeats:	YES];	
 
   [[NSRunLoop currentRunLoop] addTimer: self.blowTimer
@@ -96,7 +96,7 @@
 	self.styleTimer = [NSTimer scheduledTimerWithTimeInterval: STYLE_DURATION
                                 target:	self
                               selector:	@selector(changeBubbleStyle:)
-                              userInfo:	nil		// extra info
+                              userInfo:	nil
                                repeats:	YES];	
 
   [[NSRunLoop currentRunLoop] addTimer: self.styleTimer
@@ -257,6 +257,7 @@
   self.bubblesView.wandCenterPoint = currentTouchPosition;
   
   [Session sharedSession].machineOn = YES;
+	machineCounter = BUBBLE_MACHINE_SPACER;
 	
 	// If the swipe tracks correctly.
 	if (fabsf(startTouchPosition.x - currentTouchPosition.x) >= HORIZ_SWIPE_DRAG_MIN &&
