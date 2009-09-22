@@ -73,11 +73,11 @@
 
 -(void)setup {
   // scale the high res image down
-  [UIView beginAnimations:nil context:nil];
-  [UIView setAnimationDuration:0.1f];
+//  [UIView beginAnimations:nil context:nil];
+//  [UIView setAnimationDuration:0.1f];
   CGAffineTransform preTransform = CGAffineTransformMakeScale(MIN_SIZE_SCALAR+0.01f, MIN_SIZE_SCALAR+0.01f);
   self.transform = preTransform;
-  [UIView commitAnimations];
+//  [UIView commitAnimations];
 }
 
 - (CGFloat)velocityScalar {

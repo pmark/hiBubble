@@ -225,13 +225,9 @@
 #pragma mark 
 #pragma mark Touches
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	UITouch *touch = [touches anyObject];
-	CGPoint point = [touch locationInView:self.bubblesView];
-	
-	//if (touch.phase == UITouchPhaseMoved) {
-		NSLog(@"setting start point %f, %f", point.x, point.y);
-		self.startTouchPosition = point;
-	//}
+	//UITouch *touch = [touches anyObject];
+	//CGPoint point = [touch locationInView:self.bubblesView];
+	self.startTouchPosition = CGPointMake(-1, -1);	
   [Session sharedSession].machineOn = NO;
 	[self hideStatusMessage];
 }
@@ -239,9 +235,7 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *touch = [touches anyObject];
 	CGPoint point = [touch locationInView:self.bubblesView];
-
-	NSLog(@"setting start point %f, %f", point.x, point.y);
-	self.startTouchPosition = point;
+	self.startTouchPosition = CGPointMake(-1, -1);	
   
   [Session sharedSession].machineOn = NO;    
 
@@ -273,6 +267,11 @@
   [Session sharedSession].machineOn = YES;
 	machineCounter = BUBBLE_MACHINE_SPACER;
 	
+	if (self.startTouchPosition.x == -1 && self.startTouchPosition.y == -1) {
+		NSLog(@"setting start point %f, %f", currentTouchPosition.x, currentTouchPosition.y);
+		self.startTouchPosition = currentTouchPosition;
+	}
+
 	// If the swipe tracks correctly.
 	if (fabsf(startTouchPosition.x - currentTouchPosition.x) >= HORIZ_SWIPE_DRAG_MIN &&
 			fabsf(startTouchPosition.y - currentTouchPosition.y) <= VERT_SWIPE_DRAG_MAX)
@@ -306,6 +305,7 @@
 }
 
 -(void)swipeRight:(NSSet*)touches withEvent:(UIEvent *)event {
+	NSLog(@"swipe right");
 	if ([Session sharedSession].cameraMode) {
 		[self.camera takePicture];
 	} else {
@@ -315,6 +315,7 @@
 }
 
 -(void)swipeLeft:(NSSet*)touches withEvent:(UIEvent *)event {
+	NSLog(@"swipe left");
 	self.bubblesView.backgroundColor = [UIColor blackColor];
 	[self toggleAugmentedReality];
 }

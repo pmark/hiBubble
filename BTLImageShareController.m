@@ -7,6 +7,7 @@
 //
 
 #import "BTLImageShareController.h"
+#import <QuartzCore/QuartzCore.h>
 
 
 @implementation BTLImageShareController
@@ -68,7 +69,22 @@
 	}
 
 	[thumbnailButton setImage:self.image forState:UIControlStateNormal];
+	thumbnailButton.alpha = 0.0f;
 	thumbnailButton.hidden = NO;	
+
+  CGAffineTransform preTransform = CGAffineTransformMakeScale(0.1f, 0.1f);
+  thumbnailButton.transform = preTransform;
+
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+
+  [UIView setAnimationDuration:0.5f];
+  thumbnailButton.alpha = 1.0f;
+	
+	CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 1.0f);
+  thumbnailButton.transform = transform;
+	
+  [UIView commitAnimations];	
 }
 
 - (void)generateAndShowThumbnail:(UIImage*)source {
@@ -79,11 +95,9 @@
 	thumbnailButton.hidden = YES;
 }
 
-
-
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
+	[super didReceiveMemoryWarning];
 	
 	// Release any cached data, images, etc that aren't in use.
 }
