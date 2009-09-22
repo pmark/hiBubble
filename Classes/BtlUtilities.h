@@ -3,7 +3,7 @@
 //  Bubble
 //
 //  Created by P. Mark Anderson on 7/20/09.
-//  Copyright 2009 ProxyObjects. All rights reserved.
+//  Copyright 2009 Bordertown Labs. All rights reserved.
 //
 
 

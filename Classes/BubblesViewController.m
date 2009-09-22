@@ -29,6 +29,8 @@
 #define BUBBLE_MACHINE_SPACER 1
 #define BLOW_TIMER_INTERVAL 0.16
 
+#define INSTRUCTION_TEXT @"Swipe left:  camera\nSwipe right:  snapshot\nTilt left or swipe up:  color\nTilt right or swipe down:  clear\nDouble tap:  bubble machine";
+
 @implementation BubblesViewController
 
 @synthesize styleTimer;
@@ -220,7 +222,11 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *touch = [touches anyObject];
 	CGPoint point = [touch locationInView:self.bubblesView];
-	self.startTouchPosition = point;
+	
+	//if (touch.phase == UITouchPhaseMoved) {
+		NSLog(@"setting start point %f, %f", point.x, point.y);
+		self.startTouchPosition = point;
+	//}
   [Session sharedSession].machineOn = NO;
 	[self hideStatusMessage];
 }
@@ -228,6 +234,9 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *touch = [touches anyObject];
 	CGPoint point = [touch locationInView:self.bubblesView];
+
+	NSLog(@"setting start point %f, %f", point.x, point.y);
+	self.startTouchPosition = point;
   
   [Session sharedSession].machineOn = NO;    
 
@@ -265,9 +274,11 @@
 	{
 		[NSObject cancelPreviousPerformRequestsWithTarget:self];
 		if (startTouchPosition.x < currentTouchPosition.x) {
-			[self swipeRight:touches withEvent:event];
+			if (startTouchPosition.x < 320 - HORIZ_SWIPE_DRAG_MIN)
+				[self swipeRight:touches withEvent:event];
 		} else {
-			[self swipeLeft:touches withEvent:event];
+			if (startTouchPosition.x > HORIZ_SWIPE_DRAG_MIN)
+				[self swipeLeft:touches withEvent:event];
 		}
 		self.startTouchPosition = currentTouchPosition;
     
@@ -276,9 +287,11 @@
   {
 		[NSObject cancelPreviousPerformRequestsWithTarget:self];
 		if (startTouchPosition.y < currentTouchPosition.y) {
-			[self swipeDown:touches withEvent:event];
+			if (startTouchPosition.y < 480 - VERT_SWIPE_DRAG_MIN)
+				[self swipeDown:touches withEvent:event];
 		} else {
-			[self swipeUp:touches withEvent:event];
+			if (startTouchPosition.y > VERT_SWIPE_DRAG_MIN)
+				[self swipeUp:touches withEvent:event];
 		}
 		self.startTouchPosition = currentTouchPosition;  
 
@@ -339,15 +352,14 @@
     if ([Session sharedSession].cameraMode == YES) {
       if (!self.camera) { [self initCamera]; }
       self.bubblesView.backgroundColor = [UIColor clearColor];
-      //self.bubblesView.alpha = 0.74f;
-      self.bubblesView.backgroundColor = nil;      
-      self.view = self.camera.view;      
+      self.bubblesView.underlay.hidden = YES;
+			self.view = self.camera.view;      			
       [self.camera.view becomeFirstResponder];
+			
     } else {
+			self.bubblesView.underlay.hidden = NO;
       self.view = self.bubblesView;
-      //self.bubblesView.alpha = 0.95f;
 			[self setRandomBackgroundColor];
-      //[self.bubblesView becomeFirstResponder];
       self.camera = nil;
     }    
   }
@@ -378,12 +390,13 @@
 	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 	UIImageWriteToSavedPhotosAlbum(viewImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+
 	[self showStatusMessage:@"Taking photo..."];
-	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:2.0];
+	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:1.0];
 }
 
 - (void)image:(UIImage*)image didFinishSavingWithError:(NSError *)error contextInfo:(NSDictionary*)info {
-	[self hideStatusMessage];
+//	[self hideStatusMessage];
 }
 
 - (void)initStatusMessage {
@@ -396,9 +409,9 @@
 	self.statusLabel.shadowColor = [UIColor blackColor];  
 	self.statusLabel.hidden = NO;
 	self.statusLabel.numberOfLines = 0;
-	self.statusLabel.text = @"Swipe right: take photo\nSwipe left: toggle camera\nTilt left or swipe up: change color\nTilt right or swipe down: reset color\nDouble tap: bubble machine on/off";
+	self.statusLabel.text = INSTRUCTION_TEXT;
 	[self.bubblesView addSubview:self.statusLabel];	
-	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:15.0];
+	//[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:20.0];
 }
 
 - (void)showStatusMessage:(NSString*)message {

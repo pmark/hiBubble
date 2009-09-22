@@ -6,13 +6,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BTLImageShareController.h"
 
 
 @interface BTLFullScreenCameraController : UIImagePickerController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
 	UILabel *statusLabel;
+	BTLImageShareController *shareController;
 }
 
 @property (nonatomic, retain) UILabel *statusLabel;
+@property (nonatomic, retain) BTLImageShareController *shareController;
 
 + (BOOL)isAvailable;
 - (void)displayModalWithController:(UIViewController*)controller animated:(BOOL)animated;
@@ -22,5 +25,6 @@
 - (void)initStatusMessage;
 - (void)showStatusMessage:(NSString*)message;
 - (void)hideStatusMessage;
+- (UIImage*)generateThumbnail:(UIImage*)source;
 
 @end

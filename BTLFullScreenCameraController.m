@@ -6,11 +6,12 @@
 //
 
 #import "BTLFullScreenCameraController.h"
+#import "Session.h"
 #include <QuartzCore/QuartzCore.h>
 
 @implementation BTLFullScreenCameraController
 
-@synthesize statusLabel;
+@synthesize statusLabel, shareController;
 
 - (id)init {
   if (self = [super init]) {
@@ -25,9 +26,16 @@
 			[self.parentViewController initStatusMessage];
 		} else {
 			[self initStatusMessage];
-		}
+		}		
   }
   return self;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	
+	self.shareController = [[BTLImageShareController alloc] init];
+	[self.cameraOverlayView addSubview:self.shareController.view];
 }
 
 + (BOOL)isAvailable {
@@ -45,6 +53,8 @@
 - (void)takePicture {
 	self.delegate = self;
 	[self showStatusMessage:@"Taking photo..."];
+	[Session sharedSession].appIsActive = NO;
+	[self.shareController hideThumbnail];
 	[super takePicture];
 }
 
@@ -75,18 +85,39 @@
 	return result;	
 }
 
+- (UIImage*)generateThumbnail:(UIImage*)source {
+	CGSize targetSize = CGSizeMake(50, 75);	
+	CGRect scaledRect = CGRectZero;
+	scaledRect.origin = CGPointMake(0.0,0.0);
+	scaledRect.size.width  = 50;
+	scaledRect.size.height = 75;
+	
+	UIGraphicsBeginImageContext(targetSize);	
+	[source drawInRect:scaledRect];
+	UIImage* thumbnailImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();	
+	return thumbnailImage;
+}
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	UIImage *baseImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-	if (baseImage) {
-		UIImage *compositeImage = [self addOverlayToBaseImage:baseImage];
-		UIImageWriteToSavedPhotosAlbum(compositeImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-	}
+	if (baseImage == nil) return;
+
+	// save composite
+	UIImage *compositeImage = [self addOverlayToBaseImage:baseImage];
+	[Session sharedSession].appIsActive = YES;
+	UIImageWriteToSavedPhotosAlbum(compositeImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+
+	// thumbnail
+	UIImage *thumbnailImage = [self generateThumbnail:compositeImage];	
+	[self.shareController showThumbnail:thumbnailImage];
 }
 
 - (void)image:(UIImage*)image didFinishSavingWithError:(NSError *)error contextInfo:(NSDictionary*)info {
 	//[self writeImageToDocuments:image];
 	//[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:2.0];
 	[self hideStatusMessage];
+	
 }
 
 - (void)initStatusMessage {
@@ -132,6 +163,7 @@
 
 - (void)dealloc {
 	[statusLabel release];
+	[shareController release];
   [super dealloc];
 }
 
