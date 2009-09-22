@@ -48,6 +48,20 @@
 	NSLog(@"thumbnail tapped");
 }
 
+- (UIImage*)generateThumbnail:(UIImage*)source {
+	CGSize targetSize = CGSizeMake(50, 75);	
+	CGRect scaledRect = CGRectZero;
+	scaledRect.origin = CGPointMake(0.0,0.0);
+	scaledRect.size.width  = 50;
+	scaledRect.size.height = 75;
+	
+	UIGraphicsBeginImageContext(targetSize);	
+	[source drawInRect:scaledRect];
+	UIImage* thumbnailImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();	
+	return thumbnailImage;
+}
+
 - (void)showThumbnail:(UIImage *)newImage {
 	if (newImage != nil && newImage != self.image) {
 		self.image = newImage;
@@ -57,9 +71,15 @@
 	thumbnailButton.hidden = NO;	
 }
 
+- (void)generateAndShowThumbnail:(UIImage*)source {
+	[self showThumbnail:[self generateThumbnail:source]];
+}
+
 - (void)hideThumbnail {
 	thumbnailButton.hidden = YES;
 }
+
+
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.

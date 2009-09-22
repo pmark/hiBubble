@@ -31,12 +31,11 @@
   return self;
 }
 
+/*
 - (void)viewDidAppear:(BOOL)animated {
-	[super viewDidAppear:animated];
-	
-	self.shareController = [[BTLImageShareController alloc] init];
-	[self.cameraOverlayView addSubview:self.shareController.view];
+	[super viewDidAppear:animated];	
 }
+*/
 
 + (BOOL)isAvailable {
   return [self isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
@@ -54,7 +53,8 @@
 	self.delegate = self;
 	[self showStatusMessage:@"Taking photo..."];
 	[Session sharedSession].appIsActive = NO;
-	[self.shareController hideThumbnail];
+	if (self.shareController) 
+		[self.shareController hideThumbnail];
 	[super takePicture];
 }
 
@@ -85,20 +85,6 @@
 	return result;	
 }
 
-- (UIImage*)generateThumbnail:(UIImage*)source {
-	CGSize targetSize = CGSizeMake(50, 75);	
-	CGRect scaledRect = CGRectZero;
-	scaledRect.origin = CGPointMake(0.0,0.0);
-	scaledRect.size.width  = 50;
-	scaledRect.size.height = 75;
-	
-	UIGraphicsBeginImageContext(targetSize);	
-	[source drawInRect:scaledRect];
-	UIImage* thumbnailImage = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();	
-	return thumbnailImage;
-}
-
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	UIImage *baseImage = [info objectForKey:UIImagePickerControllerOriginalImage];
 	if (baseImage == nil) return;
@@ -109,8 +95,9 @@
 	UIImageWriteToSavedPhotosAlbum(compositeImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 
 	// thumbnail
-	UIImage *thumbnailImage = [self generateThumbnail:compositeImage];	
-	[self.shareController showThumbnail:thumbnailImage];
+	if (self.shareController) {
+		[self.shareController generateAndShowThumbnail:compositeImage];
+	}
 }
 
 - (void)image:(UIImage*)image didFinishSavingWithError:(NSError *)error contextInfo:(NSDictionary*)info {

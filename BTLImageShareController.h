@@ -16,7 +16,9 @@
 
 @property (nonatomic,retain) UIImage *image;
 
-- (void)showThumbnail:(UIImage *)newImage;
 - (void)hideThumbnail;
+- (void)showThumbnail:(UIImage *)newImage;
+- (UIImage*)generateThumbnail:(UIImage*)source;
+- (void)generateAndShowThumbnail:(UIImage*)source;
 
 @end

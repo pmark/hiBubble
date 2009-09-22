@@ -38,7 +38,7 @@
 @synthesize startTouchPosition;
 @synthesize spinner;
 @synthesize camera;
-@synthesize containerView, bubblesView, statusLabel;
+@synthesize containerView, bubblesView, statusLabel, shareController;
 
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
@@ -73,6 +73,9 @@
 	[self setRandomBackgroundColor];
 	
 	[self initStatusMessage];
+	
+	self.shareController = [[BTLImageShareController alloc] init];
+	[self.view addSubview:self.shareController.view];
 }
 
 - (void) initCamera {  
@@ -81,6 +84,7 @@
     self.camera = tmpCamera;
     self.camera.view.backgroundColor = [UIColor blackColor];
     [self.camera setCameraOverlayView:self.bubblesView];
+		self.camera.shareController = self.shareController;
     [tmpCamera release];
   }
 }
@@ -209,6 +213,7 @@
   [camera release];
   [containerView release];
   [bubblesView release];
+	[shareController release];
   [super dealloc];
 }
 
@@ -361,6 +366,7 @@
       self.view = self.bubblesView;
 			[self setRandomBackgroundColor];
       self.camera = nil;
+			[self initCamera];
     }    
   }
 }
@@ -385,18 +391,19 @@
 }
 
 - (void)saveScreenshot {
+	[self.shareController hideThumbnail];
+
 	UIGraphicsBeginImageContext(self.bubblesView.bounds.size);
 	[self.bubblesView.layer renderInContext:UIGraphicsGetCurrentContext()];
 	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
-	UIImageWriteToSavedPhotosAlbum(viewImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-
 	[self showStatusMessage:@"Taking photo..."];
 	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:1.0];
+	[self.shareController generateAndShowThumbnail:viewImage];	
+	UIImageWriteToSavedPhotosAlbum(viewImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
 
 - (void)image:(UIImage*)image didFinishSavingWithError:(NSError *)error contextInfo:(NSDictionary*)info {
-//	[self hideStatusMessage];
 }
 
 - (void)initStatusMessage {

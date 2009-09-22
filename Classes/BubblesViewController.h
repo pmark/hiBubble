@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BTLFullScreenCameraController.h"
+#import "BTLImageShareController.h"
 #import "BubblesView.h"
 
 @interface BubblesViewController : UIViewController <UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
@@ -20,6 +21,7 @@
   IBOutlet UIActivityIndicatorView *spinner;
 	UILabel *statusLabel;
 	NSInteger machineCounter;
+	BTLImageShareController *shareController;
 }
 
 @property (nonatomic,retain) NSTimer *blowTimer;
@@ -30,6 +32,8 @@
 @property (nonatomic, retain) BubblesView *bubblesView;
 @property (nonatomic, retain) UIView *containerView;
 @property (nonatomic, retain) UILabel *statusLabel;
+@property (nonatomic, retain) BTLImageShareController *shareController;
+
 
 -(void)setNormalizedVelocity:(CGFloat)level;
 -(void)askForRating;

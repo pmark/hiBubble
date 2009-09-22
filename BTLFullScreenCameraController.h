@@ -25,6 +25,5 @@
 - (void)initStatusMessage;
 - (void)showStatusMessage:(NSString*)message;
 - (void)hideStatusMessage;
-- (UIImage*)generateThumbnail:(UIImage*)source;
 
 @end
