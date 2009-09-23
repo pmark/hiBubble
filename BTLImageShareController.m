@@ -37,12 +37,9 @@
 		
 	thumbnailButton = [UIButton buttonWithType:UIButtonTypeCustom];
 	thumbnailButton.frame = CGRectMake(260.0, 395.0, 50.0, 75.0);
-	thumbnailButton.backgroundColor = [UIColor blackColor];
-	thumbnailButton.imageEdgeInsets = UIEdgeInsetsMake(2.0f, 2.0f, 2.0f, 2.0f);
 	[thumbnailButton addTarget:self action:@selector(thumbnailTapped:) forControlEvents:UIControlEventTouchUpInside];
 	thumbnailButton.hidden = YES;
 	[self.view addSubview:thumbnailButton];
-	
 }
 
 - (void)thumbnailTapped:(id)sender {
@@ -58,6 +55,11 @@
 	
 	UIGraphicsBeginImageContext(targetSize);	
 	[source drawInRect:scaledRect];
+	
+	CGContextRef context = UIGraphicsGetCurrentContext();
+  CGContextSetRGBStrokeColor(context, 0, 0, 0, 0.05f); 
+  CGContextStrokeRectWithWidth(context, scaledRect, 4.0f);	
+	
 	UIImage* thumbnailImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();	
 	return thumbnailImage;
@@ -78,7 +80,7 @@
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 
-  [UIView setAnimationDuration:0.5f];
+  [UIView setAnimationDuration:0.3f];
   thumbnailButton.alpha = 1.0f;
 	
 	CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 1.0f);

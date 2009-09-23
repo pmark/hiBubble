@@ -268,7 +268,6 @@
 	machineCounter = BUBBLE_MACHINE_SPACER;
 	
 	if (self.startTouchPosition.x == -1 && self.startTouchPosition.y == -1) {
-		NSLog(@"setting start point %f, %f", currentTouchPosition.x, currentTouchPosition.y);
 		self.startTouchPosition = currentTouchPosition;
 	}
 
@@ -305,7 +304,6 @@
 }
 
 -(void)swipeRight:(NSSet*)touches withEvent:(UIEvent *)event {
-	NSLog(@"swipe right");
 	if ([Session sharedSession].cameraMode) {
 		[self.camera takePicture];
 	} else {
@@ -315,7 +313,6 @@
 }
 
 -(void)swipeLeft:(NSSet*)touches withEvent:(UIEvent *)event {
-	NSLog(@"swipe left");
 	self.bubblesView.backgroundColor = [UIColor blackColor];
 	[self toggleAugmentedReality];
 }
