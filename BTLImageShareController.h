@@ -12,6 +12,7 @@
 @interface BTLImageShareController : UIViewController {
 	UIImage *image;
 	UIButton *thumbnailButton;
+	UIImage *thumbnailFrame;
 }
 
 @property (nonatomic,retain) UIImage *image;

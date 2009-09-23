@@ -86,6 +86,7 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+	[self showStatusMessage:@"Saving photo..."];
 	UIImage *baseImage = [info objectForKey:UIImagePickerControllerOriginalImage];
 	if (baseImage == nil) return;
 

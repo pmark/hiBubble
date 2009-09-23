@@ -389,13 +389,14 @@
 }
 
 - (void)saveScreenshot {
+	[self showStatusMessage:@"Taking photo..."];
 	[self.shareController hideThumbnail];
 
 	UIGraphicsBeginImageContext(self.bubblesView.bounds.size);
 	[self.bubblesView.layer renderInContext:UIGraphicsGetCurrentContext()];
 	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
-	[self showStatusMessage:@"Taking photo..."];
+	[self showStatusMessage:@"Saving photo..."];
 	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:1.0];
 	[self.shareController generateAndShowThumbnail:viewImage];	
 	[self.shareController hideThumbnailAfterDelay:5.0f];

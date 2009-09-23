@@ -9,6 +9,12 @@
 #import "BTLImageShareController.h"
 #import <QuartzCore/QuartzCore.h>
 
+#define THUMBNAIL_FRAME_WIDTH 100
+#define THUMBNAIL_FRAME_HEIGHT 133
+#define THUMBNAIL_FRAME_OFFSET_X 25
+#define THUMBNAIL_FRAME_OFFSET_Y 25
+#define THUMBNAIL_WIDTH 50
+#define THUMBNAIL_HEIGHT 75
 
 @implementation BTLImageShareController
 
@@ -36,29 +42,45 @@
     [super viewDidLoad];
 		
 	thumbnailButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	thumbnailButton.frame = CGRectMake(260.0, 395.0, 50.0, 75.0);
+	thumbnailButton.frame = CGRectMake(self.view.frame.size.width - THUMBNAIL_FRAME_WIDTH - 10, 
+																		 self.view.frame.size.height - THUMBNAIL_FRAME_HEIGHT - 10, 
+																		 THUMBNAIL_FRAME_WIDTH, THUMBNAIL_FRAME_HEIGHT);
 	[thumbnailButton addTarget:self action:@selector(thumbnailTapped:) forControlEvents:UIControlEventTouchUpInside];
 	thumbnailButton.hidden = YES;
 	[self.view addSubview:thumbnailButton];
+	
+	thumbnailFrame = [UIImage imageNamed:@"thumbnail_frame.png"];
 }
 
 - (void)thumbnailTapped:(id)sender {
 	NSLog(@"thumbnail tapped");
+	
+	// TODO: WHAT SHOULD HAPPEN?
+	// I know the image should appear full screen
+	// tap the image to bring up an action sheet
+	// the action sheet should contain:
+	// Email Photo
+	// Send to flickr (later)
+	// Send to facebook (later)
 }
 
 - (UIImage*)generateThumbnail:(UIImage*)source {
-	CGSize targetSize = CGSizeMake(50, 75);	
 	CGRect scaledRect = CGRectZero;
-	scaledRect.origin = CGPointMake(0.0,0.0);
-	scaledRect.size.width  = 50;
-	scaledRect.size.height = 75;
+	scaledRect.size.width  = THUMBNAIL_WIDTH;
+	scaledRect.size.height = THUMBNAIL_HEIGHT;
+	scaledRect.origin = CGPointMake(THUMBNAIL_FRAME_OFFSET_X, THUMBNAIL_FRAME_OFFSET_Y);
+	CGSize targetSize = CGSizeMake(THUMBNAIL_FRAME_WIDTH, THUMBNAIL_FRAME_HEIGHT);	
 	
-	UIGraphicsBeginImageContext(targetSize);	
+	UIGraphicsBeginImageContext(targetSize);
 	[source drawInRect:scaledRect];
+	[thumbnailFrame drawAtPoint:CGPointMake(0, 0)];
 	
-	CGContextRef context = UIGraphicsGetCurrentContext();
-  CGContextSetRGBStrokeColor(context, 0, 0, 0, 0.07f); 
-  CGContextStrokeRectWithWidth(context, scaledRect, 5.0f);	
+	// draw a simple thumbnail border
+//	CGContextRef context = UIGraphicsGetCurrentContext();
+//  CGContextSetRGBStrokeColor(context, 0, 0, 0, 0.07f); 
+//  CGContextStrokeRectWithWidth(context, scaledRect, 5.0f);	
+
+	
 	
 	UIImage* thumbnailImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();	
@@ -117,6 +139,7 @@
 
 - (void)dealloc {
 	[thumbnailButton release];
+	[thumbnailFrame release];
 	[image release];
 	[super dealloc];
 }
