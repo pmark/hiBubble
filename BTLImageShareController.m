@@ -79,8 +79,6 @@
 //	CGContextRef context = UIGraphicsGetCurrentContext();
 //  CGContextSetRGBStrokeColor(context, 0, 0, 0, 0.07f); 
 //  CGContextStrokeRectWithWidth(context, scaledRect, 5.0f);	
-
-	
 	
 	UIImage* thumbnailImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();	
@@ -116,7 +114,18 @@
 }
 
 - (void)hideThumbnail {
-	thumbnailButton.hidden = YES;
+	if (thumbnailButton.hidden) return;
+	
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+
+  [UIView setAnimationDuration:0.3f];
+  thumbnailButton.alpha = 0.0f;
+	
+	CGAffineTransform transform = CGAffineTransformMakeScale(0.01f, 0.01f);
+  thumbnailButton.transform = transform;
+	
+  [UIView commitAnimations];	
 }
 
 - (void)hideThumbnailAfterDelay:(CGFloat)delay {

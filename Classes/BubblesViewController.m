@@ -389,7 +389,6 @@
 }
 
 - (void)saveScreenshot {
-	[self showStatusMessage:@"Taking photo..."];
 	[self.shareController hideThumbnail];
 
 	UIGraphicsBeginImageContext(self.bubblesView.bounds.size);
