@@ -398,6 +398,7 @@
 	[self showStatusMessage:@"Taking photo..."];
 	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:1.0];
 	[self.shareController generateAndShowThumbnail:viewImage];	
+	[self.shareController hideThumbnailAfterDelay:5.0f];
 	UIImageWriteToSavedPhotosAlbum(viewImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
 

@@ -57,8 +57,8 @@
 	[source drawInRect:scaledRect];
 	
 	CGContextRef context = UIGraphicsGetCurrentContext();
-  CGContextSetRGBStrokeColor(context, 0, 0, 0, 0.05f); 
-  CGContextStrokeRectWithWidth(context, scaledRect, 4.0f);	
+  CGContextSetRGBStrokeColor(context, 0, 0, 0, 0.07f); 
+  CGContextStrokeRectWithWidth(context, scaledRect, 5.0f);	
 	
 	UIImage* thumbnailImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();	
@@ -95,6 +95,11 @@
 
 - (void)hideThumbnail {
 	thumbnailButton.hidden = YES;
+}
+
+- (void)hideThumbnailAfterDelay:(CGFloat)delay {
+	[NSObject cancelPreviousPerformRequestsWithTarget:self];
+	[self performSelector:@selector(hideThumbnail) withObject:self afterDelay:delay];
 }
 
 - (void)didReceiveMemoryWarning {
