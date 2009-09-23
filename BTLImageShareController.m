@@ -48,42 +48,67 @@
 	[thumbnailButton addTarget:self action:@selector(thumbnailTapped:) forControlEvents:UIControlEventTouchUpInside];
 	thumbnailButton.hidden = YES;
 	[self.view addSubview:thumbnailButton];
+
+	imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	imageButton.frame = CGRectMake(0, 0, 320, 480);
+	[imageButton addTarget:self action:@selector(imageTapped:) forControlEvents:UIControlEventTouchUpInside];
+	imageButton.hidden = NO;
+	imageButton.alpha = 0.0f;
+	[self.view addSubview:imageButton];
 	
 	thumbnailFrame = [UIImage imageNamed:@"thumbnail_frame.png"];
 }
 
 - (void)thumbnailTapped:(id)sender {
-	NSLog(@"thumbnail tapped");
 	if ([self.delegate respondsToSelector:@selector(thumbnailTapped)]) {
 		[self.delegate thumbnailTapped];
 	}
 	
-	// TODO: WHAT SHOULD HAPPEN?
-	// I know the image should appear full screen
-	// tap the image to bring up an action sheet
-	// the action sheet should contain:
-	// Email Photo
-	// Send to flickr (later)
-	// Send to facebook (later)
+	[self hideThumbnail];
 
-	// TODO: figure out how to move the thumbnailFrame up to 0,0
-	thumbnailButton.hidden = YES;
-//	[UIView beginAnimations:nil context:nil];
-//	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-//  [UIView setAnimationDuration:1.0f];
-//	thumbnailButton.frame = CGRectMake(-120, -240, 320, 480);	
-//  [UIView commitAnimations];	
-	
-	
-	UIButton *imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	imageButton.frame = CGRectMake(0, 0, 320, 480);
-	[imageButton addTarget:self action:@selector(imageTapped:) forControlEvents:UIControlEventTouchUpInside];
+	// fade in full screen image
 	[imageButton setImage:self.image forState:UIControlStateNormal];
-	[self.view addSubview:imageButton];
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+  [UIView setAnimationDuration:0.66f];
+  imageButton.alpha = 1.0f;	
+  [UIView commitAnimations];	
 }
 
 - (void)imageTapped:(id)sender {
 	NSLog(@"image tapped!");
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle: nil
+																													 delegate: self 
+																									cancelButtonTitle: @"Cancel" 
+																						 destructiveButtonTitle: NULL 
+																									otherButtonTitles: @"Email Photo", @"Go Back", NULL];
+	actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;																							
+	[actionSheet showInView:self.view];
+	[actionSheet release];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+	switch (buttonIndex) {
+		case 0:
+			NSLog(@"email photo");
+			break;
+		case 1:
+			[self hidePreviewImage];
+			if ([self.delegate respondsToSelector:@selector(previewClosed)]) {
+				[self.delegate previewClosed];
+			}
+			break;
+		default:
+			break;
+	}
+}
+
+- (void)hidePreviewImage {
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+  [UIView setAnimationDuration:0.66f];
+  imageButton.alpha = 0.0f;	
+  [UIView commitAnimations];	
 }
 
 - (UIImage*)generateThumbnail:(UIImage*)source {
@@ -169,9 +194,10 @@
 
 
 - (void)dealloc {
+	[image release];
+	[imageButton release];
 	[thumbnailButton release];
 	[thumbnailFrame release];
-	[image release];
 	[delegate release];
 	[super dealloc];
 }

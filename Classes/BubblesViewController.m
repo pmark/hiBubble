@@ -433,9 +433,12 @@
 }
 
 -(void)thumbnailTapped {
-	NSLog(@"BVC: thumbnail tapped");
 	[Session sharedSession].appIsActive = NO;
 	[self.bubblesView popAllBubbles];
+}
+
+-(void)previewClosed {
+	[Session sharedSession].appIsActive = YES;
 }
 
 

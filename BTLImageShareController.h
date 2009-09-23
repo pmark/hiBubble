@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 
 
-@interface BTLImageShareController : UIViewController {
+@interface BTLImageShareController : UIViewController <UIActionSheetDelegate> {
 	UIImage *image;
-	UIButton *thumbnailButton;
+	UIButton *imageButton;
 	UIImage *thumbnailFrame;
+	UIButton *thumbnailButton;
 	id delegate;
 }
 
@@ -24,5 +25,6 @@
 - (void)showThumbnail:(UIImage *)newImage;
 - (UIImage*)generateThumbnail:(UIImage*)source;
 - (void)generateAndShowThumbnail:(UIImage*)source;
+- (void)hidePreviewImage;
 
 @end
