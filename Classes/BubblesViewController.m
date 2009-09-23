@@ -75,6 +75,7 @@
 	[self initStatusMessage];
 	
 	self.shareController = [[BTLImageShareController alloc] init];
+	self.shareController.delegate = self;
 	[self.view addSubview:self.shareController.view];
 }
 
@@ -111,24 +112,25 @@
 }
 
 - (void)blow:(NSTimer *)timer {
+	if ([Session sharedSession].appIsActive == NO)
+		return;
+
   // set the velocity
   if ([SCListener sharedListener] != nil) {
     Float32 volume = [[SCListener sharedListener] averagePower];
     [self setNormalizedVelocity:volume];
   }  
 
-	if ([[Session sharedSession] appIsActive]) {	
-		if ([[Session sharedSession] breathDetected]) {
-			[Session sharedSession].machineOn = NO;
-			[self.bubblesView launchBubble:0];
-			[self hideStatusMessage];
-			
-		} else if ([Session sharedSession].machineOn) {
-			machineCounter++;
-			if (machineCounter > BUBBLE_MACHINE_SPACER) {
-				machineCounter = 0;
-				[self.bubblesView launchBubble:[BtlUtilities randomNumberInRange:25 maximum:100]];
-			}
+	if ([[Session sharedSession] breathDetected]) {
+		[Session sharedSession].machineOn = NO;
+		[self.bubblesView launchBubble:0];
+		[self hideStatusMessage];
+		
+	} else if ([Session sharedSession].machineOn) {
+		machineCounter++;
+		if (machineCounter > BUBBLE_MACHINE_SPACER) {
+			machineCounter = 0;
+			[self.bubblesView launchBubble:[BtlUtilities randomNumberInRange:25 maximum:100]];
 		}
 	}
 }
@@ -428,6 +430,12 @@
 
 - (void)hideStatusMessage {
 	self.statusLabel.hidden = YES;
+}
+
+-(void)thumbnailTapped {
+	NSLog(@"BVC: thumbnail tapped");
+	[Session sharedSession].appIsActive = NO;
+	[self.bubblesView popAllBubbles];
 }
 
 

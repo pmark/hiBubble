@@ -13,9 +13,11 @@
 	UIImage *image;
 	UIButton *thumbnailButton;
 	UIImage *thumbnailFrame;
+	id delegate;
 }
 
 @property (nonatomic,retain) UIImage *image;
+@property (nonatomic,assign) id delegate;
 
 - (void)hideThumbnail;
 - (void)hideThumbnailAfterDelay:(CGFloat)delay;

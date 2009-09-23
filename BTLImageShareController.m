@@ -18,7 +18,7 @@
 
 @implementation BTLImageShareController
 
-@synthesize image;
+@synthesize image, delegate;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -54,6 +54,9 @@
 
 - (void)thumbnailTapped:(id)sender {
 	NSLog(@"thumbnail tapped");
+	if ([self.delegate respondsToSelector:@selector(thumbnailTapped)]) {
+		[self.delegate thumbnailTapped];
+	}
 	
 	// TODO: WHAT SHOULD HAPPEN?
 	// I know the image should appear full screen
@@ -62,6 +65,25 @@
 	// Email Photo
 	// Send to flickr (later)
 	// Send to facebook (later)
+
+	// TODO: figure out how to move the thumbnailFrame up to 0,0
+	thumbnailButton.hidden = YES;
+//	[UIView beginAnimations:nil context:nil];
+//	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+//  [UIView setAnimationDuration:1.0f];
+//	thumbnailButton.frame = CGRectMake(-120, -240, 320, 480);	
+//  [UIView commitAnimations];	
+	
+	
+	UIButton *imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	imageButton.frame = CGRectMake(0, 0, 320, 480);
+	[imageButton addTarget:self action:@selector(imageTapped:) forControlEvents:UIControlEventTouchUpInside];
+	[imageButton setImage:self.image forState:UIControlStateNormal];
+	[self.view addSubview:imageButton];
+}
+
+- (void)imageTapped:(id)sender {
+	NSLog(@"image tapped!");
 }
 
 - (UIImage*)generateThumbnail:(UIImage*)source {
@@ -86,11 +108,7 @@
 }
 
 - (void)showThumbnail:(UIImage *)newImage {
-	if (newImage != nil && newImage != self.image) {
-		self.image = newImage;
-	}
-
-	[thumbnailButton setImage:self.image forState:UIControlStateNormal];
+	[thumbnailButton setImage:newImage forState:UIControlStateNormal];
 	thumbnailButton.alpha = 0.0f;
 	thumbnailButton.hidden = NO;	
 
@@ -109,8 +127,12 @@
   [UIView commitAnimations];	
 }
 
-- (void)generateAndShowThumbnail:(UIImage*)source {
-	[self showThumbnail:[self generateThumbnail:source]];
+- (void)generateAndShowThumbnail:(UIImage*)newImage {
+	if (newImage != nil && newImage != self.image) {
+		self.image = newImage;
+	}
+
+	[self showThumbnail:[self generateThumbnail:self.image]];
 }
 
 - (void)hideThumbnail {
@@ -150,6 +172,7 @@
 	[thumbnailButton release];
 	[thumbnailFrame release];
 	[image release];
+	[delegate release];
 	[super dealloc];
 }
 

@@ -51,6 +51,7 @@
 -(void)initStatusMessage;
 -(void)showStatusMessage:(NSString*)message;
 -(void)hideStatusMessage;
+-(void)thumbnailTapped;
 
 @end
 
