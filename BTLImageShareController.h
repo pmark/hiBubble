@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-
-@interface BTLImageShareController : UIViewController <UIActionSheetDelegate> {
+@interface BTLImageShareController : UIViewController <UIActionSheetDelegate, MFMailComposeViewControllerDelegate> {
 	UIImage *image;
 	UIButton *imageButton;
 	UIImage *thumbnailFrame;
@@ -18,6 +19,7 @@
 }
 
 @property (nonatomic,retain) UIImage *image;
+@property (nonatomic,retain) UIImage *thumbnailFrame;
 @property (nonatomic,assign) id delegate;
 
 - (void)hideThumbnail;

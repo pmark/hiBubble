@@ -17,6 +17,7 @@
 	CGFloat maxSoundLevel;
 	NSInteger bubbleCount;
 	NSInteger bubbleStyle;
+	UIInterfaceOrientation uiOrientation;
 }
 
 @property (assign) NSInteger velocity;
@@ -28,6 +29,7 @@
 @property (assign) BOOL machineOn;
 @property (assign) CGFloat minSoundLevel;
 @property (assign) CGFloat maxSoundLevel;
+@property (assign) UIInterfaceOrientation uiOrientation;
 
 -(void)setNewVelocity:(NSInteger)newVelocity;
 -(NSInteger)getVelocity;

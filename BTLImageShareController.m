@@ -18,24 +18,7 @@
 
 @implementation BTLImageShareController
 
-@synthesize image, delegate;
-
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
+@synthesize image, delegate, thumbnailFrame;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -43,7 +26,7 @@
 		
 	thumbnailButton = [UIButton buttonWithType:UIButtonTypeCustom];
 	thumbnailButton.frame = CGRectMake(self.view.frame.size.width - THUMBNAIL_FRAME_WIDTH - 10, 
-																		 self.view.frame.size.height - THUMBNAIL_FRAME_HEIGHT - 10, 
+																		 self.view.frame.size.height - THUMBNAIL_FRAME_HEIGHT - 53, 
 																		 THUMBNAIL_FRAME_WIDTH, THUMBNAIL_FRAME_HEIGHT);
 	[thumbnailButton addTarget:self action:@selector(thumbnailTapped:) forControlEvents:UIControlEventTouchUpInside];
 	thumbnailButton.hidden = YES;
@@ -56,7 +39,7 @@
 	imageButton.alpha = 0.0f;
 	[self.view addSubview:imageButton];
 	
-	thumbnailFrame = [UIImage imageNamed:@"thumbnail_frame.png"];
+	[self initThumbnailFrameImage];
 }
 
 - (void)thumbnailTapped:(id)sender {
@@ -67,7 +50,6 @@
 	[self hideThumbnail];
 
 	// fade in full screen image
-	[imageButton setImage:self.image forState:UIControlStateNormal];
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
   [UIView setAnimationDuration:0.66f];
@@ -76,7 +58,6 @@
 }
 
 - (void)imageTapped:(id)sender {
-	NSLog(@"image tapped!");
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle: nil
 																													 delegate: self 
 																									cancelButtonTitle: @"Cancel" 
@@ -90,7 +71,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	switch (buttonIndex) {
 		case 0:
-			NSLog(@"email photo");
+			[self emailPhoto];
 			break;
 		case 1:
 			[self hidePreviewImage];
@@ -103,12 +84,43 @@
 	}
 }
 
+- (void)emailPhoto {
+	if (![MFMailComposeViewController canSendMail]) {
+		UIAlertView *cantMailAlert = [[UIAlertView alloc] initWithTitle:@"Uh oh..."
+																														message:@"Sorry, this device is not able to send e-mail" delegate:NULL cancelButtonTitle:@"OK" otherButtonTitles:NULL];
+		[cantMailAlert show]; 
+		[cantMailAlert release]; 
+		return;
+	}
+
+	MFMailComposeViewController *mailController = [[[MFMailComposeViewController alloc] init] autorelease];
+	
+	NSData *imageData = UIImageJPEGRepresentation(self.image, 1.0);
+	[mailController addAttachmentData:imageData mimeType:@"image/jpg" fileName:@"hibubble"];
+	
+	NSString *emailBody = @"Tags:hibubble, iphone, app, bubbles";
+	NSString *emailSubject = @"hiBubble";
+	[mailController setMessageBody:emailBody isHTML:NO];	
+	[mailController setSubject:emailSubject];
+	mailController.mailComposeDelegate = self;
+	[self presentModalViewController:mailController animated:YES];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+	[self becomeFirstResponder];
+	[self dismissModalViewControllerAnimated:YES];
+}
+
 - (void)hidePreviewImage {
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
   [UIView setAnimationDuration:0.66f];
   imageButton.alpha = 0.0f;	
   [UIView commitAnimations];	
+}
+
+- (void)initThumbnailFrameImage {
+	self.thumbnailFrame = [UIImage imageNamed:@"thumbnail_frame.png"];
 }
 
 - (UIImage*)generateThumbnail:(UIImage*)source {
@@ -120,7 +132,10 @@
 	
 	UIGraphicsBeginImageContext(targetSize);
 	[source drawInRect:scaledRect];
-	[thumbnailFrame drawAtPoint:CGPointMake(0, 0)];
+	if (thumbnailFrame == nil) {
+		[self initThumbnailFrameImage];
+	}
+	[self.thumbnailFrame drawAtPoint:CGPointMake(0, 0)];
 	
 	// draw a simple thumbnail border
 //	CGContextRef context = UIGraphicsGetCurrentContext();
@@ -155,13 +170,15 @@
 - (void)generateAndShowThumbnail:(UIImage*)newImage {
 	if (newImage != nil && newImage != self.image) {
 		self.image = newImage;
+		[imageButton setImage:newImage forState:UIControlStateNormal];
 	}
 
-	[self showThumbnail:[self generateThumbnail:self.image]];
+	UIImage *thumb = [self generateThumbnail:self.image];
+	[self showThumbnail:thumb];
 }
 
 - (void)hideThumbnail {
-	if (thumbnailButton.hidden) return;
+	if (thumbnailButton.hidden || thumbnailButton.alpha == 0.0f) return;
 	
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -171,7 +188,7 @@
 	
 	CGAffineTransform transform = CGAffineTransformMakeScale(0.01f, 0.01f);
   thumbnailButton.transform = transform;
-	
+
   [UIView commitAnimations];	
 }
 

@@ -180,6 +180,7 @@
 		NSURL *url = [NSURL URLWithString:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=316682771&mt=8"];
 		[[UIApplication sharedApplication] openURL:url];
 	}
+	[alertView release];
 }
 
 - (void)setNormalizedVelocity:(CGFloat)level {
@@ -345,7 +346,7 @@
 		}
     break;
   }
-  
+
   return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
@@ -369,6 +370,9 @@
 			[self initCamera];
     }    
   }
+	
+	// just to be safe
+	[Session sharedSession].appIsActive = YES;
 }
 
 -(void)shakeMotionBegan:(UIEvent *)event {
@@ -391,12 +395,14 @@
 }
 
 - (void)saveScreenshot {
+	[self hideStatusMessage];
 	[self.shareController hideThumbnail];
 
 	UIGraphicsBeginImageContext(self.bubblesView.bounds.size);
 	[self.bubblesView.layer renderInContext:UIGraphicsGetCurrentContext()];
 	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
+	
 	[self showStatusMessage:@"Saving photo..."];
 	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:1.0];
 	[self.shareController generateAndShowThumbnail:viewImage];	

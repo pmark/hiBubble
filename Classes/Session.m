@@ -16,7 +16,7 @@
 SYNTHESIZE_SINGLETON_FOR_CLASS(Session);
 
 @synthesize velocity, crazyMode, cameraMode, appIsActive, machineOn, minSoundLevel, maxSoundLevel;
-@synthesize bubbleCount, bubbleStyle;
+@synthesize bubbleCount, bubbleStyle, uiOrientation;
 
 -(void)setNewVelocity:(NSInteger)newVelocity {
   self.velocity = newVelocity;

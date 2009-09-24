@@ -9,6 +9,8 @@
 #import "Session.h"
 #include <QuartzCore/QuartzCore.h>
 
+#define CAMERA_SCALAR 1.12412 // scalar = (480 / (2048 / 480))
+
 @implementation BTLFullScreenCameraController
 
 @synthesize statusLabel, shareController;
@@ -20,7 +22,7 @@
     self.navigationBarHidden = YES;
     self.toolbarHidden = YES;
     self.wantsFullScreenLayout = YES;
-    self.cameraViewTransform = CGAffineTransformScale(self.cameraViewTransform, 1.13f, 1.13f);    		
+		self.cameraViewTransform = CGAffineTransformScale(self.cameraViewTransform, CAMERA_SCALAR, CAMERA_SCALAR);    		
 		
 		if ([self.parentViewController respondsToSelector:@selector(initStatusMessage)]) {
 			[self.parentViewController initStatusMessage];
@@ -58,12 +60,15 @@
 	[super takePicture];
 }
 
+// Returns a retained image.
 - (UIImage*)dumpOverlayViewToImage {
-	UIGraphicsBeginImageContext(self.cameraOverlayView.bounds.size);
+	CGSize imageSize = self.cameraOverlayView.bounds.size;
+	UIGraphicsBeginImageContext(imageSize);
 	[self.cameraOverlayView.layer renderInContext:UIGraphicsGetCurrentContext()];
 	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
-	
+
+//	[viewImage retain];
 	return viewImage;
 }
 
@@ -72,22 +77,42 @@
 	CGPoint topCorner = CGPointMake(0, 0);
 	CGSize targetSize = CGSizeMake(320, 480);	
 	CGRect scaledRect = CGRectZero;
-	scaledRect.origin = CGPointMake(0.0,0.0);
-	scaledRect.size.width  = 320;
+	
+	CGFloat scaledX = 480 * baseImage.size.width / baseImage.size.height;
+	CGFloat offsetX = (scaledX - 320) / -2;
+	scaledRect.origin = CGPointMake(offsetX, 0.0);
+	scaledRect.size.width  = scaledX;
 	scaledRect.size.height = 480;
 	
 	UIGraphicsBeginImageContext(targetSize);	
-	[baseImage drawInRect:scaledRect];
+	[baseImage drawInRect:scaledRect];	
 	[overlayImage drawAtPoint:topCorner];	
 	UIImage* result = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();	
+//	[overlayImage release];
 	
 	return result;	
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+	NSLog(@"snapshot info: %@", info);
 	[self showStatusMessage:@"Saving photo..."];
 	UIImage *baseImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+	NSLog(@"camera image: %f x %f", baseImage.size.width, baseImage.size.height);
+	NSLog(@"imageOrientation: %i", baseImage.imageOrientation);
+	
+	switch (baseImage.imageOrientation) {
+		case UIImageOrientationLeft:
+		case UIImageOrientationRight:
+			// portrait (seems backwards to me but oh well)
+			NSLog(@"portrait");
+			break;
+		default:
+			// landscape
+			NSLog(@"landscape");
+			break;
+	}
+	
 	if (baseImage == nil) return;
 
 	// save composite
@@ -98,6 +123,7 @@
 	// thumbnail
 	if (self.shareController) {
 		[self.shareController generateAndShowThumbnail:compositeImage];
+		[self.shareController hideThumbnailAfterDelay:5.0f];
 	}
 }
 
