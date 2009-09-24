@@ -133,6 +133,8 @@
 			[self.bubblesView launchBubble:[BtlUtilities randomNumberInRange:25 maximum:100]];
 		}
 	}
+	
+	[self.bubblesView bringSubviewToFront:self.shareController.view];
 }
 
 - (void)changeBubbleStyle:(NSTimer *)timer {
