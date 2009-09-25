@@ -13,7 +13,7 @@
 
 @implementation BTLFullScreenCameraController
 
-@synthesize statusLabel, shareController;
+@synthesize statusLabel, shareController, shadeOverlay;
 
 - (id)init {
   if (self = [super init]) {
@@ -33,11 +33,14 @@
   return self;
 }
 
-/*
+
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];	
+	self.shadeOverlay = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"overlay1.png"]] autorelease];
+	self.shadeOverlay.alpha = 0.0f;
+	[self.view addSubview:self.shadeOverlay];
 }
-*/
+
 
 + (BOOL)isAvailable {
   return [self isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
@@ -53,10 +56,12 @@
 
 - (void)takePicture {
 	self.delegate = self;
-	[self showStatusMessage:@"Taking photo..."];
+	[self showStatusMessage:@". . ."];
 	[Session sharedSession].appIsActive = NO;
 	if (self.shareController) 
 		[self.shareController hideThumbnail];
+	
+	[self showShadeOverlay];
 	[super takePicture];
 }
 
@@ -111,13 +116,16 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-	[self showStatusMessage:@"Saving photo..."];
+	[self showStatusMessage:@". . ."];
 	UIImage *baseImage = [info objectForKey:UIImagePickerControllerOriginalImage];
 	if (baseImage == nil) return;
 
 	// save composite
 	UIImage *compositeImage = [self addOverlayToBaseImage:baseImage];
 	[[Session sharedSession] activateSound];
+	[self hideStatusMessage];
+	[self hideShadeOverlay];
+
 	UIImageWriteToSavedPhotosAlbum(compositeImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 
 	// thumbnail
@@ -128,7 +136,6 @@
 }
 
 - (void)image:(UIImage*)image didFinishSavingWithError:(NSError *)error contextInfo:(NSDictionary*)info {
-	[self hideStatusMessage];
 }
 
 - (void)initStatusMessage {
@@ -149,6 +156,7 @@
 	} else {
 		self.statusLabel.text = message;
 		self.statusLabel.hidden = NO;
+		[self.view bringSubviewToFront:self.statusLabel];
 	}
 }
 
@@ -158,6 +166,22 @@
 	} else {
 		self.statusLabel.hidden = YES;
 	}
+}
+
+- (void)showShadeOverlay {
+	[self animateShadeOverlay:0.82f];
+}
+
+- (void)hideShadeOverlay {
+	[self animateShadeOverlay:0.0f];
+}
+
+- (void)animateShadeOverlay:(CGFloat)alpha {
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+  [UIView setAnimationDuration:0.35f];
+  self.shadeOverlay.alpha = alpha;
+  [UIView commitAnimations];	
 }
 
 - (void)writeImageToDocuments:(UIImage*)image {
@@ -175,6 +199,7 @@
 - (void)dealloc {
 	[statusLabel release];
 	[shareController release];
+	[shadeOverlay release];
   [super dealloc];
 }
 

@@ -12,9 +12,11 @@
 @interface BTLFullScreenCameraController : UIImagePickerController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
 	UILabel *statusLabel;
 	BTLImageShareController *shareController;
+	UIImageView *shadeOverlay;
 }
 
 @property (nonatomic, retain) UILabel *statusLabel;
+@property (nonatomic, retain) UIImageView *shadeOverlay;
 @property (nonatomic, retain) BTLImageShareController *shareController;
 
 + (BOOL)isAvailable;
@@ -25,5 +27,8 @@
 - (void)initStatusMessage;
 - (void)showStatusMessage:(NSString*)message;
 - (void)hideStatusMessage;
+- (void)showShadeOverlay;
+- (void)hideShadeOverlay;
+- (void)animateShadeOverlay:(CGFloat)alpha;
 
 @end
