@@ -80,6 +80,7 @@
 	
 	CGFloat scaledX = 480 * baseImage.size.width / baseImage.size.height;
 	CGFloat offsetX = (scaledX - 320) / -2;
+
 	scaledRect.origin = CGPointMake(offsetX, 0.0);
 	scaledRect.size.width  = scaledX;
 	scaledRect.size.height = 480;
@@ -89,22 +90,17 @@
 	[overlayImage drawAtPoint:topCorner];	
 	UIImage* result = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();	
-//	[overlayImage release];
 	
 	return result;	
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-	NSLog(@"snapshot info: %@", info);
-	[self showStatusMessage:@"Saving photo..."];
-	UIImage *baseImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-	NSLog(@"camera image: %f x %f", baseImage.size.width, baseImage.size.height);
-	NSLog(@"imageOrientation: %i", baseImage.imageOrientation);
-	
-	switch (baseImage.imageOrientation) {
+- (void)adjustLandscapePhoto:(UIImage*)image {
+	NSLog(@"camera image: %f x %f", image.size.width, image.size.height);
+
+	switch (image.imageOrientation) {
 		case UIImageOrientationLeft:
 		case UIImageOrientationRight:
-			// portrait (seems backwards to me but oh well)
+			// portrait
 			NSLog(@"portrait");
 			break;
 		default:
@@ -112,12 +108,16 @@
 			NSLog(@"landscape");
 			break;
 	}
-	
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+	[self showStatusMessage:@"Saving photo..."];
+	UIImage *baseImage = [info objectForKey:UIImagePickerControllerOriginalImage];
 	if (baseImage == nil) return;
 
 	// save composite
 	UIImage *compositeImage = [self addOverlayToBaseImage:baseImage];
-	[Session sharedSession].appIsActive = YES;
+	[[Session sharedSession] activateSound];
 	UIImageWriteToSavedPhotosAlbum(compositeImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 
 	// thumbnail
@@ -128,10 +128,7 @@
 }
 
 - (void)image:(UIImage*)image didFinishSavingWithError:(NSError *)error contextInfo:(NSDictionary*)info {
-	//[self writeImageToDocuments:image];
-	//[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:2.0];
 	[self hideStatusMessage];
-	
 }
 
 - (void)initStatusMessage {

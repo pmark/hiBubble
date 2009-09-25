@@ -17,11 +17,11 @@
 #define GROW_ANIMATION_DURATION_SECONDS 0.68
 #define FLOAT_ANIMATION_DURATION_SECONDS 11.5
 #define MIN_SIZE_SCALAR 0.10
-#define FINAL_OPACITY 0.45
+#define FINAL_OPACITY 0.40
 #define MIN_HORIZON_RADIUS 100.0
 #define MAX_HORIZON_RADIUS 320.0
-#define BIRTH_OFFSET_X 40
-#define BIRTH_OFFSET_Y 75
+#define BIRTH_OFFSET_X 37
+#define BIRTH_OFFSET_Y 65
 
 @implementation OneBubbleView
 
@@ -140,7 +140,7 @@
   
   // scale the image back up to size
   // duration is proportional to velocity
-  CGFloat duration = [self scaleDownByVelocity:GROW_ANIMATION_DURATION_SECONDS percent:50];
+  CGFloat duration = [self scaleDownByVelocity:GROW_ANIMATION_DURATION_SECONDS percent:30];
 
   [UIView beginAnimations:nil context:self];
   [UIView setAnimationDuration:duration];
@@ -170,7 +170,7 @@
 }
 
 -(void)animateFloatPhase:(OneBubbleView*)oneBubble {
-  CGFloat duration = [self scaleDownByVelocity:FLOAT_ANIMATION_DURATION_SECONDS percent:60];
+  CGFloat duration = [self scaleDownByVelocity:FLOAT_ANIMATION_DURATION_SECONDS percent:50];
 	oneBubble.alpha = 1.0f;
 	CGRect imageFrame = [[oneBubble.layer presentationLayer] frame];
 	CGPoint viewOrigin = [[oneBubble.layer presentationLayer] position];

@@ -36,5 +36,6 @@
 -(bool)breathDetected;
 -(bool)bubblesShouldAppear;
 +(Session*)sharedSession;
+-(void)activateSound;
 
 @end

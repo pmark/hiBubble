@@ -140,8 +140,9 @@
 
 - (BOOL)canBecomeFirstResponder { return YES; }
 
+/*
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event { 
-	NSLog(@"shake BubblesView!");
+	//NSLog(@"shake BubblesView!");
 
 	[super motionBegan: motion withEvent: event]; 
 //	if ((motion == UIEventSubtypeMotionShake) && 
@@ -169,9 +170,8 @@
 
     }
 	}
-	
-	
 } 
+*/
 
 - (void)dealloc {
   [super dealloc];

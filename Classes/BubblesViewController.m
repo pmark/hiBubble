@@ -130,7 +130,7 @@
 		machineCounter++;
 		if (machineCounter > BUBBLE_MACHINE_SPACER) {
 			machineCounter = 0;
-			[self.bubblesView launchBubble:[BtlUtilities randomNumberInRange:25 maximum:100]];
+			[self.bubblesView launchBubble:[BtlUtilities randomNumberInRange:40 maximum:100]];
 		}
 	}
 	
@@ -193,7 +193,7 @@
 	}
 
   CGFloat min = [[Session sharedSession] minSoundLevel];
-	if (level > 0.0 && level < min) {
+	if (level > 0.001 && level < min) {
 		// gradually decrease the minimum level
 		min = level * 0.05f;
 		[[Session sharedSession] setMinSoundLevel:min];
@@ -206,6 +206,8 @@
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
+	NSLog(@"BVC: memory warning!");
+	[self.bubblesView popAllBubbles];
   [[SCListener sharedListener] stop];
 }
 
@@ -374,13 +376,10 @@
   }
 	
 	// just to be safe
-	[Session sharedSession].appIsActive = YES;
+	[[Session sharedSession] activateSound];
 }
 
 -(void)shakeMotionBegan:(UIEvent *)event {
-	//NSLog(@"shake!");
-//	if (![Session sharedSession].appIsActive) { return; }
-//	[self toggleAugmentedReality];
 } 
 
 -(void)setRandomBackgroundColor {
@@ -446,7 +445,7 @@
 }
 
 -(void)previewClosed {
-	[Session sharedSession].appIsActive = YES;
+	[[Session sharedSession] activateSound];
 }
 
 

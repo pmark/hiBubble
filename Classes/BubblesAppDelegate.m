@@ -32,7 +32,7 @@
 	[BtlUtilities seedRandomNumberGenerator];
 
   [self initSounds];
-  [[SCListener sharedListener] listen];
+	[[Session sharedSession] activateSound];
 
   [window addSubview:viewController.view];
   [window makeKeyAndVisible];
@@ -45,8 +45,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-	[Session sharedSession].appIsActive = true;
-	[[SCListener sharedListener] listen];
+	[[Session sharedSession] activateSound];
 }
 
 #pragma mark

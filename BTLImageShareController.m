@@ -26,7 +26,7 @@
 		
 	thumbnailButton = [UIButton buttonWithType:UIButtonTypeCustom];
 	thumbnailButton.frame = CGRectMake(self.view.frame.size.width - THUMBNAIL_FRAME_WIDTH - 10, 
-																		 self.view.frame.size.height - THUMBNAIL_FRAME_HEIGHT - 53, 
+																		 self.view.frame.size.height - THUMBNAIL_FRAME_HEIGHT - 10, 
 																		 THUMBNAIL_FRAME_WIDTH, THUMBNAIL_FRAME_HEIGHT);
 	[thumbnailButton addTarget:self action:@selector(thumbnailTapped:) forControlEvents:UIControlEventTouchUpInside];
 	thumbnailButton.hidden = YES;

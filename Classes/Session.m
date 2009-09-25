@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Session.h"
 #import "SynthesizeSingleton.h"
-
+#import "SCListener.h"
 
 @implementation Session
 
@@ -27,11 +27,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(Session);
 }
 
 -(bool)breathDetected {
-  return self.velocity > 24;
+  return self.velocity > 19;
 }
 
 -(bool)bubblesShouldAppear {
   return self.appIsActive && ([self breathDetected] || self.machineOn);
+}
+
+-(void)activateSound {
+	if (![[SCListener sharedListener] isListening]) {
+		[[SCListener sharedListener] listen];
+	}
+	self.appIsActive = YES;
 }
 
 @end
