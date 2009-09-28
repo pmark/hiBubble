@@ -17,8 +17,8 @@
 
 
 // horizontal swipe
-#define HORIZ_SWIPE_DRAG_MIN 240
-#define VERT_SWIPE_DRAG_MAX 150
+#define HORIZ_SWIPE_DRAG_MIN 160
+#define VERT_SWIPE_DRAG_MAX 160
 
 // vertical swipe
 #define HORIZ_SWIPE_DRAG_MAX 200
@@ -208,7 +208,7 @@
   [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
 	NSLog(@"BVC: memory warning!");
 	[self.bubblesView popAllBubbles];
-  [[SCListener sharedListener] stop];
+//  [[SCListener sharedListener] stop];
 }
 
 - (void)dealloc {
@@ -234,7 +234,7 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	//UITouch *touch = [touches anyObject];
 	//CGPoint point = [touch locationInView:self.bubblesView];
-	self.startTouchPosition = CGPointMake(-1, -1);	
+	[self resetStartTouchPostion];
   [Session sharedSession].machineOn = NO;
 	[self hideStatusMessage];
 }
@@ -242,7 +242,7 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *touch = [touches anyObject];
 	CGPoint point = [touch locationInView:self.bubblesView];
-	self.startTouchPosition = CGPointMake(-1, -1);	
+	[self resetStartTouchPostion];
   
   [Session sharedSession].machineOn = NO;    
 
@@ -377,6 +377,7 @@
 	
 	// just to be safe
 	[[Session sharedSession] activateSound];
+	[Session sharedSession].machineOn = NO;
 }
 
 -(void)shakeMotionBegan:(UIEvent *)event {
@@ -396,19 +397,22 @@
 }
 
 - (void)saveScreenshot {
+	[Session sharedSession].appIsActive = NO;
+	[self resetStartTouchPostion];
 	[self hideStatusMessage];
 	[self.shareController hideThumbnail];
 
 	UIGraphicsBeginImageContext(self.bubblesView.bounds.size);
-	[self.bubblesView.layer renderInContext:UIGraphicsGetCurrentContext()];
+	[[self.bubblesView.layer presentationLayer] renderInContext:UIGraphicsGetCurrentContext()];
 	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 	
-	[self showStatusMessage:@". . ."];
+	[self showStatusMessage:@"Taking photo..."];
 	[self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:1.0];
 	[self.shareController generateAndShowThumbnail:viewImage];	
 	[self.shareController hideThumbnailAfterDelay:5.0f];
 	UIImageWriteToSavedPhotosAlbum(viewImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+	[Session sharedSession].appIsActive = YES;
 }
 
 - (void)image:(UIImage*)image didFinishSavingWithError:(NSError *)error contextInfo:(NSDictionary*)info {
@@ -444,9 +448,14 @@
 	[self.bubblesView popAllBubbles];
 }
 
--(void)previewClosed {
+-(void)previewClosed:(id)sender {
 	[[Session sharedSession] activateSound];
 }
+
+- (void)resetStartTouchPostion {
+	self.startTouchPosition = CGPointMake(-1, -1);	
+}
+
 
 
 @end

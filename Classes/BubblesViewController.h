@@ -52,6 +52,7 @@
 -(void)showStatusMessage:(NSString*)message;
 -(void)hideStatusMessage;
 -(void)thumbnailTapped;
+-(void)resetStartTouchPostion;
 
 @end
 

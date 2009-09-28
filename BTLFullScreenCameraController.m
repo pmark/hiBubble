@@ -56,7 +56,7 @@
 
 - (void)takePicture {
 	self.delegate = self;
-	[self showStatusMessage:@". . ."];
+	[self showStatusMessage:@"Taking photo..."];
 	[Session sharedSession].appIsActive = NO;
 	if (self.shareController) 
 		[self.shareController hideThumbnail];
@@ -69,7 +69,7 @@
 - (UIImage*)dumpOverlayViewToImage {
 	CGSize imageSize = self.cameraOverlayView.bounds.size;
 	UIGraphicsBeginImageContext(imageSize);
-	[self.cameraOverlayView.layer renderInContext:UIGraphicsGetCurrentContext()];
+	[[self.cameraOverlayView.layer presentationLayer] renderInContext:UIGraphicsGetCurrentContext()];
 	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 
@@ -100,6 +100,7 @@
 }
 
 - (void)adjustLandscapePhoto:(UIImage*)image {
+	// TODO: maybe use this for something
 	NSLog(@"camera image: %f x %f", image.size.width, image.size.height);
 
 	switch (image.imageOrientation) {
@@ -116,7 +117,7 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-	[self showStatusMessage:@". . ."];
+	[self showStatusMessage:@"Saving photo..."];
 	UIImage *baseImage = [info objectForKey:UIImagePickerControllerOriginalImage];
 	if (baseImage == nil) return;
 

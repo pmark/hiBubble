@@ -35,10 +35,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(Session);
 }
 
 -(void)activateSound {
+	self.appIsActive = YES;
 	if (![[SCListener sharedListener] isListening]) {
 		[[SCListener sharedListener] listen];
 	}
-	self.appIsActive = YES;
 }
 
 @end

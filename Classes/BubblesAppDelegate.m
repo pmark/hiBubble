@@ -59,7 +59,7 @@
 	for (NSString *name in names) {
 		NSURL *url = [NSURL URLWithString:[bundle pathForResource:name ofType:@"aif"]];
 		AVAudioPlayer	*sound = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-		//[sound prepareToPlay];
+		[sound prepareToPlay];
 		sound.numberOfLoops = 0;
 		sound.volume = 1.0;
 		[self.sounds setValue:sound forKey:name];

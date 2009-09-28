@@ -48,12 +48,12 @@
 	}
 	
 	[self hideThumbnail];
-
+	
 	// fade in full screen image
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
   [UIView setAnimationDuration:0.66f];
-  imageButton.alpha = 1.0f;	
+  imageButton.alpha = 1.0f;
   [UIView commitAnimations];	
 }
 
@@ -75,8 +75,8 @@
 			break;
 		case 1:
 			[self hidePreviewImage];
-			if ([self.delegate respondsToSelector:@selector(previewClosed)]) {
-				[self.delegate previewClosed];
+			if ([self.delegate respondsToSelector:@selector(previewClosed:)]) {
+				[self.delegate previewClosed:self];
 			}
 			break;
 		default:
