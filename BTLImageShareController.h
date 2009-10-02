@@ -20,9 +20,11 @@
 
 @property (nonatomic,retain) UIImage *image;
 @property (nonatomic,retain) UIImage *thumbnailFrame;
+@property (nonatomic,retain) UIButton *thumbnailButton;
 @property (nonatomic,assign) id delegate;
 
 - (void)hideThumbnail;
+- (void)hideThumbnailFast;
 - (void)hideThumbnailAfterDelay:(CGFloat)delay;
 - (void)showThumbnail:(UIImage *)newImage;
 - (UIImage*)generateThumbnail:(UIImage*)source;

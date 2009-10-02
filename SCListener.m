@@ -125,7 +125,9 @@ static void listeningCallback(void *inUserData, AudioQueueRef inAQ, AudioQueueBu
 	UInt32 sessionCategory = kAudioSessionCategory_PlayAndRecord;
 	AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(sessionCategory), &sessionCategory);	
 
+	// TODO: figure out headphone detection
 	UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_Speaker;
+	
 	AudioSessionSetProperty (kAudioSessionProperty_OverrideAudioRoute,sizeof (audioRouteOverride),&audioRouteOverride);
 
 }

@@ -76,7 +76,7 @@
 	
 	self.shareController = [[BTLImageShareController alloc] init];
 	self.shareController.delegate = self;
-	[self.view addSubview:self.shareController.view];
+	[self.bubblesView addSubview:self.shareController.view];
 }
 
 - (void) initCamera {  
@@ -314,7 +314,9 @@
 	if ([Session sharedSession].cameraMode) {
 		[self.camera takePicture];
 	} else {
-		[self saveScreenshot];
+		[self.shareController hideThumbnailFast];
+		// delay capture so presentationLayer can catch up
+		[self performSelector:@selector(saveScreenshot) withObject:self afterDelay:0.01f];
 	}
 
 }
@@ -392,15 +394,13 @@
 		self.bubblesView.backgroundColor = [UIColor clearColor];
 	} else {
 		self.bubblesView.backgroundColor = [UIColor blackColor];
-	}
-	
+	}	
 }
 
 - (void)saveScreenshot {
 	[Session sharedSession].appIsActive = NO;
 	[self resetStartTouchPostion];
 	[self hideStatusMessage];
-	[self.shareController hideThumbnail];
 
 	UIGraphicsBeginImageContext(self.bubblesView.bounds.size);
 	[[self.bubblesView.layer presentationLayer] renderInContext:UIGraphicsGetCurrentContext()];

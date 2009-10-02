@@ -18,19 +18,19 @@
 
 @implementation BTLImageShareController
 
-@synthesize image, delegate, thumbnailFrame;
+@synthesize image, delegate, thumbnailFrame, thumbnailButton;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 		
-	thumbnailButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	thumbnailButton.frame = CGRectMake(self.view.frame.size.width - THUMBNAIL_FRAME_WIDTH - 10, 
+	self.thumbnailButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	self.thumbnailButton.frame = CGRectMake(self.view.frame.size.width - THUMBNAIL_FRAME_WIDTH - 10, 
 																		 self.view.frame.size.height - THUMBNAIL_FRAME_HEIGHT - 10, 
 																		 THUMBNAIL_FRAME_WIDTH, THUMBNAIL_FRAME_HEIGHT);
-	[thumbnailButton addTarget:self action:@selector(thumbnailTapped:) forControlEvents:UIControlEventTouchUpInside];
-	thumbnailButton.hidden = YES;
-	[self.view addSubview:thumbnailButton];
+	[self.thumbnailButton addTarget:self action:@selector(thumbnailTapped:) forControlEvents:UIControlEventTouchUpInside];
+	self.thumbnailButton.alpha = 0.0f;
+	[self.view addSubview:self.thumbnailButton];
 
 	imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
 	imageButton.frame = CGRectMake(0, 0, 320, 480);
@@ -148,21 +148,21 @@
 }
 
 - (void)showThumbnail:(UIImage *)newImage {
-	[thumbnailButton setImage:newImage forState:UIControlStateNormal];
-	thumbnailButton.alpha = 0.0f;
-	thumbnailButton.hidden = NO;	
+	[self.thumbnailButton setImage:newImage forState:UIControlStateNormal];
+	self.thumbnailButton.alpha = 0.0f;
+	self.thumbnailButton.hidden = NO;	
 
   CGAffineTransform preTransform = CGAffineTransformMakeScale(0.1f, 0.1f);
-  thumbnailButton.transform = preTransform;
+  self.thumbnailButton.transform = preTransform;
 
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 
   [UIView setAnimationDuration:0.3f];
-  thumbnailButton.alpha = 1.0f;
+  self.thumbnailButton.alpha = 1.0f;
 	
 	CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 1.0f);
-  thumbnailButton.transform = transform;
+  self.thumbnailButton.transform = transform;
 	
   [UIView commitAnimations];	
 }
@@ -178,18 +178,23 @@
 }
 
 - (void)hideThumbnail {
-	if (thumbnailButton.hidden || thumbnailButton.alpha == 0.0f) return;
+	if (self.thumbnailButton.hidden || self.thumbnailButton.alpha == 0.0f) return;
 	
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 
   [UIView setAnimationDuration:0.3f];
-  thumbnailButton.alpha = 0.0f;
+  self.thumbnailButton.alpha = 0.0f;
 	
 	CGAffineTransform transform = CGAffineTransformMakeScale(0.01f, 0.01f);
-  thumbnailButton.transform = transform;
+  self.thumbnailButton.transform = transform;
 
   [UIView commitAnimations];	
+}
+
+- (void)hideThumbnailFast {
+  self.thumbnailButton.alpha = 0.0f;
+  self.thumbnailButton.hidden = YES;
 }
 
 - (void)hideThumbnailAfterDelay:(CGFloat)delay {
